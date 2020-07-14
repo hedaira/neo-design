@@ -41,7 +41,7 @@ function compLess() {
                 }
             })
         )
-        .pipe(concat('neoAntd.css'))
+        .pipe(concat('neoDesign.css'))
         .pipe(gulp.dest('dist'))
 }
 

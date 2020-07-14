@@ -61,9 +61,5 @@
   },
   "directories": {
     "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "n"
   }
 }
