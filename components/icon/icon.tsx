@@ -21,14 +21,14 @@ const exit = () => <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org
   <path d="M10.09 15.59L11.5 17L16.5 12L11.5 7L10.09 8.41L12.67 11H3V13H12.67L10.09 15.59ZM19 3H5C3.89 3 3 3.9 3 5V9H5V5H19V19H5V15H3V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="#333333"/>
 </svg>
 
-const tuple = <T extends any[]>(...args: T) => args;
+const tuple = <T extends string[]>(...args: T) => args;
 
 const AllIcons = tuple(
-    notification,
-    question,
-    person,
-    exit,
-    calendar
+    'notification',
+    'question',
+    'person',
+    'exit',
+    'calendar'
 );
 export type SingleIcon = typeof AllIcons[number];
 
@@ -36,6 +36,14 @@ export interface IconProps {
     img?: SingleIcon;
     className?: string;
 }
+
+// const AllIcons = tuple(
+//     notification,
+//     question,
+//     person,
+//     exit,
+//     calendar
+// );
 
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<IconProps & React.RefAttributes<HTMLElement>> {}
@@ -46,9 +54,17 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
         className
     } = props;
 
+    const component: any = () => {
+        if (img === 'notification') {
+            return notification
+        }
+        else {
+            return exit
+        }
+    };
 
     return (
-        <Icon className={className} component={img} alt={'Not found'}/>
+        <Icon className={className} component={component} alt={'Not found'}/>
     )
 };
 
