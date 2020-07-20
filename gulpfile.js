@@ -8,7 +8,7 @@ const transformLess = require('@ant-design/tools/lib/transformLess');
 
 function compTsx() {
     return gulp
-        .src('src/**/*.tsx')
+        .src('components/**/*.tsx')
         .pipe(ts({
             ...tsconfig.compilerOptions,
             declaration: true,
@@ -18,7 +18,7 @@ function compTsx() {
 
 function compLess() {
     return gulp
-        .src('src/**/*.less')
+        .src('components/**/*.less')
         .pipe(
             through2.obj(function (file, encoding, next) {
                 this.push(file.clone());
