@@ -1,6 +1,6 @@
 {
   "name": "neo-design",
-  "version": "1.0.78",
+  "version": "1.0.79",
   "description": "Neoflex Design",
   "main": "lib/index.js",
   "module": "lib/index.js",
