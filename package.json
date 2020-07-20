@@ -22,8 +22,7 @@
     "@babel/preset-react": "^7.10.4",
     "gulp-less": "^4.0.1",
     "react-test-renderer": "^16.13.1",
-    "tinycolor2": "^1.4.1",
-    "node": "^14.5.0"
+    "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
     "@ant-design/css-animation": "^1.7.2",
