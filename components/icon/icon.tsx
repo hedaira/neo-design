@@ -37,34 +37,19 @@ export interface IconProps {
     className?: string;
 }
 
-// const AllIcons = tuple(
-//     notification,
-//     question,
-//     person,
-//     exit,
-//     calendar
-// );
-
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<IconProps & React.RefAttributes<HTMLElement>> {}
 
 const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props) => {
     const {
         img,
-        className
+        className,
     } = props;
 
-    const component: any = () => {
-        if (img === 'notification') {
-            return notification
-        }
-        else {
-            return exit
-        }
-    };
+    const path = './../../icons/header/' + img + '.svg'
 
     return (
-        <Icon className={className} component={component} alt={'Not found'}/>
+        <img className={className} src={path} alt={'Not found'}/>
     )
 };
 
