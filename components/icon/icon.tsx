@@ -1,4 +1,5 @@
 import * as React from "react";
+import Icon from "@ant-design/icons/lib";
 
 const calendar = () => <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M19.5599 4.43992H18.72V2.75987C18.72 2.29629 18.3436 1.91992 17.8799 1.91992H17.0399C16.5762 1.91992 16.2 2.29629 16.2 2.75987V4.43992H7.79987V2.75987C7.79987 2.29629 7.42365 1.91992 6.95992 1.91992H6.11997C5.65624 1.91992 5.27987 2.29629 5.27987 2.75987V4.43992H4.43992C3.05057 4.43992 1.91992 5.57057 1.91992 6.95992V19.5599C1.91992 20.9493 3.05057 22.0799 4.43992 22.0799H19.5599C20.9493 22.0799 22.0799 20.9493 22.0799 19.5599V6.95992C22.0799 5.57057 20.9493 4.43992 19.5599 4.43992ZM20.3999 19.5599C20.3999 20.0227 20.0227 20.3999 19.5599 20.3999H4.43992C3.97711 20.3999 3.59997 20.0227 3.59997 19.5599V10.3536H20.3999V19.5599Z" fill="#333333"/>
@@ -20,14 +21,14 @@ const exit = () => <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org
   <path d="M10.09 15.59L11.5 17L16.5 12L11.5 7L10.09 8.41L12.67 11H3V13H12.67L10.09 15.59ZM19 3H5C3.89 3 3 3.9 3 5V9H5V5H19V19H5V15H3V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="#333333"/>
 </svg>
 
-const tuple = <T extends string[]>(...args: T) => args;
+const tuple = <T extends any[]>(...args: T) => args;
 
 const AllIcons = tuple(
-    'notification',
-    'question',
-    'person',
-    'exit',
-    'calendar'
+    notification,
+    question,
+    person,
+    exit,
+    calendar
 );
 export type SingleIcon = typeof AllIcons[number];
 
@@ -47,15 +48,15 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
 
 
     return (
-        <img className={className} src={img} alt={'Not found'}/>
+        <Icon className={className} component={img} alt={'Not found'}/>
     )
 };
 
-const Icon = React.forwardRef<unknown, IconProps>(InternalIcon) as CompoundedComponent;
+const NeoIcon = React.forwardRef<unknown, IconProps>(InternalIcon) as CompoundedComponent;
 
-Icon.displayName = 'NeoIcon';
+NeoIcon.displayName = 'NeoIcon';
 
-Icon.defaultProps = {
+NeoIcon.defaultProps = {
 };
 
-export default Icon
+export default NeoIcon
