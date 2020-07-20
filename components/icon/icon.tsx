@@ -29,7 +29,6 @@ const AllIcons = tuple(
     'exit',
     'calendar'
 );
-
 export type SingleIcon = typeof AllIcons[number];
 
 export interface IconProps {
@@ -55,5 +54,8 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
 const Icon = React.forwardRef<unknown, IconProps>(InternalIcon) as CompoundedComponent;
 
 Icon.displayName = 'NeoIcon';
+
+Icon.defaultProps = {
+};
 
 export default Icon
