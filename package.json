@@ -13,7 +13,7 @@
     "compile": "gulp",
     "prepublishOnly": "npm run compile",
     "lint": "eslint src --ext .ts",
-    "lint:fix": "prettier --write '{src,tests}/**/*.ts'",
+    "lint:fix": "prettier --write '{src,tests}/**/*.ts'"
   },
   "author": "Suvorova Anna",
   "license": "MIT",
@@ -59,4 +59,3 @@
     "typescript": "~3.9.2"
   }
 }
-
