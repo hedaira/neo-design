@@ -39,13 +39,11 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
       },
       className
   );
-  console.log(classes + '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
   return (
       <button
           className={classes}
       >
-          {classes}
         {children}
       </button>
   )
