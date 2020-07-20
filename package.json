@@ -68,5 +68,13 @@
   },
   "directories": {
     "lib": "lib"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hedaira/neo-design.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hedaira/neo-design/issues"
+  },
+  "homepage": "https://github.com/hedaira/neo-design#readme"
 }

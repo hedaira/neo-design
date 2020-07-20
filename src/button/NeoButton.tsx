@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const tuple = <T extends string[]>(...args: T) => args;
 
-const ButtonTypes = tuple('disabled', 'secondary', 'primary');
+const ButtonTypes = tuple('disabled', 'secondary');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
