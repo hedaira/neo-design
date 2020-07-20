@@ -1,6 +1,6 @@
 {
   "name": "neo-design",
-  "version": "1.0.0",
+  "version": "1.0.77",
   "description": "Update version to https://www.npmjs.com/package/neo-design\r ### `npm init`\r ### `git commit`\r ### `npm version [1.0.0]`\r ### `npm publish`",
   "main": ".eslintrc.js",
   "scripts": {
