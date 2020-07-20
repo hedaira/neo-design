@@ -16,7 +16,7 @@ export interface ButtonProps {
   children?: React.ReactNode;
 }
 
-const prefix = 'btn btn-primary';
+const prefix = 'btn';
 
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLElement>> {}
