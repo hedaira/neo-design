@@ -1,5 +1,5 @@
-import NeoButton from './NeoButton';
+import Button from './button';
 
-export { ButtonProps, ButtonType } from './NeoButton';
+export { ButtonProps, ButtonType } from './button';
 
-export default NeoButton;
+export default Button;

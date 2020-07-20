@@ -22,7 +22,7 @@ interface CompoundedComponent
     extends React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLElement>> {}
 
 
-const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props, ref) => {
+const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props) => {
   const {
     type,
     size,
@@ -39,7 +39,6 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
       },
       className
   );
-    console.log(children + ' _____  '+ classes + '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
 
   return (
       <button
@@ -48,23 +47,15 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         {children}
       </button>
   )
-
-
-
-  // return <button
-  //     className={classes}
-  // >
-  //   {children}
-  // </button>
 };
 
-const NeoButton = React.forwardRef<unknown, ButtonProps>(InternalButton) as CompoundedComponent;
+const Button = React.forwardRef<unknown, ButtonProps>(InternalButton) as CompoundedComponent;
 
-NeoButton.displayName = 'NeoButton';
+Button.displayName = 'NeoButton';
 
-NeoButton.defaultProps = {
+Button.defaultProps = {
 };
 
-export default NeoButton
+export default Button
 
 
