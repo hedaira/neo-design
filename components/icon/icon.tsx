@@ -15,7 +15,7 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
     } = props;
 
     return (
-        <img className={className} src={icon} alt={'Not found'}/>
+        <img className={className} src={'sprite.svg#Vector'} alt={'Not found'}/>
     )
 };
 
