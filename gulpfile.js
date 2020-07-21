@@ -3,6 +3,7 @@ const ts = require('gulp-typescript');
 const tsconfig = require('./tsconfig.json');
 const concat = require('gulp-concat');
 const less = require('gulp-less');
+const svgSprite = require('gulp-svg-sprite');
 const through2 = require('through2');
 const transformLess = require('@ant-design/tools/lib/transformLess');
 
@@ -14,6 +15,25 @@ function compTsx() {
             declaration: true,
         }))
         .pipe(gulp.dest('lib'))
+}
+
+function compSvg() {
+    return gulp
+        .src('icons/**/*.svg')
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg",
+                    render: {
+                        scss: {
+                            dest:'../../../sass/_sprite.scss',
+                            template: "sass/templates/_sprite_template.scss"
+                        }
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest('svg'));
 }
 
 function compLess() {
@@ -45,4 +65,4 @@ function compLess() {
         .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.series(compTsx, compLess));
+gulp.task('default', gulp.series(compTsx, compLess, compSvg));
