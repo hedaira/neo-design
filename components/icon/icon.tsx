@@ -46,10 +46,11 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
         className,
     } = props;
 
-    const path = 'icons/header/' + img + '.svg';
+    const component = notification;
 
     return (
-        <img className={className} src={path} alt={'Not found'}/>
+        <Icon component={component} {...props} />
+        // <img className={className} src={path} alt={'Not found'}/>
     )
 };
 
