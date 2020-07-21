@@ -33,7 +33,7 @@ const AllIcons = tuple(
 export type SingleIcon = typeof AllIcons[number];
 
 export interface IconProps {
-    img?: SingleIcon;
+    img?: any;
     className?: string;
 }
 
@@ -49,7 +49,7 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
     const path = './../../icons/calendar.svg';
 
     return (
-            <img className={className} src='notification.svg' alt={'Not found'}/>
+            <img className={className} src={img} alt={'Not found'}/>
     )
 };
 
