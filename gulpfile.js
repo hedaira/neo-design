@@ -24,12 +24,6 @@ function compSvg() {
             mode: {
                 symbol: {
                     sprite: "../sprite.svg",
-                    render: {
-                        scss: {
-                            dest:'../../../sass/_sprite.scss',
-                            template: "sass/templates/_sprite_template.scss"
-                        }
-                    }
                 }
             }
         }))
