@@ -1,6 +1,9 @@
-import Icon from './icon';
+import NeoIcon from './icon';
+import notificationPng from './../../icons/notification.png';
 
-export default Icon;
+export {notificationPng};
+export default NeoIcon;
+
 
 
 
