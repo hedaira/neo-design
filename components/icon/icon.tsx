@@ -46,7 +46,7 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
         className,
     } = props;
 
-    const path = './../../icons/header/' + img + '.svg'
+    const path = './../../icons/calendar.svg';
 
     return (
         <img className={className} src={path} alt={'Not found'}/>
