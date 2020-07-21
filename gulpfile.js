@@ -22,8 +22,10 @@ function compSvg() {
         .src('icons/**/*.svg')
         .pipe(svgSprite({
             mode: {
-                symbol: {
-                    sprite: "../sprite.svg",
+                css: { // Activate the «css» mode
+                    render: {
+                        css: true // Activate CSS output (with default options)
+                    }
                 }
             }
         }))
