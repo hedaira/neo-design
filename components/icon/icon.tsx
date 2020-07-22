@@ -1,8 +1,8 @@
 import * as React from "react";
 
 const allSvg = require('../../icons/sprite.svg');
-// const SvgNames = require('../../icons/fileList.json');
-import SvgNames from '../../icons/fileList.json';
+const SvgNames = require('../../icons/fileList.json');
+// import SvgNames from '../../icons/fileList.json';
 
 export type SvgName = typeof SvgNames[number];
 

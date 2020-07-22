@@ -5,6 +5,7 @@ const concat = require('gulp-concat');
 const less = require('gulp-less');
 const svgSprite = require('gulp-svg-sprite');
 const fileList = require('gulp-filelist');
+const jsonToTsd = require('gulp-json-to-tsd');
 const through2 = require('through2');
 const transformLess = require('@ant-design/tools/lib/transformLess');
 
@@ -34,7 +35,14 @@ function compSvg() {
 function compSvgList() {
     return gulp
         .src('svg/**/*.svg')
-        .pipe(fileList('fileList.tsx', { flatten: true, removeExtensions: true }))
+        .pipe(fileList('fileList.json', { flatten: true, removeExtensions: true }))
+        .pipe(gulp.dest('icons'));
+}
+
+function comJsonTsd() {
+    return gulp
+        .src('icons/**/*.json')
+        .pipe(jsonToTsd({declareVariable: true}))
         .pipe(gulp.dest('icons'));
 }
 
@@ -67,4 +75,4 @@ function compLess() {
         .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.series(compSvgList, compTsx, compLess, compSvg));
+gulp.task('default', gulp.series(compTsx, compLess, compSvgList, comJsonTsd, compSvg));
