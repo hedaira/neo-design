@@ -1,7 +1,14 @@
 import * as React from "react";
 
+const allSvg = require('./../../svg/sprite.svg');
+
+const tuple = <T extends string[]>(...args: T) => args;
+
+const SvgNames = tuple('calendar', 'legend');
+export type SvgName = typeof SvgNames[number];
+
 export interface IconProps {
-    icon?: any;
+    icon?: SvgName;
     className?: string;
 }
 
@@ -15,7 +22,9 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
     } = props;
 
     return (
-        <img className={className} src={'sprite.svg#Vector'} alt={'Not found'}/>
+        <svg viewBox="0 0 50 50" width="50" height="50">
+            <use xlinkHref={`${allSvg}#${icon}`} />
+        </svg>
     )
 };
 
