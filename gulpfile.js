@@ -34,7 +34,7 @@ function compSvg() {
 function compSvgList() {
     return gulp
         .src('svg/**/*.svg')
-        .pipe(fileList('fileList.json'))
+        .pipe(fileList('fileList.json', { flatten: true }))
         .pipe(gulp.dest('icons'));
 }
 
