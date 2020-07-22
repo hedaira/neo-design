@@ -5,6 +5,7 @@
     "lib": ["es2017"],
     "strict": true,
     "esModuleInterop": true,
-    "jsx": "react"
+    "jsx": "react",
+    "resolveJsonModule": true
   }
 }
