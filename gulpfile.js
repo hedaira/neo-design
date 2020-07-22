@@ -27,7 +27,7 @@ function compSvg() {
                 }
             }
         }))
-        .pipe(gulp.dest('svg'));
+        .pipe(gulp.dest('lib/icon'));
 }
 
 function compLess() {
