@@ -35,8 +35,12 @@ function compSvg() {
 function compSvgList() {
     return gulp
         .src('svg/**/*.svg')
-        .pipe(fileList('fileList.json', { flatten: true, removeExtensions: true }))
+        .pipe(fileList('fileList.json', { flatten: true, removeExtensions: true, destRowTemplate: formatter }))
         .pipe(gulp.dest('icons'));
+}
+
+function formatter(filePath) {
+    return filePath.substring(filePath + ': ' + filePath + '\r\n';
 }
 
 function comJsonTsd() {
