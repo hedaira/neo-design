@@ -5,7 +5,7 @@ const fileList = require('../../icons/fileList.json');
 
 const tuple = <T extends string[]>(...args: T) => args;
 
-const SvgNames = tuple(JSON.parse(fileList));
+const SvgNames = tuple(fileList);
 export type SvgName = typeof SvgNames[number];
 
 export interface IconProps {
