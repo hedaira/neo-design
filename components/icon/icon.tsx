@@ -1,12 +1,12 @@
 import * as React from "react";
 
 const allSvg = require('../../icons/sprite.svg');
-const SvgNames = require('../../icons/fileList.json');
+const SvgNames: string[] = require('../../icons/fileList.json');
 
 export type SvgName = typeof SvgNames[number];
 
 export interface IconProps {
-    icon?: SvgName;
+    icon: SvgName;
     className?: string;
 }
 
