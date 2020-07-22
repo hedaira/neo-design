@@ -6,7 +6,8 @@
   "module": "lib/index.js",
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "icons"
   ],
   "scripts": {
     "tsc": "tsc",
