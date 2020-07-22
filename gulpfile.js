@@ -40,7 +40,7 @@ function compSvgList() {
 }
 
 function formatter(filePath) {
-    return filePath.substring(filePath + ': ' + filePath + '\r\n';
+    return filePath.substring(filePath + ': ' + filePath + '\r\n');
 }
 
 function comJsonTsd() {
