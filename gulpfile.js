@@ -35,12 +35,13 @@ function compSvg() {
 function compSvgList() {
     return gulp
         .src('svg/**/*.svg')
-        .pipe(fileList('fileList.json', { flatten: true, removeExtensions: true, destRowTemplate: formatter }))
+        // .pipe(fileList('fileList.json', { flatten: true, removeExtensions: true, destRowTemplate: formatter }))
+        .pipe(fileList('fileList.json', { destRowTemplate: formatter }))
         .pipe(gulp.dest('icons'));
 }
 
 function formatter(filePath) {
-    return filePath + ': ' + filePath + '\r\n';
+    return filePath.substring(filePath.lastIndexOf('/') + 1) + ': ' + filePath + '\r\n';
 }
 
 function comJsonTsd() {
