@@ -10,7 +10,7 @@ const transformLess = require('@ant-design/tools/lib/transformLess');
 
 function compTsx() {
     return gulp
-        .src('components/**/*.tsx')
+        .src(['components/**/*.tsx', 'icons/**/*.tsx'])
         .pipe(ts({
             ...tsconfig.compilerOptions,
             declaration: true,
@@ -34,7 +34,7 @@ function compSvg() {
 function compSvgList() {
     return gulp
         .src('svg/**/*.svg')
-        .pipe(fileList('fileList.ts', { flatten: true, removeExtensions: true }))
+        .pipe(fileList('fileList.tsx', { flatten: true, removeExtensions: true }))
         .pipe(gulp.dest('icons'));
 }
 
@@ -67,4 +67,4 @@ function compLess() {
         .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.series(compTsx, compLess, compSvgList, compSvg));
+gulp.task('default', gulp.series(compSvgList, compTsx, compLess, compSvg));
