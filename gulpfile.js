@@ -19,7 +19,7 @@ function compTsx() {
 
 function compSvg() {
     return gulp
-        .src('icons/**/*.svg')
+        .src('svg/**/*.svg')
         .pipe(svgSprite({
             mode: {
                 symbol: {
@@ -27,7 +27,7 @@ function compSvg() {
                 }
             }
         }))
-        .pipe(gulp.dest('lib/icon'));
+        .pipe(gulp.dest('icons'));
 }
 
 function compLess() {
