@@ -1,8 +1,9 @@
-// import React from 'react';
-// import { storiesOf } from '@storybook/react';
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import '../components/style.less';
 // import '../css/style.css';
 // import '../css/icons.css';
-// import ButtonPage from "./General/Button";
+import ButtonPage from "../stories/Button";
 // import IconPage from "./General/Icon";
 // import InputPage from "./General/Input";
 // import BarsPage from "./General/Bars";
@@ -17,8 +18,8 @@
 // import MainColorPageDoc from "./Documentation/ColorPallete/Main";
 // import AccentColorPageDoc from "./Documentation/ColorPallete/Accent";
 // import ModalPage from "./Feedback/Modal";
-//
-// /*Documentation*/
+
+/*Documentation*/
 // storiesOf('Documentation|Description', module)
 //     .add('Description', () => <DescriptionPageDoc />)
 //
@@ -33,10 +34,10 @@
 //
 // storiesOf('Documentation|Color', module)
 //     .add('Accent', () => <AccentColorPageDoc />)
-// /*General*/
-// storiesOf('General|Buttons', module)
-//     .add('Buttons', () => <ButtonPage />)
-//
+/*General*/
+storiesOf('General|Buttons', module)
+    .add('Buttons', () => <ButtonPage />)
+
 // storiesOf('General|Icons', module)
 //     .add('Icons', () => <IconPage />)
 //

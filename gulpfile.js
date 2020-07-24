@@ -14,7 +14,7 @@ const transformLess = require('@ant-design/tools/lib/transformLess');
 
 function compTsx() {
     return gulp
-        .src(['components/**/*.tsx', 'icons/**/*.tsx'])
+        .src('components/**/*.tsx')
         .pipe(ts({
             ...tsconfig.compilerOptions,
             declaration: true,

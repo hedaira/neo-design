@@ -16,13 +16,14 @@
   -moz-transition: background 0.2s ease;
   -o-transition: background 0.2s ease;
   transition: background 0.2s ease;
-  background-color: #2A356C;
+  background: #424D78;
   border: none;
   color: #fff;
+  outline: none;
 }
 
 .btn:hover {
-  background-color: #424D78;
+  background: #2A356C;
   border: none;
   color: white;
 }
@@ -39,6 +40,7 @@
   background-color: #B3B3B3;
   border: none;
   color: #fff;
+  cursor: not-allowed;
 }
 
 .btn-disabled:hover {
@@ -49,12 +51,17 @@
 
 .btn-secondary {
   background-color: #fff;
-  border-color: #2A356C;
+  border: 1px solid #424D78;
   color: #2A356C;
-}
 
-.btn-secondary:hover {
-  background-color: #fff;
-  border-color: #424D78;
-  color: #424D78;
+      &&:active{
+        background: #FFF8E0;
+        border: 1px solid #171D45;
+      }
+      &&:hover {
+        background-color: #fff;
+        border: 1px solid #171D45;
+        color: #424D78;
+        box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+      }
 }
