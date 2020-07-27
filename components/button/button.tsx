@@ -1,7 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-
-const tuple = <T extends string[]>(...args: T) => args;
+import {tuple} from '../_utils/tools'
 
 const ButtonTypes = tuple('disabled', 'secondary');
 export type ButtonType = typeof ButtonTypes[number];
@@ -20,7 +19,6 @@ const prefix = 'btn';
 
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLElement>> {}
-
 
 const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props) => {
   const {

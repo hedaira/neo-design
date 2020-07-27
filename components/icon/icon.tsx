@@ -1,9 +1,8 @@
 import * as React from "react";
-
+import {tuple} from '../_utils/tools'
 const allSvg = require('../../icons/sprite.svg');
-const SvgNames = require('../../icons/fileList.json');
-// import SvgNames from '../../icons/fileList.json';
 
+const SvgNames = tuple('calendar', 'legend', 'Vector');
 export type SvgName = typeof SvgNames[number];
 
 export interface IconProps {
