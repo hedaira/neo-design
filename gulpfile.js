@@ -29,26 +29,26 @@ function compSvgList() {
         .pipe(gulp.dest('icons'));
 }
 
-function compSvgListData() {
-    return gulp
-        .src('svg/**/*.svg')
-        .pipe(data(function(file, callback) {
-            console.log(file.path.substring(
-                file.path.lastIndexOf('\\') + 1, file.path.lastIndexOf('.')
-            ));
+// function compSvgListData() {
+//     return gulp
+//         .src('svg/**/*.svg')
+//         .pipe(data(function(file, callback) {
+//             console.log(file.path.substring(
+//                 file.path.lastIndexOf('\\') + 1, file.path.lastIndexOf('.')
+//             ));
+//
+//             let content = file.path.substring(file.path.lastIndexOf('\\') + 1, file.path.lastIndexOf('.'));
+//             return callback(undefined, { content: content });
+//         }))
+//         .pipe(gulp.dest('icons'));
+// }
 
-            let content = file.path.substring(file.path.lastIndexOf('\\') + 1, file.path.lastIndexOf('.'));
-            return callback(undefined, { content: content });
-        }))
-        .pipe(gulp.dest('icons'));
-}
-
-function comJsonTsd() {
-    return gulp
-        .src('icons/**/*.json')
-        .pipe(jsonToTsd())
-        .pipe(gulp.dest('icons'));
-}
+// function comJsonTsd() {
+//     return gulp
+//         .src('icons/**/*.json')
+//         .pipe(jsonToTsd())
+//         .pipe(gulp.dest('icons'));
+// }
 
 function compSvg() {
     return gulp
@@ -92,5 +92,4 @@ function compLess() {
         .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.series(compTsx, compSvgList, comJsonTsd, compSvg, compLess));
-// gulp.task('default', gulp.series(compSvgList, compSvgListData));
+gulp.task('default', gulp.series(compTsx, compSvgList, compSvg, compLess));
