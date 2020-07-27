@@ -20,13 +20,14 @@
   border: none;
   color: #fff;
   outline: none;
+
+      &:hover {
+        background: #2A356C;
+        border: none;
+        color: white;
+      }
 }
 
-.btn:hover {
-  background: #2A356C;
-  border: none;
-  color: white;
-}
 
 .btn-medium {
   font-size: 15px;
@@ -41,12 +42,11 @@
   border: none;
   color: #fff;
   cursor: not-allowed;
-}
-
-.btn-disabled:hover {
-  background-color: #B3B3B3;
-  border: none;
-  color: #fff;
+      &:hover{
+        background-color: #B3B3B3;
+        border: none;
+        color: #fff;
+      }
 }
 
 .btn-secondary {
@@ -54,11 +54,11 @@
   border: 1px solid #424D78;
   color: #2A356C;
 
-      &&:active{
+      &:active{
         background: #FFF8E0;
         border: 1px solid #171D45;
       }
-      &&:hover {
+      &:hover {
         background-color: #fff;
         border: 1px solid #171D45;
         color: #424D78;
