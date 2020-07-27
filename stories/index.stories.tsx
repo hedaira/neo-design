@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import '../components/style.less';
+import '../components/neoDesign.less';
 // import '../css/style.css';
 // import '../css/icons.css';
 import ButtonPage from "../stories/Button";
