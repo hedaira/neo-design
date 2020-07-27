@@ -2,7 +2,56 @@ import * as React from "react";
 import {tuple} from '../_utils/tools'
 const allSvg = require('../../icons/sprite.svg');
 
-const SvgNames = tuple('calendar', 'legend', 'Vector');
+const SvgNames = tuple(
+    "arrowLong",
+    "calendar",
+    "close",
+    "delete",
+    "diagram",
+    "diagramBlock",
+    "diagramCircle",
+    "edit",
+    "fill",
+    "gear",
+    "letter",
+    "list",
+    "menu_open",
+    "plus",
+    "rubbish",
+    "search",
+    "swich",
+    "alert",
+    "info",
+    "success",
+    "warning",
+    "down",
+    "left",
+    "up",
+    "add",
+    "barChart",
+    "calculator",
+    "download",
+    "filter",
+    "fullScreen",
+    "mark",
+    "plusBlock",
+    "print",
+    "sort",
+    "undo",
+    "update",
+    "calendar",
+    "exit",
+    "notification",
+    "person",
+    "question",
+    "settings",
+    "legend",
+    "tiles",
+    "more",
+    "table",
+    "tableUp"
+);
+
 export type SvgName = typeof SvgNames[number];
 
 export interface IconProps {
@@ -20,7 +69,7 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
     } = props;
 
     return (
-        <svg>
+        <svg viewBox="0 0 50 50" width="50" height="50">
             <use xlinkHref={`${allSvg}#${icon}`} />
         </svg>
     )
