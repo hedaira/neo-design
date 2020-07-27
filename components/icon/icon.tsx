@@ -69,7 +69,7 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props)
     } = props;
 
     return (
-        <svg>
+        <svg width="24" height="24" viewBox="0 0 24 24">
             <use xlinkHref={`${allSvg}#${icon}`} />
         </svg>
     )
