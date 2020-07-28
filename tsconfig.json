@@ -3,6 +3,7 @@
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "jsx": "react",
     "module": "commonjs",
     "moduleResolution": "node",

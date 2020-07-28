@@ -27,7 +27,8 @@
     "react-test-renderer": "^16.13.1",
     "style-loader": "^1.2.1",
     "tinycolor2": "^1.4.1",
-    "ts-loader": "^8.0.1"
+    "ts-loader": "^8.0.1",
+    "antd": "^4.3.5"
   },
   "devDependencies": {
     "@ant-design/css-animation": "^1.7.2",
