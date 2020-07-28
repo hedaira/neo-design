@@ -7,7 +7,7 @@ const AlertTypes = tuple('success', 'info', 'warning', 'error'); // ctrl space �
 export type AlertType = typeof AlertTypes[number];
 
 
-export interface AlertProps { // указываем какие пропсы передовать
+export interface AlertProps {
   type?: AlertType; // смотреть выше
   message?: string; // смотреть выше
   description?: string;
