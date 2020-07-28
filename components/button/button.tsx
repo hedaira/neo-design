@@ -13,6 +13,7 @@ export interface ButtonProps {
   size?: SizeType;
   className?: string;
   children?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 const prefix = 'btn';
@@ -28,7 +29,6 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
     children
   } = props;
 
-
   const classes = classNames(
       prefix,
       {
@@ -38,9 +38,17 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
       className
   );
 
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
+        const { onClick } = props;
+        if (onClick) {
+            (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)(e);
+        }
+    };
+
   return (
       <button
           className={classes}
+          onClick={handleClick}
       >
         {children}
       </button>
