@@ -35,7 +35,10 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
   const classes = classNames(
       prefix,
       {
-        [`${prefix}-${type}`]: type,
+          [`${prefix}-${type}`]: type,
+          [`${prefix}-${message}`]: message,
+          [`${prefix}-${closable}`]: closable,
+          [`${prefix}-${description}`]: description,
       },
       className,
   );
