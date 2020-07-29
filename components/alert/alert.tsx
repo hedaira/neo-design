@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Alert} from "antd/lib";
 
-const AlertTypes = tuple('success', 'info', 'warning', 'error'); // ctrl space показывал варианты для type
+const AlertTypes = tuple('success', 'info', 'warning', 'error');
 export type AlertType = typeof AlertTypes[number];
 
 
