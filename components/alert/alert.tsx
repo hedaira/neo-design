@@ -44,7 +44,6 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
           closable={closable}
           description={description}
           type={type}
-          showIcon
       >
         {children}
       </Alert>
