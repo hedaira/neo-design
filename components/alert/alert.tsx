@@ -16,12 +16,12 @@ export interface AlertProps {
   children?: React.ReactNode;
 }
 
-const prefix = 'alrt'; // для удобства чтоб понимать
+const prefix = 'alrt';
 
 interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<AlertProps & React.RefAttributes<HTMLElement>> {} // обьевление интерфейса
+    extends React.ForwardRefExoticComponent<AlertProps & React.RefAttributes<HTMLElement>> {}
 
-const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => { // описание все что есть сверху
+const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => {
   const {
         type,
         message,
