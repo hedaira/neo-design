@@ -16,12 +16,12 @@ export interface AlertProps {
   children?: React.ReactNode;
 }
 
-const prefix = 'alrt';
+const prefix = 'alrt'; // для удобства чтоб понимать
 
 interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<AlertProps & React.RefAttributes<HTMLElement>> {}
+    extends React.ForwardRefExoticComponent<AlertProps & React.RefAttributes<HTMLElement>> {} // обьевление интерфейса
 
-const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => {
+const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => { // описание все что есть сверху
   const {
         type,
         message,
@@ -32,18 +32,21 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
   } = props;
 
 
-  const classes = classNames(
+  /*const classes = classNames(
       prefix,
+      {
+          [`${prefix}-${type}`]: type,
+      },
       className,
-  );
+  );*/
 
   return (
       <Alert
-          className={classes} // стлизуем кнопку
+          className={className} // стлизуем кнопку
           message={message}
           closable={closable}
           description={description}
-          type={type}
+          showIcon
       >
         {children}
       </Alert>
