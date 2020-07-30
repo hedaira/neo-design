@@ -8,7 +8,7 @@ export type AlertType = typeof AlertTypes[number];
 
 
 export interface AlertProps {
-    type?: 'success' | 'info' | 'warning' | 'error';
+  type?: AlertType; // смотреть выше
   message?: string; // смотреть выше
   description?: string;
   className?: string;
@@ -32,17 +32,17 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
   } = props;
 
 
-  /*const classes = classNames(
+  const classes = classNames(
       prefix,
       {
           [`${prefix}-${type}`]: type,
       },
       className,
-  );*/
+  );
 
   return (
       <Alert
-          className={className} // стлизуем кнопку
+          className={classes} // стлизуем кнопку
           message={message}
           closable={closable}
           description={description}
