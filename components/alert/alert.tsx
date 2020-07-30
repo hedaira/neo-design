@@ -32,20 +32,21 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
   } = props;
 
 
-  const classes = classNames(
+  /*const classes = classNames(
       prefix,
       {
           [`${prefix}-${type}`]: type,
       },
       className,
-  );
+  );*/
 
   return (
       <Alert
-          className={classes} // стлизуем кнопку
+          className={className} // стлизуем кнопку
           message={message}
           closable={closable}
           description={description}
+          type={type}
           showIcon
       >
         {children}
