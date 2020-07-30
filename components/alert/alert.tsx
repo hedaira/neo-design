@@ -8,11 +8,10 @@ export type AlertType = typeof AlertTypes[number];
 
 
 export interface AlertProps {
-  type?: AlertType; // смотреть выше
+  typee?: AlertType; // смотреть выше
   message?: string; // смотреть выше
   description?: string;
   className?: string;
-  closable?: boolean;
   children?: React.ReactNode;
 }
 
@@ -23,31 +22,28 @@ interface CompoundedComponent
 
 const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => { // описание все что есть сверху
   const {
-        type,
+        typee,
         message,
         className,
         description,
-        closable,
         children
   } = props;
 
 
-  /*const classes = classNames(
+  const classes = classNames(
       prefix,
       {
-          [`${prefix}-${type}`]: type,
+          [`${prefix}-${typee}`]: typee,
       },
       className,
-  );*/
+  );
 
   return (
       <Alert
-          className={className} // стлизуем кнопку
+          className={classes} // стлизуем кнопку
           message={message}
-          closable={closable}
           description={description}
-          type={type}
-          showIcon
+          closable
       >
         {children}
       </Alert>
