@@ -60,6 +60,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             message={message}
             description={description}
             closable={closable}
+            type={"info"}
             {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
@@ -74,6 +75,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         <Alert
             message={message}
             description={description}
+            type={"error"}
             closable={closable}
             {...props}
             className={classes}
