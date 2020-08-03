@@ -55,7 +55,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
     }
 
     if (props.typee === 'info') {
-        return <div className={"alert-info"}>
+        return <label className={'info'}>
         <Alert
             message={message}
             description={description}
@@ -67,11 +67,11 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         >
             {children}
         </Alert>
-        </div>
+        </label>
     }
 
     if (props.typee === 'error') {
-        return <div className={"alert-error"}>
+        return <label className={'error'}>
         <Alert
             message={message}
             description={description}
@@ -83,12 +83,12 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         >
             {children}
         </Alert>
-        </div>
+        </label>
     }
 
     if (props.typee === 'success') {
 
-        return <div className={"alert-success"}>
+        return <label className={'success'}>
         <Alert
             message={message}
             description={description}
@@ -100,11 +100,11 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         >
             {children}
         </Alert>
-        </div>
+        </label>
     }
 
     if (props.typee === 'warning') {
-        return <div className={"alert-warning"}>
+        return <label className={'warning'}>
         <Alert
             message={message}
             description={description}
@@ -116,7 +116,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         >
             {children}
         </Alert>
-        </div>
+        </label>
     }
 
 }
