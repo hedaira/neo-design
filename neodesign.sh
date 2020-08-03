@@ -8,7 +8,7 @@ start)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
        npm install -g
-       npm run-script build
+       npm run-script start-storybook
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
