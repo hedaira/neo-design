@@ -11,7 +11,6 @@ export interface AlertProps {
         typee?: AlertType;
         message?: string; // смотреть выше
         description?: string;
-        closable?: boolean;
         width?: string;
         className?: string;
         children?: React.ReactNode;
@@ -45,7 +44,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
     if (props.typee === 'default') {
         return <Alert
             message={message}
-            type={"info"}
+            closable
             {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
@@ -54,57 +53,6 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         </Alert>
     }
 
-    if (props.typee === 'info') {
-        return <Alert
-            message={message}
-            description={description}
-            type={"info"}
-            {...props}
-            className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
-        >
-            {children}
-        </Alert>
-    }
-
-    if (props.typee === 'error') {
-        return <Alert
-            message={message}
-            description={description}
-            type={"info"}
-            {...props}
-            className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
-        >
-            {children}
-        </Alert>
-    }
-
-    if (props.typee === 'success') {
-        return <Alert
-            message={message}
-            description={description}
-            type={"info"}
-            {...props}
-            className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
-        >
-            {children}
-        </Alert>
-    }
-
-    if (props.typee === 'warning') {
-        return <Alert
-            message={message}
-            description={description}
-            type={"info"}
-            {...props}
-            className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
-        >
-            {children}
-        </Alert>
-    }
 }
 
 const NeoAlert = React.forwardRef<unknown, AlertProps>(InternalAlert) as CompoundedComponent; // вызыввается
