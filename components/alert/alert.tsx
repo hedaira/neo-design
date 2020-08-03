@@ -105,11 +105,11 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             {children}
         </Alert>
     }
-};
+}
 
 const NeoAlert = React.forwardRef<unknown, AlertProps>(InternalAlert) as CompoundedComponent; // вызыввается
 
-NeoAlert.displayName = 'NeoAlert'; // указываем как вызывать
+NeoAlert.displayName = 'NeoAlert';
 
 NeoAlert.defaultProps = {
 };
