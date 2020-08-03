@@ -11,6 +11,7 @@ export interface AlertProps {
         typee?: AlertType;
         message?: string; // смотреть выше
         description?: string;
+        closable?: boolean;
         width?: string;
         className?: string;
         children?: React.ReactNode;
@@ -26,6 +27,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
       typee,
       message,
       description,
+      closable,
       className,
       children,
   } = props;
@@ -40,17 +42,81 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
     );
 
 
-
     if (props.typee === 'default') {
         return <Alert
             message={message}
-            closable
+            closable={closable}
             {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
         </Alert>
+    }
+
+    if (props.typee === 'info') {
+        return <div className={"alert-info"}>
+        <Alert
+            message={message}
+            description={description}
+            closable={closable}
+            type={"info"}
+            {...props}
+            className={classes}
+            style={{width: `${props.width ? props.width : "auto"}`}}
+        >
+            {children}
+        </Alert>
+        </div>
+    }
+
+    if (props.typee === 'error') {
+        return <div className={"alert-error"}>
+        <Alert
+            message={message}
+            description={description}
+            closable={closable}
+            type={"info"}
+            {...props}
+            className={classes}
+            style={{width: `${props.width ? props.width : "auto"}`}}
+        >
+            {children}
+        </Alert>
+        </div>
+    }
+
+    if (props.typee === 'success') {
+
+        return <div className={"alert-success"}>
+        <Alert
+            message={message}
+            description={description}
+            closable={closable}
+            type={"info"}
+            {...props}
+            className={classes}
+            style={{width: `${props.width ? props.width : "auto"}`}}
+        >
+            {children}
+        </Alert>
+        </div>
+    }
+
+    if (props.typee === 'warning') {
+        return <div className={"alert-warning"}>
+        <Alert
+            message={message}
+            description={description}
+            closable={closable}
+            type={"info"}
+            {...props}
+            className={classes}
+            style={{width: `${props.width ? props.width : "auto"}`}}
+        >
+            {children}
+        </Alert>
+        </div>
     }
 
 }
