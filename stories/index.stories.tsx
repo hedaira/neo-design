@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.css';
 import '../stories/index.css';
-import '../components/neoDesign.less'
+import '../components/neoDesign.less';
 // import '../css/style.css';
 // import '../css/icons.css';
 

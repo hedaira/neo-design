@@ -13,7 +13,7 @@ export interface SelectProps {
     value?: string;
     allowClear?: boolean;
     onClick?: any;
-    defaultValue: string;
+    defaultValue?: string;
 
 }
 
@@ -30,14 +30,13 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
 
     const classes = classNames(
-        prefix,
-        className
+        className,
+        prefix
     );
 
         return <Select
             {...props}
             className={classes}
-            defaultValue={props.defaultValue}
             style={{width: `${props.width ? props.width : "185px"}`}}
         >
             {children}

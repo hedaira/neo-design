@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Input} from 'antd';
-const InputTypes = tuple('default', 'search', 'textArea', 'checkbox', 'radio');
+const InputTypes = tuple('search', 'textArea', 'checkbox', 'radio');
 export type InputType = typeof InputTypes[number];
 
 
@@ -36,10 +36,10 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         {
             [`${prefix}-${type}`]: type,
         },
-        className
+        className,
     );
 
-    if (props.type === 'default') {
+    if (!props.type) {
         return <Input
             {...props}
             className={classes}
