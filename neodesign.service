@@ -7,6 +7,7 @@
  Restart=always
  RestartSec=1
  SuccessExitStatus=143
+  ExecStart = /opt/neodesign/neo-design/neodesign.sh install
  ExecStart = /opt/neodesign/neo-design/neodesign.sh start
  ExecStop = /opt/neodesign/neo-design/neodesign.sh stop
  ExecReload = /opt/neodesign/neo-design/neodesign.sh restart
