@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import 'antd/dist/antd.css'
+import 'antd/dist/antd.css';
 import '../stories/index.css';
-import '../components/neoDesign.less'
+import '../components/neoDesign.less';
 // import '../css/style.css';
 // import '../css/icons.css';
 
@@ -19,7 +19,7 @@ import InputPage from "../stories/Input";
 // import TablesPage from "./General/Table";
 // import ComponentsPage from "./Other/Components";
 // import AlertPage from "./Feedback/Alert";
-// import GridPage from "./General/Grid";
+import GridPage from "./Documentation/Grid";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -56,9 +56,9 @@ storiesOf('General|Inputs', module)
 //
 // storiesOf('General|Tables', module)
 //     .add('Tables', () => <TablesPage />)
-//
-// storiesOf('General|Grid', module)
-//     .add('Grid', () => <GridPage />)
+
+storiesOf('General|Grid', module)
+    .add('Grid', () => <GridPage />)
 //
 // /*Feedback*/
 // storiesOf('Feedback|Alerts', module)
