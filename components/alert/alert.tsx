@@ -4,12 +4,12 @@ import {tuple} from '../_utils/tools'
 import {Alert} from "antd/lib";
 import NeoIcon from "../icon";
 
-const AlertTypes = tuple('success', 'info', 'warning', 'error', 'default');
+const AlertTypes = tuple('success', 'info', 'warning', 'error');
 export type AlertType = typeof AlertTypes[number];
 
 
 export interface AlertProps {
-        typee?: AlertType;
+        Type?: AlertType;
         message?: string; // смотреть выше
         description?: string;
         closable?: boolean;
@@ -25,7 +25,7 @@ interface CompoundedComponent
 
 const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => { // описание все что есть сверху
   const {
-      typee,
+      Type,
       message,
       description,
       closable,
@@ -38,13 +38,13 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         className,
         prefix,
         {
-            [`${prefix}-${typee}`]: typee,
+            [`${prefix}-${Type}`]: Type,
         }
 
     );
 
 
-    if (props.typee === 'default') {
+    if (!props.Type) {
 
         return <Alert
             className={classes}
@@ -58,7 +58,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         </Alert>
     }
 
-    if (props.typee === 'info') {
+    if (props.Type === 'info') {
         return <label className={'info'}>
         <Alert
             message={message}
@@ -74,7 +74,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         </label>
     }
 
-    if (props.typee === 'error') {
+    if (props.Type === 'error') {
         return <label className={'error'}>
         <Alert
             message={message}
@@ -89,7 +89,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         </label>
     }
 
-    if (props.typee === 'success') {
+    if (props.Type === 'success') {
 
         return <label className={'success'}>
         <Alert
@@ -105,7 +105,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         </label>
     }
 
-    if (props.typee === 'warning') {
+    if (props.Type === 'warning') {
         return <label className={'warning'}>
         <Alert
             message={message}
