@@ -12,7 +12,7 @@ import TypographyPageDoc from "./Documentation/Typography";
 import MainColorPageDoc from "./Documentation/ColorPallete/Main";
 import AccentColorPageDoc from "./Documentation/ColorPallete/Accent";
 import ButtonPage from "../stories/Button";
-// import IconPage from "./General/Icon";
+import IconPage from "../stories/Icon";
 import InputPage from "../stories/Input";
 // import BarsPage from "./General/Bars";
 // import DiagramsPage from "./General/Diagrams";
@@ -42,9 +42,9 @@ storiesOf('Documentation|Description', module)
 storiesOf('General|Buttons', module)
     .add('Buttons', () => <ButtonPage />)
 
-// storiesOf('General|Icons', module)
-//     .add('Icons', () => <IconPage />)
-//
+storiesOf('General|Icons', module)
+    .add('Icons', () => <IconPage />)
+
 storiesOf('General|Inputs', module)
     .add('Inputs', () => <InputPage />)
 //
