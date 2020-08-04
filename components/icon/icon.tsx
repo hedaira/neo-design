@@ -61,16 +61,18 @@ export interface IconProps {
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<IconProps & React.RefAttributes<HTMLElement>> {}
 
-const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props) => {
+const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props, ref) => {
     const {
         icon,
         className
     } = props;
 
-    const allSvg_ = allSvg;
+    console.log(allSvg);
+    console.log('hihihihihihihih!!!!!!!!!!!!!!!!!!!');
+
     return (
         <svg width="24" height="24" viewBox="0 0 24 24">
-            <use xlinkHref={`${allSvg_}#${icon}`} />
+            <use xlinkHref={`${allSvg}#${icon}`} />
         </svg>
     )
 };
