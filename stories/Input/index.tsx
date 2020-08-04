@@ -71,7 +71,7 @@ class InputPage extends React.Component {
                     <div>
                         <h4>Basic input</h4>
                         <br />
-                        <NeoInput type={'default'} width={"250px"} />
+                        <NeoInput width={"250px"} />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoInput } from "neo-design";
@@ -94,7 +94,7 @@ class InputPage extends React.Component {
 
                     <div>
                         <h4>Clear input</h4>
-                        <NeoInput type={'default'} width={'250px'} allowClear />
+                        <NeoInput width={'250px'} allowClear />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoInput } from "neo-design";
@@ -134,7 +134,7 @@ class InputPage extends React.Component {
 
                     <h4>Basic</h4>
                     <div>
-                        <NeoSelect defaultValue="lucy">
+                        <NeoSelect defaultValue={'lucy'}>
                             <option value="lucy">Lucy</option>
                             <option value="jack">Jack</option>
                             <option value="john">John</option>

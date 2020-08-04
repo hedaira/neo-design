@@ -1,13 +1,3 @@
-/*Отключаем лишние стили antd*/
-.ant-input-affix-wrapper-focused {
-  border: 1px solid #2A356C !important;
-  outline: none;
-  box-shadow: none;
-}
-
-
-
-
 .input {
     outline: none;
     background: #FFFFFF;
@@ -24,19 +14,16 @@
 
     &:focus, &:hover {
       box-shadow: none;
+      border: 1px solid #2A356C;
     }
 
-  &-default, &-search, &-textArea {
+  &-search, &-textArea {
       &:focus, &:hover {
         outline: none;
         border: 1px solid #2A356C;
         box-sizing: border-box;
         border-radius: 4px;
       }
-  }
-
-  &-default {
-    
   }
 
   &-textArea {
@@ -180,4 +167,11 @@
   height: 12px;
   border-radius: 50%;
   background: #2A356C;
+}
+
+/*Отключаем лишние стили antd*/
+.ant-input-affix-wrapper-focused {
+  border: 1px solid #2A356C !important;
+  outline: none;
+  box-shadow: none;
 }
