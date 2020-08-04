@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Alert} from "antd/lib";
+import NeoIcon from "../icon";
 
 const AlertTypes = tuple('success', 'info', 'warning', 'error', 'default');
 export type AlertType = typeof AlertTypes[number];
@@ -34,22 +35,25 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
 
 
     const classes = classNames(
+        className,
         prefix,
         {
             [`${prefix}-${typee}`]: typee,
-        },
-        className
+        }
+
     );
 
 
     if (props.typee === 'default') {
+
         return <Alert
+            className={classes}
             message={message}
             closable={closable}
             {...props}
-            className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
+            <NeoIcon icon={'calendar'} />
             {children}
         </Alert>
     }
@@ -60,9 +64,9 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             message={message}
             description={description}
             closable={closable}
-            type={"info"}
             {...props}
             className={classes}
+
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
@@ -75,7 +79,6 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         <Alert
             message={message}
             description={description}
-            type={"error"}
             closable={closable}
             {...props}
             className={classes}
