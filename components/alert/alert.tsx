@@ -12,7 +12,6 @@ export interface AlertProps {
         Type?: AlertType;
         message?: string; // смотреть выше
         description?: string;
-        closable?: boolean;
         width?: string;
         className?: string;
         children?: React.ReactNode;
@@ -28,7 +27,6 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
       Type,
       message,
       description,
-      closable,
       className,
       children,
   } = props;
@@ -49,9 +47,9 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         return <Alert
             className={classes}
             message={message}
-            closable={closable}
+            closable
             {...props}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "350px"}`}}
         >
             <NeoIcon icon={'calendar'} />
             {children}
@@ -63,11 +61,11 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
 
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "350px"}`}}
         >
             {children}
         </Alert>
@@ -79,10 +77,10 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "350px"}`}}
         >
             {children}
         </Alert>
@@ -95,10 +93,10 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "350px"}`}}
         >
             {children}
         </Alert>
@@ -110,10 +108,10 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "350px"}`}}
         >
             {children}
         </Alert>

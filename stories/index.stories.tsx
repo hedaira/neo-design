@@ -21,6 +21,7 @@ import InputPage from "../stories/Input";
 // import AlertPage from "./Feedback/Alert";
 import GridPage from "./Documentation/Grid";
 import AlertPage from "./Alert";
+import ModalPage from "./Modal";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -65,8 +66,8 @@ storiesOf('General|Grid', module)
  storiesOf('Feedback|Alerts', module)
      .add('Alerts', () => <AlertPage />)
 
-// storiesOf('Feedback|Modal', module)
-//     .add('Modal', () => <ModalPage />)
+ storiesOf('Feedback|Modal', module)
+     .add('Modal', () => <ModalPage />)
 //
 // /*Others*/
 // storiesOf('Others|Components', module)
