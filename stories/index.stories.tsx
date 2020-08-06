@@ -12,7 +12,7 @@ import TypographyPageDoc from "./Documentation/Typography";
 import MainColorPageDoc from "./Documentation/ColorPallete/Main";
 import AccentColorPageDoc from "./Documentation/ColorPallete/Accent";
 import ButtonPage from "../stories/Button";
-// import IconPage from "./General/Icon";
+import IconPage from "../stories/Icon";
 import InputPage from "../stories/Input";
 // import BarsPage from "./General/Bars";
 // import DiagramsPage from "./General/Diagrams";
@@ -20,6 +20,8 @@ import InputPage from "../stories/Input";
 // import ComponentsPage from "./Other/Components";
 // import AlertPage from "./Feedback/Alert";
 import GridPage from "./Documentation/Grid";
+import AlertPage from "./Alert";
+import ModalPage from "./Modal";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -42,9 +44,9 @@ storiesOf('Documentation|Description', module)
 storiesOf('General|Buttons', module)
     .add('Buttons', () => <ButtonPage />)
 
-// storiesOf('General|Icons', module)
-//     .add('Icons', () => <IconPage />)
-//
+storiesOf('General|Icons', module)
+    .add('Icons', () => <IconPage />)
+
 storiesOf('General|Inputs', module)
     .add('Inputs', () => <InputPage />)
 //
@@ -61,11 +63,11 @@ storiesOf('General|Grid', module)
     .add('Grid', () => <GridPage />)
 //
 // /*Feedback*/
-// storiesOf('Feedback|Alerts', module)
-//     .add('Alerts', () => <AlertPage />)
-//
-// storiesOf('Feedback|Modal', module)
-//     .add('Modal', () => <ModalPage />)
+ storiesOf('Feedback|Alerts', module)
+     .add('Alerts', () => <AlertPage />)
+
+ storiesOf('Feedback|Modal', module)
+     .add('Modal', () => <ModalPage />)
 //
 // /*Others*/
 // storiesOf('Others|Components', module)

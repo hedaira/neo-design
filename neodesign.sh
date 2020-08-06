@@ -2,7 +2,7 @@
 SERVICE_NAME=neodesign
 PID_PATH_NAME=/opt/neodesign/neo-design/neodesign-pid
 
-SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/neodesign/neo-design/logs/neodesign.log -Dlogging.level.root=info -Dserver.port=6666"
+SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/neodesign/neo-design/logs/neodesign.log -Dlogging.level.root=info"
 case $1 in
 install)
        echo "Starting $SERVICE_NAME ..."
@@ -13,10 +13,19 @@ install)
        echo "$SERVICE_NAME is already running ..."
   fi
 ;;
+gulp)
+       echo "Starting $SERVICE_NAME ..."
+  if [ ! -f $PID_PATH_NAME ]; then
+       npm gulp
+       echo "$SERVICE_NAME started ..."
+  else
+       echo "$SERVICE_NAME is already running ..."
+  fi
+;;
 start)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       npm run-script start-storybook
+       nohup npm run storybook >> /dev/null >>/dev/null & echo $! > $PID_PATH_NAME
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."

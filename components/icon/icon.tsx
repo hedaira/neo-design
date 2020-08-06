@@ -1,7 +1,6 @@
 import * as React from "react";
 import {tuple} from '../_utils/tools'
 const allSvg = require('../../icons/sprite.svg');
-
 const SvgNames = tuple(
     "arrowLong",
     "calendar",
@@ -65,11 +64,14 @@ export interface IconProps {
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<IconProps & React.RefAttributes<HTMLElement>> {}
 
-const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props) => {
+const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props, ref) => {
     const {
         icon,
-        className,
+        className
     } = props;
+
+    console.log(allSvg);
+    console.log('hihihihihihihih!!!!!!!!!!!!!!!!!!!');
 
     return (
         <svg width="24" height="24" viewBox="0 0 24 24">

@@ -6,7 +6,6 @@ export default class DescriptionPageDoc extends Component {
         return (
             <Fragment>
                 <section className="example">
-
                 <h1 className="title">Дизайн система</h1>
 
                 <p className="text">
