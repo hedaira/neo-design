@@ -12,9 +12,11 @@ export interface SelectProps {
     name?: string;
     value?: string;
     allowClear?: boolean;
-    onClick?: any;
     defaultValue?: string;
-
+    onClick?: any;
+    onChange?;
+    getPopupContainer?;
+    style?;
 }
 
 const prefix = 'select';
@@ -38,9 +40,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
             {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "185px"}`}}
-        >
-            {children}
-        </Select>
+        />
 }
 
 const NeoSelect = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;

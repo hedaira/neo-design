@@ -2,18 +2,20 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 
-const ButtonTypes = tuple('disabled', 'secondary');
+const ButtonTypes = tuple('disabled', 'secondary', 'link', 'icon');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
 export type SizeType = typeof SizeTypes[number];
 
 export interface ButtonProps {
-  type?: ButtonType;
-  size?: SizeType;
-  className?: string;
-  children?: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLElement>;
+    type?: ButtonType;
+    size?: SizeType;
+    title?: string;
+    className?: string;
+    children?: React.ReactNode;
+    onClick?: React.MouseEventHandler<HTMLElement>;
+    style?;
 }
 
 const prefix = 'btn';
@@ -45,14 +47,15 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         }
     };
 
-  return (
-      <button
-          className={classes}
-          onClick={handleClick}
-      >
-        {children}
-      </button>
-  )
+    return (
+        <button
+            className={classes}
+            onClick={handleClick}
+        >
+            {children}
+        </button>
+    )
+
 };
 
 const Button = React.forwardRef<unknown, ButtonProps>(InternalButton) as CompoundedComponent;

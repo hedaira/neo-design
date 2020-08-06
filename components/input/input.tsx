@@ -15,7 +15,9 @@ export interface InputProps {
     value?: string;
     allowClear?: boolean;
     onClick?: any;
-
+    onChange?: any;
+    defaultChecked?: any;
+    style?;
 }
 
 const prefix = 'input';
