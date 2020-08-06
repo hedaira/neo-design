@@ -49,7 +49,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             message={message}
             closable
             {...props}
-            style={{width: `${props.width ? props.width : "350px"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             <NeoIcon icon={'calendar'} />
             {children}
@@ -65,7 +65,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             {...props}
             className={classes}
 
-            style={{width: `${props.width ? props.width : "350px"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
@@ -80,7 +80,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "350px"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
@@ -96,7 +96,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "350px"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
@@ -111,7 +111,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "350px"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
