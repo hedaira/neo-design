@@ -1,8 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {tuple} from '../_utils/tools'
 import {Select} from 'antd';
-
 
 
 export interface SelectProps {
@@ -17,6 +15,8 @@ export interface SelectProps {
     onChange?;
     getPopupContainer?;
     style?;
+    placeholder?;
+    suffix?;
 }
 
 const prefix = 'select';

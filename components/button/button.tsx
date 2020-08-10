@@ -16,6 +16,8 @@ export interface ButtonProps {
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLElement>;
     style?;
+    disabled?;
+    color?;
 }
 
 const prefix = 'btn';
@@ -51,6 +53,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         <button
             className={classes}
             onClick={handleClick}
+            style={{backgroundColor: `${props.color ? props.color : ''}`}}
         >
             {children}
         </button>
