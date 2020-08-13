@@ -1,8 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {tuple} from '../_utils/tools'
 import {Select} from 'antd';
-
 
 
 export interface SelectProps {
@@ -12,9 +10,13 @@ export interface SelectProps {
     name?: string;
     value?: string;
     allowClear?: boolean;
-    onClick?: any;
     defaultValue?: string;
-
+    onClick?: any;
+    onChange?;
+    getPopupContainer?;
+    style?;
+    placeholder?;
+    suffix?;
 }
 
 const prefix = 'select';
@@ -38,9 +40,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
             {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "185px"}`}}
-        >
-            {children}
-        </Select>
+        />
 }
 
 const NeoSelect = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;

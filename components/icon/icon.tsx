@@ -56,6 +56,9 @@ export type SvgName = typeof SvgNames[number];
 export interface IconProps {
     icon: SvgName;
     className?: string;
+    ghost?;
+    style?;
+    onClick?;
 }
 
 interface CompoundedComponent

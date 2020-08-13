@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-/*import {NXAlert} from "./Alert";*/
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoAlert} from "../../components";
@@ -17,7 +16,7 @@ export default class AlertPage extends React.Component {
 
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
-                    {`import { NXAlert } from "nx-design";`}
+                    {`import { NeoAlert } from "neo-design";`}
                 </SyntaxHighlighter>
 
                 <h2 className="title">Примеры:</h2>
@@ -25,14 +24,9 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Basic</h3>
-                        <NeoAlert typee={'default'} message={'test'} closable></NeoAlert>
-                        <NeoAlert typee={'error'} message={'test'} closable></NeoAlert>
-                        <NeoAlert typee={'info'} message={'test'} closable></NeoAlert>
-                        <NeoAlert typee={'warning'} message={'test'} closable></NeoAlert>
-
-                        {/*<NXAlert.small message="Success Text" width='233px' />*/}
+                        <NeoAlert message={'Success Text'} width={'233px'}/>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NXAlert.small message="Success Text" />`}
+                            {`<NeoAlert message={'Success Text'} width={'233px'}/>`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
@@ -40,10 +34,10 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Error</h3>
-                        {/*<NXAlert.error message="Error" description='This is an error alert' closable />*/}
+                        <NeoAlert Type={'error'} message={'Error'} description='This is an error alert' />
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NXAlert.error message='Error' description='This is an error alert' />`}
+                            {`<NeoAlert Type={'error'} message={'Error'} description='This is an error alert'/>`}
                         </SyntaxHighlighter>
                     </div>
                     <div className='comp-descr'>
@@ -55,10 +49,10 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Info</h3>
-                        {/*<NXAlert.info message="Info" description='This is an info alert' closable />*/}
+                        <NeoAlert Type={'info'} message={'Info'}  description='This is an info alert'/>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NXAlert.info message="Info" description='This is an info alert' />`}
+                            {`<NeoAlert Type={'info'} message={'Info'}  description='This is an info alert'/>`}
                         </SyntaxHighlighter>
                     </div>
                     <div className='comp-descr'>
@@ -71,10 +65,10 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Warning</h3>
-                        {/*<NXAlert.warning message="Warning" description='This is a warning alert' closable />*/}
+                        <NeoAlert Type={'warning'} message={'Warning'}  description='This is a warning alert'/>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NXAlert.warning message="Warning" description='This is a warning alert' />`}
+                            {`<NeoAlert Type={'warning'} message={'Warning'}  description='This is a warning alert'/>`}
                         </SyntaxHighlighter>
                     </div>
                     <div className='comp-descr'>
@@ -87,10 +81,10 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Success</h3>
-                        {/*<NXAlert.success message="Success" description='This is a success alert' closable />*/}
+                        <NeoAlert Type={'success'} message={'Success'} description='This is a success alert' />
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NXAlert.success message="Success" description='This is a success alert' />`}
+                            {`<NeoAlert Type={'success'} message={'Success'} description='This is a success alert'/>`}
                         </SyntaxHighlighter>
                     </div>
                     <div className='comp-descr'>

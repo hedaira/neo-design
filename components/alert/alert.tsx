@@ -4,15 +4,14 @@ import {tuple} from '../_utils/tools'
 import {Alert} from "antd/lib";
 import NeoIcon from "../icon";
 
-const AlertTypes = tuple('success', 'info', 'warning', 'error', 'default');
+const AlertTypes = tuple('success', 'info', 'warning', 'error');
 export type AlertType = typeof AlertTypes[number];
 
 
 export interface AlertProps {
-        typee?: AlertType;
+        Type?: AlertType;
         message?: string; // смотреть выше
         description?: string;
-        closable?: boolean;
         width?: string;
         className?: string;
         children?: React.ReactNode;
@@ -25,10 +24,9 @@ interface CompoundedComponent
 
 const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => { // описание все что есть сверху
   const {
-      typee,
+      Type,
       message,
       description,
-      closable,
       className,
       children,
   } = props;
@@ -38,82 +36,82 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         className,
         prefix,
         {
-            [`${prefix}-${typee}`]: typee,
+            [`${prefix}-${Type}`]: Type,
         }
 
     );
 
 
-    if (props.typee === 'default') {
+    if (!props.Type) {
 
         return <Alert
             className={classes}
             message={message}
-            closable={closable}
+            closable
             {...props}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             <NeoIcon icon={'calendar'} />
             {children}
         </Alert>
     }
 
-    if (props.typee === 'info') {
+    if (props.Type === 'info') {
         return <label className={'info'}>
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
 
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
         </label>
     }
 
-    if (props.typee === 'error') {
+    if (props.Type === 'error') {
         return <label className={'error'}>
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
         </label>
     }
 
-    if (props.typee === 'success') {
+    if (props.Type === 'success') {
 
         return <label className={'success'}>
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
         </label>
     }
 
-    if (props.typee === 'warning') {
+    if (props.Type === 'warning') {
         return <label className={'warning'}>
         <Alert
             message={message}
             description={description}
-            closable={closable}
+            closable
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{width: `${props.width ? props.width : "370px"}`}}
         >
             {children}
         </Alert>
