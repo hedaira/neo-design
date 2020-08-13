@@ -51,7 +51,6 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             {...props}
             style={{width: `${props.width ? props.width : "370px"}`}}
         >
-            <NeoIcon icon={'calendar'} />
             {children}
         </Alert>
     }

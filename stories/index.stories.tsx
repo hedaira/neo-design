@@ -22,6 +22,7 @@ import InputPage from "../stories/Input";
 import GridPage from "./Documentation/Grid";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
+import DiagramsPage from "./Diagrams";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -53,8 +54,8 @@ storiesOf('General|Inputs', module)
 // storiesOf('General|Bars', module)
 //     .add('FunctionalBars', () => <BarsPage />)
 //
-// storiesOf('General|Diagrams', module)
-//     .add('Diagrams', () => <DiagramsPage />)
+ storiesOf('General|Diagrams', module)
+     .add('Diagrams', () => <DiagramsPage />)
 //
 // storiesOf('General|Tables', module)
 //     .add('Tables', () => <TablesPage />)
