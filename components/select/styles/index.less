@@ -2,7 +2,7 @@
   cursor: pointer;
 }
 
-.select div {
+.select > div {
   outline: none !important;
   box-sizing: border-box;
   border-radius: 4px !important;
@@ -47,9 +47,17 @@
   left: 11px;
 }
 
+.select .ant-select-item-option {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
 .select .ant-select-selection-item {
   padding: 0;
   line-height: 30px;
+  font-weight: 400;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   flex: 1 1;

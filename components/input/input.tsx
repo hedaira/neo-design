@@ -18,6 +18,8 @@ export interface InputProps {
     onChange?: any;
     defaultChecked?: any;
     style?;
+    placeholder?;
+
 }
 
 const prefix = 'input';
