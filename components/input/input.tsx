@@ -16,7 +16,8 @@ export interface InputProps {
     allowClear?: boolean;
     onClick?: any;
     onChange?: any;
-    defaultChecked?: any;
+    defaultChecked?: boolean;
+    checked?: boolean;
     style?;
     placeholder?;
 
@@ -65,10 +66,10 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'checkbox') {
-        return <label className={'checkbox-label'}>
-            {children}
-                <input type={'checkbox'} className={classes} />
+        return <label className={'checkbox-label'} >
+            <input type={'checkbox'} className={classes} defaultChecked={(props.checked)}/>
             <span className="checkmark" />
+            <span>{children}</span>
         </label>
     }
 
