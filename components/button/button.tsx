@@ -51,9 +51,10 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
 
     return (
         <button
+            title={props.title}
             className={classes}
             onClick={handleClick}
-            style={{backgroundColor: `${props.color ? props.color : ''}`}}
+            style={...props.style}
         >
             {children}
         </button>

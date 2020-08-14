@@ -84,7 +84,7 @@ export default class TablesPage extends Component {
                 dataIndex: 'Column_6',
             },
             {
-                title: <NeoIcon margin='3px auto' icon={'more'} />,
+                title: <NeoIcon icon={'more'} />,
                 dataIndex: 'Column_6',
             }
         ];

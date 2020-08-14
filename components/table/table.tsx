@@ -9,6 +9,9 @@ export interface TableProps {
     onChange?;
     getPopupContainer?;
     style?;
+    columns?;
+    dataSource?;
+    size?;
 }
 
 const prefix = 'table';
@@ -30,6 +33,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, TableProps> = (pro
     return <Table
         {...props}
         className={classes}
+        style={...props.style}
     />
 }
 
