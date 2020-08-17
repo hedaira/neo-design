@@ -56,9 +56,8 @@ export type SvgName = typeof SvgNames[number];
 export interface IconProps {
     icon: SvgName;
     className?: string;
-    ghost?;
     style?;
-    onClick?;
+    color?;
 }
 
 interface CompoundedComponent
@@ -67,16 +66,20 @@ interface CompoundedComponent
 const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props, ref) => {
     const {
         icon,
-        className
+        className,
+        color,
+        style
     } = props;
 
     console.log(allSvg);
     console.log('hihihihihihihih!!!!!!!!!!!!!!!!!!!');
 
     return (
-        <svg width="24" height="24" viewBox="0 0 24 24">
-            <use xlinkHref={`${allSvg}#${icon}`} />
-        </svg>
+        <div color={color} className={className} style={style}>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <use xlinkHref={`${allSvg}#${icon}`} />
+            </svg>
+        </div>
     )
 };
 
