@@ -15,7 +15,6 @@ import ButtonPage from "../stories/Button";
 import IconPage from "../stories/Icon";
 import InputPage from "../stories/Input";
 import BarsPage from "../stories/Bar";
-// import DiagramsPage from "./General/Diagrams";
 import TablesPage from "../stories/Table";
 import ComponentsPage from "./Other";
 // import AlertPage from "./Feedback/Alert";

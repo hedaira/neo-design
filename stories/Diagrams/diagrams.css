@@ -1,0 +1,33 @@
+.chooseButton{
+    min-width: 30px;
+    width: 30px;
+    padding: 0;
+
+}
+
+.chooseRow{
+    margin: 15px 0 0 0;
+    content: 'space-between';
+}
+
+.chooseCol{
+    display: flex;
+    width: 181px;
+    height: 25px;
+}
+
+.nameOfDiagram{
+    margin: 8px 0;
+}
+
+.Selects{
+    margin: 16px 0;
+}
+.bottomButtons{
+    content: 'flex-start';
+}
+.Buttons{
+    font-size: 12px;
+    width: 116.71px;
+    height: 32px;
+}
