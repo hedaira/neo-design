@@ -67,16 +67,12 @@ const InternalIcon: React.ForwardRefRenderFunction<unknown, IconProps> = (props,
     const {
         icon,
         className,
-        color,
         style
     } = props;
 
-    console.log(allSvg);
-    console.log('hihihihihihihih!!!!!!!!!!!!!!!!!!!');
-
     return (
-        <div color={color} className={className} style={style}>
-            <svg width="24" height="24" viewBox="0 0 24 24">
+        <div className={className} style={style}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#424D78">
                 <use xlinkHref={`${allSvg}#${icon}`} />
             </svg>
         </div>
