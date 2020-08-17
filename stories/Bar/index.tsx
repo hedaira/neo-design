@@ -160,14 +160,14 @@ export default class BarsPage extends Component {
                             {`import React, {Component} from 'react';
 import {NeoIcon, NeoInput, NeoSelect} from "neo-design/lib";
 
-export default class NXFunctionalBar extends Component {
+export default class NeoBar extends Component {
 
     render() {
         return (
             <div className='functionalBar__header'>
 
                 <div className='block'>
-                    <NeoInput width='192px' />
+                    <NeoInput width='192px' type={'search'} />
                     <div className='verticalLine' />
                     <NeoIcon icon={'plus'} />
                     <div className='verticalLine' />
@@ -218,7 +218,7 @@ export default class NXFunctionalBar extends Component {
                             {`import React, {Component} from 'react';
 import {NeoIcon, NeoSelect} from 'neo-design/lib';
 
-export default class NXDiagramBar extends Component {
+export default class NeoBar extends Component {
 
     render() {
         return (

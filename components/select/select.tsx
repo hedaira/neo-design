@@ -27,7 +27,6 @@ interface CompoundedComponent
 const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (props) => {
     const {
         className,
-        children,
     } = props;
 
 
@@ -39,7 +38,8 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         return <Select
             {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "185px"}`}}
+            style={{...props.style, width: `${props.width ? props.width : "185px"}`}}
+            placeholder={props.placeholder}
         />
 }
 

@@ -16,7 +16,8 @@ export interface InputProps {
     allowClear?: boolean;
     onClick?: any;
     onChange?: any;
-    defaultChecked?: any;
+    defaultChecked?: boolean;
+    checked?: boolean;
     style?;
     placeholder?;
 
@@ -56,19 +57,19 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     if (props.type === 'search') {
         return <Input
             placeholder='Поиск'
-            {...props}
             className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            {...props}
+            style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
         </Input>
     }
 
     if (props.type === 'checkbox') {
-        return <label className={'checkbox-label'}>
-            {children}
-                <input type={'checkbox'} className={classes} />
+        return <label className={'checkbox-label'} >
+            <input type={'checkbox'} className={classes} checked={(props.checked)} defaultChecked={(props.defaultChecked)} onChange={props.onChange}/>
             <span className="checkmark" />
+            <span>{children}</span>
         </label>
     }
 
@@ -82,7 +83,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'textArea') {
-        return <textarea className={classes} style={{width: `${props.width ? props.width : "auto"}`}}>
+        return <textarea className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}}>
             {children}
         </textarea>
     }
