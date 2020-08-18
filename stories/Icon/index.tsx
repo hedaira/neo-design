@@ -108,7 +108,7 @@ class IconPage extends React.Component {
                 <section className="icons ml20">
                     <div className="icon">
                         <NeoIcon icon={"calendar"}/>
-                {/*        <NeoIcon icon={"notification"} />*/}
+                        {/*<NeoIcon icon={"notification"} />*/}
                         <br/>
                         <span>Big</span>
                     </div>
