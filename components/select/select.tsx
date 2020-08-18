@@ -8,7 +8,7 @@ export interface SelectProps {
     className?: string;
     children?: React.ReactNode;
     name?: string;
-    value?: string;
+    value?: any;
     allowClear?: boolean;
     defaultValue?: string;
     onClick?: any;
