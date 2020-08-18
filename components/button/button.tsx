@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 
-const ButtonTypes = tuple('disabled', 'secondary', 'link', 'icon');
+const ButtonTypes = tuple('disabled', 'secondary', 'link', 'icon', 'ghost');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
