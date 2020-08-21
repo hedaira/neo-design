@@ -10,6 +10,7 @@ export interface SelectProps {
     name?: string;
     value?: any;
     allowClear?: boolean;
+    showSearch?: boolean;
     defaultValue?: string;
     onClick?: any;
     onChange?;

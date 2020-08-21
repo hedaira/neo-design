@@ -20,7 +20,10 @@ export interface InputProps {
     checked?: boolean;
     style?;
     placeholder?;
-
+    disabled?: any;
+    id?;
+    key?;
+    title?;
 }
 
 const prefix = 'input';

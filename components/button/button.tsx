@@ -19,6 +19,8 @@ export interface ButtonProps {
     disabled?;
     color?;
     value?;
+    id?;
+    key?;
 }
 
 const prefix = 'btn';
