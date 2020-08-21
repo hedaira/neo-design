@@ -25,6 +25,7 @@ const SvgNames = tuple(
     "warning",
     "down",
     "left",
+    "right",
     "up",
     "add",
     "barChart",
@@ -41,6 +42,7 @@ const SvgNames = tuple(
     "calendar",
     "exit",
     "notification",
+    "notification_off",
     "person",
     "question",
     "settings",
@@ -48,7 +50,9 @@ const SvgNames = tuple(
     "tiles",
     "more",
     "table",
-    "tableUp"
+    "tableUp",
+    "hide",
+    "show"
 );
 
 export type SvgName = typeof SvgNames[number];
