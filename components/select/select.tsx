@@ -18,6 +18,7 @@ export interface SelectProps {
     style?;
     placeholder?;
     suffix?;
+    mode?;
 }
 
 const prefix = 'select';

@@ -16,6 +16,7 @@ export interface InputProps {
     allowClear?: boolean;
     onClick?: any;
     onChange?: any;
+    onSearch?: any;
     defaultChecked?: boolean;
     checked?: boolean;
     style?;
@@ -58,14 +59,15 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'search') {
-        return <Input
+        return <Input.Search
             placeholder='Поиск'
             className={classes}
             {...props}
+            onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
-        </Input>
+        </Input.Search>
     }
 
     if (props.type === 'checkbox') {

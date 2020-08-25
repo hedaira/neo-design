@@ -16,7 +16,7 @@ export interface ButtonProps {
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLElement>;
     style?;
-    disabled?;
+    disabled?: boolean;
     color?;
     value?;
     id?;
