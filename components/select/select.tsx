@@ -14,6 +14,7 @@ export interface SelectProps {
     defaultValue?: string;
     onClick?: any;
     onChange?;
+    disabled?;
     getPopupContainer?;
     style?;
     placeholder?;
