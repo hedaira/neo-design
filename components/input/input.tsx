@@ -25,6 +25,7 @@ export interface InputProps {
     id?;
     key?;
     title?;
+    onKeyUp?;
 }
 
 const prefix = 'input';
