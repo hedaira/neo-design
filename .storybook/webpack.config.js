@@ -13,8 +13,7 @@ module.exports = ({config}) => {
                 loader: require.resolve('react-docgen-typescript-loader'),
             },
         ],
-
-},
+        },
         {
             test: /\.less$/,
             loaders: ['style-loader', 'css-loader', 'less-loader'],
