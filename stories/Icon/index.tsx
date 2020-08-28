@@ -3,8 +3,7 @@ import * as React from 'react';
 // import { NeoInput, NeoSelect } from '../../components/index';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoIcon} from '../../components/index';
-// import {NeoIcon} from "../../lib";
+import {NeoIcon} from "neo-icon/lib";
 
 class IconPage extends React.Component {
 
@@ -108,7 +107,8 @@ class IconPage extends React.Component {
                 <section className="icons ml20">
                     <div className="icon">
                         <NeoIcon icon={"calendar"}/>
-                        {/*<NeoIcon icon={"notification"} />*/}
+
+                        <NeoIcon icon={"notification"} />
                         <br/>
                         <span>Big</span>
                     </div>

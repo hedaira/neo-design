@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoTable, NeoIcon} from "../../components";
+import {NeoTable} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {NeoIcon} from "neo-icon/lib";
 
 export default class TablesPage extends Component {
     state = {

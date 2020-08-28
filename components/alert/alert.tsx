@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Alert} from "antd/lib";
-import NeoIcon from "../icon";
+import {NeoIcon} from "neo-icon/lib";
 
 const AlertTypes = tuple('success', 'info', 'warning', 'error');
 export type AlertType = typeof AlertTypes[number];

@@ -36,7 +36,7 @@ export default class ButtonPage extends React.Component {
 
           <h2 className="title">Как использовать</h2>
           <SyntaxHighlighter language='jsx' style={okaidia} >
-              {`import NeoButton from 'nx-design/lib';`}
+              {`import NeoButton from 'neo-design/lib';`}
           </SyntaxHighlighter>
 
         <h2 className="title">Примеры:</h2>

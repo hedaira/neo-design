@@ -15,7 +15,7 @@ export default class ComponentsPage extends Component {
                         <h3 className="ex-title">Hint</h3><br/>
                         <NeoHint title='Hint example'>Hover me</NeoHint>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`import { NeoHint } from "nx-design";
+                            {`import { NeoHint } from "neo-design";
 
 <NeoHint title='Hint example'>Hover me</NeoHint>
 `}
