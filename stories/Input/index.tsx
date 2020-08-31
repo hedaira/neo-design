@@ -1,16 +1,5 @@
 import * as React from 'react';
 
-// import NXInputSearch, {
-    // NXInput,
-    // NXCheckbox,
-    // NXRadio,
-    // NXTextArea,
-    // NXDatePicker,
-    // NXSelect,
-    // NXOption,
-    // NXInputClear, NXRadioButton
-// } from '../../components/input';
-
 import { NeoInput, NeoSelect } from '../../components/index';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -39,7 +28,7 @@ class InputPage extends React.Component {
                         <NeoInput type={'checkbox'}>Checkbox 3</NeoInput>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoInput } from "neo-design";
+                        {`import { NeoInput } from "neo-design/lib";
 
 <NeoInput type={'checkbox'}>Checkbox 1</NeoInput>
 <NeoInput type={'checkbox'}>Checkbox 2</NeoInput>
@@ -57,7 +46,7 @@ class InputPage extends React.Component {
                         <NeoInput type={'radio'} name={'radio'}>Radio 3</NeoInput>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoInput } from "neo-design";
+                        {`import { NeoInput } from "neo-design/lib";
 
 <NeoInput type={'radio'} name={'radio'}>Radio 1</NeoInput>
 <NeoInput type={'radio'} name={'radio'}>Radio 2</NeoInput>
@@ -74,7 +63,7 @@ class InputPage extends React.Component {
                         <NeoInput width={"250px"} />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoInput } from "neo-design";
+                        {`import { NeoInput } from "neo-design/lib";
 
 <NeoInput type={'default'} width={"250px"} />`}
                     </SyntaxHighlighter>
@@ -86,7 +75,7 @@ class InputPage extends React.Component {
                         <NeoInput type={'search'} width={"250px"} />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoInput } from "neo-design";
+                        {`import { NeoInput } from "neo-design/lib";
 
 <NeoInput type={'search'} width={"250px"} />`}
                     </SyntaxHighlighter>
@@ -97,7 +86,7 @@ class InputPage extends React.Component {
                         <NeoInput width={'250px'} allowClear />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoInput } from "neo-design";
+                        {`import { NeoInput } from "neo-design/lib";
 
 <NeoInput type={'default'} width={'250px'} allowClear />`}
                     </SyntaxHighlighter>
@@ -110,7 +99,7 @@ class InputPage extends React.Component {
                         <NeoInput type={'textArea'} width={'250px'} />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoInput } from "neo-design";
+                        {`import { NeoInput } from "neo-design/lib";
 
 <NeoInput type={'textArea'} width={'250px'} />`}
                     </SyntaxHighlighter>
@@ -123,7 +112,7 @@ class InputPage extends React.Component {
                         {/*<NXDatePicker />*/}
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NXDatePicker } from "nx-design";
+                        {`import { NXDatePicker } from "neo-design/lib";
 
 <NXDatePicker />`}
                     </SyntaxHighlighter>
@@ -141,7 +130,7 @@ class InputPage extends React.Component {
                         </NeoSelect>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NXSelect, NXOption } from "nx-design";
+                        {`import { NeoSelect } from "neo-design/lib";
 
 <NeoSelect defaultValue="lucy">
     <option value="lucy">Lucy</option>

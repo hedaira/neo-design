@@ -8,15 +8,18 @@ export interface SelectProps {
     className?: string;
     children?: React.ReactNode;
     name?: string;
-    value?: string;
+    value?: any;
     allowClear?: boolean;
+    showSearch?: boolean;
     defaultValue?: string;
     onClick?: any;
     onChange?;
+    disabled?;
     getPopupContainer?;
     style?;
     placeholder?;
     suffix?;
+    mode?;
 }
 
 const prefix = 'select';

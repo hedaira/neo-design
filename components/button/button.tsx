@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 
-const ButtonTypes = tuple('disabled', 'secondary', 'link', 'icon');
+const ButtonTypes = tuple('disabled', 'secondary', 'link', 'ghost');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
@@ -16,8 +16,7 @@ export interface ButtonProps {
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLElement>;
     style?;
-    disabled?;
-    color?;
+    id?;
 }
 
 const prefix = 'btn';
@@ -27,10 +26,13 @@ interface CompoundedComponent
 
 const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (props) => {
   const {
-    type,
-    size,
-    className,
-    children
+      type,
+      size,
+      title,
+      className,
+      children,
+      style,
+      id
   } = props;
 
   const classes = classNames(
@@ -51,10 +53,11 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
 
     return (
         <button
-            title={props.title}
+            id={id}
+            title={title}
             className={classes}
             onClick={handleClick}
-            style={...props.style}
+            style={style}
         >
             {children}
         </button>

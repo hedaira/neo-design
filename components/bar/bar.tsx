@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
-import {NeoIcon, NeoInput, NeoSelect, NeoButton} from "../index";
+import {NeoInput, NeoSelect, NeoButton} from "../index";
+import {NeoIcon} from "neo-icon/lib";
 
 const BarTypes = tuple('functional', 'diagram', 'calendar');
 export type BarType = typeof BarTypes[number];

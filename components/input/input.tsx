@@ -16,11 +16,16 @@ export interface InputProps {
     allowClear?: boolean;
     onClick?: any;
     onChange?: any;
+    onSearch?: any;
     defaultChecked?: boolean;
     checked?: boolean;
     style?;
     placeholder?;
-
+    disabled?: any;
+    id?;
+    key?;
+    title?;
+    onKeyUp?;
 }
 
 const prefix = 'input';
@@ -55,29 +60,30 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'search') {
-        return <Input
+        return <Input.Search
             placeholder='Поиск'
             className={classes}
             {...props}
+            onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
-        </Input>
+        </Input.Search>
     }
 
     if (props.type === 'checkbox') {
-        return <label className={'checkbox-label'} >
-            <input type={'checkbox'} className={classes} checked={(props.checked)} defaultChecked={(props.defaultChecked)} onChange={props.onChange}/>
-            <span className="checkmark" />
+        return <label className={classes} style={props.disabled? {cursor:'no-drop'}:{}}>
+            <input type={'checkbox'} checked={(props.checked)} defaultChecked={(props.defaultChecked)} onChange={props.onChange} disabled={props.disabled}/>
+            <span className="checkmark" style={props.disabled? {backgroundColor:'rgba(0,0,0,0.15)'}:{}} />
             <span>{children}</span>
         </label>
     }
 
     if (props.type === 'radio') {
         return <label
-            className={'radio-label'} >
+            className={classes} >
             {children}
-                <input type={'radio'} className={classes} name={props.name} value={props.value} />
+                <input type={'radio'} name={props.name} value={props.value} />
             <span className="checkmark" />
         </label>
     }

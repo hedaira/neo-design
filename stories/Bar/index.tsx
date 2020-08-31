@@ -25,7 +25,7 @@ export default class BarsPage extends Component {
 {/*                        <button id='calendar' onClick={showCode}>Show Code</button>*/}
 {/*                        <SyntaxHighlighter id='calendar' language='jsx' style={okaidia} >*/}
 {/*                            {`import React,{Component} from "react";*/}
-{/*import {NXIcon, legend, print, arrowLeft, plus, calendar, table, NXButton, NXInputSearch, NXOption, NXSelect} from "nx-design";*/}
+{/*import {NXIcon, legend, print, arrowLeft, plus, calendar, table, NXButton, NXInputSearch, NXOption, NXSelect} from "neo-design";*/}
 {/*import './index.css';*/}
 
 {/*export default class NXCalendarBar extends Component {*/}

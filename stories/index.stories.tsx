@@ -59,9 +59,6 @@ storiesOf('General|Diagrams', module)
 storiesOf('General|Tables', module)
     .add('Tables', () => <TablesPage />)
 
-storiesOf('General|Grid', module)
-    .add('Grid', () => <GridPage />)
-//
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
      .add('Alerts', () => <AlertPage />)

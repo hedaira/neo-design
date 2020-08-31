@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import Button from '../../components/button'
+import {NeoButton} from '../../components/index'
 // import {PropsTab} from "../../../utils/helpers";
 
 export default class ButtonPage extends React.Component {
@@ -36,31 +36,42 @@ export default class ButtonPage extends React.Component {
 
           <h2 className="title">Как использовать</h2>
           <SyntaxHighlighter language='jsx' style={okaidia} >
-              {`import NXButton from 'nx-design';`}
+              {`import NeoButton from 'neo-design/lib';`}
           </SyntaxHighlighter>
 
         <h2 className="title">Примеры:</h2>
         <section className="example">
           <div>
-            <Button className='ml20'>
+            <NeoButton className='ml20'>
               Primary
-            </Button>
+            </NeoButton>
 
-            <Button type={'secondary'} className="ml20">
+            <NeoButton type={'secondary'} className="ml20">
               Default
-            </Button>
+            </NeoButton>
 
-            <Button type={'disabled'} className="ml20">
+            <NeoButton type={'disabled'} className="ml20">
               Disabled
-            </Button>
+            </NeoButton>
 
+              <NeoButton type={'link'} className="ml20" style={{color:'blue'}}>
+                  Link
+              </NeoButton>
+
+              <NeoButton type={'ghost'} className="ml20" style={{color:'blue'}}>
+                  Ghost
+              </NeoButton>
           </div>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
-                    {`<NXButton primary> Primary </NXButton>
+                    {`<NeoButton> Primary </NeoButton>
 
-<NXButton> Default </NXButton>
+<NeoButton type={'secondary'}> Default </NeoButton>
 
-<NXButton disabled> Disabled </NXButton>`}
+<NeoButton type={'disabled'}> Disabled </NeoButton>
+
+<NeoButton type={'link'}> Link </NeoButton>
+
+<NeoButton type={'ghost'}> Ghost </NeoButton>`}
                 </SyntaxHighlighter>
         </section>
         {/*<PropsTab Props={*/}

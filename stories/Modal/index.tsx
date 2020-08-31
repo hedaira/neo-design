@@ -3,8 +3,6 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoModal, NeoButton} from "../../components";
 
-
-
 export default class ModalPage extends Component {
     state = {
         visible: false,
@@ -79,7 +77,7 @@ export default class ModalPage extends Component {
 
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
-                    {`import { NeoModal } from "neo-design";`}
+                    {`import { NeoModal } from "neo-design/lib";`}
                 </SyntaxHighlighter>
 
                 <h2 className="title">Примеры:</h2>

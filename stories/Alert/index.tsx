@@ -16,7 +16,7 @@ export default class AlertPage extends React.Component {
 
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
-                    {`import { NeoAlert } from "neo-design";`}
+                    {`import { NeoAlert } from "neo-design/lib";`}
                 </SyntaxHighlighter>
 
                 <h2 className="title">Примеры:</h2>
