@@ -13,18 +13,21 @@ module.exports = ({config}) => {
                 loader: require.resolve('react-docgen-typescript-loader'),
             },
         ],
-
-},
-        {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: ["file-loader"]
         },
         {
             test: /\.less$/,
             loaders: ['style-loader', 'css-loader', 'less-loader'],
             include: path.resolve(__dirname, '../components/')
         });
+
     config.resolve.extensions.push('.ts', '.tsx');
+
+    config.module.rules.unshift({
+        test: /\.svg$/,
+        include: path.resolve(__dirname, '../stories/'),
+        use: ["@svgr/webpack", "url-loader"],
+    });
+
     return config;
 };
 
