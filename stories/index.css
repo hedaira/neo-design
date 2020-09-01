@@ -346,3 +346,25 @@ table {
     margin: auto 12px auto auto;
     color: black;
 }
+
+/*icons*/
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 800px;
+}
+
+.icon {
+    width: 6%;
+    text-align: center;
+    display: inline-block;
+}
+
+.icon span {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.icon:hover {
+    border-color: #aaa;
+}
