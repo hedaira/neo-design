@@ -15,13 +15,13 @@ import ButtonPage from "../stories/Button";
 import IconPage from "../stories/Icon";
 import InputPage from "../stories/Input";
 import BarsPage from "../stories/Bar";
-// import DiagramsPage from "./General/Diagrams";
 import TablesPage from "./Table";
 import ComponentsPage from "./Other";
 // import AlertPage from "./Feedback/Alert";
 import GridPage from "./Documentation/Grid";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
+import DiagramsPage from "./Diagrams";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -53,8 +53,8 @@ storiesOf('General|Inputs', module)
 storiesOf('General|Bars', module)
     .add('FunctionalBars', () => <BarsPage />)
 
-// storiesOf('General|Diagrams', module)
-//     .add('Diagrams', () => <DiagramsPage />)
+storiesOf('General|Diagrams', module)
+    .add('Diagrams', () => <DiagramsPage />)
 
 storiesOf('General|Tables', module)
     .add('Tables', () => <TablesPage />)
