@@ -1,0 +1,33 @@
+.switch {
+  min-width: 1px!important;
+        width: 24px;
+        height: 14px;
+  background: #E6E6E6;
+
+  &-ant-switch-checked{
+    background: #FFDD8F!important;
+  }
+
+
+
+}
+
+.ant-switch::after{
+  background: #B3B3B3;
+  height: 14px;
+  width: 14px;
+  top: -1px;
+  left: -1px;
+}
+
+.ant-switch-checked::after{
+  transform: translateX(80%);
+}
+
+
+.ant-switch:not(.ant-switch-disabled):active::before, .ant-switch:not(.ant-switch-disabled):active::after{
+  width: 14px
+}
+.ant-switch-checked{
+  background: #FFDD8F!important;
+}

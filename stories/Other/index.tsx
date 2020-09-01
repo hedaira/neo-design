@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoHint} from '../../components/'
+import {NeoHint, NeoSwitch} from '../../components/'
 
 export default class ComponentsPage extends Component {
     state = {}
@@ -22,6 +22,23 @@ export default class ComponentsPage extends Component {
                         </SyntaxHighlighter>
                     </div>
                 </section>
+
+
+                <section className="example">
+                    <div className='flex-column'>
+                        <h3 className="ex-title">Switcher</h3><br/>
+                        <NeoSwitch/>
+                        <SyntaxHighlighter language='jsx' style={okaidia} >
+                            {`import { NeoSwitch } from "neo-design";
+
+ <NeoSwitch/>
+`}
+                        </SyntaxHighlighter>
+                    </div>
+                </section>
+
+
+
 
             </Fragment>
         );

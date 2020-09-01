@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './diagrams.css'
 
-import {NeoSelect, NeoButton, NeoInput, NeoRow, NeoCol, NeoIcon} from "../../components";
+import {NeoSelect, NeoButton, NeoInput, NeoRow, NeoCol} from "../../components";
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import showCode from "../../components/_utils/tools";

@@ -13,3 +13,4 @@ export { default as NeoHint } from './other/hint';
 export { default as NeoTable } from './table';
 
 export { default as NeoBar } from './bar'
+export { default as NeoSwitch } from './switch'
