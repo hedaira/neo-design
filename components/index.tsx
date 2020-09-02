@@ -3,6 +3,7 @@ export { default as NeoAlert } from './alert';
 export { default as NeoModal } from './modal';
 
 export { default as NeoInput } from './input';
+export { default as NeoInputNumber } from './inputNumber'
 export { default as NeoSelect } from './select';
 
 export { default as NeoCol } from './grid/col';
