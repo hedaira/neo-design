@@ -15,3 +15,5 @@ export { default as NeoTable } from './table';
 
 export { default as NeoBar } from './bar'
 export { default as NeoSwitch } from './switch'
+export { default as NeoTag } from './tag'
+
