@@ -14,7 +14,7 @@ class IconPage extends React.Component {
 
     copyToClipboard = (icon, size) => {
         const el = document.createElement('textarea');
-        el.value = `<NeoIcon icon={${icon}} size={${size}}/>`;
+        el.value = `<NeoIcon icon={"'${icon}"'} size={'"${size}"'}/>`;
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
