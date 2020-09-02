@@ -25,7 +25,7 @@ gulp)
 start)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       nohup npm run storybook >> /dev/null >>/dev/null & echo $! > $PID_PATH_NAME
+       nohup npm run storybook 1>>/opt/neodesign/neo-design/logs/neodesign.log 2>>/opt/neodesign/neo-design/logs/neodesign.log & echo $! > $PID_PATH_NAME
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
