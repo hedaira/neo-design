@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Modal} from "antd/lib";
 import {NeoButton} from "../index";
+import {NeoIcon} from "neo-icon/lib";
 
 
 const ModalTypes = tuple('success', 'info', 'error');
@@ -85,32 +86,39 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
     if (props.type === 'info') {
         return <Modal
             className={classes}
-            title={title}
+            title={
+                <div>
+                    <NeoIcon icon={'info'} size={'60'}/>
+                    <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column', marginTop: '17px'}}>
+                        {title}
+                    </div>
+                </div>}
             onOk={handleClick}
             visible={visible}
             closable={false}
-            footer={
-                <NeoButton className={'info-button'}  size={'medium'} onClick={handleClick}>OK</NeoButton>}
-            {...props}
+            footer={<NeoButton className={'info-button'}  size={'medium'} onClick={handleClick}>OK</NeoButton>}
             style={{width: `${props.width ? props.width : "930px"}`}}
         >
             <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>
-            {content}
+                {content}
             </div>
+            {children}
         </Modal>
-
-
     }
 
     if (props.type === 'error') {
         return <Modal
             className={classes}
-            title={title}
+            title={
+                <div>
+                    <NeoIcon icon={"warning"} size={'60'} color={'#e16468'}/>
+                    <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column', marginTop: '17px'}}>
+                        {title}
+                    </div>
+                </div>}
             visible={visible}
             closable={false}
-            footer={
-                <NeoButton size={'medium'} className={'error-button'} onClick={handleClick}>OK</NeoButton>}
-            {...props}
+            footer={<NeoButton size={'medium'} className={'error-button'} onClick={handleClick}>OK</NeoButton>}
             style={{width: `${props.width ? props.width : "430px"}`}}
         >
             <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>
@@ -118,19 +126,21 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             </div>
             {children}
         </Modal>
-
     }
 
     if (props.type === 'success') {
         return <Modal
             className={classes}
-            title={<div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>{title}
-            </div>}
+            title={
+                <div>
+                    <NeoIcon icon={"success"} size={'60'} color={'#27677c'}/>
+                    <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column', marginTop: '17px'}}>
+                        {title}
+                    </div>
+                </div>}
             visible={visible}
             closable={false}
-            footer={
-                <NeoButton size={'medium'} className={'success-button'} onClick={handleClick}>OK</NeoButton>}
-            {...props}
+            footer={<NeoButton size={'medium'} className={'success-button'} onClick={handleClick}>OK</NeoButton>}
             style={{width: `${props.width ? props.width : "430px"}`}}
         >
             <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>
@@ -138,7 +148,6 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             </div>
             {children}
         </Modal>
-
     }
 
 }
