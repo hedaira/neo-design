@@ -10,7 +10,7 @@ export interface InputNumberProps {
   className?: string;
   children?: React.ReactNode;
   defaultValue?: number;
-  parser?: (displayValue: string | undefined) => number | string;
+  parser?: (displayValue: any | undefined) => number | string;
   formatter?: (value: number | string | undefined) => string;
   min?: number;
   max?: number;
