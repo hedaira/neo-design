@@ -9,12 +9,12 @@ export type AlertType = typeof AlertTypes[number];
 
 
 export interface AlertProps {
-        Type?: AlertType;
+        type?: AlertType;
         message?: string; // смотреть выше
         description?: string;
         width?: string;
         className?: string;
-        children?: React.ReactNode;
+        closable?: boolean;
 }
 
 const prefix = 'alert'; // для удобства чтоб понимать
@@ -24,11 +24,11 @@ interface CompoundedComponent
 
 const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (props) => { // описание все что есть сверху
   const {
-      Type,
+      type,
       message,
       description,
       className,
-      children,
+      closable
   } = props;
 
 
@@ -36,77 +36,80 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
         className,
         prefix,
         {
-            [`${prefix}-${Type}`]: Type,
+            [`${prefix}-${type}`]: type,
         }
 
     );
 
-
-    if (!props.Type) {
+    if (!props.type) {
 
         return <Alert
-            className={classes}
+            banner
+            closable={closable || false}
             message={message}
-            closable
-            {...props}
+            className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
-        >
-            {children}
-        </Alert>
+            icon={<NeoIcon icon={'success'} color={'#27677c'}/>}
+            closeText={closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            {...props}
+        />
     }
 
-    if (props.Type === 'info') {
+    if (props.type === 'error') {
         return <Alert
+            banner
+            closable={closable || true}
             message={message}
-            description={description}
-            closable
-            {...props}
             className={classes}
-
             style={{width: `${props.width ? props.width : "370px"}`}}
-        >
-            {children}
-        </Alert>
+            icon={<NeoIcon icon={'warning'} color={'#d47f9b'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            description={description}
+            {...props}
+        />
     }
 
-    if (props.Type === 'error') {
+    if (props.type === 'info') {
         return <Alert
+            banner
+            closable={closable || true}
             message={message}
-            description={description}
-            closable
-            {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
-        >
-            {children}
-        </Alert>
+            icon={<NeoIcon icon={'info'} color={'#424d78'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            description={description}
+            {...props}
+        />
     }
 
-    if (props.Type === 'success') {
+    if (props.type === 'success') {
 
         return <Alert
+            banner
+            closable={closable || true}
             message={message}
-            description={description}
-            closable
-            {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
-        >
-            {children}
-        </Alert>
+            icon={<NeoIcon icon={'success'} color={'#27677C'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            description={description}
+            {...props}
+        />
     }
 
-    if (props.Type === 'warning') {
+    if (props.type === 'warning') {
         return <Alert
+            banner
+            closable={closable || true}
             message={message}
-            description={description}
-            closable
-            {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
-        >
-            {children}
-        </Alert>
+            icon={<NeoIcon icon={'info'} color={'#D9A54C'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            description={description}
+            {...props}
+        />
     }
 
 }

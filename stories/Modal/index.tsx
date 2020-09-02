@@ -10,7 +10,7 @@ export default class ModalPage extends Component {
         visibleError: false,
         visibleSuccess: false
 
-    }
+    };
 
     showModal = () => {
         this.setState({
@@ -23,6 +23,7 @@ export default class ModalPage extends Component {
             visible: false,
         });
     };
+
     showModalInfo = () => {
         this.setState({
             visibleInfo: true,
@@ -45,6 +46,7 @@ export default class ModalPage extends Component {
             visibleError: false,
         });
     };
+
     showModalSuccess = () => {
         this.setState({
             visibleSuccess: true,
@@ -85,13 +87,19 @@ export default class ModalPage extends Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Basic</h3>
-                        <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
                         <br/>
-                        {/*<NXModal title={'Question?'} content={'This is a question modal'} />*/}
+                        <NeoButton type={'secondary'} onClick={this.showModal} style={{width: '115px'}}>Open Modal</NeoButton>
+                        <br/>
                         <NeoModal title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>
                         </NeoModal>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NeoModal title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>`}
+                            {`state = {visible: false}
+showModal = () => {this.setState({visible: true})}
+handleOk = () => {this.setState({visible: false})}
+    
+<NeoButton type={'secondary'} onClick={this.showModal} style={{width: '115px'}}>Open Modal</NeoButton>
+<NeoModal title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>
+`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
@@ -99,12 +107,19 @@ export default class ModalPage extends Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Info</h3>
-                        <NeoButton type={'secondary'} onClick={this.showModalInfo}>Open Modal</NeoButton>
+                        <br/>
+                        <NeoButton type={'secondary'} onClick={this.showModalInfo} style={{width: '115px'}}>Open Modal</NeoButton>
                         <br/>
                         <NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visibleInfo} onOk={this.handleOkInfo}/>
-                        {/*<NXModal title={'Info'} content={'This is an info modal'} info />*/}
+
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visibleInfo} onOk={this.handleOkInfo}/>`}
+                            {`state = {visible: false}
+showModal = () => {this.setState({visible: true})}
+handleOk = () => {this.setState({visible: false})}
+    
+<NeoButton type={'secondary'} onClick={this.showModal} style={{width: '115px'}}>Open Modal</NeoButton>
+<NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visible} onOk={this.handleOk}>
+`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
@@ -112,12 +127,18 @@ export default class ModalPage extends Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Success</h3>
-                        <NeoButton type={'secondary'} onClick={this.showModalSuccess}>Open Modal</NeoButton>
+                        <br/>
+                        <NeoButton type={'secondary'} onClick={this.showModalSuccess} style={{width: '115px'}}>Open Modal</NeoButton>
                         <br/>
                         <NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visibleSuccess} onOk={this.handleOkSuccess}/>
-                        {/*<NXModal title={'Success'} content={'This is a success modal'} success />*/}
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visibleSuccess} onOk={this.handleOkSuccess}/>`}
+                            {`state = {visible: false}
+showModal = () => {this.setState({visible: true})}
+handleOk = () => {this.setState({visible: false})}
+    
+<NeoButton type={'secondary'} onClick={this.showModal} style={{width: '115px'}}>Open Modal</NeoButton>
+<NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visible} onOk={this.handleOk}>
+`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
@@ -125,12 +146,18 @@ export default class ModalPage extends Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Error</h3>
-                        <NeoButton type={'secondary'} onClick={this.showModalError}>Open Modal</NeoButton>
+                        <br/>
+                        <NeoButton type={'secondary'} onClick={this.showModalError} style={{width: '115px'}}>Open Modal</NeoButton>
                         <br/>
                         <NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visibleError} onOk={this.handleOkError}/>
-                        {/*<NXModal title={'Error'} content={'This is an error modal'} error />*/}
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`<NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visibleError} onOk={this.handleOkError}/>>`}
+                            {`state = {visible: false}
+showModal = () => {this.setState({visible: true})}
+handleOk = () => {this.setState({visible: false})}
+    
+<NeoButton type={'secondary'} onClick={this.showModal} style={{width: '115px'}}>Open Modal</NeoButton>
+<NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visible} onOk={this.handleOk}>
+`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
