@@ -12,16 +12,16 @@ class IconPage extends React.Component {
 
     }
 
-    copyToClipboard = (icon, size) => {
+    copyToClipboard = (icon) => {
         const el = document.createElement('textarea');
-        el.value = `<NeoIcon icon={"${icon}"} size={"${size}"}/>`;
+        el.value = `<NeoIcon icon={"${icon}"}/>`;
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
 
         return (
-            message.success(`copied to clipboard "<NeoIcon icon={${icon}} size={${size}}" />`)
+            message.success(`copied to clipboard <NeoIcon icon={icon}/>`)
 
         )
     };
@@ -30,9 +30,9 @@ class IconPage extends React.Component {
         return arr.map((icon, i) =>
             <div
                 className="icon"
-                onClick={() => this.copyToClipboard(icon, '40')}
+                onClick={() => this.copyToClipboard(icon)}
             >
-                <NeoIcon key={i} icon={icon} size={'40'}/>
+                <NeoIcon key={i} icon={icon} size={"m"}/>
                 <br/>
         </div>)
     }
@@ -42,9 +42,9 @@ class IconPage extends React.Component {
             <div
                 style={{width: '200px'}}
                 className="icon"
-                onClick={() => this.copyToClipboard(icon, '200')}
+                onClick={() => this.copyToClipboard(icon)}
             >
-                <NeoIcon key={i} icon={icon} size={'200'}/>
+                <NeoIcon key={i} icon={icon} customSize={'200'}/>
             </div>)
     }
 
@@ -155,33 +155,21 @@ class IconPage extends React.Component {
                         <h3 className="ex-title">Size</h3>
                         <br />
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'}/>
-                        </div>
-                        <div className="icon">
-                            <NeoIcon icon={"notification"} size={'40'}/>
-                        </div>
-                        <div className="icon">
-                            <NeoIcon icon={"notification"} size={'30'}/>
+                            <NeoIcon icon={"notification"} size={"m"}/>
                         </div>
                         <div className="icon">
                             <NeoIcon icon={"notification"}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'15'}/>
-                        </div>
-                        <div className="icon">
-                            <NeoIcon icon={"notification"} size={'10'}/>
+                            <NeoIcon icon={"notification"} size={"s"}/>
                         </div>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoIcon } from "neo-design/lib";
 
-<NeoIcon icon={"notification"} size={'50'}/>
-<NeoIcon icon={"notification"} size={'40'}/>
-<NeoIcon icon={"notification"} size={'30'}/>
+<NeoIcon icon={"notification"} size={'s'}/>
 <NeoIcon icon={"notification"}/>
-<NeoIcon icon={"notification"} size={'15'}/>
-<NeoIcon icon={"notification"} size={'10'}/>`}
+<NeoIcon icon={"notification"} size={'m'}/>`}
                     </SyntaxHighlighter>
                 </section>
 
@@ -190,33 +178,33 @@ class IconPage extends React.Component {
                         <h3 className="ex-title">Color</h3>
                         <br />
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'} color={'#171d45'}/>
+                            <NeoIcon icon={"notification"} size={"m"} color={'#171d45'}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'} color={'#d9a54c'}/>
+                            <NeoIcon icon={"notification"} size={"m"} color={'#d9a54c'}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'} color={'#404040'}/>
+                            <NeoIcon icon={"notification"} size={"m"} color={'#404040'}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'} color={'#870944'}/>
+                            <NeoIcon icon={"notification"} size={"m"} color={'#870944'}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'} color={'#174557'}/>
+                            <NeoIcon icon={"notification"} size={"m"} color={'#174557'}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={'50'} color={'#1a7ca3'}/>
+                            <NeoIcon icon={"notification"} size={"m"} color={'#1a7ca3'}/>
                         </div>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoIcon } from "neo-design/lib";
 
-<NeoIcon icon={"notification"} size={'50'} color={'#171d45'}/>
-<NeoIcon icon={"notification"} size={'50'} color={'#d9a54c'}/>
-<NeoIcon icon={"notification"} size={'50'} color={'#404040'}/>
-<NeoIcon icon={"notification"} size={'50'} color={'#870944'}/>
-<NeoIcon icon={"notification"} size={'50'} color={'#174557'}/>
-<NeoIcon icon={"notification"} size={'50'} color={'#1a7ca3'}/>`}
+<NeoIcon icon={"notification"} size={"m"} color={'#171d45'}/>
+<NeoIcon icon={"notification"} size={"m"} color={'#d9a54c'}/>
+<NeoIcon icon={"notification"} size={"m"} color={'#404040'}/>
+<NeoIcon icon={"notification"} size={"m"} color={'#870944'}/>
+<NeoIcon icon={"notification"} size={"m"} color={'#174557'}/>
+<NeoIcon icon={"notification"} size={"m"} color={'#1a7ca3'}/>`}
                     </SyntaxHighlighter>
                 </section>
 
@@ -295,16 +283,6 @@ class IconPage extends React.Component {
                             }
                         </section>
                     </div>
-                    <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import { NeoIcon } from "neo-design/lib";
-
-/*Header*/
-<NeoIcon icon={"notification"} size={'50'}/>
-<NeoIcon icon={"question"} size={'50'}/>
-<NeoIcon icon={"person"} size={'50'}/>
-<NeoIcon icon={"exit"} size={'50'}/>
-<NeoIcon icon={"settings"} size={'50'}/>`}
-                    </SyntaxHighlighter>
                 </section>
                 {/*<PropsTab Props={*/}
                 {/*    [*/}

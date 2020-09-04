@@ -50,7 +50,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
             icon={<NeoIcon icon={'success'} color={'#27677c'}/>}
-            closeText={closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            closeText={closable && <NeoIcon icon={"close"} color={'#B3B3B3'}/>}
             {...props}
         />
     }
@@ -63,7 +63,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
             icon={<NeoIcon icon={'warning'} color={'#d47f9b'}/>}
-            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} color={'#B3B3B3'}/>}
             description={description}
             {...props}
         />
@@ -77,7 +77,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
             icon={<NeoIcon icon={'info'} color={'#424d78'}/>}
-            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} color={'#B3B3B3'}/>}
             description={description}
             {...props}
         />
@@ -92,7 +92,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
             icon={<NeoIcon icon={'success'} color={'#27677C'}/>}
-            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} color={'#B3B3B3'}/>}
             description={description}
             {...props}
         />
@@ -106,7 +106,7 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
             className={classes}
             style={{width: `${props.width ? props.width : "370px"}`}}
             icon={<NeoIcon icon={'info'} color={'#D9A54C'}/>}
-            closeText={!closable && <NeoIcon icon={"close"} size={'16'} color={'#B3B3B3'}/>}
+            closeText={!closable && <NeoIcon icon={"close"} color={'#B3B3B3'}/>}
             description={description}
             {...props}
         />

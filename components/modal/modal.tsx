@@ -88,7 +88,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             className={classes}
             title={
                 <div>
-                    <NeoIcon icon={'info'} size={'60'}/>
+                    <NeoIcon icon={'info'} customSize={'60'}/>
                     <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column', marginTop: '17px'}}>
                         {title}
                     </div>
@@ -111,7 +111,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             className={classes}
             title={
                 <div>
-                    <NeoIcon icon={"warning"} size={'60'} color={'#e16468'}/>
+                    <NeoIcon icon={"warning"} customSize={'60'} color={'#e16468'}/>
                     <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column', marginTop: '17px'}}>
                         {title}
                     </div>
@@ -133,7 +133,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             className={classes}
             title={
                 <div>
-                    <NeoIcon icon={"success"} size={'60'} color={'#27677c'}/>
+                    <NeoIcon icon={"success"} customSize={'60'} color={'#27677c'}/>
                     <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column', marginTop: '17px'}}>
                         {title}
                     </div>
