@@ -9,6 +9,7 @@ export type InputType = typeof InputTypes[number];
 export interface InputProps {
     type?: InputType;
     width?: string;
+    password?: boolean;
     className?: string;
     children?: React.ReactNode;
     name?: string;
@@ -49,9 +50,20 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         className,
     );
 
-    if (!props.type) {
+    if (!props.type && !props.password) {
         return <Input
             {...props}
+            className={classes}
+            style={{width: `${props.width ? props.width : "auto"}`}}
+        >
+            {children}
+        </Input>
+    }
+
+    if (!props.type && props.password) {
+        return <Input
+            {...props}
+            type="password"
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
