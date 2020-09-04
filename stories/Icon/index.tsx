@@ -21,7 +21,7 @@ class IconPage extends React.Component {
         document.body.removeChild(el);
 
         return (
-            message.success(`copied to clipboard <NeoIcon icon={icon}/>`)
+            message.success(`copied to clipboard <NeoIcon icon={"${icon}"}/>`)
 
         )
     };
@@ -51,7 +51,7 @@ class IconPage extends React.Component {
     render() {
 
         const header = ['notification',
-            'notification_off',
+            'notificationOff',
             'question',
             'person',
             'exit',
@@ -68,7 +68,8 @@ class IconPage extends React.Component {
             'update-clock',
             'mark',
             'update',
-            'fullScreen'
+            'fullScreen',
+            'fullScreenUnDo'
         ];
 
         const diagrams = [
@@ -101,8 +102,6 @@ class IconPage extends React.Component {
             'delete',
             'plus',
             'close',
-            'switchOff',
-            'switchOn',
             'calendar',
             'calendarFull',
             'rubbish',
@@ -116,7 +115,6 @@ class IconPage extends React.Component {
             'edit',
             'menuOpen',
             'search',
-            'legend',
             'tiles',
             "play",
             "show",
@@ -129,7 +127,17 @@ class IconPage extends React.Component {
             'duplicate',
             'exportFile',
             'importFile',
-            'undo'
+            'undo',
+            'checkbox',
+            'checkboxFill'
+        ];
+
+        const colorIcons = [
+            'radioButton',
+            'radioButtonFill',
+            'switchOff',
+            'switchOn',
+            'legend',
         ];
 
         const menu = [
@@ -271,6 +279,15 @@ class IconPage extends React.Component {
                         <section className="icons ml20">
                             {
                                 this.groupIcon(icons)
+                            }
+                        </section>
+                    </div>
+                    <div>
+                        <h3 className="ex-title">No color changes</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(colorIcons)
                             }
                         </section>
                     </div>
