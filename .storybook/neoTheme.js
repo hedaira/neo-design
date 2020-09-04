@@ -1,8 +1,8 @@
 import { create } from '@storybook/theming/create';
-import show from './show.svg'
+import logo from './logo.png'
 
 export default create({
     base: 'light',
-    brandTitle: 'Neo design',
-    brandImage: show
+    brandTitle: 'Neo Design',
+    brandImage: logo
 });
