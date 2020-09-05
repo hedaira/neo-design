@@ -17,3 +17,5 @@ export { default as NeoBar } from './bar'
 export { default as NeoSwitch } from './switch'
 export { default as NeoTag } from './tag'
 
+export { default as NeoTypography } from './typography'
+
