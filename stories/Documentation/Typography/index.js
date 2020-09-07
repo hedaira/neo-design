@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import {NeoCol, NeoRow, NeoTypography} from "../../../components";
+import {NeoCol, NeoRow} from "../../../components";
 import {okaidia} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 
@@ -17,7 +17,7 @@ export default class TypographyPageDoc extends Component {
                         <NeoCol span={8}><h1>56px</h1></NeoCol>
                         <NeoCol span={8}><h1>H1</h1></NeoCol>
                         <NeoCol span={8}><h1>Text</h1></NeoCol>
-                        <NeoTypography type={'h1-regular'}>56pt H1 Text</NeoTypography>
+                        {/*<NeoTypography type={'h1-regular'}>56pt H1 Text</NeoTypography>*/}
                     </NeoRow>
                     <NeoRow>
                         <NeoCol span={8}><h2 className='medium'>32px</h2></NeoCol>
