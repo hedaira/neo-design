@@ -7,8 +7,7 @@
   "files": [
     "lib",
     "dist",
-    "icons",
-    "fonts"
+    "icons"
   ],
   "scripts": {
     "tsc": "tsc",

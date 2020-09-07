@@ -29,4 +29,9 @@ function compLess() {
         .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.series(compTsx, compLess));
+function copyFonts() {
+    return gulp
+        .src(['fonts/**/*']).pipe(gulp.dest('dist/fonts'));
+}
+
+gulp.task('default', gulp.series(compTsx, compLess, copyFonts));
