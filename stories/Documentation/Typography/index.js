@@ -138,35 +138,68 @@ export default class TypographyPageDoc extends Component {
                     </NeoRow>
                     <NeoRow style={{marginBottom: marginBottom}}>
                         <NeoCol span={8}>
-                            <NeoTypography type={'table-medium'}>12px</NeoTypography>
+                            <NeoTypography type={'body-link'}>14px</NeoTypography>
                         </NeoCol>
                         <NeoCol span={8}>
-                            <NeoTypography type={'table-medium'}>table/medium</NeoTypography>
+                            <NeoTypography type={'body-link'}>body/link</NeoTypography>
                         </NeoCol>
                         <NeoCol span={8}>
-                            <NeoTypography type={'table-medium'}>Text</NeoTypography>
-                        </NeoCol>
-                    </NeoRow>
-                    <NeoRow style={{marginBottom: marginBottom}}>
-                        <NeoCol span={8}>
-                            <NeoTypography type={'table-regular'}>12px</NeoTypography>
-                        </NeoCol>
-                        <NeoCol span={8}>
-                            <NeoTypography type={'table-regular'}>table/regular</NeoTypography>
-                        </NeoCol>
-                        <NeoCol span={8}>
-                            <NeoTypography type={'table-regular'}>Text</NeoTypography>
+                            <NeoTypography type={'body-link'}>Text</NeoTypography>
                         </NeoCol>
                     </NeoRow>
                     <NeoRow style={{marginBottom: marginBottom}}>
                         <NeoCol span={8}>
-                            <NeoTypography type={'table-light'}>12px</NeoTypography>
+                            <NeoTypography type={'body-bold'}>14px</NeoTypography>
                         </NeoCol>
                         <NeoCol span={8}>
-                            <NeoTypography type={'table-light'}>table/light</NeoTypography>
+                            <NeoTypography type={'body-bold'}>body/bold</NeoTypography>
                         </NeoCol>
                         <NeoCol span={8}>
-                            <NeoTypography type={'table-light'}>Text</NeoTypography>
+                            <NeoTypography type={'body-bold'}>Text</NeoTypography>
+                        </NeoCol>
+                    </NeoRow>
+                    <NeoRow style={{marginBottom: marginBottom}}>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-regular'}>12px</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-regular'}>capture/regular</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-regular'}>Text</NeoTypography>
+                        </NeoCol>
+                    </NeoRow>
+                    <NeoRow style={{marginBottom: marginBottom}}>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-medium'}>12px</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-medium'}>capture/medium</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-medium'}>Text</NeoTypography>
+                        </NeoCol>
+                    </NeoRow>
+                    <NeoRow style={{marginBottom: marginBottom}}>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-link'}>12px</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-link'}>capture/link</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-link'}>Text</NeoTypography>
+                        </NeoCol>
+                    </NeoRow>
+                    <NeoRow style={{marginBottom: marginBottom}}>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-light'}>12px</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-light'}>capture/light</NeoTypography>
+                        </NeoCol>
+                        <NeoCol span={8}>
+                            <NeoTypography type={'capture-light'}>Text</NeoTypography>
                         </NeoCol>
                     </NeoRow>
                     <SyntaxHighlighter language='jsx' style={okaidia} >

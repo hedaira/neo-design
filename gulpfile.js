@@ -31,7 +31,7 @@ function compLess() {
 
 function copyFonts() {
     return gulp
-        .src(['fonts/**/*']).pipe(gulp.dest('dist/fonts'));
+        .src(['components/typography/fonts/**/*']).pipe(gulp.dest('dist/fonts'));
 }
 
 gulp.task('default', gulp.series(compTsx, compLess, copyFonts));
