@@ -1,6 +1,8 @@
 .typography {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
+  color: #000000;
+  font-weight: normal;
 }
 
 .typography-capture-light {
@@ -10,20 +12,18 @@
 }
 
 .typography-capture-link {
-  font-weight: normal;
   font-size: 12px;
   line-height: 14px;
   text-decoration-line: underline;
 }
 
 .typography-capture-medium {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 12px;
   line-height: 14px;
 }
 
 .typography-capture-regular {
-  font-weight: normal;
   font-size: 12px;
   line-height: 14px;
 }
@@ -35,7 +35,6 @@
 }
 
 .typography-body-link {
-  font-weight: normal;
   font-size: 14px;
   line-height: 16px;
   text-decoration-line: underline;
@@ -48,7 +47,6 @@
 }
 
 .typography-body-regular {
-  font-weight: normal;
   font-size: 14px;
   line-height: 16px;
 }
@@ -66,63 +64,59 @@
 }
 
 .typography-h4-regular {
-  font-weight: normal;
   font-size: 16px;
   line-height: 19px;
 }
 
 .typography-h4-medium {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 19px;
 }
 
 .typography-h3-regular {
-  font-weight: normal;
   font-size: 20px;
   line-height: 23px;
 }
 
 .typography-h3-medium {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 23px;
 }
 
 .typography-h2-regular {
-  font-weight: normal;
   font-size: 32px;
   line-height: 37px;
 }
 
 .typography-h2-medium {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 32px;
   line-height: 37px;
 }
 
 .typography-h1-regular {
-  font-weight: normal;
   font-size: 56px;
   line-height: 66px;
 }
 
-//.font-face(@font-family, @filepath, @font-weight, @font-style){
-//  @font-face {
-//    font-family: @font-family;
-//    font-weight:@font-weight;
-//    font-style:@font-style;
-//    src: url('@{filepath}.eot'); // IE9 Compat Modes
-//
-//    src: local(@font-family), local('@{font-family}-Regular'),
-//    url('@{filepath}.eot?#iefix') format('embedded-opentype'), //IE6-IE8
-//    url('@{filepath}.woff2') format('woff2'), //Super Modern Browsers
-//    url('@{filepath}.woff') format('woff'), //Modern Browsers
-//    url('@{filepath}.ttf')  format('truetype'), //Safari, Android, iOS
-//    url('@{filepath}.svg#Roboto') format('svg'); //Legacy iOS
-//  }
-//}
+.font-face(@font-family, @filepath, @font-weight, @font-style){
+  @font-face {
+    font-family: @font-family;
+    font-weight:@font-weight;
+    font-style:@font-style;
+    src: url('@{filepath}.eot'); // IE9 Compat Modes
 
-//.font-face('Roboto', '../fonts/roboto-v20-latin_cyrillic-ext_cyrillic-regular', 400, normal);
+    src: local(@font-family), local('@{font-family}-Regular'),
+    url('@{filepath}.eot?#iefix') format('embedded-opentype'), //IE6-IE8
+    url('@{filepath}.woff2') format('woff2'), //Super Modern Browsers
+    url('@{filepath}.woff') format('woff'), //Modern Browsers
+    url('@{filepath}.ttf')  format('truetype'), //Safari, Android, iOS
+    url('@{filepath}.svg#Roboto') format('svg'); //Legacy iOS
+  }
+}
+
+.font-face('Roboto', '/fonts/roboto-v20-latin_cyrillic-ext_cyrillic-regular', normal, normal);
 
 
