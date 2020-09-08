@@ -58,7 +58,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
             title={title}
             className={classes}
             onClick={handleClick}
-            style={{...style, width: props.width}}
+            style={{...style, width: props.width ? props.width : 'auto'}}
         >
             {children}
         </button>
