@@ -13,7 +13,7 @@
     "tsc": "tsc",
     "compile": "gulp",
     "prepublishOnly": "npm run compile",
-    "storybook": "start-storybook -p 9002 -s .storybook"
+    "storybook": "start-storybook -p 9002 -c .storybook"
   },
   "author": "Suvorova Anna",
   "license": "MIT",

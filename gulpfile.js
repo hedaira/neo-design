@@ -24,7 +24,7 @@ function compTsx() {
 
 function compLess() {
     return gulp
-        .src('components/*.less')
+        .src('components/style/neoDesign.less')
         .pipe(less())
         .pipe(gulp.dest('dist'))
 }
