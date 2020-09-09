@@ -10,6 +10,7 @@ export interface InputProps {
     type?: InputType;
     width?: string;
     password?: boolean;
+    autofocus?: boolean;
     className?: string;
     children?: React.ReactNode;
     name?: string;
@@ -53,6 +54,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     if (!props.type && !props.password) {
         return <Input
             {...props}
+            autoFocus={props.autofocus}
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
@@ -63,6 +65,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     if (!props.type && props.password) {
         return <Input
             {...props}
+            autoFocus={props.autofocus}
             type="password"
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
@@ -74,6 +77,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     if (props.type === 'search') {
         return <Input.Search
             placeholder='Поиск'
+            autoFocus={props.autofocus}
             className={classes}
             {...props}
             onSearch={props.onSearch}
