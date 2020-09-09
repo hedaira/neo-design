@@ -24,9 +24,14 @@ function compTsx() {
 
 function compLess() {
     return gulp
-        .src('components/*.less')
+        .src('components/style/neoDesign.less')
         .pipe(less())
         .pipe(gulp.dest('dist'))
 }
 
-gulp.task('default', gulp.series(compTsx, compLess));
+function copyFonts() {
+    return gulp
+        .src(['components/typography/fonts/**/*']).pipe(gulp.dest('dist/fonts'));
+}
+
+gulp.task('default', gulp.series(compTsx, compLess, copyFonts));

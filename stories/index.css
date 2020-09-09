@@ -369,3 +369,81 @@ table {
 .icon:hover {
     border-color: #aaa;
 }
+
+/* Roboto black */
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../dist/fonts/Roboto-Black.eot');
+    src: url('../dist/fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),
+    url('../dist/fonts/Roboto-Black.woff2') format('woff2'),
+    url('../dist/fonts/Roboto-Black.woff') format('woff'),
+    url('../dist/fonts/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Roboto bold */
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../dist/fonts/Roboto-Bold.eot');
+    src: url('../dist/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../dist/fonts/Roboto-Bold.woff2') format('woff2'),
+    url('../dist/fonts/Roboto-Bold.woff') format('woff'),
+    url('../dist/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Roboto medium */
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../dist/fonts/Roboto-Medium.eot');
+    src: url('../dist/fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../dist/fonts/Roboto-Medium.woff2') format('woff2'),
+    url('../dist/fonts/Roboto-Medium.woff') format('woff'),
+    url('../dist/fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Roboto regular */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../dist/fonts/Roboto-Regular.eot");
+    src: url("../dist/fonts/Roboto-Regular.eot?#iefix") format('embedded-opentype'),
+    url("../dist/fonts/Roboto-Regular.woff2") format('woff2'),
+    url("../dist/fonts/Roboto-Regular.woff") format('woff'),
+    url("../dist/fonts/Roboto-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Roboto light */
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../dist/fonts/Roboto-Light.eot');
+    src: url('../dist/fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+    url('../dist/fonts/Roboto-Light.woff2') format('woff2'),
+    url('../dist/fonts/Roboto-Light.woff') format('woff'),
+    url('../dist/fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Roboto thin */
+
+@font-face {
+    font-family: "Roboto";
+    src: url('../dist/fonts/Roboto-Thin.eot');
+    src: url('../dist/fonts/Roboto-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../dist/fonts/Roboto-Thin.woff2') format('woff2'),
+    url('../dist/fonts/Roboto-Thin.woff') format('woff'),
+    url('../dist/fonts/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
