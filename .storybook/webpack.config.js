@@ -1,6 +1,5 @@
 const path = require("path");
 
-//dont need stories path if you have your stories inside your //components folder
 module.exports = ({config}) => {
     config.module.rules.push({
         test: /\.(ts|tsx)$/,
