@@ -174,7 +174,7 @@ export default class NeoBar extends Component {
                     <NeoIcon icon={'filter'} />
                     <NeoIcon icon={'sort'} />
                     <div className='verticalLine' />
-                    <NeoIcon icon={'calculator'} />
+                    <NeoIcon icon={'calculator'} /> 
                     <NeoIcon icon={'plusBlock'} />
                     <NeoIcon icon={'barChart'} />
                     <NeoIcon icon={'add'} />

@@ -43,18 +43,18 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
 
                 <div className='block'>
                     <NeoInput type={'search'} width='192px' />
+                   {/* <div className='verticalLine' />
+                    <NeoIcon icon={'plus'} />*/}
                     <div className='verticalLine' />
-                    <NeoIcon icon={'plus'} />
+                    <NeoIcon icon={'filter'} size={"m"} style={{marginTop: "4px"}} color={'#5E6785'}/>
+                    <NeoIcon icon={'sort'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'}/>
                     <div className='verticalLine' />
-                    <NeoIcon icon={'filter'} />
-                    <NeoIcon icon={'sort'} />
+                    <NeoIcon icon={'calculator'} size={"m"} style={{marginTop: "4px"}} color={'#5E6785'}/>
+                    <NeoIcon icon={'plusBlock'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'} />
+                    <NeoIcon icon={'barChart'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'}/>
+                    <NeoIcon icon={'add'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'} />
                     <div className='verticalLine' />
-                    <NeoIcon icon={'calculator'} />
-                    <NeoIcon icon={'plusBlock'} />
-                    <NeoIcon icon={'barChart'} />
-                    <NeoIcon icon={'add'} />
-                    <div className='verticalLine' />
-                    <NeoIcon icon={'mark'} />
+                    <NeoIcon icon={'mark'} size={"m"} style={{marginTop: "4px"}} color={'#5E6785'}/>
                     <div className='verticalLine' />
                 </div>
 
@@ -66,9 +66,9 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
                         </option>
                     </NeoSelect>
                     <div className='verticalLine' />
-                    <NeoIcon icon={'download'} />
-                    <NeoIcon icon={'print'} />
-                    <NeoIcon icon={'fullScreen'} />
+                    <NeoIcon icon={'download'} size={"m"} style={{marginTop: "4px"}} color={'#5E6785'} />
+                    <NeoIcon icon={'print'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'} />
+                    <NeoIcon icon={'fullScreen'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'} />
                 </div>
 
             </div>
@@ -80,16 +80,16 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
             <div className='functionalBar__header'>
                 <div className='block'>
                     <a>
-                        <NeoIcon icon={'arrowLong'} />
-                        <span>Вернуться к таблице</span>
+                        <NeoIcon icon={'arrowLong'} style={{marginTop: "4px"}} color={'#5E6785'} />
+                        <span style={{marginLeft: "9.33px"}}>Вернуться к таблице</span>
                     </a>
                     <div className='verticalLine' />
-                    <NeoIcon icon={'plus'} />
-                    <NeoIcon icon={'edit'} />
-                    <div className='verticalLine' />
-                    <NeoIcon icon={'mark'} />
-                    <NeoIcon icon={'rubbish'} />
-                    <div className='verticalLine' />
+                    <NeoIcon icon={'plus'} size={'m'} style={{marginTop: "4px"}} color={'#5E6785'}/>
+                    <NeoIcon icon={'edit'} size={'m'} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'}/>
+                    <div className='verticalLine'/>
+                    <NeoIcon icon={'mark'} size={'m'} style={{marginTop: "4px"}} color={'#5E6785'}/>
+                    <NeoIcon icon={'rubbish'} size={'m'} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'}/>
+                    <div className='verticalLine'/>
                 </div>
 
                 <div className='block'>
@@ -100,9 +100,9 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
                         </option>
                     </NeoSelect>
                     <div className='verticalLine' />
-                    <NeoIcon icon={'download'} />
-                    <NeoIcon icon={'print'} />
-                    <NeoIcon icon={'fullScreen'} />
+                    <NeoIcon icon={'download'} size={'m'} style={{marginTop: "4px"}} color={'#5E6785'} />
+                    <NeoIcon icon={'print'}  size={'m'} style={{marginTop: "4px", marginLeft: "4px"}} color={'#5E6785'}/>
+                    <NeoIcon icon={'fullScreen'}  size={'m'} style={{marginTop: "4px", marginLeft: "4px"}} color={'#5E6785'}/>
                 </div>
             </div>
         );
