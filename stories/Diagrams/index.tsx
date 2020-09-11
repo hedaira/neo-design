@@ -243,11 +243,11 @@ export default class DiagramsPage extends Component {
             <div style={{backgroundColor: '#F2F2F2', padding:'16px 40px', height:'64px'}}>
             <NeoRow className={"bottomButtons"}>
                     <NeoCol span={5}><NeoButton size={'large'} className={'Buttons'}>Добавить</NeoButton></NeoCol>
-                <NeoCol span={5}><NeoButton size={'large'} type={'secondary'} className={'Buttons'}>Очистить</NeoButton></NeoCol>
+                    <NeoCol span={5}><NeoButton size={'large'} type={'secondary'} className={'Buttons'}>Очистить</NeoButton></NeoCol>
             </NeoRow>
             </div>
         </Form>
-    )
+    )       
 }
 }
 `}
