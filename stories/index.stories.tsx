@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
+import {storiesOf} from '@storybook/react';
 import 'antd/dist/antd.css';
 import '../stories/index.css';
 import '../components/style/neoStories.less';
-// import '../css/style.css';
-// import '../css/icons.css';
 
 import DescriptionPageDoc from "./Documentation/Description";
 import GridPageDoc from "../stories/Documentation/Grid";
@@ -16,9 +14,9 @@ import IconPage from "../stories/Icon";
 import InputPage from "../stories/Input";
 import BarsPage from "../stories/Bar";
 import TablesPage from "./Table";
+import TabsPage from "./Tabs";
 import ComponentsPage from "./Other";
 // import AlertPage from "./Feedback/Alert";
-import GridPage from "./Documentation/Grid";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
 import DiagramsPage from "./Diagrams";
@@ -58,6 +56,9 @@ storiesOf('General|Diagrams', module)
 
 storiesOf('General|Tables', module)
     .add('Tables', () => <TablesPage />)
+
+storiesOf('General|Tabs', module)
+    .add('Tabs', () => <TabsPage />)
 
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
