@@ -5,6 +5,8 @@ import {NeoAlert} from "../../components";
 
 export default class AlertPage extends React.Component {
     state = {}
+
+
     render() {
         return (
             <Fragment>
@@ -20,7 +22,6 @@ export default class AlertPage extends React.Component {
                 </SyntaxHighlighter>
 
                 <h2 className="title">Примеры:</h2>
-
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Basic</h3>
@@ -77,7 +78,6 @@ export default class AlertPage extends React.Component {
                         </p>
                     </div>
                 </section>
-
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Success</h3>

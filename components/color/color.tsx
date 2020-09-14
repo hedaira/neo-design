@@ -1,46 +1,55 @@
 import * as React from 'react';
-import classNames from 'classnames';
-import {tuple} from '../_utils/tools'
 
-export interface ColorProps {
-}
+const NeoColor = {
+    violete_8: '#000000',
+    violete_7: '#171D45',
+    violete_6: '#2A356C',
+    violete_5: '#424D78',
+    violete_4: '#5E6785',
+    violete_3: '#7E8391',
+    violete_2: 'rgba(66, 77, 120, 0.15)',
+    yellow_7: '#B38136',
+    yellow_6: '#D9A54C',
+    yellow_5: '#FFCC66',
+    yellow_4: '#FFDD8F',
+    yellow_3: '#FFECB8',
+    yellow_2: '#FFF8E0',
+    yellow_1: '#FFFCF3',
+    grey_9: '#333333',
+    grey_8: '#404040',
+    grey_7: '#666666',
+    grey_6: '#8C8C8C',
+    grey_5: '#B3B3B3',
+    grey_4: '#D9D9D9',
+    grey_3: '#E6E6E6',
+    grey_2: '#F2F2F2',
+    grey_1: '#FAFAFA',
+    magenta_8: '#610231',
+    magenta_7: '#870944',
+    magenta_6: '#AD1457',
+    magenta_5: '#BA346A',
+    magenta_4: '#C75880',
+    magenta_3: '#D47F9B',
+    magenta_2: '#E0ABBB',
+    magenta_1: '#EDDADF',
+    green_8: '#0A2430',
+    green_7: '#174557',
+    green_6: '#27677C',
+    green_5: '#417A8A',
+    green_4: '#5F8C96',
+    green_3: '#819EA3',
+    green_2: '#A5AFB0',
+    green_1: '#E7EEEF',
+    blue_8: '#0E5A7D',
+    blue_7: '#1A7CA3',
+    blue_6: '#2AA2C9',
+    blue_5: '#4FB9D6',
+    blue_4: '#78CFE3',
+    blue_3: '#A5E5F0',
+    blue_2: '#D7F8FC',
+    blue_1: '#F0FEFF'
+} as const;
 
-const presetPrimaryColors: { [key: string]: string } = {
-    red: '#F5222D',
-    volcano: '#FA541C',
-    orange: '#FA8C16',
-    gold: '#FAAD14',
-    yellow: '#FADB14',
-    lime: '#A0D911',
-    green: '#52C41A',
-    cyan: '#13C2C2',
-    blue: '#1890FF',
-    geekblue: '#2F54EB',
-    purple: '#722ED1',
-    magenta: '#EB2F96',
-    grey: '#666666',
-};
-
-interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<ColorProps & React.RefAttributes<HTMLElement>> {}
-
-const InternalColor: React.ForwardRefRenderFunction<unknown, ColorProps> = (props) => {
-    const {} = props;
-    return (
-        <button>
-
-        </button>
-    )
-
-};
-
-const Color = React.forwardRef<unknown, ColorProps>(InternalColor) as CompoundedComponent;
-
-Color.displayName = 'NeoColor';
-
-Color.defaultProps = {
-};
-
-export default Color
+export default NeoColor
 
 

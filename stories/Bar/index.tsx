@@ -192,7 +192,6 @@ export default class NeoBar extends Component {
                     </NeoSelect>
                     <div className='verticalLine' />
                     <NeoIcon icon={'download'} />
-                    <NeoIcon icon={'print'} />
                     <NeoIcon icon={'fullScreen'} />
                 </div>
 
@@ -246,7 +245,6 @@ export default class NeoBar extends Component {
                     </NeoSelect>
                     <div className='verticalLine' />
                     <NeoIcon icon={'download'} />
-                    <NeoIcon icon={'print'} />
                     <NeoIcon icon={'fullScreen'} />
                 </div>
             </div>

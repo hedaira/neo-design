@@ -7,8 +7,7 @@ import '../components/style/neoStories.less';
 import DescriptionPageDoc from "./Documentation/Description";
 import GridPageDoc from "../stories/Documentation/Grid";
 import TypographyPageDoc from "../stories/Documentation/Typography";
-import MainColorPageDoc from "../stories/Documentation/ColorPallete/Main";
-import AccentColorPageDoc from "../stories/Documentation/ColorPallete/Accent";
+import ColorPageDoc from "../stories/Documentation/Color";
 import ButtonPage from "../stories/Button";
 import IconPage from "../stories/Icon";
 import InputPage from "../stories/Input";
@@ -33,10 +32,7 @@ storiesOf('Documentation|Typography', module)
     .add('Typography', () => <TypographyPageDoc />)
 
 storiesOf('Documentation|Color', module)
-    .add('Main', () => <MainColorPageDoc />)
-
-storiesOf('Documentation|Color', module)
-    .add('Accent', () => <AccentColorPageDoc />)
+    .add('Colors', () => <ColorPageDoc />)
 
 /*General*/
 storiesOf('General|Buttons', module)
