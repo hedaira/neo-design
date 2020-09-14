@@ -15,7 +15,6 @@ export default class AlertPage extends React.Component {
                 <p className="text">
                     Alert показывает короткое и важное сообщение для того, чтобы привлечь внимание пользователя, не отвлекая его от задачи. Сообщение призвано помочь пользователю не допустить ошибку, устранить уже имеющуюся или о чем-то проинформировать важном, но не влияющем на работу приложения в целом.
                 </p>
-
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
                     {`import { NeoAlert } from "neo-design/lib";`}
