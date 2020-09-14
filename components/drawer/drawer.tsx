@@ -2,7 +2,6 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import { Drawer } from "antd";
-import { NeoButton } from "../index";
 
 const DrawerTypes = tuple('success', 'info', 'error');
 export type DrawerType = typeof DrawerTypes[number];
@@ -14,32 +13,35 @@ export interface DrawerProps {
     content?: string;
     visible?: boolean;
     onClose?;
-    onSubmit?;
-    onOk?: React.MouseEventHandler<HTMLElement>;
-    onCancel?: React.MouseEventHandler<HTMLElement>;
     width?;
     className?: string;
     children?: React.ReactNode;
     getContainer?;
     mask?;
+    footer?;
 }
 
 
 
 const prefix = 'Drawer';
 
+
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<DrawerProps & React.RefAttributes<HTMLElement>> {}
 
 const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (props) => {
     const {
-        type,
         title,
         width,
         visible,
         className,
         children,
     } = props;
+
+const classes = classNames(
+    className,
+    prefix,
+);
 
     return (
         <Drawer
@@ -49,6 +51,7 @@ const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (pr
             visible={visible}
             bodyStyle={{ paddingBottom: 80 }}
             style={{top:'80px'}}
+            className={classes}
         >
             {children}
             <div
@@ -58,17 +61,12 @@ const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (pr
                     bottom: '80px',
                     width: '100%',
                     borderTop: '1px solid #e9e9e9',
-                    padding: '10px 16px',
-                    background: '#fff',
-                    textAlign: 'right',
+                    padding: '16px 40px',
+                    background: '#F2F2F2',
+                    textAlign: 'left',
                 }}
             >
-                <NeoButton onClick={props.onSubmit}>
-                    Submit
-                </NeoButton>
-                <NeoButton type={'secondary'} onClick={props.onClose} style={{ marginRight: 8 }}>
-                    Cancel
-                </NeoButton>
+                {props.footer}
             </div>
         </Drawer>
     )
