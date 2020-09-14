@@ -67,7 +67,6 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
                     </NeoSelect>
                     <div className='verticalLine' />
                     <NeoIcon icon={'download'} size={"m"} style={{marginTop: "4px"}} color={'#5E6785'} />
-                    <NeoIcon icon={'print'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'} />
                     <NeoIcon icon={'fullScreen'} size={"m"} style={{marginLeft: "4px", marginTop: "4px"}} color={'#5E6785'} />
                 </div>
 
@@ -101,7 +100,6 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
                     </NeoSelect>
                     <div className='verticalLine' />
                     <NeoIcon icon={'download'} size={'m'} style={{marginTop: "4px"}} color={'#5E6785'} />
-                    <NeoIcon icon={'print'}  size={'m'} style={{marginTop: "4px", marginLeft: "4px"}} color={'#5E6785'}/>
                     <NeoIcon icon={'fullScreen'}  size={'m'} style={{marginTop: "4px", marginLeft: "4px"}} color={'#5E6785'}/>
                 </div>
             </div>
