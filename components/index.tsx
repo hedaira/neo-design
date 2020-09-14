@@ -22,3 +22,5 @@ export { default as NeoTypography } from './typography'
 export { default as NeoTabs } from './tabs'
 
 export { default as NeoColor } from './color'
+
+export { default as NeoDrawer } from './drawer'

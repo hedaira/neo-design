@@ -93,7 +93,6 @@ export default class AlertPage extends React.Component {
                         </p>
                     </div>
                 </section>
-
             </Fragment>
         );
     }

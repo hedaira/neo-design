@@ -10,6 +10,11 @@ thead .table__column_header {
   line-height: 14px;
   padding: 4px;
 }
+
+thead .table__column_header div {
+  display: flex;
+}
+
 thead {
   height: 48px;
   background-color: #F2F2F2 !important;
@@ -34,4 +39,12 @@ tr:hover>td:first-child{
 }
 tr:hover>td:last-child{
   border-right: 1px solid #D9D9D9 !important;
+}
+
+.ant-table-small > .ant-table-content > .ant-table-body {
+  margin: unset;
+}
+
+.ant-table-thead > tr > th .ant-table-header-column {
+  width: 100%;
 }
