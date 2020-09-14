@@ -12,6 +12,7 @@ export interface DatePickerProps {
     showTime?: any;
     className?: string;
     onChange?: any;
+    suffixIcon?: any;
 
 }
 
@@ -35,7 +36,6 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
             {...props}
             className={classes}
             style={{width: `${props.width ? props.width : "auto"}`}}
-            suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
         >
         </DatePicker>
 
