@@ -1,3 +1,3 @@
-import Color from './color';
+import NeoColor from './color';
 
-export default Color;
+export default NeoColor;
