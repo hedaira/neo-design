@@ -17,8 +17,6 @@ export default class TabsPage extends React.Component {
                 </p>
 
                 <NeoTabs
-
-                    tabPosition={"bottom"}
                     defaultActiveKey={"2"}
                     onChange={()=>{alert("changed")}}
                     animated={false}
@@ -33,7 +31,6 @@ import React from "react";
 import {NeoTabs} from "neo-design/lib";
 
 <NeoTabs
-    tabPosition={"bottom"}
     defaultActiveKey={"2"}
     onChange={( )=>{alert("changed")}}
     animated={false}

@@ -34,9 +34,9 @@ const InternalTag: React.ForwardRefRenderFunction<unknown, TagProps> = (props) =
     return <Tag
         {...props}
         className={classes}
-        style={{width: `${props.width ? props.width : "auto"}`}}
+        /*style={{width: `${props.width ? props.width : "auto"}`}}*/
     >
-      <span style={{fontStyle: "normal", fontWeight: "normal", fontSize: "14px", lineHeight: "30px", color: "#424D78", marginTop: "7px"}}>
+      <span style={{fontStyle: "normal", fontWeight: "normal", fontSize: "14px", lineHeight: "30px", color: "#424D78"}}>
         {children}
       </span>
 
