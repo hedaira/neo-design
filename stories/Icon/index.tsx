@@ -8,10 +8,6 @@ import {message} from "antd";
 
 class IconPage extends React.Component {
 
-    alert = (str: string) => {
-
-    }
-
     copyToClipboard = (icon) => {
         const el = document.createElement('textarea');
         el.value = `<NeoIcon icon={"${icon}"}/>`;
