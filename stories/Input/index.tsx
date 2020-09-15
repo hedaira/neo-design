@@ -110,14 +110,12 @@ class InputPage extends React.Component {
                     <h3 className="ex-title">Date Picker</h3>
 
                     <div>
-                       <NeoDatePicker
-                           suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}/>
+                       <NeoDatePicker/>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NXDatePicker } from "neo-design/lib";
 
-<NeoDatePicker
-suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}/>`}
+<NeoDatePicker/>}/>`}
                     </SyntaxHighlighter>
                 </section>
 
