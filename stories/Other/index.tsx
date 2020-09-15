@@ -57,11 +57,24 @@ export default class ComponentsPage extends Component {
                             <NeoButton onClick={this.showDrawer} style={{width: '150px'}}>
                                 Open Drawer
                             </NeoButton>
-                            <NeoDrawer title={'This is drawer title'} visible={this.state.visible} onClose={this.onClose} onSubmit={this.onSubmit} width={720}>
+                            <NeoDrawer
+                                title={'This is drawer title'}
+                                visible={this.state.visible}
+                                onClose={this.onClose}
+                                width={720}
+                                footer={<>
+                                    <NeoButton onClick={this.onSubmit} style={{marginRight:'16px'}}>
+                                        Применить
+                                    </NeoButton>
+                                    <NeoButton type={'secondary'} onClick={this.onClose}>
+                                        Отменить
+                                    </NeoButton>
+                                </>}
+                                >
                                 <h1>Content</h1>
                             </NeoDrawer>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
-                            {`import { NeoDrawer } from "neo-design/lib";
+                            {`import { NeoDrawer, NeoButton } from "neo-design/lib";
 
 state = {
     visible: false,
@@ -80,10 +93,23 @@ onSubmit = () => {
 } 
 
 return (
-    <NeoButton onClick={this.showDrawer}>
-    Open Drawer
+    <NeoButton onClick={this.showDrawer} style={{width: '150px'}}>
+        Open Drawer
     </NeoButton>
-    <NeoDrawer title={'This is drawer title'} visible={this.state.visible} onClose={this.onClose} onSubmit={this.onSubmit} width={720}>
+    <NeoDrawer
+        title={'This is drawer title'} 
+        visible={this.state.visible} 
+        onClose={this.onClose} 
+        width={720}
+        footer={<>
+            <NeoButton onClick={this.onSubmit} style={{marginRight:'16px'}}>
+                Применить
+            </NeoButton>
+            <NeoButton type={'secondary'} onClick={this.onClose}>
+                Отменить
+            </NeoButton>
+        </>}
+        >
         <h1>Content</h1>
     </NeoDrawer>
 )
