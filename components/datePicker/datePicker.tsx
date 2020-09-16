@@ -17,7 +17,6 @@ export interface DatePickerProps {
     disabled?: any;
     allowClear?: any;
 
-
 }
 
 const prefix = 'datepicker';

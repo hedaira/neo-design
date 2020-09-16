@@ -11,7 +11,7 @@ export interface SelectProps {
     value?: any;
     allowClear?: boolean;
     showSearch?: boolean;
-    defaultValue?: string;
+    defaultValue?: any;
     onClick?: any;
     onChange?;
     disabled?;
