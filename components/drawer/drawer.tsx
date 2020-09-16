@@ -19,6 +19,7 @@ export interface DrawerProps {
     getContainer?;
     mask?;
     footer?;
+    style?;
 }
 
 
@@ -50,7 +51,7 @@ const classes = classNames(
             onClose={props.onClose}
             visible={visible}
             bodyStyle={{ paddingBottom: 80 }}
-            style={{top:'80px'}}
+            style={{...props.style, top:'80px'}}
             className={classes}
         >
             {children}
