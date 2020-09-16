@@ -20,6 +20,7 @@ export { default as NeoTag } from './tag'
 export { default as NeoTypography } from './typography'
 
 export { default as NeoTabs } from './tabs'
+export { default as NeoDatePicker} from './datePicker'
 
 export { default as NeoColor } from './color'
 

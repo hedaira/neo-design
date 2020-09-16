@@ -5,6 +5,8 @@ import {NeoAlert} from "../../components";
 
 export default class AlertPage extends React.Component {
     state = {}
+
+
     render() {
         return (
             <Fragment>
@@ -13,14 +15,12 @@ export default class AlertPage extends React.Component {
                 <p className="text">
                     Alert показывает короткое и важное сообщение для того, чтобы привлечь внимание пользователя, не отвлекая его от задачи. Сообщение призвано помочь пользователю не допустить ошибку, устранить уже имеющуюся или о чем-то проинформировать важном, но не влияющем на работу приложения в целом.
                 </p>
-
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
                     {`import { NeoAlert } from "neo-design/lib";`}
                 </SyntaxHighlighter>
 
                 <h2 className="title">Примеры:</h2>
-
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Basic</h3>
@@ -77,7 +77,6 @@ export default class AlertPage extends React.Component {
                         </p>
                     </div>
                 </section>
-
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Success</h3>
