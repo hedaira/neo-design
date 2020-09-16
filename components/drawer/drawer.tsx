@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import { Drawer } from "antd";
+declare type getContainerFunc = () => HTMLElement;
 
 const DrawerTypes = tuple('success', 'info', 'error');
 export type DrawerType = typeof DrawerTypes[number];
@@ -16,7 +17,7 @@ export interface DrawerProps {
     width?;
     className?: string;
     children?: React.ReactNode;
-    getContainer?;
+    getContainer?: string | HTMLElement | getContainerFunc | false;
     mask?;
     footer?;
     style?;
