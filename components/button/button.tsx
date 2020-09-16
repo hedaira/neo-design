@@ -52,17 +52,23 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         }
     };
 
-    return (
-        <button
-            id={id}
-            title={title}
-            className={classes}
-            onClick={handleClick}
-            style={style}
-        >
-            {children}
-        </button>
-    )
+    if (props.hidden === true){
+        return null
+    }
+
+    if (props.hidden !== true) {
+        return (
+            <button
+                id={id}
+                title={title}
+                className={classes}
+                onClick={handleClick}
+                style={style}
+            >
+                {children}
+            </button>
+        )
+    }
 
 };
 
