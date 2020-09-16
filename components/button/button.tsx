@@ -17,6 +17,7 @@ export interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLElement>;
     style?;
     id?;
+    hidden?;
 }
 
 const prefix = 'btn';
