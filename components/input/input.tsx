@@ -28,6 +28,7 @@ export interface InputProps {
     key?;
     title?;
     onKeyUp?;
+    hidden?;
 }
 
 const prefix = 'input';
@@ -56,6 +57,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             {...props}
             autoFocus={props.autofocus}
             className={classes}
+            hidden={props.hidden}
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
@@ -68,6 +70,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             autoFocus={props.autofocus}
             type="password"
             className={classes}
+            hidden={props.hidden}
             style={{width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
@@ -80,6 +83,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             autoFocus={props.autofocus}
             className={classes}
             {...props}
+            hidden={props.hidden}
             onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
