@@ -17,6 +17,7 @@ export interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLElement>;
     style?;
     id?;
+    hidden?;
     suffixIcon?: React.ReactNode;
 }
 
@@ -61,6 +62,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 className={classes}
                 onClick={handleClick}
                 style={style}
+                hidden={props.hidden}
             >
                 <div style={{marginRight: '6px', marginBottom: '-5px'}}>
                     {suffixIcon}
@@ -79,6 +81,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 className={classes}
                 onClick={handleClick}
                 style={style}
+                hidden={props.hidden}
             >
                 {children}
             </button>
