@@ -61,17 +61,25 @@ export default class ComponentsPage extends Component {
                                 title={'This is drawer title'}
                                 visible={this.state.visible}
                                 onClose={this.onClose}
-                                width={720}
-                                footer={<>
+                                width={720}>
+                                <h1>Content</h1>
+                                <div style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    bottom: '80px',
+                                    width: '100%',
+                                    borderTop: '1px solid #e9e9e9',
+                                    padding: '16px 40px',
+                                    background: '#F2F2F2',
+                                    textAlign: 'left',
+                                }}>
                                     <NeoButton onClick={this.onSubmit} style={{marginRight:'16px'}}>
                                         Применить
                                     </NeoButton>
                                     <NeoButton type={'secondary'} onClick={this.onClose}>
                                         Отменить
                                     </NeoButton>
-                                </>}
-                                >
-                                <h1>Content</h1>
+                                </div>
                             </NeoDrawer>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`import { NeoDrawer, NeoButton } from "neo-design/lib";
@@ -100,17 +108,25 @@ return (
         title={'This is drawer title'} 
         visible={this.state.visible} 
         onClose={this.onClose} 
-        width={720}
-        footer={<>
+        width={720}>
+        <h1>Content</h1>
+        <div style={{
+            position: 'absolute',
+            right: 0,
+            bottom: '80px',
+            width: '100%',
+            borderTop: '1px solid #e9e9e9',
+            padding: '16px 40px',
+            background: '#F2F2F2',
+            textAlign: 'left',
+        }}>
             <NeoButton onClick={this.onSubmit} style={{marginRight:'16px'}}>
                 Применить
             </NeoButton>
             <NeoButton type={'secondary'} onClick={this.onClose}>
                 Отменить
-            </NeoButton>
-        </>}
-        >
-        <h1>Content</h1>
+            </NeoButton>   
+        </div>
     </NeoDrawer>
 )
 `}

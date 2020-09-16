@@ -19,6 +19,7 @@ export interface DrawerProps {
     getContainer?;
     mask?;
     footer?;
+    style?;
 }
 
 
@@ -50,24 +51,24 @@ const classes = classNames(
             onClose={props.onClose}
             visible={visible}
             bodyStyle={{ paddingBottom: 80 }}
-            style={{top:'80px'}}
+            style={{...props.style, top:'80px'}}
             className={classes}
         >
             {children}
-            <div
-                style={{
-                    position: 'absolute',
-                    right: 0,
-                    bottom: '80px',
-                    width: '100%',
-                    borderTop: '1px solid #e9e9e9',
-                    padding: '16px 40px',
-                    background: '#F2F2F2',
-                    textAlign: 'left',
-                }}
-            >
-                {props.footer}
-            </div>
+
+                {props.footer && <div
+                    style={{
+                        position: 'absolute',
+                        right: 0,
+                        bottom: '80px',
+                        width: '100%',
+                        borderTop: '1px solid #e9e9e9',
+                        padding: '16px 40px',
+                        background: '#F2F2F2',
+                        textAlign: 'left',
+                    }}
+                >{props.footer}</div>
+                }
         </Drawer>
     )
 
