@@ -54,6 +54,7 @@ const classes = classNames(
             bodyStyle={{ paddingBottom: 80 }}
             style={{...props.style, top:'80px'}}
             className={classes}
+            getContainer={props.getContainer}
         >
             {children}
 
