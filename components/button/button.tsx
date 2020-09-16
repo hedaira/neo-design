@@ -17,6 +17,7 @@ export interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLElement>;
     style?;
     id?;
+    suffixIcon?: React.ReactNode;
 }
 
 const prefix = 'btn';
@@ -32,7 +33,8 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
       className,
       children,
       style,
-      id
+      id,
+      suffixIcon
   } = props;
 
   const classes = classNames(
@@ -51,17 +53,38 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         }
     };
 
-    return (
-        <button
-            id={id}
-            title={title}
-            className={classes}
-            onClick={handleClick}
-            style={style}
-        >
-            {children}
-        </button>
-    )
+    if (suffixIcon) {
+        return (
+            <button
+                id={id}
+                title={title}
+                className={classes}
+                onClick={handleClick}
+                style={style}
+            >
+                <div style={{marginRight: '6px', marginBottom: '-5px'}}>
+                    {suffixIcon}
+                </div>
+                <div >
+                    {children}
+                </div>
+            </button>
+        )
+    }
+    else {
+        return (
+            <button
+                id={id}
+                title={title}
+                className={classes}
+                onClick={handleClick}
+                style={style}
+            >
+                {children}
+            </button>
+        )
+    }
+
 
 };
 

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoButton} from '../../components/index'
+import {NeoButton, NeoColor} from '../../components/index'
+import {NeoIcon} from "neo-icon/lib";
 // import {PropsTab} from "../../../utils/helpers";
 
 export default class ButtonPage extends React.Component {
@@ -46,19 +47,19 @@ export default class ButtonPage extends React.Component {
               Primary
             </NeoButton>
 
-            <NeoButton type={'secondary'} className="ml20">
-              Default
-            </NeoButton>
+              <NeoButton type={'secondary'} className="ml20">
+                  Default
+              </NeoButton>
 
             <NeoButton type={'disabled'} className="ml20">
               Disabled
             </NeoButton>
 
-              <NeoButton type={'link'} className="ml20" style={{color:'blue'}}>
+              <NeoButton type={'link'} className="ml20" style={{color: NeoColor.blue_7}}>
                   Link
               </NeoButton>
 
-              <NeoButton type={'ghost'} className="ml20" style={{color:'blue'}}>
+              <NeoButton type={'ghost'} className="ml20" style={{color: NeoColor.blue_7}}>
                   Ghost
               </NeoButton>
           </div>
@@ -74,6 +75,55 @@ export default class ButtonPage extends React.Component {
 <NeoButton type={'ghost'}> Ghost </NeoButton>`}
                 </SyntaxHighlighter>
         </section>
+
+          <section className="example">
+              <div>
+                  <NeoButton className='ml20'
+                             suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.grey_1}/>}
+                  >
+                      Primary
+                  </NeoButton>
+
+                  <NeoButton type={'secondary'} className="ml20"
+                             suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.violete_6}/>}
+                  >
+                      Default
+                  </NeoButton>
+
+                  <NeoButton type={'disabled'} className="ml20"
+                             suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.grey_1}/>}
+                  >
+                      Disabled
+                  </NeoButton>
+
+                  <NeoButton type={'link'} className="ml20" style={{color: NeoColor.blue_7}}
+                             suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.blue_7}/>}
+                  >
+                      Link
+                  </NeoButton>
+
+                  <NeoButton type={'ghost'} className="ml20" style={{color: NeoColor.blue_7}}
+                             suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.blue_7}/>}
+                  >
+                      Ghost
+                  </NeoButton>
+              </div>
+              <SyntaxHighlighter language='jsx' style={okaidia} >
+                  {`import {NeoButton, NeoColor} from 'neo-design/lib'
+import {NeoIcon} from "neo-icon/lib";
+
+<NeoButton suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.grey_1}/>} > Primary </NeoButton>
+
+<NeoButton type={'secondary'} suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.violete_6}/>} > Default </NeoButton>
+
+<NeoButton type={'disabled'} suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.grey_1}/>} > Disabled </NeoButton>
+
+<NeoButton type={'link'} suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.blue_7}/>} > Link </NeoButton>
+
+<NeoButton type={'ghost'} suffixIcon={<NeoIcon icon={"arrowLong"} color={NeoColor.blue_7}/>} > Ghost </NeoButton>`}
+              </SyntaxHighlighter>
+          </section>
+
         {/*<PropsTab Props={*/}
         {/*    [*/}
         {/*        {name:'primary', default:'-', description:'Кнопка для первичного призыва к действию (Primary)'},*/}
