@@ -2,11 +2,11 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Modal} from "antd/lib";
-import {NeoButton} from "../index";
+import {NeoButton, NeoTypography} from "../index";
 import {NeoIcon} from "neo-icon/lib";
 
 
-const ModalTypes = tuple('success', 'info', 'error');
+const ModalTypes = tuple('success', 'info', 'error', 'edit', 'question');
 export type ModalType = typeof ModalTypes[number];
 
 
@@ -15,11 +15,16 @@ export interface ModalProps {
         title?: string; // смотреть выше
         content?: string;
         visible?: boolean;
+        textOfLeftButton?: string;
+        textOfRightButton?: string;
+        onLeftButtonClick?: any;
+        onRightButtonClick?: any;
         onOk?: React.MouseEventHandler<HTMLElement>;
         onCancel?: React.MouseEventHandler<HTMLElement>;
         width?: string;
         className?: string;
         children?: React.ReactNode;
+        closable?;
 }
 
 
@@ -33,6 +38,10 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
   const {
       type,
       title,
+      textOfLeftButton,
+      textOfRightButton,
+      onLeftButtonClick,
+      onRightButtonClick,
       content,
       visible,
       className,
@@ -63,13 +72,13 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         }
     };
 
-    if (!props.type) {
+    if (props.type === 'question') {
         return <label className={'question'}>
         <Modal
             className={classes}
             title={title}
             visible={visible}
-            closable={false}
+            closable={props.closable}
             footer={<div>
                 <NeoButton size={'medium'} className={'question-button-close'} type={'secondary'} onClick={handleClick}>Close</NeoButton>
                 <NeoButton size={'medium'} className={'question-button-ok'} onClick={handleClick}>OK</NeoButton>
@@ -95,7 +104,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                 </div>}
             onOk={handleClick}
             visible={visible}
-            closable={false}
+            closable={props.closable}
             footer={<NeoButton className={'info-button'}  size={'medium'} onClick={handleClick}>OK</NeoButton>}
             style={{width: `${props.width ? props.width : "930px"}`}}
         >
@@ -117,7 +126,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                     </div>
                 </div>}
             visible={visible}
-            closable={false}
+            closable={props.closable}
             footer={<NeoButton size={'medium'} className={'error-button'} onClick={handleClick}>OK</NeoButton>}
             style={{width: `${props.width ? props.width : "430px"}`}}
         >
@@ -139,7 +148,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                     </div>
                 </div>}
             visible={visible}
-            closable={false}
+            closable={props.closable}
             footer={<NeoButton size={'medium'} className={'success-button'} onClick={handleClick}>OK</NeoButton>}
             style={{width: `${props.width ? props.width : "430px"}`}}
         >
@@ -149,6 +158,28 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             {children}
         </Modal>
     }
+
+    if (props.type === 'edit' ) {
+        return <label className={'question'}>
+            <Modal
+                className={classes}
+                title={title}
+                visible={visible}
+                closable={props.closable}
+                footer={<div>
+                    <NeoButton style={{width:"111px", height: "32px"}} className={'edit-button-left'} type={'secondary'} onClick={onLeftButtonClick}><NeoTypography style={{color: "#424D78"}} type={'capture-regular'}>{textOfLeftButton}</NeoTypography></NeoButton>
+                    <NeoButton style={{width:"111px", height: "32px", marginLeft: "8px"}} className={'edit-button-right'} onClick={onRightButtonClick}><NeoTypography style={{color: "#FFFFFF"}} type={'capture-regular'}>{textOfRightButton}</NeoTypography></NeoButton>
+                </div>}
+                {...props}
+                style={{width: `${props.width ? props.width : "430px"}`}}
+            >
+               <NeoTypography type={'capture-regular'} style={{color: "#333333"}}>{content} </NeoTypography>
+                {children}
+            </Modal>
+        </label>
+    }
+
+
 
 }
 
