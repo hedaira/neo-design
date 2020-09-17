@@ -34,7 +34,7 @@ export default class DiagramsPage extends Component {
         return(
 
             <Fragment>
-                <h1 className="title">Diagrams</h1>
+                <h1 className="title">Диаграммы</h1>
 
                 <h2 className="title">Примеры:</h2>
 

@@ -22,7 +22,7 @@ export default class ComponentsPage extends Component {
     render() {
         return (
             <Fragment>
-                <h1 className="title">Components</h1>
+                <h1 className="title">Другие компоненты</h1>
 
                 <section className="example">
                     <div className='flex-column'>

@@ -1,5 +1,19 @@
 .Modal{
 
+  &-question {
+    .ant-modal-content .ant-modal-close{
+      display: none
+    }
+  }
+
+  &-edit {
+    .ant-modal-content{
+      height: 175px;
+    }
+  }
+
+
+
   &-info{
 
       .info-button{
@@ -10,6 +24,10 @@
         line-height: 14px;
         font-weight: 400;
       }
+
+    .ant-modal-content .ant-modal-close{
+      display: none
+    }
 
 
     .ant-modal-title{
@@ -41,6 +59,10 @@
       font-weight: 400;
     }
 
+    .ant-modal-content .ant-modal-close{
+      display: none
+    }
+
     .ant-modal-title{
       color: #2A356C;
       height: 100px;
@@ -66,6 +88,9 @@
       font-size: 12px;
       line-height: 14px;
       font-weight: 400;
+    }
+    .ant-modal-content .ant-modal-close{
+      display: none
     }
 
     .ant-modal-title{
@@ -103,15 +128,20 @@
   font-weight: 400;
 }
 
+.edit-button-left{
+ margin-top: 20px;
+}
+
+.edit-button-right{
+  margin-top: 20px;
+}
+
 .ant-modal-content{
   border-radius: 4px;
   width: 430px;
   height: 158px;
 }
 
-.ant-modal-content .ant-modal-close{
-  display: none
-}
 
 .ant-modal-header{
   padding: 24px 24px 16px;

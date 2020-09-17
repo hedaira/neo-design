@@ -8,7 +8,8 @@ export default class ModalPage extends Component {
         visible: false,
         visibleInfo: false,
         visibleError: false,
-        visibleSuccess: false
+        visibleSuccess: false,
+        visibleEdit: false,
 
     };
 
@@ -22,6 +23,32 @@ export default class ModalPage extends Component {
         this.setState({
             visible: false,
         });
+    };
+
+    showModalEdit = () => {
+        this.setState({
+            visibleEdit: true,
+        });
+    };
+
+    handleLeftEdit = () => {
+        this.setState({
+            visibleEdit: false,
+        });
+        alert("left")
+    };
+
+    close = () => {
+        this.setState({
+            visibleEdit: false,
+        });
+    };
+
+    handleRightEdit = () => {
+        this.setState({
+            visibleEdit: false,
+        });
+        alert("right")
     };
 
     showModalInfo = () => {
@@ -61,7 +88,7 @@ export default class ModalPage extends Component {
     render() {
         return (
             <Fragment>
-                <h1 className="title">Modal</h1>
+                <h1 className="title">Модальное окно</h1>
 
                 <p className="text">
                     Модальное окно — это окно, которое блокирует работу пользователя с приложением до тех пор, пока это окно не закроют.
@@ -70,7 +97,7 @@ export default class ModalPage extends Component {
                 </p>
 
                 <p className="text">
-                    Отличие от компонента alert:
+                    Отличие от компонента Алерт:
                     <br/>
                     Модальное окно блокирует работу с приложением до тех пор, пока его (модальное окно) не закроют.
                     У модального окна всегда есть кнопка действия.
@@ -90,8 +117,9 @@ export default class ModalPage extends Component {
                         <br/>
                         <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
                         <br/>
-                        <NeoModal title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>
+                        <NeoModal type={'question'} title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>
                         </NeoModal>
+
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`state = {visible: false}
 showModal = () => {this.setState({visible: true})}
@@ -161,6 +189,36 @@ handleOk = () => {this.setState({visible: false})}
                         </SyntaxHighlighter>
                     </div>
                 </section>
+
+
+                <section className="example space-between">
+                    <div>
+                        <h3 className="ex-title">Edit</h3>
+                        <br/>
+                        <NeoButton type={'secondary'} onClick={this.showModalEdit}>Open Modal</NeoButton>
+                        <br/>
+                        <NeoModal  onCancel={this.close} closable={true} type={'edit'} title={"Question?"} content={"You still have unsaved changes. By clicking the \"Delete\" button you will return to the table without changes."} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
+                                              onRightButtonClick={this.handleRightEdit} textOfLeftButton={"left"} textOfRightButton={"right"}
+                    >
+                    </NeoModal>
+                        <SyntaxHighlighter language='jsx' style={okaidia}>
+                            {`state = {visibleEdit: false}
+showModalEdit = () => {this.setState({ visibleEdit: true,});};
+handleLeftEdit = () => {this.setState({visibleEdit: false,});alert("left")};
+handleRightEdit = () => {this.setState({visibleEdit: false,});alert("right")};
+
+
+    
+<NeoButton type={'secondary'} onClick={this.showModalEdit}>Open Modal</NeoButton>
+<NeoModal onCancel={this.close} type={'edit'} title={"Edit?"} content={"This is a edit mode modal"} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
+                                  onRightButtonClick={this.handleRightEdit} textOfLeftButton={"left"} textOfRightButton={"right"}
+                        >
+                        </NeoModal>
+`}
+                        </SyntaxHighlighter>
+                    </div>
+                </section>
+
 
                 {/*<PropsTab Props={
                     [
