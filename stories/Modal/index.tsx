@@ -88,7 +88,7 @@ export default class ModalPage extends Component {
     render() {
         return (
             <Fragment>
-                <h1 className="title">Modal</h1>
+                <h1 className="title">Модальное окно</h1>
 
                 <p className="text">
                     Модальное окно — это окно, которое блокирует работу пользователя с приложением до тех пор, пока это окно не закроют.
@@ -97,7 +97,7 @@ export default class ModalPage extends Component {
                 </p>
 
                 <p className="text">
-                    Отличие от компонента alert:
+                    Отличие от компонента Алерт:
                     <br/>
                     Модальное окно блокирует работу с приложением до тех пор, пока его (модальное окно) не закроют.
                     У модального окна всегда есть кнопка действия.
