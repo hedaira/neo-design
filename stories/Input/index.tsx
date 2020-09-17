@@ -11,15 +11,9 @@ class InputPage extends React.Component {
 
         return (
             <React.Fragment>
-                <h1 className="title">Input</h1>
+                <h1 className="title">Формы ввода</h1>
 
-                <h2 className="title">When to use</h2>
-
-                <p className="text">
-                    A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
-                </p>
-
-                <h2 className="title">Examples:</h2>
+                <h2 className="title">Примеры:</h2>
                 <section className="example">
                     <div>
                         <h3 className="ex-title">Checkbox</h3>
@@ -84,6 +78,7 @@ class InputPage extends React.Component {
 
                     <div>
                         <h4>Clear input</h4>
+                        <br />
                         <NeoInput width={'250px'} allowClear />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >

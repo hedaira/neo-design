@@ -10,10 +10,10 @@ export default class AlertPage extends React.Component {
     render() {
         return (
             <Fragment>
-                <h1 className="title">Alert</h1>
+                <h1 className="title">Алерт</h1>
 
                 <p className="text">
-                    Alert показывает короткое и важное сообщение для того, чтобы привлечь внимание пользователя, не отвлекая его от задачи. Сообщение призвано помочь пользователю не допустить ошибку, устранить уже имеющуюся или о чем-то проинформировать важном, но не влияющем на работу приложения в целом.
+                    Алерт показывает короткое и важное сообщение для того, чтобы привлечь внимание пользователя, не отвлекая его от задачи. Сообщение призвано помочь пользователю не допустить ошибку, устранить уже имеющуюся или о чем-то проинформировать важном, но не влияющем на работу приложения в целом.
                 </p>
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
@@ -24,6 +24,7 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Basic</h3>
+                        <br/>
                         <NeoAlert message={'Success Text'} width={'233px'}/>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`<NeoAlert message={'Success Text'} width={'233px'}/>`}
@@ -34,6 +35,7 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Error</h3>
+                        <br/>
                         <NeoAlert type={'error'} message={'Error'} description={'This is an error alert'}/>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
@@ -49,6 +51,7 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Info</h3>
+                        <br/>
                         <NeoAlert type={'info'} message={'Info'}  description={'This is an info alert'}/>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
@@ -65,6 +68,7 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Warning</h3>
+                        <br/>
                         <NeoAlert type={'warning'} message={'Warning'}  description={'This is a warning alert'}/>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
@@ -80,6 +84,7 @@ export default class AlertPage extends React.Component {
                 <section className="example space-between">
                     <div>
                         <h3 className="ex-title">Success</h3>
+                        <br/>
                         <NeoAlert type={'success'} message={'Success'} description={'This is a success alert'} />
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >

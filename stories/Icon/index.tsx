@@ -146,17 +146,17 @@ class IconPage extends React.Component {
 
         return (
             <React.Fragment>
-                <h1 className="title">Icons</h1>
+                <h1 className="title">Иконки</h1>
 
                 <SyntaxHighlighter language='jsx' style={okaidia} >
                     {`import { NeoIcon } from "neo-design/lib";`}
                 </SyntaxHighlighter>
 
 
-                <h2 className="title">Examples:</h2>
+                <h2 className="title">Примеры:</h2>
                 <section className="example">
                     <div>
-                        <h3 className="ex-title">Size</h3>
+                        <h3 className="ex-title">Размер</h3>
                         <br />
                         <div className="icon">
                             <NeoIcon icon={"notification"} size={"m"}/>
@@ -179,7 +179,7 @@ class IconPage extends React.Component {
 
                 <section className="example">
                     <div>
-                        <h3 className="ex-title">Color</h3>
+                        <h3 className="ex-title">Цвет</h3>
                         <br />
                         <div className="icon">
                             <NeoIcon icon={"notification"} size={"m"} color={'#171d45'}/>
@@ -212,7 +212,7 @@ class IconPage extends React.Component {
                     </SyntaxHighlighter>
                 </section>
 
-                <h2 className="title">When you click on the icon, it will be copied to the clipboard</h2>
+                <h2 className="title">Нажав на иконку, ее код будет скопирован в буфер</h2>
 
                 <section className="example">
                     <div>

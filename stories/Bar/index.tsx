@@ -11,9 +11,9 @@ export default class BarsPage extends Component {
 
         return (
             <Fragment>
-                <h1 className="title">Bars</h1>
+                <h1 className="title">Бары</h1>
 
-                <h2 className="title">Examples:</h2>
+                <h2 className="title">Примеры:</h2>
 
 {/*                <section className="example">*/}
 {/*                    <h3 className="ex-title">Calendar</h3>*/}
