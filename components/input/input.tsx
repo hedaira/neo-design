@@ -94,17 +94,16 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     if (props.type === 'checkbox') {
         return <label className={classes} style={props.disabled? {cursor:'no-drop'}:{}}>
             <input type={'checkbox'} checked={(props.checked)} defaultChecked={(props.defaultChecked)} onChange={props.onChange} disabled={props.disabled}/>
-            <span className="checkmark" style={props.disabled? {backgroundColor:'rgba(0,0,0,0.15)'}:{}} />
+            <span className="checkmark" style={props.disabled? {backgroundColor:'#E6E6E6', border:'1px solid #8C8C8C'}:{}} />
             <span>{children}</span>
         </label>
     }
 
     if (props.type === 'radio') {
-        return <label
-            className={classes} >
-            {children}
-                <input type={'radio'} name={props.name} value={props.value} />
+        return <label className={classes}>
+            <input type={'radio'} name={props.name} value={props.value} />
             <span className="checkmark" />
+            <span>{children}</span>
         </label>
     }
 

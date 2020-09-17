@@ -18,7 +18,7 @@ class InputPage extends React.Component {
                     <div>
                         <h3 className="ex-title">Checkbox</h3>
                         <br />
-                        <NeoInput type={'checkbox'}>Checkbox 1</NeoInput>
+                        <NeoInput type={'checkbox'} disabled checked>Checkbox 1</NeoInput>
                         <NeoInput type={'checkbox'}>Checkbox 2</NeoInput>
                         <NeoInput type={'checkbox'}>Checkbox 3</NeoInput>
                     </div>
