@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import {NeoCol, NeoRow, NeoTypography} from "../../../components";
+import {NeoCol, NeoRow, NeoTypography, NeoButton} from "../../../components";
 import {okaidia} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
+import showCode from "../../../components/_utils/tools";
 
 const marginBottom = '20px';
 export default class TypographyPageDoc extends Component {
@@ -208,8 +209,11 @@ export default class TypographyPageDoc extends Component {
                             <NeoTypography type={'capture-light'}>Text</NeoTypography>
                         </NeoCol>
                     </NeoRow>
-                    <SyntaxHighlighter language='jsx' style={okaidia} >
-                        {`import {NeoCol, NeoRow, NeoTypography} from "neo-design/lib";
+
+                    <div className='showCode'>
+                        <NeoButton  id='typographyAll' style={{width: '170px'}} onClick={showCode}>Show code</NeoButton>
+                        <SyntaxHighlighter id='typographyAll' language='jsx' style={okaidia} >
+                            {`import {NeoCol, NeoRow, NeoTypography} from "neo-design/lib";
 const marginBottom = '20px';
 
 <NeoRow style={{marginBottom: marginBottom}}>
@@ -400,7 +404,28 @@ const marginBottom = '20px';
         <NeoTypography type={'capture-light'}>Text</NeoTypography>
     </NeoCol>
 </NeoRow>`}
-                    </SyntaxHighlighter>
+                        </SyntaxHighlighter>
+                    </div>
+                </section>
+                <p className="text">
+                    <NeoTypography type={'h3-medium'}>Hover</NeoTypography>
+                </p>
+                <section className="example">
+                    <p className="text">
+                        <NeoTypography type={'h3-medium'} hoverTextDecoration={'underline'} style={{cursor: 'pointer'}}>Underline</NeoTypography>
+                    </p>
+                    <p className="text">
+                        <NeoTypography type={'h3-medium'} hoverTextDecoration={'line-through'} style={{cursor: 'pointer'}}>Line-through</NeoTypography>
+                    </p>
+                    <div className='showCode'>
+                        <NeoButton  id='typographyHover' style={{width: '170px'}} onClick={showCode}>Show code</NeoButton>
+                        <SyntaxHighlighter id='typographyHover' language='jsx' style={okaidia} >
+                            {`import {NeoTypography} from "neo-design/lib";
+
+<NeoTypography type={'h3-medium'} hoverTextDecoration={'underline'} style={{cursor: 'pointer'}}>Underline</NeoTypography>
+<NeoTypography type={'h3-medium'} hoverTextDecoration={'line-through'} style={{cursor: 'pointer'}}>Line-through</NeoTypography>`}
+                        </SyntaxHighlighter>
+                    </div>
                 </section>
             </Fragment>
         );

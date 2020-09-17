@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import { NeoBar } from '../../components'
+import {NeoBar, NeoButton} from '../../components'
 
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -155,7 +155,7 @@ export default class BarsPage extends Component {
                     </div>
 
                     <div className='showCode'>
-                        <button id='functionalBar' onClick={showCode}>Show Code</button>
+                        <NeoButton  id='functionalBar' style={{width: '170px'}} onClick={showCode}>Show code</NeoButton>
                         <SyntaxHighlighter id='functionalBar' language='jsx' style={okaidia} >
                             {`import React, {Component} from 'react';
 import {NeoIcon, NeoInput, NeoSelect} from "neo-design/lib";
@@ -212,7 +212,7 @@ export default class NeoBar extends Component {
                     </div>
 
                     <div className='showCode'>
-                        <button id='diagramBar' onClick={showCode}>Show Code</button>
+                        <NeoButton  id='diagramBar' style={{width: '170px'}} onClick={showCode}>Show code</NeoButton>
                         <SyntaxHighlighter id='diagramBar' language='jsx' style={okaidia} >
                             {`import React, {Component} from 'react';
 import {NeoIcon, NeoSelect} from 'neo-design/lib';

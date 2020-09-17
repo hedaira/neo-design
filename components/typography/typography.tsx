@@ -22,12 +22,20 @@ const TypographyTypes = tuple(
     'h1-regular');
 export type TypographyType = typeof TypographyTypes[number];
 
+const TextDecorations = tuple(
+    'line-through',
+    'overline',
+    'underline');
+
+export type TextDecoration = typeof TextDecorations[number];
+
 export interface TypographyProps {
     type?: TypographyType;
     className?: string;
     children?: React.ReactNode;
     style?;
     id?;
+    hoverTextDecoration?: TextDecoration;
 }
 
 const prefix = 'typography';
@@ -41,13 +49,15 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, TypographyProps> =
       className,
       children,
       style,
-      id
+      id,
+      hoverTextDecoration
   } = props;
 
   const classes = classNames(
       prefix,
       {
-        [`${prefix}-${type || 'capture-regular'}`]: true
+          [`${prefix}-${type || 'capture-regular'}`]: true,
+          [`${prefix}-${hoverTextDecoration}`]: hoverTextDecoration
       },
       className
   );
