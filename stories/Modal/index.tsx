@@ -198,9 +198,9 @@ handleOk = () => {this.setState({visible: false})}
                         <NeoButton type={'secondary'} onClick={this.showModalEdit}>Open Modal</NeoButton>
                         <br/>
                         <NeoModal  onCancel={this.close} closable={true} type={'edit'} title={"Question?"} content={"You still have unsaved changes. By clicking the \"Delete\" button you will return to the table without changes."} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
-                                  onRightButtonClick={this.handleRightEdit} textOfLeftButton={"left"} textOfRightButton={"right"}
-                        >
-                        </NeoModal>
+                                              onRightButtonClick={this.handleRightEdit} textOfLeftButton={"left"} textOfRightButton={"right"}
+                    >
+                    </NeoModal>
                         <SyntaxHighlighter language='jsx' style={okaidia}>
                             {`state = {visibleEdit: false}
 showModalEdit = () => {this.setState({ visibleEdit: true,});};

@@ -168,7 +168,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                 closable={props.closable}
                 footer={<div>
                     <NeoButton style={{width:"111px", height: "32px"}} className={'edit-button-left'} type={'secondary'} onClick={onLeftButtonClick}><NeoTypography style={{color: "#424D78"}} type={'capture-regular'}>{textOfLeftButton}</NeoTypography></NeoButton>
-                    <NeoButton style={{width:"111px", height: "32px"}} className={'edit-button-right'} onClick={onRightButtonClick}><NeoTypography style={{color: "#FFFFFF"}} type={'capture-regular'}>{textOfRightButton}</NeoTypography></NeoButton>
+                    <NeoButton style={{width:"111px", height: "32px", marginLeft: "8px"}} className={'edit-button-right'} onClick={onRightButtonClick}><NeoTypography style={{color: "#FFFFFF"}} type={'capture-regular'}>{textOfRightButton}</NeoTypography></NeoButton>
                 </div>}
                 {...props}
                 style={{width: `${props.width ? props.width : "430px"}`}}
