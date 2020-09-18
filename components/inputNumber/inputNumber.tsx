@@ -14,6 +14,9 @@ export interface InputNumberProps {
   formatter?: (value: number | string | undefined) => string;
   min?: number;
   max?: number;
+  value?: number;
+  placeholder?: string;
+  disabled?: boolean;
   onChange?: any;
   style?: React.CSSProperties;
 }
