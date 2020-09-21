@@ -8,17 +8,21 @@
     font-size: 12px;
     line-height: 2.5;
     color: #333333;
-    //padding: 9px 12px 9px 12px;
     margin: 0;
     box-shadow: none;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-
+    font-family: Roboto;
     &:focus, &:hover, &:active {
       box-shadow: none;
       border: 1px solid #2A356C !important;
     }
 
+      input {
+        font-size: 12px;
+        font-family: Roboto;
+        color: #333333;
+      }
     &-search, &-textArea {
       &:focus, &:hover {
         outline: none;
@@ -29,7 +33,9 @@
     }
 
     &-textArea {
+      padding: 7px 12px;
       height: auto;
+      line-height: 1.5;
     }
 
     &-checkbox input {
@@ -50,7 +56,7 @@
   margin-bottom: 17px;
   cursor: pointer;
   font-size: 14px;
-  line-height: 1;
+  line-height: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -111,7 +117,7 @@
     margin-bottom: 10px;
     cursor: pointer;
     font-size: 14px;
-    line-height: 1;
+    line-height: 18px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
