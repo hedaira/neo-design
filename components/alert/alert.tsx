@@ -100,11 +100,11 @@ const InternalAlert: React.ForwardRefRenderFunction<unknown, AlertProps> = (prop
 
     if (props.type === 'warning') {
         return <Alert
-            {...props}
             banner
             closable={closable || true}
             message={message}
             className={classes}
+            {...props}
             style={{width: `${props.width ? props.width : "370px"}`}}
             icon={<NeoIcon icon={'info'} size={"m"} color={'#D9A54C'}/>}
             closeText={!closable && <NeoIcon icon={"close"} color={'#B3B3B3'}/>}

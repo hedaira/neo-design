@@ -79,9 +79,9 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
 
     if (props.type === 'search') {
         return <Input.Search
-            {...props}
             placeholder='Поиск'
             autoFocus={props.autofocus}
+            {...props}
             className={classes}
             hidden={props.hidden}
             onSearch={props.onSearch}

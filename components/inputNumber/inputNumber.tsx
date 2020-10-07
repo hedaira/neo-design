@@ -40,8 +40,8 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, InputNumberPr
 
 
     return <InputNumber
-        {...props}
         className={classes}
+        {...props}
         style={{width: `${props.width ? props.width : "auto"}`}}
     >
       {children}

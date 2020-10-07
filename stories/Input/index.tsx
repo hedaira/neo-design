@@ -66,7 +66,7 @@ class InputPage extends React.Component {
                     <div>
                         <h4>Search input</h4>
                         <br />
-                        <NeoInput type={'search'} width={"250px"} />
+                        <NeoInput type={'search'} className={'inputttt'} width={"250px"} />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoInput } from "neo-design/lib";

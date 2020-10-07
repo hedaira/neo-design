@@ -51,8 +51,8 @@ const InternalCol: React.ForwardRefRenderFunction<ColSize, ColProps> = (props) =
 
     return (
         <Col
-            {...props}
             className={classes}
+            {...props}
         >
             {children}
         </Col>

@@ -47,7 +47,6 @@ const classes = classNames(
 
     return (
         <Drawer
-            {...props}
             title={title}
             width={width}
             onClose={props.onClose}
@@ -55,6 +54,7 @@ const classes = classNames(
             bodyStyle={{ paddingBottom: 80 }}
             style={{...props.style, top:'79px'}}
             className={classes}
+            {...props}
             getContainer={props.getContainer}
         >
             {children}
