@@ -34,8 +34,8 @@ const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) 
 
     return (
         <Row
-            className={classes}
             {...props}
+            className={classes}
         >
             {children}
         </Row>
