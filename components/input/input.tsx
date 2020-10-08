@@ -49,7 +49,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         {
             [`${prefix}-${type}`]: type,
         },
-        className,
+            className,
     );
 
     if (!props.type && !props.password) {
@@ -81,8 +81,8 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         return <Input.Search
             placeholder='Поиск'
             autoFocus={props.autofocus}
-            className={classes}
             {...props}
+            className={classes}
             hidden={props.hidden}
             onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
@@ -94,22 +94,21 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     if (props.type === 'checkbox') {
         return <label className={classes} style={props.disabled? {cursor:'no-drop'}:{}}>
             <input type={'checkbox'} checked={(props.checked)} defaultChecked={(props.defaultChecked)} onChange={props.onChange} disabled={props.disabled}/>
-            <span className="checkmark" style={props.disabled? {backgroundColor:'rgba(0,0,0,0.15)'}:{}} />
+            <span className="checkmark" style={props.disabled? {backgroundColor:'#E6E6E6', border:'1px solid #8C8C8C'}:{}} />
             <span>{children}</span>
         </label>
     }
 
     if (props.type === 'radio') {
-        return <label
-            className={classes} >
-            {children}
-                <input type={'radio'} name={props.name} value={props.value} />
+        return <label className={classes}>
+            <input type={'radio'} name={props.name} value={props.value} />
             <span className="checkmark" />
+            <span>{children}</span>
         </label>
     }
 
     if (props.type === 'textArea') {
-        return <textarea className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}}>
+        return <textarea className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}} placeholder={props.placeholder}>
             {children}
         </textarea>
     }

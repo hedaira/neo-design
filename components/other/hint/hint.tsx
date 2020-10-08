@@ -33,9 +33,9 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, HintProps> = (prop
 
     return <div className={classes}
     ><Tooltip
+        {...props}
         title={props.title}
         placement="bottomLeft"
-        {...props}
     >{children}</Tooltip></div>
 }
 

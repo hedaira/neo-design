@@ -75,6 +75,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
     if (props.type === 'question') {
         return <label className={'question'}>
         <Modal
+            {...props}
             className={classes}
             title={title}
             visible={visible}
@@ -83,7 +84,6 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                 <NeoButton size={'medium'} className={'question-button-close'} type={'secondary'} onClick={handleClick}>Close</NeoButton>
                 <NeoButton size={'medium'} className={'question-button-ok'} onClick={handleClick}>OK</NeoButton>
             </div>}
-            {...props}
             style={{width: `${props.width ? props.width : "430px"}`}}
         >
             {content}
@@ -94,6 +94,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
 
     if (props.type === 'info') {
         return <Modal
+            {...props}
             className={classes}
             title={
                 <div>
@@ -117,6 +118,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
 
     if (props.type === 'error') {
         return <Modal
+            {...props}
             className={classes}
             title={
                 <div>
@@ -139,6 +141,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
 
     if (props.type === 'success') {
         return <Modal
+            {...props}
             className={classes}
             title={
                 <div>
@@ -163,6 +166,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         return <label className={'question'}>
             <Modal
                 className={classes}
+                {...props}
                 title={title}
                 visible={visible}
                 closable={props.closable}
@@ -170,7 +174,6 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                     <NeoButton style={{width:"111px", height: "32px"}} className={'edit-button-left'} type={'secondary'} onClick={onLeftButtonClick}><NeoTypography style={{color: "#424D78"}} type={'capture-regular'}>{textOfLeftButton}</NeoTypography></NeoButton>
                     <NeoButton style={{width:"111px", height: "32px", marginLeft: "8px"}} className={'edit-button-right'} onClick={onRightButtonClick}><NeoTypography style={{color: "#FFFFFF"}} type={'capture-regular'}>{textOfRightButton}</NeoTypography></NeoButton>
                 </div>}
-                {...props}
                 style={{width: `${props.width ? props.width : "430px"}`}}
             >
                <NeoTypography type={'capture-regular'} style={{color: "#333333"}}>{content} </NeoTypography>

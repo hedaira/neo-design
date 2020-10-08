@@ -52,8 +52,9 @@ const classes = classNames(
             onClose={props.onClose}
             visible={visible}
             bodyStyle={{ paddingBottom: 80 }}
-            style={{...props.style, top:'80px'}}
+            style={{...props.style, top:'79px'}}
             className={classes}
+            {...props}
             getContainer={props.getContainer}
         >
             {children}
@@ -62,7 +63,7 @@ const classes = classNames(
                     style={{
                         position: 'absolute',
                         right: 0,
-                        bottom: '80px',
+                        bottom: '79px',
                         width: '100%',
                         borderTop: '1px solid #e9e9e9',
                         padding: '16px 40px',

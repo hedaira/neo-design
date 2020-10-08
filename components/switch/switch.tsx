@@ -34,9 +34,9 @@ const InternalSwitch: React.ForwardRefRenderFunction<unknown, SwitchProps> = (pr
     );
 
         return <Switch
-            {...props}
             style={props.style}
             className={classes}
+            {...props}
         >
         </Switch>
 

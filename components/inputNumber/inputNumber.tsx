@@ -14,6 +14,9 @@ export interface InputNumberProps {
   formatter?: (value: number | string | undefined) => string;
   min?: number;
   max?: number;
+  value?: number;
+  placeholder?: string;
+  disabled?: boolean;
   onChange?: any;
   style?: React.CSSProperties;
 }
@@ -37,8 +40,8 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, InputNumberPr
 
 
     return <InputNumber
-        {...props}
         className={classes}
+        {...props}
         style={{width: `${props.width ? props.width : "auto"}`}}
     >
       {children}

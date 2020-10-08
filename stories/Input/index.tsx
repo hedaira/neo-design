@@ -3,7 +3,6 @@ import * as React from 'react';
 import { NeoInput, NeoSelect, NeoDatePicker } from '../../components/index';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoIcon} from "neo-icon/lib";
 // import {PropsTab} from "../../../utils/helpers";
 
 class InputPage extends React.Component {
@@ -18,14 +17,14 @@ class InputPage extends React.Component {
                     <div>
                         <h3 className="ex-title">Checkbox</h3>
                         <br />
-                        <NeoInput type={'checkbox'}>Checkbox 1</NeoInput>
+                        <NeoInput type={'checkbox'} disabled checked>Checkbox 1</NeoInput>
                         <NeoInput type={'checkbox'}>Checkbox 2</NeoInput>
                         <NeoInput type={'checkbox'}>Checkbox 3</NeoInput>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoInput } from "neo-design/lib";
 
-<NeoInput type={'checkbox'}>Checkbox 1</NeoInput>
+<NeoInput type={'checkbox'} disabled checked>Checkbox 1</NeoInput>
 <NeoInput type={'checkbox'}>Checkbox 2</NeoInput>
 <NeoInput type={'checkbox'}>Checkbox 3</NeoInput>`}
                     </SyntaxHighlighter>
@@ -67,7 +66,7 @@ class InputPage extends React.Component {
                     <div>
                         <h4>Search input</h4>
                         <br />
-                        <NeoInput type={'search'} width={"250px"} />
+                        <NeoInput type={'search'} className={'inputttt'} width={"250px"} />
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoInput } from "neo-design/lib";
