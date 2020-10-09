@@ -19,6 +19,7 @@ import ComponentsPage from "./Other";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
 import DiagramsPage from "./Diagrams";
+import TagPage from "./Tag";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -55,6 +56,9 @@ storiesOf('General|Tables', module)
 
 storiesOf('General|Tabs', module)
     .add('Tabs', () => <TabsPage />)
+
+storiesOf('General|Tag', module)
+    .add('Tag', () => <TagPage />)
 
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
