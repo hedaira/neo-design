@@ -77,12 +77,12 @@ class IconPage extends React.Component {
         const arrows = [
             'arrowUp',
             'arrowDown',
-            'arrowVerticalLeft',
+            'arrowVerticalRight',
             'arrowLeft',
             'arrowRight',
-            'arrowVerticalRight',
-            'moveUp',
-            'moveDown'
+            'arrowVerticalLeft',
+            'moveDown',
+            'moveUp'
         ];
 
         const tables = [
