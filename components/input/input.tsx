@@ -49,7 +49,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         {
             [`${prefix}-${type}`]: type,
         },
-        className,
+            className,
     );
 
     if (!props.type && !props.password) {
@@ -81,8 +81,8 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         return <Input.Search
             placeholder='Поиск'
             autoFocus={props.autofocus}
-            className={classes}
             {...props}
+            className={classes}
             hidden={props.hidden}
             onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}

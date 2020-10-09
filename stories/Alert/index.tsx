@@ -37,7 +37,6 @@ export default class AlertPage extends React.Component {
                         <h3 className="ex-title">Error</h3>
                         <br/>
                         <NeoAlert type={'error'} message={'Error'} description={'This is an error alert'}/>
-
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`<NeoAlert type={'error'} message={'Error'} description={'This is an error alert'}/>`}
                         </SyntaxHighlighter>
