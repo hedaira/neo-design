@@ -77,8 +77,12 @@ class IconPage extends React.Component {
         const arrows = [
             'arrowUp',
             'arrowDown',
+            'arrowVerticalRight',
             'arrowLeft',
-            'arrowRight'
+            'arrowRight',
+            'arrowVerticalLeft',
+            'moveDown',
+            'moveUp'
         ];
 
         const tables = [
@@ -125,7 +129,9 @@ class IconPage extends React.Component {
             'importFile',
             'undo',
             'checkbox',
-            'checkboxFill'
+            'checkboxFill',
+            'cloudServer',
+            'code'
         ];
 
         const colorIcons = [
