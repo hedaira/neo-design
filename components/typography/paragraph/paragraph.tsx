@@ -65,7 +65,6 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, NeoParagraphProps>
             {children}
         </Paragraph>
     )
-
 };
 
 const NeoParagraph = React.forwardRef<unknown, NeoParagraphProps>(InternalButton) as CompoundedComponent;
