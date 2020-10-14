@@ -13,7 +13,7 @@ export interface NeoParagraphProps {
     copyable?;
     editable?;
     code?;
-    deleted?;
+    delete?;
     disabled?;
     ellipsis?;
     mark?;
@@ -39,7 +39,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, NeoParagraphProps>
         ellipsis,
         mark,
         underline,
-        strong
+        strong,
     } = props;
 
     const classes = classNames(
@@ -60,6 +60,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, NeoParagraphProps>
             mark={mark}
             underline={underline}
             strong={strong}
+            delete={props.delete}
         >
             {children}
         </Paragraph>
