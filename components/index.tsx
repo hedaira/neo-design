@@ -18,6 +18,7 @@ export { default as NeoSwitch } from './switch'
 export { default as NeoTag } from './tag'
 
 export { default as NeoTypography } from './typography'
+export { default as NeoParagraph } from './typography/paragraph'
 
 export { default as NeoTabs } from './tabs'
 export { default as NeoDatePicker} from './datePicker'
