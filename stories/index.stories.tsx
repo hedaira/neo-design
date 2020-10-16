@@ -14,12 +14,18 @@ import InputPage from "../stories/Input";
 import BarsPage from "../stories/Bar";
 import TablesPage from "./Table";
 import TabsPage from "./Tabs";
-import ComponentsPage from "./Other";
 // import AlertPage from "./Feedback/Alert";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
 import DiagramsPage from "./Diagrams";
 import TagPage from "./Tag";
+import SwitcherPage from "./Switcher";
+import DrawerPage from "./Drawer";
+import HintPage from "./Hint";
+import DatePickerPage from "./DatePicker";
+import CheckboxesPage from "./Checkboxes";
+import RadioPage from "./Radio";
+import SelectsPage from "./Selects";
 // import ModalPage from "./Feedback/Modal";
 
 /*Documentation*/
@@ -60,13 +66,34 @@ storiesOf('General|Tabs', module)
 storiesOf('General|Tag', module)
     .add('Tag', () => <TagPage />)
 
+storiesOf('General|Hint', module)
+    .add('Hint', () => <HintPage />)
+
+storiesOf('General|Switcher', module)
+    .add('Switcher', () => <SwitcherPage />)
+
+storiesOf('General|DatePicker', module)
+    .add('DatePicker', () => <DatePickerPage />)
+
+storiesOf('General|Checkboxes', module)
+    .add('Checkboxes', () => <CheckboxesPage />)
+
+storiesOf('General|Radio', module)
+    .add('Radio', () => <RadioPage />)
+
+storiesOf('General|Select', module)
+    .add('Selects', () => <SelectsPage />)
+
+
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
      .add('Alerts', () => <AlertPage />)
 
  storiesOf('Feedback|Modal', module)
      .add('Modal', () => <ModalPage />)
+
+storiesOf('Feedback|Drawer', module)
+    .add('Drawer', () => <DrawerPage />)
 //
 /*Others*/
-storiesOf('Others|Components', module)
-    .add('Components', () => <ComponentsPage />)
+

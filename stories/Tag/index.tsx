@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoTag} from '../../components/index'
+import {NeoButton, NeoTag} from '../../components/index'
 import showCode from "../../components/_utils/tools";
 import {Fragment} from "react";
 
@@ -19,7 +19,7 @@ export default class TagPage extends React.Component {
                 <NeoTag>not closable</NeoTag>
                 </div>
                 <div className='showCode'>
-                <button id='Tag' onClick={showCode}>Show Code</button>
+                    <NeoButton style={{width: '170px'}} id='Tag' onClick={showCode}>Show Code</NeoButton>
                 <SyntaxHighlighter id='Tag' language='jsx' style={okaidia}>
                     {`
       <NeoTag closable={true}>closable</NeoTag>
