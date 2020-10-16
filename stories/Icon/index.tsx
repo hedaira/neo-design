@@ -68,6 +68,15 @@ class IconPage extends React.Component {
             'fullScreenUnDo'
         ];
 
+        const functionalBarCheck = [
+            'filterCheck',
+            'plusBlockCheck',
+            'calculatorCheck',
+            'barChartCheck',
+            'sortCheck',
+            'addCheck'
+        ];
+
         const diagrams = [
             'diagram',
             'diagramCircle',
@@ -236,6 +245,15 @@ class IconPage extends React.Component {
                         <section className="icons ml20">
                             {
                                 this.groupIcon(functionalBar)
+                            }
+                        </section>
+                    </div>
+                    <div>
+                        <h3 className="ex-title">Functional Bar Check</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(functionalBarCheck)
                             }
                         </section>
                     </div>
