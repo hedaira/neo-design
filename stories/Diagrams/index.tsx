@@ -127,7 +127,7 @@ export default class DiagramsPage extends Component {
             </div>
         </Form>
                     <div className='showCode'>
-                        <button id='diagram' onClick={showCode} style={{marginTop: this.state.diagramType === "Line" ? "60px" : null}}>Show Code</button>
+                        <NeoButton id='diagram' onClick={showCode} style={{marginTop: this.state.diagramType === "Line" ? "60px" : null, width: '170px'}}>Show Code</NeoButton>
 
 
                     <SyntaxHighlighter id='diagram' language='jsx' style={okaidia} >

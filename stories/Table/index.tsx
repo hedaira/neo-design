@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoTable} from "../../components";
+import {NeoButton, NeoTable} from "../../components";
 import showCode from "../../components/_utils/tools";
 import {NeoIcon} from "neo-icon/lib";
 
@@ -107,7 +107,7 @@ export default class TablesPage extends Component {
                         <NeoTable columns={columns} dataSource={data} size="middle" {...this.state} />
                     </div>
                     <div className='showCode'>
-                        <button id='table' onClick={showCode}>Show Code</button>
+                        <NeoButton style={{width: '170px'}} id='table' onClick={showCode}>Show Code</NeoButton>
                     <SyntaxHighlighter id='table' language='jsx' style={okaidia}>
                         {`import React from "react";
 import {NeoTable, NeoIcon} from "neo-design/lib";
