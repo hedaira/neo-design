@@ -10,14 +10,14 @@ export default class MainColorPageDoc extends Component {
     renderColorBox = (title, color, value) => {
         return (
             <NeoCol span={2} direction='column' style={{display: 'inline-block'}}>
-                <NeoTypography type={'body-medium'} style={{marginBottom: '12px', marginTop: '12px'}}>{color}</NeoTypography>
+                <NeoTypography type={'body_medium'} style={{marginBottom: '12px', marginTop: '12px'}}>{color}</NeoTypography>
                     <div
                         style={{backgroundColor: NeoColor[color], width:'108px', height:'108px', display:'flex', alignItems:'center', justifyContent:'center'}}
                         onClick={() => this.copyToClipboard(color)}
                     >
-                        <NeoTypography type={'body-medium'} style={{color: NeoColor.grey_1}}>{title}</NeoTypography>
+                        <NeoTypography type={'body_medium'} style={{color: NeoColor.grey_1}}>{title}</NeoTypography>
                     </div>
-                <NeoTypography type={'body-medium'} style={{marginTop: '12px'}}>{value}</NeoTypography>
+                <NeoTypography type={'body_medium'} style={{marginTop: '12px'}}>{value}</NeoTypography>
             </NeoCol>)
     };
 
@@ -43,7 +43,7 @@ export default class MainColorPageDoc extends Component {
                 <SyntaxHighlighter language='jsx' style={okaidia} >
                     {`import {NeoColor} from 'neo-design/lib';
                     
-<NeoTypography type={'body-medium'} style={{color: NeoColor.violete_6}}>Example</NeoTypography>
+<NeoTypography type={'body_medium'} style={{color: NeoColor.violete_6}}>Example</NeoTypography>
                     `}
                 </SyntaxHighlighter>
 
