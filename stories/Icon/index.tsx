@@ -68,6 +68,15 @@ class IconPage extends React.Component {
             'fullScreenUnDo'
         ];
 
+        const functionalBarCheck = [
+            'filterCheck',
+            'plusBlockCheck',
+            'calculatorCheck',
+            'barChartCheck',
+            'sortCheck',
+            'addCheck'
+        ];
+
         const diagrams = [
             'diagram',
             'diagramCircle',
@@ -96,6 +105,10 @@ class IconPage extends React.Component {
             'success',
             'info',
             'warning'
+        ];
+
+        const files = ['fileExcel',
+            'fileWord'
         ];
 
         const icons = [
@@ -240,6 +253,15 @@ class IconPage extends React.Component {
                         </section>
                     </div>
                     <div>
+                        <h3 className="ex-title">Functional Bar Check</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(functionalBarCheck)
+                            }
+                        </section>
+                    </div>
+                    <div>
                         <h3 className="ex-title">Diagram</h3>
                         <br />
                         <section className="icons ml20">
@@ -272,6 +294,15 @@ class IconPage extends React.Component {
                         <section className="icons ml20">
                             {
                                 this.groupIcon(alerts)
+                            }
+                        </section>
+                    </div>
+                    <div>
+                        <h3 className="ex-title">Files</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(files)
                             }
                         </section>
                     </div>
