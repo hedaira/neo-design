@@ -107,6 +107,10 @@ class IconPage extends React.Component {
             'warning'
         ];
 
+        const files = ['fileExcel',
+            'fileWord'
+        ];
+
         const icons = [
             'delete',
             'plus',
@@ -290,6 +294,15 @@ class IconPage extends React.Component {
                         <section className="icons ml20">
                             {
                                 this.groupIcon(alerts)
+                            }
+                        </section>
+                    </div>
+                    <div>
+                        <h3 className="ex-title">Files</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(files)
                             }
                         </section>
                     </div>
