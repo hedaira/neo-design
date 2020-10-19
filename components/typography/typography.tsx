@@ -3,23 +3,23 @@ import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 
 const TypographyTypes = tuple(
-    'capture-light',
-    'capture-link',
-    'capture-medium',
-    'capture-regular',
-    'body-bold',
-    'body-link',
-    'body-light',
-    'body-regular',
-    'body-medium',
-    'h4-light',
-    'h4-regular',
-    'h4-medium',
-    'h3-regular',
-    'h3-medium',
-    'h2-regular',
-    'h2-medium',
-    'h1-regular');
+    'h1_regular',
+    'h2_medium',
+    'h2_regular',
+    'h3_medium',
+    'h3_regular',
+    'h4_medium',
+    'h4_regular',
+    'h4_light',
+    'body_medium',
+    'body_regular',
+    'body_light',
+    'body_link',
+    'body_bold',
+    'capture_regular',
+    'capture_medium',
+    'capture_link',
+    'capture_light');
 export type TypographyType = typeof TypographyTypes[number];
 
 const TextDecorations = tuple(
@@ -56,7 +56,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, TypographyProps> =
   const classes = classNames(
       prefix,
       {
-          [`${prefix}-${type || 'capture-regular'}`]: true,
+          [`${prefix}-${type || 'capture_regular'}`]: true,
           [`${prefix}-${hoverTextDecoration}`]: hoverTextDecoration
       },
       className
