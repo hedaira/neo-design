@@ -41,6 +41,7 @@ export interface NeoParagraphProps {
     mark?;
     underline?;
     strong?;
+    required?;
 }
 
 const prefix = 'typography';
@@ -63,6 +64,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, NeoParagraphProps>
         mark,
         underline,
         strong,
+        required
     } = props;
 
     const classes = classNames(
@@ -89,6 +91,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, NeoParagraphProps>
             delete={props.delete}
         >
             {children}
+            {required && <span style={{color:'red', display:'inline'}}> *</span>}
         </Paragraph>
     )
 };
