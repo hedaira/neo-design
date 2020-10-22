@@ -7,6 +7,7 @@ import '../components/style/neoStories.less';
 import DescriptionPageDoc from "./Documentation/Description";
 import GridPageDoc from "../stories/Documentation/Grid";
 import TypographyPageDoc from "../stories/Documentation/Typography";
+import ParagraphPageDoc from "../stories/Documentation/Paragraph";
 import ColorPageDoc from "../stories/Documentation/Color";
 import ButtonPage from "../stories/Button";
 import IconPage from "../stories/Icon";
@@ -37,6 +38,9 @@ storiesOf('Documentation|Grid', module)
 
 storiesOf('Documentation|Typography', module)
     .add('Typography', () => <TypographyPageDoc />)
+
+storiesOf('Documentation|Paragraph', module)
+    .add('Paragraph', () => <ParagraphPageDoc />)
 
 storiesOf('Documentation|Color', module)
     .add('Colors', () => <ColorPageDoc />)

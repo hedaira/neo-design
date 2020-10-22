@@ -91,7 +91,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, NeoParagraphProps>
             delete={props.delete}
         >
             {children}
-            {required && <span style={{color:'red', display:'inline'}}> *</span>}
+            {required && <span style={{color:'#ad1457', display:'inline'}}> *</span>}
         </Paragraph>
     )
 };

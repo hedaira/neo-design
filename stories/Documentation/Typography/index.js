@@ -10,7 +10,7 @@ export default class TypographyPageDoc extends Component {
     render() {
         return (
             <Fragment>
-                <NeoTypography type={'h1-regular'} className="title">Типографика и текст в интерфейсах</NeoTypography>
+                <NeoTypography type={'h1_regular'} className="title">Типографика и текст в интерфейсах</NeoTypography>
 
                 <h2 className="title">Как использовать</h2>
                 <SyntaxHighlighter language='jsx' style={okaidia} >
