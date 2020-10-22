@@ -10,7 +10,7 @@ export interface HintProps {
     getPopupContainer?;
     style?;
     title?;
-    children?;
+    children?: React.ReactNode;
 
 }
 
