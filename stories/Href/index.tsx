@@ -20,11 +20,11 @@ export default class HrefPage extends React.Component {
                 <h2 className="title">Примеры:</h2>
                 <section className="example space-between">
                     <div>
-                        <NeoHref type={'success'} href={'#'} hidden={false}>Ошибки не обнаружены</NeoHref>
+                        <NeoHref type={'success'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />
                         <br/>
-                        <NeoHref type={'warning'} href={'#'} hidden={false}>Текст предупреждение</NeoHref>
+                        <NeoHref type={'warning'} hidden={false}>Текст предупреждение</NeoHref>
                         <br/>
-                        <NeoHref type={'error'} href={'#'} hidden={false}>Обнаружены ошибки</NeoHref>
+                        <NeoHref type={'error'} hidden={false}>Обнаружены ошибки</NeoHref>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`import {NeoHref} from 'neo-design/lib';
 
