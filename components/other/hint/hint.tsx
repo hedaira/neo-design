@@ -10,7 +10,7 @@ export interface HintProps {
     getPopupContainer?;
     style?;
     title?;
-    children?;
+    children?: React.ReactNode;
 
 }
 
@@ -36,7 +36,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, HintProps> = (prop
         {...props}
         title={props.title}
         placement="bottomLeft"
-    >{children}</Tooltip></div>
+    ><div>{children}</div></Tooltip></div>
 }
 
 const NeoHint = React.forwardRef<unknown, HintProps>(InternalSelect) as CompoundedComponent;

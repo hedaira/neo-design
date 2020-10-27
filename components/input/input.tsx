@@ -58,7 +58,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             autoFocus={props.autofocus}
             className={classes}
             hidden={props.hidden}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
         </Input>
@@ -71,7 +71,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             type="password"
             className={classes}
             hidden={props.hidden}
-            style={{width: `${props.width ? props.width : "auto"}`}}
+            style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
         </Input>

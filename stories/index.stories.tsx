@@ -7,6 +7,7 @@ import '../components/style/neoStories.less';
 import DescriptionPageDoc from "./Documentation/Description";
 import GridPageDoc from "../stories/Documentation/Grid";
 import TypographyPageDoc from "../stories/Documentation/Typography";
+import ParagraphPageDoc from "../stories/Documentation/Paragraph";
 import ColorPageDoc from "../stories/Documentation/Color";
 import ButtonPage from "../stories/Button";
 import IconPage from "../stories/Icon";
@@ -17,6 +18,7 @@ import TabsPage from "./Tabs";
 // import AlertPage from "./Feedback/Alert";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
+import HrefPage from "./Href";
 import DiagramsPage from "./Diagrams";
 import TagPage from "./Tag";
 import SwitcherPage from "./Switcher";
@@ -37,6 +39,9 @@ storiesOf('Documentation|Grid', module)
 
 storiesOf('Documentation|Typography', module)
     .add('Typography', () => <TypographyPageDoc />)
+
+storiesOf('Documentation|Paragraph', module)
+    .add('Paragraph', () => <ParagraphPageDoc />)
 
 storiesOf('Documentation|Color', module)
     .add('Colors', () => <ColorPageDoc />)
@@ -88,6 +93,9 @@ storiesOf('General|Select', module)
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
      .add('Alerts', () => <AlertPage />)
+
+ storiesOf('Feedback|Href', module)
+    .add('Href', () => <HrefPage />)
 
  storiesOf('Feedback|Modal', module)
      .add('Modal', () => <ModalPage />)
