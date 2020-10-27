@@ -33,6 +33,18 @@ class IconPage extends React.Component {
         </div>)
     }
 
+    groupSwitcherIcon = (arr) => {
+        return arr.map((icon, i) =>
+            <div
+                className="icon"
+                style={{marginRight: '20px'}}
+                onClick={() => this.copyToClipboard(icon)}
+            >
+                <NeoIcon key={i} icon={icon} customSize={'44'}/>
+                <br/>
+            </div>)
+    }
+
     groupMenuIcon = (arr) => {
         return arr.map((icon, i) =>
             <div
@@ -97,7 +109,13 @@ class IconPage extends React.Component {
         const tables = [
             'more',
             'table',
-            'tableUp'
+            'tableUp',
+            'search',
+            'dragAndDrop'
+        ];
+
+        const tablesCheck = [
+            'searchCheck'
         ];
 
         const alerts = [
@@ -107,9 +125,33 @@ class IconPage extends React.Component {
             'warning'
         ];
 
-        const files = ['fileExcel',
+        const checkbox = [
+            'checkbox',
+            'checkboxFill',
+            'checkboxDisabled'
+        ];
+
+        const switcher = [
+            'switchOff',
+            'switchOn'
+        ];
+
+        const files = [
+            'fileExcel',
             'fileWord'
         ];
+
+        const mainMenu = [
+            'file',
+            'compose',
+            'tools',
+            'updateTwoLine',
+            'checkStatus',
+            'form',
+            'cloudDownload',
+            'directory',
+            'team'
+        ]
 
         const icons = [
             'delete',
@@ -127,7 +169,6 @@ class IconPage extends React.Component {
             'arrowLong',
             'edit',
             'menuOpen',
-            'search',
             'tiles',
             "play",
             "show",
@@ -141,17 +182,14 @@ class IconPage extends React.Component {
             'exportFile',
             'importFile',
             'undo',
-            'checkbox',
-            'checkboxFill',
             'cloudServer',
-            'code'
+            'code',
+            'ellipsis'
         ];
 
         const colorIcons = [
             'radioButton',
             'radioButtonFill',
-            'switchOff',
-            'switchOn',
             'legend',
         ];
 
@@ -186,10 +224,14 @@ class IconPage extends React.Component {
                         <div className="icon">
                             <NeoIcon icon={"notification"} size={"s"}/>
                         </div>
+                        <div className="icon">
+                            <NeoIcon icon={"notification"} size={"xs"}/>
+                        </div>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoIcon } from "neo-design/lib";
 
+<NeoIcon icon={"notification"} size={'xs'}/>
 <NeoIcon icon={"notification"} size={'s'}/>
 <NeoIcon icon={"notification"}/>
 <NeoIcon icon={"notification"} size={'m'}/>`}
@@ -289,6 +331,15 @@ class IconPage extends React.Component {
                         </section>
                     </div>
                     <div>
+                        <h3 className="ex-title">Table Check</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(tablesCheck)
+                            }
+                        </section>
+                    </div>
+                    <div>
                         <h3 className="ex-title">Alert</h3>
                         <br />
                         <section className="icons ml20">
@@ -307,11 +358,38 @@ class IconPage extends React.Component {
                         </section>
                     </div>
                     <div>
+                        <h3 className="ex-title">Main menu</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(mainMenu)
+                            }
+                        </section>
+                    </div>
+                    <div>
                         <h3 className="ex-title">All</h3>
                         <br />
                         <section className="icons ml20">
                             {
                                 this.groupIcon(icons)
+                            }
+                        </section>
+                    </div>
+                    <div>
+                        <h3 className="ex-title">Checkbox</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupIcon(checkbox)
+                            }
+                        </section>
+                    </div>
+                    <div>
+                        <h3 className="ex-title">Switcher</h3>
+                        <br />
+                        <section className="icons ml20">
+                            {
+                                this.groupSwitcherIcon(switcher)
                             }
                         </section>
                     </div>
