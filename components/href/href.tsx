@@ -16,8 +16,11 @@ export interface HrefProps {
     className?: string;
     closable?: boolean;
     hidden?: boolean;
-    href?;
     children?: React.ReactNode;
+    onClick?: React.MouseEventHandler<HTMLElement>;
+    dangerouslySetInnerHTML?;
+    href?;
+    style?;
 }
 
 const prefix = 'href'; // для удобства чтоб понимать
@@ -33,7 +36,10 @@ const InternalHref: React.ForwardRefRenderFunction<unknown, HrefProps> = (props)
         className,
         closable,
         hidden,
-        href
+        href,
+        style,
+        onClick,
+        dangerouslySetInnerHTML
     } = props;
 
 
@@ -50,7 +56,10 @@ const InternalHref: React.ForwardRefRenderFunction<unknown, HrefProps> = (props)
         return <a
             className={classes}
             hidden={hidden}
-            href={href}>
+            href={href}
+            style={style}
+            onClick={onClick}
+            dangerouslySetInnerHTML={dangerouslySetInnerHTML}>
             <NeoIcon style={{margin:'5px 12px 0 0'}} icon={'warning'} color={'#AD1457'}/>
             <NeoTypography type={'body_regular'} style={{color:'#AD1457'}}>{props.children}</NeoTypography>
         </a>
@@ -60,7 +69,10 @@ const InternalHref: React.ForwardRefRenderFunction<unknown, HrefProps> = (props)
         return <a
             className={classes}
             hidden={hidden}
-            href={href}>
+            href={href}
+            style={style}
+            onClick={onClick}
+            dangerouslySetInnerHTML={dangerouslySetInnerHTML}>
             <NeoIcon style={{margin:'5px 12px 0 0'}} icon={'success'} color={'#27677C'}/>
             <NeoTypography type={'body_regular'} style={{color:'#0E5A7D'}}>{props.children}</NeoTypography>
         </a>
@@ -70,7 +82,10 @@ const InternalHref: React.ForwardRefRenderFunction<unknown, HrefProps> = (props)
         return <a
             className={classes}
             hidden={hidden}
-            href={href}>
+            href={href}
+            style={style}
+            onClick={onClick}
+            dangerouslySetInnerHTML={dangerouslySetInnerHTML}>
             <NeoIcon style={{margin:'5px 12px 0 0'}} icon={'warning'} color={'#D9A54C'}/>
             <NeoTypography type={'body_regular'} style={{color:'#D9A54C'}}>{props.children}</NeoTypography>
         </a>
