@@ -225,7 +225,7 @@ class IconPage extends React.Component {
                             <NeoIcon icon={"notification"} size={"s"}/>
                         </div>
                         <div className="icon">
-                            <NeoIcon icon={"notification"} size={"xs"}/>
+                            {/*<NeoIcon icon={"notification"} size={"xs"}/>*/}
                         </div>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >

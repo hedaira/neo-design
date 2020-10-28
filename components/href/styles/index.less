@@ -1,19 +1,24 @@
-a.href{
-  text-decoration: none !important;
-}
-
 .href {
   height: 40px;
   padding: 0 16px;
   box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+
   &&-success{
     background-color: #F0FEFF;
+    color: #0E5A7D;
   }
   &&-error{
     background-color: #F8F1F3;
+    color: #AD1457;
   }
   &&-warning{
     background-color: #FFFCF3;
+    color: #D9A54C;
   }
 }
