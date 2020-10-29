@@ -18,6 +18,7 @@ import TabsPage from "./Tabs";
 // import AlertPage from "./Feedback/Alert";
 import AlertPage from "./Alert";
 import ModalPage from "./Modal";
+import HrefPage from "./Href";
 import DiagramsPage from "./Diagrams";
 import TagPage from "./Tag";
 import SwitcherPage from "./Switcher";
@@ -92,6 +93,9 @@ storiesOf('General|Select', module)
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
      .add('Alerts', () => <AlertPage />)
+
+ storiesOf('Feedback|Href', module)
+    .add('Href', () => <HrefPage />)
 
  storiesOf('Feedback|Modal', module)
      .add('Modal', () => <ModalPage />)
