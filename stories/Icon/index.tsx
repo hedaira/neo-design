@@ -225,16 +225,16 @@ class IconPage extends React.Component {
                             <NeoIcon icon={"notification"} size={"s"}/>
                         </div>
                         <div className="icon">
-                            {/*<NeoIcon icon={"notification"} size={"xs"}/>*/}
+                            <NeoIcon icon={"notification"} size={"xs"}/>
                         </div>
                     </div>
                     <SyntaxHighlighter language='jsx' style={okaidia} >
                         {`import { NeoIcon } from "neo-design/lib";
 
-<NeoIcon icon={"notification"} size={'xs'}/>
-<NeoIcon icon={"notification"} size={'s'}/>
+<NeoIcon icon={"notification"} size={'m'}/>
 <NeoIcon icon={"notification"}/>
-<NeoIcon icon={"notification"} size={'m'}/>`}
+<NeoIcon icon={"notification"} size={'s'}/>
+<NeoIcon icon={"notification"} size={'xs'}/>`}
                     </SyntaxHighlighter>
                 </section>
 

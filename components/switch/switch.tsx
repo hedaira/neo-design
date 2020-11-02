@@ -1,4 +1,4 @@
-import * as React from 'react';
+    import * as React from 'react';
 import classNames from 'classnames';
 import {Switch} from 'antd';
 
@@ -34,6 +34,8 @@ const InternalSwitch: React.ForwardRefRenderFunction<unknown, SwitchProps> = (pr
     );
 
         return <Switch
+            checkedChildren="ON"
+            unCheckedChildren="OFF"
             style={props.style}
             className={classes}
             {...props}
