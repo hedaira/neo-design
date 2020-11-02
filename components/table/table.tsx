@@ -14,6 +14,7 @@ export interface TableProps {
     size?;
     scroll?;
     bordered?: boolean;
+    rowSelection?;
 }
 
 const prefix = 'table';
@@ -36,6 +37,9 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, TableProps> = (pro
         {...props}
         className={classes}
         style={...props.style}
+        bordered={props.bordered}
+        scroll={props.scroll}
+        rowSelection={props.rowSelection}
     />
 }
 
