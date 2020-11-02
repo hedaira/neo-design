@@ -12,6 +12,8 @@ export interface TableProps {
     columns?;
     dataSource?;
     size?;
+    scroll?;
+    bordered?: boolean;
 }
 
 const prefix = 'table';
