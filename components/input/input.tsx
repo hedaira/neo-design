@@ -29,6 +29,7 @@ export interface InputProps {
     title?;
     onKeyUp?;
     hidden?;
+    onPressEnter?;
 }
 
 const prefix = 'input';
@@ -58,6 +59,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             autoFocus={props.autofocus}
             className={classes}
             hidden={props.hidden}
+            onPressEnter={props.onPressEnter}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
