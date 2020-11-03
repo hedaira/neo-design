@@ -73,6 +73,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             type="password"
             className={classes}
             hidden={props.hidden}
+            onPressEnter={props.onPressEnter}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
             {children}
@@ -86,6 +87,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             {...props}
             className={classes}
             hidden={props.hidden}
+            onPressEnter={props.onPressEnter}
             onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
         >
