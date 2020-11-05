@@ -63,6 +63,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 onClick={handleClick}
                 style={style}
                 hidden={props.hidden}
+                disabled={(props.type === 'disabled')}
             >
                 <div style={{marginRight: '6px', marginBottom: '-5px'}}>
                     {suffixIcon}
@@ -82,6 +83,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 onClick={handleClick}
                 style={style}
                 hidden={props.hidden}
+                disabled={(props.type === 'disabled')}
             >
                 {children}
             </button>
