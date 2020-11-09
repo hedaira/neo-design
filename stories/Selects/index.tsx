@@ -3,7 +3,7 @@ import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoButton, NeoSelect} from "../../components";
 import showCode from "../../components/_utils/tools";
-import { Form, Input, Button, Checkbox } from 'antd';
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class SelectsPage extends React.Component {
     state = {}
@@ -18,6 +18,10 @@ export default class SelectsPage extends React.Component {
     };
 
     render() {
+        const data = [{name:'width', default:'185px', description:'Ширина'},
+            {name:'allowClear', default:'false', description:'Очистить поле'},
+            {name:'showSearch', default:'false', description:'Добавить иконку поиска'}];
+
         return (
             <Fragment>
 
@@ -85,9 +89,11 @@ export default class SelectsPage extends React.Component {
     <option value="jack">Jack</option>
     <option value="john">John</option>
 </NeoSelect>`}
-                    </SyntaxHighlighter>+
+                    </SyntaxHighlighter>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

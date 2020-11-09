@@ -16,6 +16,7 @@ export interface TableProps {
     bordered?: boolean;
     rowSelection?;
     pagination?;
+    position?;
 }
 
 const prefix = 'table';

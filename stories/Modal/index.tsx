@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoModal, NeoButton} from "../../components";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class ModalPage extends Component {
     state = {
@@ -86,6 +87,11 @@ export default class ModalPage extends Component {
         });
     };
     render() {
+        const data = [{name:'type', default:'-', description:"Тип ('success', 'info', 'error', 'edit', 'question')"},
+            {name:'title', default:'-', description:"Заголовок модального окна"},
+            {name:'content', default:'-', description:"Сообщение модального окна"},
+            {name:'visible', default:'false', description:"Показываетсся ли модальное окно"},
+            {name:'onOk', default:'-', description:"()=>{}"}];
         return (
             <Fragment>
                 <h1 className="title">Модальное окно</h1>
@@ -219,16 +225,8 @@ handleRightEdit = () => {this.setState({visibleEdit: false,});alert("right")};
                     </div>
                 </section>
 
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
 
-                {/*<PropsTab Props={
-                    [
-                        {name:'title', default:'-', description:'Заголовок'},
-                        {name:'content', default:'-', description:'Сообщение'},
-                        {name:'info', default:'-', description:'Тип модального окна'},
-                        {name:'success', default:'-', description:'Тип модального окна'},
-                        {name:'error', default:'-', description:'Тип модального окна'},
-                    ]
-                }/>*/}
 
             </Fragment>
         );
