@@ -1,10 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoAlert, NeoHref} from "../../components";
+import {NeoHref} from "../../components";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class HrefPage extends React.Component {
     render() {
+        const data = [{name:'type', default:'-', description:'Тип'},
+            {name:'hidden', default:'false', description:'Видимость оповещение'},
+            {name:'dangerouslySetInnerHTML', default:'-', description:"__html: 'Пример'"}];
+
         return (
             <Fragment>
                 <h1 className="title">Алерт</h1>
@@ -20,20 +25,21 @@ export default class HrefPage extends React.Component {
                 <h2 className="title">Примеры:</h2>
                 <section className="example space-between">
                     <div>
-                        <NeoHref type={'success'} href={'#'} hidden={false}>Ошибки не обнаружены</NeoHref>
+                        <NeoHref type={'success'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />
                         <br/>
-                        <NeoHref type={'warning'} href={'#'} hidden={false}>Текст предупреждение</NeoHref>
+                        <NeoHref type={'warning'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />
                         <br/>
-                        <NeoHref type={'error'} href={'#'} hidden={false}>Обнаружены ошибки</NeoHref>
+                        <NeoHref type={'error'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`import {NeoHref} from 'neo-design/lib';
 
-<NeoHref type={'success'} href={'#'} hidden={false}>Ошибки не обнаружены</NeoHref>
-<NeoHref type={'warning'} href={'#'} hidden={false}>Текст предупреждение</NeoHref>
-<NeoHref type={'error'} href={'#'} hidden={false}>Обнаружены ошибки</NeoHref>`}
+<NeoHref type={'success'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />
+<NeoHref type={'warning'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />
+<NeoHref type={'error'} hidden={false} dangerouslySetInnerHTML={{__html: 'Первый &middot; Второй'}} />`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
 
             </Fragment>
         );

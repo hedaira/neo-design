@@ -4,6 +4,7 @@ import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoButton, NeoTable} from "../../components";
 import showCode from "../../components/_utils/tools";
 import {NeoIcon} from "neo-icon/lib";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class TablesPage extends Component {
     state = {
@@ -97,6 +98,17 @@ export default class TablesPage extends Component {
                 Column_1: `Row${i}`,
             });
         }
+
+        const propsData = [
+            {name:'colums', default:'-', description:'Колонки таблицы'},
+            {name:'dataSource', default:'-', description:'data'},
+            {name:'bordered', default:'true/false', description:'Границы'},
+            {name:'loading', default:'true/false', description:'Статус загрузки таблицы'},
+            {name:'size', default:'default', description:"Размер таблицы('default','middle','small')"},
+            {name:'showHeader', default:'true/false', description:'Показывать header таблицы'},
+            {name:'pagination', default:'true/false', description:'Пагинация'}
+        ]
+
         return (
             <Fragment>
                 <h1 className="title">Таблицы</h1>
@@ -218,6 +230,8 @@ export default class Table extends React.Component {
                     </SyntaxHighlighter>
                     </div>
                 </section>
+                <PropsTab dataSource={propsData} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

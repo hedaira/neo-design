@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 
-const ButtonTypes = tuple('disabled', 'secondary', 'link', 'ghost');
+const ButtonTypes = tuple('primary', 'disabled', 'secondary', 'link', 'ghost');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
@@ -63,6 +63,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 onClick={handleClick}
                 style={style}
                 hidden={props.hidden}
+                disabled={(props.type === 'disabled')}
             >
                 <div style={{marginRight: '6px', marginBottom: '-5px'}}>
                     {suffixIcon}
@@ -82,6 +83,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 onClick={handleClick}
                 style={style}
                 hidden={props.hidden}
+                disabled={(props.type === 'disabled')}
             >
                 {children}
             </button>

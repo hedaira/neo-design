@@ -1,14 +1,22 @@
 import * as React from 'react';
 
-import {NeoInput, NeoSelect, NeoDatePicker, NeoButton} from '../../components/index';
+import {NeoInput, NeoButton} from '../../components/index';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoIcon} from "neo-icon/lib";
 import showCode from "../../components/_utils/tools";
-// import {PropsTab} from "../../../utils/helpers";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 class InputPage extends React.Component {
     render() {
+
+        const data = [{name:'type', default:'-', description:"Тип('search', 'textArea', 'checkbox', 'radio', 'password')"},
+            {name:'width', default:'auto', description:'Ширина'},
+            {name:'hidden', default:'true/false', description:'Кнопка вторичного призыва к действию (Secondary)'},
+            {name:'disabled', default:'-', description:'Кнопка, запрещающая выполнение действия'},
+            {name:'onSearch', default:'', description:'()=>{}'},
+            {name:'placeholder', default:'-', description:'Placeholder'},
+            {name:'allowClear', default:'true/false', description:'Очистить поле(иконка)'},
+            {name:'isIcon', default:'-', description:'Применяется, если кнопка содержит в себе иконку'}];
 
         return (
             <React.Fragment>
@@ -93,13 +101,8 @@ class InputPage extends React.Component {
                     </div>
                 </section>
 
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
 
-                {/*<PropsTab Props={*/}
-                {/*    [*/}
-                {/*        {name:'width', default:'100%', description:'Ширина'},*/}
-
-                {/*    ]*/}
-                {/*}/>*/}
             </React.Fragment>
         );
     }

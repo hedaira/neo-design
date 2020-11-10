@@ -3,12 +3,14 @@ import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoButton, NeoHint} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class HintPage extends React.Component {
     state = {}
 
 
     render() {
+        const data = [{name:'title', default:'-', description:'Всплывающее сообщение при наведении'}];
         return (
             <Fragment>
                 <h1 className="title">Hint</h1>
@@ -28,6 +30,8 @@ export default class HintPage extends React.Component {
                         </div>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

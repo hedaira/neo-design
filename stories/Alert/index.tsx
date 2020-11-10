@@ -1,13 +1,19 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoAlert, NeoButton, NeoHint} from "../../components";
+import {NeoAlert} from "../../components";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class AlertPage extends React.Component {
     state = {}
 
 
     render() {
+        const data = [{name:'type', default:'-', description:"Тип Alert'а ('success', 'info', 'warning', 'error)"},
+            {name:'message', default:'-', description:'Основное сообщение(заголовок)'},
+            {name:'description', default:'-', description:'Описание'},
+            {name:'width', default:'370px', description:'Ширина'},
+            {name:'closable', default:'true', description:'Добавляет возможность закрыть окно'}]
         return (
             <Fragment>
                 <h1 className="title">Алерт</h1>
@@ -96,6 +102,8 @@ export default class AlertPage extends React.Component {
                         </p>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

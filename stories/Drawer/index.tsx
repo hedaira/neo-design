@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoAlert, NeoButton, NeoDrawer} from "../../components";
+import {NeoButton, NeoDrawer} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class DrawerPage extends React.Component {
     state = {
@@ -22,6 +23,12 @@ export default class DrawerPage extends React.Component {
 
 
     render() {
+        const data = [{name:'type', default:'-', description:"Тип('success', 'info', 'error')"},
+            {name:'title', default:'-', description:'Заголовок'},
+            {name:'visible', default:'false', description:'visible'},
+            {name:'width', default:'-', description:'Ширина'},
+            {name:'footer', default:'<html>', description:'Footer<html>'}];
+
         return (
             <Fragment>
                 <h1 className="title">Drawer</h1>
@@ -111,6 +118,8 @@ return (
                         </div>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

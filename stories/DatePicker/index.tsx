@@ -1,14 +1,22 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoButton, NeoAlert, NeoDatePicker} from "../../components";
+import {NeoButton, NeoDatePicker} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class DatePickerPage extends React.Component {
     state = {}
 
 
     render() {
+        const data = [{name:'defaultValue', default:'-', description:'Установка даты по умолчанию'},
+            {name:'format', default:'YYYY-MM-DD', description:'Формат даты'},
+            {name:'disabled', default:'false', description:'disabled'},
+            {name:'showTime', default:'-', description:'Для обеспечения дополнительного выбора времени'},
+            {name:'onChange', default:'-', description:'()=>{}'},
+            {name:'allowClear', default:'false', description:'Показывать кнопку очистки'},
+            {name:'width', default:'auto', description:'Ширина'}];
         return (
             <Fragment>
                 <h1 className="title">DatePicker</h1>
@@ -28,6 +36,7 @@ export default class DatePickerPage extends React.Component {
                     </SyntaxHighlighter>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
 
             </Fragment>
         );

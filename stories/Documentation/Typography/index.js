@@ -3,11 +3,13 @@ import {NeoCol, NeoRow, NeoTypography, NeoButton} from "../../../components";
 import {okaidia} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 import showCode from "../../../components/_utils/tools";
+import {PropsTab} from "../../../components/_utils/PropsTab";
 
 const marginBottom = '20px';
 export default class TypographyPageDoc extends Component {
     state = {}
     render() {
+        const data = [{name:'type', default:'capture_regular', description:'Тип'}];
         return (
             <Fragment>
                 <NeoTypography type={'h1_regular'} className="title">Типографика и текст в интерфейсах</NeoTypography>
@@ -427,6 +429,9 @@ const marginBottom = '20px';
                         </SyntaxHighlighter>
                     </div>
                 </section>
+
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

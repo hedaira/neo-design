@@ -3,12 +3,13 @@ import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoButton, NeoSwitch} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class SwitcherPage extends React.Component {
     state = {}
 
-
     render() {
+        const data = [{name:'disabled', default:'-', description:'Disabled'}];
         return (
             <Fragment>
                 <h1 className="title">Switcher</h1>
@@ -28,6 +29,8 @@ export default class SwitcherPage extends React.Component {
                         </div>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }
