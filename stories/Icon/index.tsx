@@ -137,7 +137,11 @@ class IconPage extends React.Component {
         ];
 
         const files = [
+            'folder',
+            'folderOpen',
+            'folderAdd',
             'fileExcel',
+            'document',
             'fileWord'
         ];
 
