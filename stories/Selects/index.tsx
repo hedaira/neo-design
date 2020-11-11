@@ -91,6 +91,35 @@ export default class SelectsPage extends React.Component {
 </NeoSelect>`}
                     </SyntaxHighlighter>
                     </div>
+
+                <br/>
+
+                    <h4>Select with tags</h4>
+                    <div>
+                        <NeoSelect
+                            allowClear={true}
+                            mode={"tags"}
+                            width={'670px'}
+                            placeholder={"Выберите из списка"}
+                            defaultValue={'more'}
+                        >
+                            <option value="lucy">Lucy</option>
+                            <option value="jack">Jack</option>
+                            <option value="more">Еще</option>
+                        </NeoSelect>
+                    </div>
+                    <div className='showCode'>
+                        <NeoButton style={{width: '170px'}} id='Selects' onClick={showCode}>Show Code</NeoButton>
+                        <SyntaxHighlighter id='Selects' language='jsx' style={okaidia} >
+                            {`import { NeoSelect } from "neo-design/lib";
+
+<NeoSelect defaultValue="lucy">
+    <option value="lucy">Lucy</option>
+    <option value="jack">Jack</option>
+    <option value="john">John</option>
+</NeoSelect>`}
+                        </SyntaxHighlighter>
+                    </div>
                 </section>
                 <PropsTab dataSource={data} size="middle" pagination={false}/>
 
