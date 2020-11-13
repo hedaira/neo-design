@@ -3,12 +3,15 @@ import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoButton, NeoInput} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class RadioPage extends React.Component {
     state = {}
 
 
     render() {
+        const data = [{name:'type', default:'-', description:"Тип('search', 'textArea', 'checkbox', 'radio', 'password')"}];
+
         return (
             <Fragment>
                 <h1 className="title">Radio</h1>
@@ -32,6 +35,8 @@ export default class RadioPage extends React.Component {
                     </SyntaxHighlighter>
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

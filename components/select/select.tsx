@@ -20,6 +20,8 @@ export interface SelectProps {
     placeholder?;
     suffix?;
     mode?;
+    maxTagCount?;
+    maxTagPlaceholder?;
 }
 
 const prefix = 'select';

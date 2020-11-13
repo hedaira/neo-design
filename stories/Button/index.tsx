@@ -1,13 +1,20 @@
 import * as React from 'react';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoButton, NeoColor} from '../../components/index'
+import {NeoButton, NeoColor, NeoTable} from '../../components/index'
 import {NeoIcon} from "neo-icon/lib";
 import showCode from "../../components/_utils/tools";
-// import {PropsTab} from "../../../utils/helpers";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class ButtonPage extends React.Component {
   render() {
+
+      const data = [{name:'type', default:'-', description:"Тип('primary', 'disabled', 'secondary', 'link', 'ghost')"},
+          {name:'size', default:'-', description:"Размер('medium', 'large')"},
+          {name:'disabled', default:'-', description:'Кнопка, запрещающая выполнение действия'},
+          {name:'hidden', default:'false', description:'Отображать ли кнопку'},
+          {name:'suffixIcon', default:'<NeoIcon icon="..." />', description:'Применяется, если кнопка содержит в себе иконку'}];
+
     return (
       <React.Fragment>
         <h1 className="title">Кнопки</h1>
@@ -132,19 +139,8 @@ import {NeoIcon} from "neo-icon/lib";
                   </SyntaxHighlighter>
               </div>
           </section>
+          <PropsTab dataSource={data} size="middle" pagination={false}/>
 
-        {/*<PropsTab Props={*/}
-        {/*    [*/}
-        {/*        {name:'primary', default:'-', description:'Кнопка для первичного призыва к действию (Primary)'},*/}
-        {/*        {name:'secondary', default:'-', description:'Кнопка вторичного призыва к действию (Secondary)'},*/}
-        {/*        {name:'disabled', default:'-', description:'Кнопка, запрещающая выполнение действия'},*/}
-        {/*        {name:'padding', default:'9px 32px', description:'Внутренний отступ'},*/}
-        {/*        {name:'margin', default:'-', description:'Внешний отступ'},*/}
-        {/*        {name:'height', default:'32px', description:'Высота'},*/}
-        {/*        {name:'width', default:'0', description:'Ширина'},*/}
-        {/*        {name:'isIcon', default:'-', description:'Применяется, если кнопка содержит в себе иконку'}*/}
-        {/*    ]*/}
-        {/*}/>*/}
       </React.Fragment>
     );
   }

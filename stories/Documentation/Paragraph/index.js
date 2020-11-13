@@ -1,14 +1,26 @@
 import React, { Component, Fragment } from 'react';
-import {NeoCol, NeoRow, NeoTypography, NeoButton} from "../../../components";
+import {NeoTypography, NeoButton} from "../../../components";
 import {okaidia} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter";
 import showCode from "../../../components/_utils/tools";
 import NeoParagraph from "../../../components/typography/paragraph";
+import {PropsTab} from "../../../components/_utils/PropsTab";
 
 const marginBottom = '20px';
 export default class TypographyPageDoc extends Component {
     state = {}
     render() {
+        const data = [{name:'type', default:'capture_regular', description:'Тип'},
+            {name:'copyable', default:'false', description:'Можно установить копию текста и обратный вызов, когда это объект. boolean | { text: string, onCopy: Function }'},
+            {name:'code', default:'false', description:'Стиль кода'},
+            {name:'delete', default:'false', description:'Зачеркивание'},
+            {name:'disabled', default:'false', description:'Disabled'},
+            {name:'ellipsis', default:'false', description:'Отображать многоточие при переполнении текста. Можно настраивать строки и расширять с помощью объекта. boolean | { rows: number, expandable: boolean, onExpand: Function }'},
+            {name:'mark', default:'false', description:'Выделение'},
+            {name:'underline', default:'false', description:'Подчеркивание'},
+            {name:'strong', default:'false', description:'Выделение жирным'},
+            {name:'required', default:'false', description:'Пометить звездочкой'},
+        ];
         return (
             <Fragment>
                 <NeoTypography type={'h1_regular'} className="title">Типографика и текст в интерфейсах</NeoTypography>
@@ -62,6 +74,9 @@ export default class TypographyPageDoc extends Component {
                         </SyntaxHighlighter>
                     </div>
                 </section>
+
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

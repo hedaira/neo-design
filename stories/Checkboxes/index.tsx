@@ -1,14 +1,19 @@
 import React, {Fragment} from 'react';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoButton, NeoHint, NeoInput} from "../../components";
+import {NeoButton, NeoInput} from "../../components";
 import showCode from "../../components/_utils/tools";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class CheckboxesPage extends React.Component {
     state = {}
 
 
     render() {
+        const data = [{name:'disabled', default:'false', description:"disabled"},
+            {name:'checked', default:'false', description:'checked'},
+            {name:'defaultChecked', default:'-', description:'defaultChecked'},
+            {name:'onChange', default:'-', description:'()=>{}'}]
         return (
             <Fragment>
                 <h1 className="title">Checkboxes</h1>
@@ -33,6 +38,8 @@ export default class CheckboxesPage extends React.Component {
 
                     </div>
                 </section>
+                <PropsTab dataSource={data} size="middle" pagination={false}/>
+
             </Fragment>
         );
     }

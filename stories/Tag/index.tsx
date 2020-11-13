@@ -4,9 +4,11 @@ import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import {NeoButton, NeoTag} from '../../components/index'
 import showCode from "../../components/_utils/tools";
 import {Fragment} from "react";
+import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class TagPage extends React.Component {
   render() {
+      const data = [{name:'closable', default:'false', description:'Кнопка удаления(крестик)'}];
     return (
         <Fragment>
             <h1 className="title">Теги</h1>
@@ -28,6 +30,8 @@ export default class TagPage extends React.Component {
                 </SyntaxHighlighter>
                 </div>
             </section>
+            <PropsTab dataSource={data} size="middle" pagination={false}/>
+
         </Fragment>
     );
   }
