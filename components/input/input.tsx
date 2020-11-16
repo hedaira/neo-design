@@ -104,11 +104,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'radio') {
-        return <label
+        return <label style={props.disabled? {cursor:'no-drop'}:{}}
             className={classes} >
             {children}
-                <input type={'radio'} name={props.name} value={props.value} onChange={props.onChange} onClick={props.onClick}/>
-            <span className="checkmark" />
+                <input type={'radio'} name={props.name} value={props.value} onChange={props.onChange} onClick={props.onClick} disabled={props.disabled}/>
+            <span className="checkmark" style={props.disabled? {backgroundColor:'rgba(0,0,0,0.15)'}:{}}/>
         </label>
     }
 
