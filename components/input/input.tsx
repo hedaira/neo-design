@@ -107,7 +107,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
         return <label
             className={classes} >
             {children}
-                <input type={'radio'} name={props.name} value={props.value} />
+                <input type={'radio'} name={props.name} value={props.value} onChange={props.onChange} onClick={props.onClick}/>
             <span className="checkmark" />
         </label>
     }
