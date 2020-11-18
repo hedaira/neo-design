@@ -22,6 +22,8 @@ export interface SelectProps {
     mode?;
     maxTagCount?;
     maxTagPlaceholder?;
+    maxTagTextLength?;
+
 }
 
 const prefix = 'select';

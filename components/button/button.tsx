@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
+import {Tooltip} from "antd";
 
 const ButtonTypes = tuple('primary', 'disabled', 'secondary', 'link', 'ghost');
 export type ButtonType = typeof ButtonTypes[number];
@@ -54,6 +55,27 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         }
     };
 
+    if (suffixIcon && props.title) {
+        return (
+            <Tooltip title={props.title} placement="bottomLeft">
+                <button
+                    id={id}
+                    className={classes}
+                    onClick={handleClick}
+                    style={style}
+                    hidden={props.hidden}
+                    disabled={(props.type === 'disabled')}
+                >
+                    <div style={{marginRight: '6px', marginBottom: '-5px'}}>
+                        {suffixIcon}
+                    </div>
+                    <div>
+                        {children}
+                    </div>
+                </button>
+            </Tooltip>
+        )
+    }
     if (suffixIcon) {
         return (
             <button
@@ -74,11 +96,26 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
             </button>
         )
     }
+    if(props.title){
+        return (
+        <Tooltip title={props.title} placement="bottomLeft">
+            <button
+                id={id}
+                className={classes}
+                onClick={handleClick}
+                style={style}
+                hidden={props.hidden}
+                disabled={(props.type === 'disabled')}
+            >
+                {children}
+            </button>
+        </Tooltip>
+        )
+    }
     else {
         return (
             <button
                 id={id}
-                title={title}
                 className={classes}
                 onClick={handleClick}
                 style={style}

@@ -16,7 +16,7 @@ thead .table__column_header div {
 }
 
 thead th {
-  height: 48px;
+  height: 40px !important;
   background-color: #F2F2F2 !important;
 }
 tr th:last-child{
@@ -26,20 +26,26 @@ tr th:last-child{
 }
 tbody tr {
   height: 40px;
+  background-color: #ffffff !important;
 }
+
 tbody tr:nth-child(2n) {
-  background-color: #FAFAFA;
+  background-color: #FAFAFA !important;
 }
+//tr:hover>td {
+//  border-top: 1px solid #D9D9D9 !important;
+//  border-bottom: 1px solid #D9D9D9 !important;
+//}
 tr:hover>td {
-  border-top: 1px solid #D9D9D9 !important;
-  border-bottom: 1px solid #D9D9D9 !important;
+  background-color: #FFF8E0 !important;
+  transition: all 0.3s !important;
 }
-tr:hover>td:first-child{
-  border-left: 1px solid #D9D9D9 !important;
-}
-tr:hover>td:last-child{
-  border-right: 1px solid #D9D9D9 !important;
-}
+//tr:hover>td:first-child{
+//  border-left: 1px solid #D9D9D9 !important;
+//}
+//tr:hover>td:last-child{
+//  border-right: 1px solid #D9D9D9 !important;
+//}
 
 .ant-table-small > .ant-table-content > .ant-table-body {
   margin: unset;
