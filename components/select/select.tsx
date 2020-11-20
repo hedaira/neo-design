@@ -11,18 +11,17 @@ export interface SelectProps {
     value?: any;
     allowClear?: boolean;
     showSearch?: boolean;
+    disabled?: boolean;
+    placeholder?: string;
     defaultValue?: any;
     onClick?: any;
+    mode?: 'default' | 'multiple' | 'tags';
+    maxTagCount?: number;
+    maxTagTextLength?: number;
     onChange?;
-    disabled?;
     getPopupContainer?;
     style?;
-    placeholder?;
-    suffix?;
-    mode?;
-    maxTagCount?;
     maxTagPlaceholder?;
-    maxTagTextLength?;
 
 }
 

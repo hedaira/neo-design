@@ -24,7 +24,7 @@ export interface ModalProps {
         width?: string;
         className?: string;
         children?: React.ReactNode;
-        closable?;
+        closable?: boolean;
 }
 
 
@@ -57,13 +57,6 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         }
 
     );
-
-    const handleOk = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
-        const { onOk } = props;
-        if (onOk) {
-            (onOk as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)(e);
-        }
-    };
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement, MouseEvent>) => {
         const { onOk } = props;

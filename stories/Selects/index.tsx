@@ -20,7 +20,10 @@ export default class SelectsPage extends React.Component {
     render() {
         const data = [{name:'width', default:'185px', description:'Ширина'},
             {name:'allowClear', default:'false', description:'Очистить поле'},
-            {name:'showSearch', default:'false', description:'Добавить иконку поиска'}];
+            {name:'showSearch', default:'false', description:'Добавить иконку поиска'},
+            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов'},
+            {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги'},
+            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения'}];
 
         return (
             <Fragment>
@@ -101,11 +104,10 @@ export default class SelectsPage extends React.Component {
                             mode={"tags"}
                             width={'670px'}
                             placeholder={"Выберите из списка"}
-                            defaultValue={'more'}
                         >
                             <option value="lucy">Lucy</option>
                             <option value="jack">Jack</option>
-                            <option value="more">Еще</option>
+                            <option value="john">John</option>
                         </NeoSelect>
                     </div>
                     <div className='showCode'>

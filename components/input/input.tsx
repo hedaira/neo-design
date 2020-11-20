@@ -21,14 +21,14 @@ export interface InputProps {
     onSearch?: any;
     defaultChecked?: boolean;
     checked?: boolean;
-    style?;
-    placeholder?;
+    hidden?: boolean;
+    placeholder?: string;
     disabled?: any;
+    title?: string;
+    style?;
     id?;
     key?;
-    title?;
     onKeyUp?;
-    hidden?;
     onPressEnter?;
 }
 

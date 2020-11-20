@@ -31,12 +31,8 @@ interface CompoundedComponent
 const InternalHref: React.ForwardRefRenderFunction<unknown, HrefProps> = (props) => { // описание все что есть сверху
     const {
         type,
-        message,
-        description,
         className,
-        closable,
         hidden,
-        href,
         style,
         onClick,
         dangerouslySetInnerHTML

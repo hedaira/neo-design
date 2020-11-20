@@ -7,14 +7,14 @@ import {NeoIcon} from "neo-icon/lib";
 export interface DatePickerProps {
     width?: string;
     defaultValue?: any;
-    format?: any;
-    showTime?: any;
+    format?: string | string[];
+    showTime?: object|boolean;
     className?: string;
+    disabled?: boolean;
+    allowClear?: boolean;
     onChange?: any;
     key?: any;
     value?: any;
-    disabled?: any;
-    allowClear?: any;
 
 }
 

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {tuple} from '../_utils/tools'
 import {InputNumber} from 'antd';
 
 

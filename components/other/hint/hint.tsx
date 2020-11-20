@@ -6,11 +6,11 @@ import {Tooltip} from 'antd';
 export interface HintProps {
     className?: string;
     onClick?: any;
+    title?: string;
+    children?: React.ReactNode;
     onChange?;
     getPopupContainer?;
     style?;
-    title?;
-    children?: React.ReactNode;
 
 }
 
