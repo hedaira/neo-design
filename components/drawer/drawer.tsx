@@ -37,6 +37,7 @@ const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (pr
         visible,
         className,
         children,
+        width
     } = props;
 
 const classes = classNames(
@@ -47,6 +48,7 @@ const classes = classNames(
     return (
         <Drawer
             title={title}
+            width={width}
             onClose={props.onClose}
             visible={visible}
             bodyStyle={{ paddingBottom: 80 }}
