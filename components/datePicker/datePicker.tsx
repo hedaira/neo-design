@@ -8,8 +8,8 @@ export interface DatePickerProps {
     width?: string;
     defaultValue?: any;
     className?: string;
-    disabled?: boolean;
-    allowClear?: boolean;
+    disabled?: any;
+    allowClear?: any;
     onChange?: any;
     key?: any;
     value?: any;
