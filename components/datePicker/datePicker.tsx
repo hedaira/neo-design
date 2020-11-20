@@ -13,8 +13,8 @@ export interface DatePickerProps {
     onChange?: any;
     key?: any;
     value?: any;
-    format?;
-    showTime?;
+    format?:any;
+    showTime?:any;
 
 }
 
