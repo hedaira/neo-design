@@ -13,11 +13,11 @@ export interface DrawerProps {
     title?: string; // смотреть выше
     content?: string;
     visible?: boolean;
-    width?: number;
     className?: string;
     children?: React.ReactNode;
     getContainer?: string | HTMLElement | getContainerFunc | false;
     mask?: boolean;
+    width?;
     onClose?;
     footer?;
     style?;
