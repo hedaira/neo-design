@@ -6,15 +6,15 @@ import {NeoIcon} from "neo-icon/lib";
 
 export interface DatePickerProps {
     width?: string;
-    defaultValue?: any;
+    defaultValue?;
     className?: string;
     disabled?: any;
     allowClear?: any;
     onChange?: any;
     key?: any;
-    value?: any;
-    format?:any;
-    showTime?:any;
+    value?;
+    format?;
+    showTime?;
 
 }
 
