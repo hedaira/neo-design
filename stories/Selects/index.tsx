@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoButton, NeoSelect} from "../../components";
+import {NeoButton, NeoOption, NeoSelect} from "../../components";
 import showCode from "../../components/_utils/tools";
 import {PropsTab} from "../../components/_utils/PropsTab";
 
@@ -77,15 +77,15 @@ export default class SelectsPage extends React.Component {
                     <h4>Default with text</h4>
                     <div>
                         <NeoSelect placeholder={'lucy'}>
-                            <option value="lucy">Lucy</option>
-                            <option value="jack">Jack</option>
-                            <option value="john">John</option>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
                         </NeoSelect>
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Selects' onClick={showCode}>Show Code</NeoButton>
                     <SyntaxHighlighter id='Selects' language='jsx' style={okaidia} >
-                        {`import { NeoSelect } from "neo-design/lib";
+                        {`import { NeoSelect, NeoOption } from "neo-design/lib";
 
 <NeoSelect defaultValue="lucy">
     <option value="lucy">Lucy</option>
@@ -105,20 +105,20 @@ export default class SelectsPage extends React.Component {
                             width={'670px'}
                             placeholder={"Выберите из списка"}
                         >
-                            <option value="lucy">Lucy</option>
-                            <option value="jack">Jack</option>
-                            <option value="john">John</option>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
                         </NeoSelect>
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Selects' onClick={showCode}>Show Code</NeoButton>
                         <SyntaxHighlighter id='Selects' language='jsx' style={okaidia} >
-                            {`import { NeoSelect } from "neo-design/lib";
+                            {`import { NeoSelect, NeoOption } from "neo-design/lib";
 
 <NeoSelect defaultValue="lucy">
-    <option value="lucy">Lucy</option>
-    <option value="jack">Jack</option>
-    <option value="john">John</option>
+    <NeoOption value="lucy">Lucy</NeoOption>
+    <NeoOption value="jack">Jack</NeoOption>
+    <NeoOption value="john">John</NeoOption>
 </NeoSelect>`}
                         </SyntaxHighlighter>
                     </div>
