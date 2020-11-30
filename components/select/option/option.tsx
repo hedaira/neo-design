@@ -4,25 +4,12 @@ import {Select} from 'antd';
 
 
 export interface OptionProps {
-    width?: string;
     className?: string;
     children?: React.ReactNode;
-    name?: string;
     value?: any;
-    allowClear?: boolean;
-    showSearch?: boolean;
     disabled?: boolean;
-    placeholder?: string;
-    defaultValue?: any;
     onClick?: any;
-    mode?: 'default' | 'multiple' | 'tags';
-    maxTagCount?: number;
-    maxTagTextLength?: number;
-    onChange?;
-    getPopupContainer?;
-    style?;
-    maxTagPlaceholder?;
-
+    title?: any;
 }
 
 const prefix = 'option';
