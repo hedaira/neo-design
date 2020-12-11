@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {DatePicker} from 'antd';
 import {NeoIcon} from "neo-icon/lib";
+import {Title} from "../_utils/Title";
 
 
 export interface DatePickerProps {
@@ -15,7 +16,8 @@ export interface DatePickerProps {
     value?;
     format?;
     showTime?;
-
+    title?: string;
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
 }
 
 const prefix = 'datepicker';
@@ -34,16 +36,25 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
         className,
     );
 
-        return <DatePicker
-            {...props}
-            className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
-            suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
-        >
-        </DatePicker>
+    const width = `${props.width ? props.width : "auto"}`;
 
+    if (props.title && props.titleOrientation) {
+        return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
+            <DatePicker
+                {...props}
+                className={classes}
+                style={{width: `${props.width ? props.width : "auto"}`}}
+                suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
+            />
+        </Title>
+    }
 
-
+    return <DatePicker
+        {...props}
+        className={classes}
+        style={{width: width}}
+        suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
+    />
 }
 
 const NeoDatePicker = React.forwardRef<unknown, DatePickerProps>(InternalDatePicker) as CompoundedComponent;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {Select} from 'antd';
+import {Title} from "../_utils/Title";
 
 
 export interface SelectProps {
@@ -22,7 +23,8 @@ export interface SelectProps {
     getPopupContainer?;
     style?;
     maxTagPlaceholder?;
-
+    title?: string;
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
 }
 
 const prefix = 'select';
@@ -41,12 +43,25 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         prefix
     );
 
-        return <Select
-            {...props}
-            className={classes}
-            style={{...props.style, width: `${props.width ? props.width : "185px"}`}}
-            placeholder={props.placeholder}
-        />
+    const width = `${props.width ? props.width : "185px"}`;
+
+    if (props.title && props.titleOrientation) {
+        return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
+            <Select
+                {...props}
+                className={classes}
+                style={{...props.style, width: width}}
+                placeholder={props.placeholder}
+            />
+        </Title>
+    }
+
+    return <Select
+        {...props}
+        className={classes}
+        style={{...props.style, width: width}}
+        placeholder={props.placeholder}
+    />
 }
 
 const NeoSelect = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;

@@ -19,6 +19,8 @@ export default class SelectsPage extends React.Component {
 
     render() {
         const data = [{name:'width', default:'185px', description:'Ширина'},
+            {name:'title', default:'false', description:'Заголовок'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
             {name:'allowClear', default:'false', description:'Очистить поле'},
             {name:'showSearch', default:'false', description:'Добавить иконку поиска'},
             {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов'},
@@ -97,6 +99,41 @@ export default class SelectsPage extends React.Component {
 
                 <br/>
 
+                    <br/>
+                    <h4>Select with title</h4>
+                    <div>
+                        <NeoSelect title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
+                        </NeoSelect>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <NeoSelect title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
+                        </NeoSelect>
+                    </div>
+                    <div className='showCode'>
+                        <NeoButton style={{width: '170px'}} id='SelectsTitle' onClick={showCode}>Show Code</NeoButton>
+                        <SyntaxHighlighter id='SelectsTitle' language='jsx' style={okaidia} >
+                            {`import { NeoSelect, NeoOption } from "neo-design/lib";
+
+<NeoSelect title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
+                        <NeoOption value="lucy">Lucy</NeoOption>
+                        <NeoOption value="jack">Jack</NeoOption>
+                        <NeoOption value="john">John</NeoOption>
+                    </NeoSelect>
+                    <NeoSelect title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
+                        <NeoOption value="lucy">Lucy</NeoOption>
+                        <NeoOption value="jack">Jack</NeoOption>
+                        <NeoOption value="john">John</NeoOption>
+                    </NeoSelect>`}
+                        </SyntaxHighlighter>
+                    </div>
+
                     <h4>Select with tags</h4>
                     <div>
                         <NeoSelect
@@ -124,7 +161,6 @@ export default class SelectsPage extends React.Component {
                     </div>
                 </section>
                 <PropsTab dataSource={data} size="middle" pagination={false}/>
-
             </Fragment>
         );
     }

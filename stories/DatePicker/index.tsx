@@ -11,6 +11,8 @@ export default class DatePickerPage extends React.Component {
 
     render() {
         const data = [{name:'defaultValue', default:'-', description:'Установка даты по умолчанию'},
+            {name:'title', default:'false', description:'Заголовок'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
             {name:'format', default:'YYYY-MM-DD', description:'Формат даты'},
             {name:'disabled', default:'false', description:'disabled'},
             {name:'showTime', default:'-', description:'Для обеспечения дополнительного выбора времени'},
@@ -30,10 +32,29 @@ export default class DatePickerPage extends React.Component {
                     <div className='showCode'>
                     <NeoButton style={{width: '170px'}} id='DatePicker' onClick={showCode}>Show Code</NeoButton>
                     <SyntaxHighlighter id='DatePicker' language='jsx' style={okaidia} >
-                        {`import { NXDatePicker } from "neo-design/lib";
+                        {`import { NeoDatePicker } from "neo-design/lib";
 
-<NeoDatePicker/>}/>`}
+<NeoDatePicker/>`}
                     </SyntaxHighlighter>
+                    </div>
+                    <br/>
+                    <h3 className="ex-title">Date Picker with title</h3>
+
+                    <div>
+                        <NeoDatePicker width={"185px"} title={"DateTime"} titleOrientation={"Top"}/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <NeoDatePicker width={"185px"} title={"DateTime"} titleOrientation={"Left"}/>
+                    </div>
+                    <div className='showCode'>
+                        <NeoButton style={{width: '170px'}} id='DatePickerTitle' onClick={showCode}>Show Code</NeoButton>
+                        <SyntaxHighlighter id='DatePickerTitle' language='jsx' style={okaidia} >
+                            {`import { NeoDatePicker } from "neo-design/lib";
+
+<NeoDatePicker width={"185px"} title={"DateTime"} titleOrientation={"Top"}/>
+<NeoDatePicker width={"185px"} title={"DateTime"} titleOrientation={"Left"}/>`}
+                        </SyntaxHighlighter>
                     </div>
                 </section>
                 <PropsTab dataSource={data} size="middle" pagination={false}/>
