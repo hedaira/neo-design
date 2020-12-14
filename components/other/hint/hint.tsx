@@ -38,7 +38,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, HintProps> = (prop
         {...props}
         title={props.title}
         placement={props.placement ? props.placement : "bottomLeft"}
-        overlayStyle={{width:props.width}}
+        overlayStyle={{maxWidth:props.width}}
     ><div>{children}</div></Tooltip></div>
 }
 
