@@ -126,7 +126,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'textArea') {
-        return <textarea className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}}>
+        return <textarea {...props} className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}}>
             {children}
         </textarea>
     }
