@@ -17,7 +17,8 @@ export interface DatePickerProps {
     format?;
     showTime?;
     title?: string;
-    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
+    getPopupContainer?: ()=>HTMLElement;
 }
 
 const prefix = 'datepicker';

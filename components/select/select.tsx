@@ -20,11 +20,11 @@ export interface SelectProps {
     maxTagCount?: number;
     maxTagTextLength?: number;
     onChange?;
-    getPopupContainer?;
+    getPopupContainer?: ()=>HTMLElement;
     style?;
     maxTagPlaceholder?;
     title?: string;
-    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left",
 }
 
 const prefix = 'select';
