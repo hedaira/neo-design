@@ -18,7 +18,9 @@ export default class DatePickerPage extends React.Component {
             {name:'showTime', default:'-', description:'Для обеспечения дополнительного выбора времени'},
             {name:'onChange', default:'-', description:'()=>{}'},
             {name:'allowClear', default:'false', description:'Показывать кнопку очистки'},
-            {name:'width', default:'auto', description:'Ширина'}];
+            {name:'width', default:'auto', description:'Ширина'},
+            {name:'getCalendarContainer', default: '-', description:'Контейнер в котором будет отображаться календарь NeoDatePicker\'а'}
+            ];
         return (
             <Fragment>
                 <h1 className="title">DatePicker</h1>

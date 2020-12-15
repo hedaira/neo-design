@@ -20,11 +20,11 @@ export interface SelectProps {
     maxTagCount?: number;
     maxTagTextLength?: number;
     onChange?;
-    getPopupContainer?;
+    getPopupContainer?: ()=>HTMLElement;
     style?;
     maxTagPlaceholder?;
     title?: string;
-    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left",
 }
 
 const prefix = 'select';
@@ -49,6 +49,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
             <Select
                 {...props}
+                getPopupContainer={props.getPopupContainer}
                 className={classes}
                 style={{...props.style, width: width}}
                 placeholder={props.placeholder}
@@ -58,6 +59,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
     return <Select
         {...props}
+        getPopupContainer={props.getPopupContainer}
         className={classes}
         style={{...props.style, width: width}}
         placeholder={props.placeholder}

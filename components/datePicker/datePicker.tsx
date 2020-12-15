@@ -17,7 +17,8 @@ export interface DatePickerProps {
     format?;
     showTime?;
     title?: string;
-    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
+    getCalendarContainer?: ()=>HTMLElement;
 }
 
 const prefix = 'datepicker';
@@ -42,6 +43,7 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
         return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
             <DatePicker
                 {...props}
+                getCalendarContainer={props.getCalendarContainer}
                 className={classes}
                 style={{width: `${props.width ? props.width : "auto"}`}}
                 suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
@@ -51,6 +53,7 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
 
     return <DatePicker
         {...props}
+        getCalendarContainer={props.getCalendarContainer}
         className={classes}
         style={{width: width}}
         suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
