@@ -25,7 +25,9 @@ export default class SelectsPage extends React.Component {
             {name:'showSearch', default:'false', description:'Добавить иконку поиска'},
             {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов'},
             {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги'},
-            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения'}];
+            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения'},
+            {name:'getPopupContainer', default: '-', description:'Контейнер в котором будет отображаться дроп даун select\'а'}
+            ];
 
         return (
             <Fragment>

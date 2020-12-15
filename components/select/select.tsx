@@ -49,6 +49,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
             <Select
                 {...props}
+                getPopupContainer={props.getPopupContainer}
                 className={classes}
                 style={{...props.style, width: width}}
                 placeholder={props.placeholder}
@@ -58,6 +59,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
     return <Select
         {...props}
+        getPopupContainer={props.getPopupContainer}
         className={classes}
         style={{...props.style, width: width}}
         placeholder={props.placeholder}
