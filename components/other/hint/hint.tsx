@@ -8,9 +8,11 @@ export interface HintProps {
     onClick?: any;
     title?: string;
     children?: React.ReactNode;
+    placement?;
     onChange?;
     getPopupContainer?;
     style?;
+    width?: string;
 
 }
 
@@ -35,7 +37,8 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, HintProps> = (prop
     ><Tooltip
         {...props}
         title={props.title}
-        placement="bottomLeft"
+        placement={props.placement ? props.placement : "bottomLeft"}
+        overlayStyle={{maxWidth:props.width}}
     ><div>{children}</div></Tooltip></div>
 }
 
