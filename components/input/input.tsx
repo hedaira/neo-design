@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Input} from 'antd';
+import {Title} from "../_utils/Title";
 const InputTypes = tuple('search', 'textArea', 'checkbox', 'radio');
 export type InputType = typeof InputTypes[number];
 
@@ -21,14 +22,15 @@ export interface InputProps {
     onSearch?: any;
     defaultChecked?: boolean;
     checked?: boolean;
-    style?;
-    placeholder?;
+    hidden?: boolean;
+    placeholder?: string;
     disabled?: any;
+    title?: string;
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    style?;
     id?;
     key?;
-    title?;
     onKeyUp?;
-    hidden?;
     onPressEnter?;
 }
 
@@ -54,7 +56,18 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     );
 
     if (!props.type && !props.password) {
-        return <Input
+        return props.title && props.titleOrientation ? <Title title={props.title} titleOrientation={props.titleOrientation} width={`${props.width ? props.width : "auto"}`}>
+            <Input
+                {...props}
+                autoFocus={props.autofocus}
+                className={classes}
+                hidden={props.hidden}
+                onPressEnter={props.onPressEnter}
+                style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            >
+                {children}
+            </Input>
+        </Title> : <Input
             {...props}
             autoFocus={props.autofocus}
             className={classes}
@@ -113,7 +126,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'textArea') {
-        return <textarea className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}}>
+        return <textarea {...props} className={classes} style={{...props.style, width: `${props.width ? props.width : "auto"}`}}>
             {children}
         </textarea>
     }

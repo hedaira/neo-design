@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {okaidia} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {NeoButton, NeoSelect} from "../../components";
+import {NeoButton, NeoOption, NeoSelect} from "../../components";
 import showCode from "../../components/_utils/tools";
 import {PropsTab} from "../../components/_utils/PropsTab";
 
@@ -19,8 +19,15 @@ export default class SelectsPage extends React.Component {
 
     render() {
         const data = [{name:'width', default:'185px', description:'Ширина'},
+            {name:'title', default:'false', description:'Заголовок'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
             {name:'allowClear', default:'false', description:'Очистить поле'},
-            {name:'showSearch', default:'false', description:'Добавить иконку поиска'}];
+            {name:'showSearch', default:'false', description:'Добавить иконку поиска'},
+            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов'},
+            {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги'},
+            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения'},
+            {name:'getPopupContainer', default: '-', description:'Контейнер в котором будет отображаться дроп даун select\'а'}
+            ];
 
         return (
             <Fragment>
@@ -74,15 +81,15 @@ export default class SelectsPage extends React.Component {
                     <h4>Default with text</h4>
                     <div>
                         <NeoSelect placeholder={'lucy'}>
-                            <option value="lucy">Lucy</option>
-                            <option value="jack">Jack</option>
-                            <option value="john">John</option>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
                         </NeoSelect>
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Selects' onClick={showCode}>Show Code</NeoButton>
                     <SyntaxHighlighter id='Selects' language='jsx' style={okaidia} >
-                        {`import { NeoSelect } from "neo-design/lib";
+                        {`import { NeoSelect, NeoOption } from "neo-design/lib";
 
 <NeoSelect defaultValue="lucy">
     <option value="lucy">Lucy</option>
@@ -94,6 +101,41 @@ export default class SelectsPage extends React.Component {
 
                 <br/>
 
+                    <br/>
+                    <h4>Select with title</h4>
+                    <div>
+                        <NeoSelect title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
+                        </NeoSelect>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <NeoSelect title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
+                        </NeoSelect>
+                    </div>
+                    <div className='showCode'>
+                        <NeoButton style={{width: '170px'}} id='SelectsTitle' onClick={showCode}>Show Code</NeoButton>
+                        <SyntaxHighlighter id='SelectsTitle' language='jsx' style={okaidia} >
+                            {`import { NeoSelect, NeoOption } from "neo-design/lib";
+
+<NeoSelect title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
+                        <NeoOption value="lucy">Lucy</NeoOption>
+                        <NeoOption value="jack">Jack</NeoOption>
+                        <NeoOption value="john">John</NeoOption>
+                    </NeoSelect>
+                    <NeoSelect title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
+                        <NeoOption value="lucy">Lucy</NeoOption>
+                        <NeoOption value="jack">Jack</NeoOption>
+                        <NeoOption value="john">John</NeoOption>
+                    </NeoSelect>`}
+                        </SyntaxHighlighter>
+                    </div>
+
                     <h4>Select with tags</h4>
                     <div>
                         <NeoSelect
@@ -101,28 +143,26 @@ export default class SelectsPage extends React.Component {
                             mode={"tags"}
                             width={'670px'}
                             placeholder={"Выберите из списка"}
-                            defaultValue={'more'}
                         >
-                            <option value="lucy">Lucy</option>
-                            <option value="jack">Jack</option>
-                            <option value="more">Еще</option>
+                            <NeoOption value="lucy">Lucy</NeoOption>
+                            <NeoOption value="jack">Jack</NeoOption>
+                            <NeoOption value="john">John</NeoOption>
                         </NeoSelect>
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Selects' onClick={showCode}>Show Code</NeoButton>
                         <SyntaxHighlighter id='Selects' language='jsx' style={okaidia} >
-                            {`import { NeoSelect } from "neo-design/lib";
+                            {`import { NeoSelect, NeoOption } from "neo-design/lib";
 
 <NeoSelect defaultValue="lucy">
-    <option value="lucy">Lucy</option>
-    <option value="jack">Jack</option>
-    <option value="john">John</option>
+    <NeoOption value="lucy">Lucy</NeoOption>
+    <NeoOption value="jack">Jack</NeoOption>
+    <NeoOption value="john">John</NeoOption>
 </NeoSelect>`}
                         </SyntaxHighlighter>
                     </div>
                 </section>
                 <PropsTab dataSource={data} size="middle" pagination={false}/>
-
             </Fragment>
         );
     }

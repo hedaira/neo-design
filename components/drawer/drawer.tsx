@@ -13,12 +13,12 @@ export interface DrawerProps {
     title?: string; // смотреть выше
     content?: string;
     visible?: boolean;
-    onClose?;
-    width?;
     className?: string;
     children?: React.ReactNode;
     getContainer?: string | HTMLElement | getContainerFunc | false;
-    mask?;
+    mask?: boolean;
+    width?;
+    onClose?;
     footer?;
     style?;
 }
@@ -34,10 +34,10 @@ interface CompoundedComponent
 const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (props) => {
     const {
         title,
-        width,
         visible,
         className,
         children,
+        width
     } = props;
 
 const classes = classNames(

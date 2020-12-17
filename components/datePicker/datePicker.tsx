@@ -2,20 +2,23 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {DatePicker} from 'antd';
 import {NeoIcon} from "neo-icon/lib";
+import {Title} from "../_utils/Title";
 
 
 export interface DatePickerProps {
     width?: string;
-    defaultValue?: any;
-    format?: any;
-    showTime?: any;
+    defaultValue?;
     className?: string;
-    onChange?: any;
-    key?: any;
-    value?: any;
     disabled?: any;
     allowClear?: any;
-
+    onChange?: any;
+    key?: any;
+    value?;
+    format?;
+    showTime?;
+    title?: string;
+    titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
+    getCalendarContainer?: ()=>HTMLElement;
 }
 
 const prefix = 'datepicker';
@@ -34,16 +37,27 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
         className,
     );
 
-        return <DatePicker
-            {...props}
-            className={classes}
-            style={{width: `${props.width ? props.width : "auto"}`}}
-            suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
-        >
-        </DatePicker>
+    const width = `${props.width ? props.width : "auto"}`;
 
+    if (props.title && props.titleOrientation) {
+        return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
+            <DatePicker
+                {...props}
+                getCalendarContainer={props.getCalendarContainer}
+                className={classes}
+                style={{width: `${props.width ? props.width : "auto"}`}}
+                suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
+            />
+        </Title>
+    }
 
-
+    return <DatePicker
+        {...props}
+        getCalendarContainer={props.getCalendarContainer}
+        className={classes}
+        style={{width: width}}
+        suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
+    />
 }
 
 const NeoDatePicker = React.forwardRef<unknown, DatePickerProps>(InternalDatePicker) as CompoundedComponent;

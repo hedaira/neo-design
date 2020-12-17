@@ -14,12 +14,12 @@ export interface ButtonProps {
     size?: SizeType;
     title?: string;
     className?: string;
+    id?: string;
+    hidden?: boolean;
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLElement>;
-    style?;
-    id?;
-    hidden?;
     suffixIcon?: React.ReactNode;
+    style?;
 }
 
 const prefix = 'btn';

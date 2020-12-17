@@ -13,8 +13,7 @@ export interface BarProps {
     className?: string;
     children?: React.ReactNode;
     style?;
-    disabled?;
-    color?;
+    color?: string;
 }
 
 const prefix = 'bar';
@@ -26,7 +25,6 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, BarProps> = (props
     const {
         type,
         className,
-        children
     } = props;
 
     const classes = classNames(

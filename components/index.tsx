@@ -7,6 +7,7 @@ export { default as NeoHref } from './href';
 export { default as NeoInput } from './input';
 export { default as NeoInputNumber } from './inputNumber'
 export { default as NeoSelect } from './select';
+export { default as NeoOption } from './select/option';
 
 export { default as NeoCol } from './grid/col';
 export { default as NeoRow } from './grid/row';

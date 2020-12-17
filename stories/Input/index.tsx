@@ -11,6 +11,8 @@ class InputPage extends React.Component {
 
         const data = [{name:'type', default:'-', description:"Тип('search', 'textArea', 'checkbox', 'radio', 'password')"},
             {name:'width', default:'auto', description:'Ширина'},
+            {name:'title', default:'false', description:'Заголовок'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
             {name:'hidden', default:'true/false', description:'Кнопка вторичного призыва к действию (Secondary)'},
             {name:'disabled', default:'-', description:'Кнопка, запрещающая выполнение действия'},
             {name:'onSearch', default:'', description:'()=>{}'},
@@ -38,6 +40,24 @@ class InputPage extends React.Component {
 
 <NeoInput type={'default'} width={"250px"} />`}
                     </SyntaxHighlighter>
+                    </div>
+                    <br/>
+
+                    <div>
+                        <h4>Title</h4>
+                        <br />
+                        <NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
+                        <br/>
+                        <NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />
+                    </div>
+                    <div className='showCode'>
+                        <NeoButton style={{width: '170px'}} id='Title' onClick={showCode}>Show Code</NeoButton>
+                        <SyntaxHighlighter id='Title' language='jsx' style={okaidia} >
+                            {`import { NeoInput } from "neo-design/lib";
+
+<NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
+<NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />`}
+                        </SyntaxHighlighter>
                     </div>
                     <br/>
 
