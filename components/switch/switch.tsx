@@ -38,6 +38,7 @@ const InternalSwitch: React.ForwardRefRenderFunction<unknown, SwitchProps> = (pr
             unCheckedChildren="OFF"
             style={props.style}
             className={classes}
+            loading={true}
             {...props}
         >
         </Switch>
