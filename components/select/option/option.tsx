@@ -33,6 +33,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, OptionProps> = (pr
     return <NeoOption
         {...props}
         className={classes}
+        value={props.value}
     />
 }
 
