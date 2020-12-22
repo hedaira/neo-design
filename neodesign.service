@@ -1,4 +1,4 @@
-# systemctl enable /opt/neodesign/neodesign.service
+# systemctl enable /opt/neo-design/neodesign.service
 [Unit]
  Description = Neoflex Design Service
 
@@ -7,9 +7,9 @@
  Restart=always
  RestartSec=1
  SuccessExitStatus=143
- ExecStart = /opt/neodesign/neodesign.sh start
- ExecStop = /opt/neodesign/neodesign.sh stop
- ExecReload = /opt/neodesign/neodesign.sh restart
+ ExecStart = /opt/neo-design/neodesign.sh start
+ ExecStop = /opt/neo-design/neodesign.sh stop
+ ExecReload = /opt/neo-design/neodesign.sh restart
 
 [Install]
  WantedBy=multi-user.target
