@@ -54,6 +54,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
                 className={classes}
                 style={{...props.style, width: width}}
                 placeholder={props.placeholder}
+                defaultValue={props.defaultValue}
             />
         </Title>
     }
@@ -64,6 +65,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         className={classes}
         style={{...props.style, width: width}}
         placeholder={props.placeholder}
+        defaultValue={props.defaultValue}
     />
 }
 
