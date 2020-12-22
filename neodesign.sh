@@ -1,6 +1,6 @@
 #!/bin/sh
 SERVICE_NAME=neodesign
-PID_PATH_NAME=/opt/neodesign/neodesign-pid
+PID_PATH_NAME=/opt/neo-design/neodesign-pid
 
 SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/neo-design/logs/neodesign.log -Dlogging.level.root=info"
 case $1 in
