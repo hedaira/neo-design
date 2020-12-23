@@ -1,13 +1,13 @@
 #!/bin/sh
 SERVICE_NAME=neodesign
-PID_PATH_NAME=/opt/neodesign/neo-design/neodesign-pid
+PID_PATH_NAME=/opt/neo-design/neodesign-pid
 
-SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/neodesign/neo-design/logs/neodesign.log -Dlogging.level.root=info"
+SYS_PARAMS="-Xmx8g -Dlogging.file=/opt/neo-design/logs/neodesign.log -Dlogging.level.root=info"
 case $1 in
 install)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       npm install -g
+       npm install
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
@@ -25,7 +25,7 @@ gulp)
 start)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       nohup npm run storybook 1>>/opt/neodesign/neo-design/logs/neodesign.log 2>>/opt/neodesign/neo-design/logs/neodesign.log & echo $! > $PID_PATH_NAME
+       nohup npm run storybook 1>>/opt/neo-design/logs/neodesign.log 2>>/opt/neo-design/logs/neodesign.log & echo $! > $PID_PATH_NAME
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
