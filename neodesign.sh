@@ -7,7 +7,7 @@ case $1 in
 install)
        echo "Starting $SERVICE_NAME ..."
   if [ ! -f $PID_PATH_NAME ]; then
-       npm install -g
+       npm install
        echo "$SERVICE_NAME started ..."
   else
        echo "$SERVICE_NAME is already running ..."
