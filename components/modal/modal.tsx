@@ -164,7 +164,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                         <NeoTypography style={{color: "#FFFFFF"}} type={'capture_regular'}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoTypography>
                     </NeoButton>}
                     {onRightButtonClick && <NeoButton style={{width:"111px", height: "32px"}} className={'edit-button-left'} type={'secondary'} onClick={onRightButtonClick}>
-                        <NeoTypography style={{color: "#424D78"}} type={'capture_regular'}>{textOfLeftButton ? textOfLeftButton : 'Отменить'}</NeoTypography>
+                        <NeoTypography style={{color: "#424D78"}} type={'capture_regular'}>{textOfRightButton ? textOfRightButton : 'Отменить'}</NeoTypography>
                     </NeoButton>}
                 </div>}
                 style={{width: `${props.width ? props.width : "432px"}`}}
