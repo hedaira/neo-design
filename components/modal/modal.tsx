@@ -25,6 +25,7 @@ export interface ModalProps {
         className?: string;
         children?: React.ReactNode;
         closable?: boolean;
+        footer?: any;
 }
 
 
@@ -46,6 +47,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
       visible,
       className,
       children,
+      footer
   } = props;
 
 
@@ -67,7 +69,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             title={title}
             visible={visible}
             closable={props.closable}
-            footer={<div>
+            footer={footer ? footer :<div>
                 {onLeftButtonClick && <NeoButton size={'medium'} className={'basic-button-ok'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
                 {onRightButtonClick && <NeoButton size={'medium'} className={'basic-button-close'} type={'secondary'} onClick={onRightButtonClick}>{textOfRightButton ? textOfRightButton : 'Отменить'}</NeoButton>}
             </div>}
@@ -93,7 +95,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             onOk={onLeftButtonClick}
             visible={visible}
             closable={props.closable}
-            footer={<NeoButton className={'info-button'}  size={'medium'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
+            footer={footer ? footer :<NeoButton className={'info-button'}  size={'medium'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
             style={{width: `${props.width ? props.width : "930px"}`}}
         >
             <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>
@@ -116,7 +118,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                 </div>}
             visible={visible}
             closable={props.closable}
-            footer={<NeoButton size={'medium'} className={'error-button'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
+            footer={footer ? footer :<NeoButton size={'medium'} className={'error-button'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
             style={{width: `${props.width ? props.width : "432px"}`}}
         >
             <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>
@@ -139,7 +141,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                 </div>}
             visible={visible}
             closable={props.closable}
-            footer={<NeoButton size={'medium'} className={'success-button'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
+            footer={footer ? footer :<NeoButton size={'medium'} className={'success-button'} onClick={onLeftButtonClick}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoButton>}
             style={{width: `${props.width ? props.width : "432px"}`}}
         >
             <div style={{width: '100%', display:'flex', alignItems:'center', flexDirection:'column'}}>
@@ -157,7 +159,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
                 title={title}
                 visible={visible}
                 closable={props.closable}
-                footer={<div>
+                footer={footer ? footer : <div>
                     {onLeftButtonClick && <NeoButton style={{width:"111px", height: "32px"}} className={'edit-button-right'} onClick={onLeftButtonClick}>
                         <NeoTypography style={{color: "#FFFFFF"}} type={'capture_regular'}>{textOfLeftButton ? textOfLeftButton : 'Ок'}</NeoTypography>
                     </NeoButton>}

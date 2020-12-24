@@ -102,7 +102,8 @@ export default class ModalPage extends Component {
             {name:'textOfLeftButton', default:'Ок', description:"Текст основной кнопки 'Ок'", value: 'ReactNode'},
             {name:'textOfRightButton', default:'Отменить', description:"Текст кнопки 'Отменить'", value: 'ReactNode'},
             {name:'onCancel', default:'-', description:"Действие при закрытии модального окна(крестик)", value: 'function(e)'},
-            {name:'closable', default:'false', description:"Видна ли кнопка закрытия (крестик) в правом верхнем углу модального диалога или нет", value: 'true / false'}];
+            {name:'closable', default:'false', description:"Видна ли кнопка закрытия (крестик) в правом верхнем углу модального диалога или нет", value: 'true / false'},
+            {name:'footer', default:'-', description:"Кастомизация блока footer", value: 'ReactNode'}];
         return (
             <Fragment>
                 <h1 className="title">Модальное окно</h1>
