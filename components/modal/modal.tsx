@@ -154,8 +154,8 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
     if (props.type === 'edit' ) {
         return <label className={'question'}>
             <Modal
-                className={classes}
                 {...props}
+                className={classes}
                 title={title}
                 visible={visible}
                 closable={props.closable}
