@@ -19,15 +19,22 @@ export class PropsTab extends React.Component<TabProps, unknown>{
             },
             {
                 title: <div className='table__column_header'>
+                    <span style={{width:'100%', textAlign: 'center'}}>Description</span>
+                </div>,
+                dataIndex: 'description'
+            },
+            {
+                title: <div className='table__column_header'>
                     <span style={{width:'100%', textAlign: 'center'}}>Default</span>
                 </div>,
                 dataIndex: 'default',
             },
             {
                 title: <div className='table__column_header'>
-                    <span style={{width:'100%', textAlign: 'center'}}>Description</span>
+                    <span style={{width:'100%', textAlign: 'center'}}>Value</span>
                 </div>,
-                dataIndex: 'description'}]
+                dataIndex: 'value',
+            }]
 
         return <div className={'propsTab'}>
             <h2 className="title">API:</h2>
