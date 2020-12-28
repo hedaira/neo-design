@@ -77,7 +77,8 @@ class IconPage extends React.Component {
             'mark',
             'update',
             'fullScreen',
-            'fullScreenUnDo'
+            'fullScreenUnDo',
+            "hide"
         ];
 
         const functionalBarCheck = [
@@ -86,7 +87,8 @@ class IconPage extends React.Component {
             'calculatorCheck',
             'barChartCheck',
             'sortCheck',
-            'addCheck'
+            'addCheck',
+            'hideCheck'
         ];
 
         const diagrams = [
@@ -178,7 +180,6 @@ class IconPage extends React.Component {
             'tiles',
             "play",
             "show",
-            "hide",
             "journal",
             'star',
             'starFull',
