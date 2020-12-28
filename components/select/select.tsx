@@ -56,7 +56,9 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
                 style={{...props.style, width: width}}
                 placeholder={props.placeholder}
                 filterOption={props.filterOption}
-            />
+            >
+                {props.children}
+            </Select>
         </Title>
     }
 
@@ -67,7 +69,9 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         style={{...props.style, width: width}}
         placeholder={props.placeholder}
         filterOption={props.filterOption}
-    />
+    >
+        {props.children}
+    </Select>
 }
 
 const NeoSelect = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;
