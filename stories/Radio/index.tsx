@@ -10,7 +10,11 @@ export default class RadioPage extends React.Component {
 
 
     render() {
-        const data = [{name:'type', default:'-', description:"Тип('search', 'textArea', 'checkbox', 'radio', 'password')"}];
+        const data = [{name:'type', default:'-', description:"Тип", value: "'search' | 'textArea' | 'checkbox' | 'radio' | 'password'"},
+            {name:'disabled', default:'false', description:'disabled', value: 'true / false'},
+            {name:'checked', default:'false', description:'checked', value: 'true / false'},
+            {name:'defaultChecked', default:'false', description:'Выбрано по умолчанию', value: 'true / false'},
+            {name:'onChange', default:'-', description:'onChange', value: 'function(e)'}];
 
         return (
             <Fragment>

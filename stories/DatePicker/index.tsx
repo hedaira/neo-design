@@ -10,16 +10,16 @@ export default class DatePickerPage extends React.Component {
 
 
     render() {
-        const data = [{name:'defaultValue', default:'-', description:'Установка даты по умолчанию'},
-            {name:'title', default:'false', description:'Заголовок'},
-            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
-            {name:'format', default:'YYYY-MM-DD', description:'Формат даты'},
-            {name:'disabled', default:'false', description:'disabled'},
-            {name:'showTime', default:'-', description:'Для обеспечения дополнительного выбора времени'},
-            {name:'onChange', default:'-', description:'()=>{}'},
-            {name:'allowClear', default:'false', description:'Показывать кнопку очистки'},
-            {name:'width', default:'auto', description:'Ширина'},
-            {name:'getCalendarContainer', default: '-', description:'Контейнер в котором будет отображаться календарь NeoDatePicker\'а'}
+        const data = [{name:'defaultValue', default:'-', description:'Установка даты по умолчанию', value: 'moment'},
+            {name:'width', default:'auto', description:'Ширина', value: 'String'},
+            {name:'title', default:'false', description:'Заголовок', value: 'String'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка', value: '"Top" | "Right" | "Bottom" | "Left"'},
+            {name:'format', default:'YYYY-MM-DD', description:'Формат даты', value: 'String'},
+            {name:'disabled', default:'false', description:'disabled', value: 'true / false'},
+            {name:'showTime', default:'-', description:'Для обеспечения дополнительного выбора времени', value: 'true / false | object'},
+            {name:'onChange', default:'-', description:'onChane', value: 'function(e)'},
+            {name:'allowClear', default:'false', description:'Показывать кнопку очистки', value: 'true / false'},
+            {name:'getCalendarContainer', default: '-', description:"Контейнер в котором будет отображаться календарь NeoDatePicker'а", value: 'function(e)'}
             ];
         return (
             <Fragment>

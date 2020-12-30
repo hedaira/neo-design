@@ -10,16 +10,16 @@ const marginBottom = '20px';
 export default class TypographyPageDoc extends Component {
     state = {}
     render() {
-        const data = [{name:'type', default:'capture_regular', description:'Тип'},
-            {name:'copyable', default:'false', description:'Можно установить копию текста и обратный вызов, когда это объект. boolean | { text: string, onCopy: Function }'},
-            {name:'code', default:'false', description:'Стиль кода'},
-            {name:'delete', default:'false', description:'Зачеркивание'},
-            {name:'disabled', default:'false', description:'Disabled'},
-            {name:'ellipsis', default:'false', description:'Отображать многоточие при переполнении текста. Можно настраивать строки и расширять с помощью объекта. boolean | { rows: number, expandable: boolean, onExpand: Function }'},
-            {name:'mark', default:'false', description:'Выделение'},
-            {name:'underline', default:'false', description:'Подчеркивание'},
-            {name:'strong', default:'false', description:'Выделение жирным'},
-            {name:'required', default:'false', description:'Пометить звездочкой'},
+        const data = [{name:'type', default:'capture_regular', description:'Тип', value: "'h1_regular' | 'h2_medium' | 'h2_regular' | 'h3_medium' | 'h3_regular' | 'h4_medium' | 'h4_regular' | 'h4_light' | 'body_medium' | 'body_regular' | 'body_light' | 'body_link' | 'body_bold' | 'capture_regular' | 'capture_medium' | 'capture_link' | 'capture_light'"},
+            {name:'copyable', default:'false', description:'Можно установить копию текста и обратный вызов, когда это объект', value: 'true / false | { text: string, onCopy: Function }'},
+            {name:'code', default:'false', description:'Стиль кода', value: 'true / false'},
+            {name:'delete', default:'false', description:'Зачеркивание', value: 'true / false'},
+            {name:'disabled', default:'false', description:'Disabled', value: 'true / false'},
+            {name:'ellipsis', default:'false', description:'Отображать многоточие при переполнении текста. Можно настраивать строки и расширять с помощью объекта', value: 'boolean | { rows: number, expandable: boolean, onExpand: Function }'},
+            {name:'mark', default:'false', description:'Выделение', value: 'true / false'},
+            {name:'underline', default:'false', description:'Подчеркивание', value: 'true / false'},
+            {name:'strong', default:'false', description:'Выделение жирным', value: 'true / false'},
+            {name:'required', default:'false', description:'Пометить звездочкой', value: 'true / false'}
         ];
         return (
             <Fragment>

@@ -100,13 +100,13 @@ export default class TablesPage extends Component {
         }
 
         const propsData = [
-            {name:'colums', default:'-', description:'Колонки таблицы'},
-            {name:'dataSource', default:'-', description:'data'},
-            {name:'bordered', default:'true/false', description:'Границы'},
-            {name:'loading', default:'true/false', description:'Статус загрузки таблицы'},
-            {name:'size', default:'default', description:"Размер таблицы('default','middle','small')"},
-            {name:'showHeader', default:'true/false', description:'Показывать header таблицы'},
-            {name:'pagination', default:'true/false', description:'Пагинация'}
+            {name:'colums', default:'-', description:'Колонки таблицы', value: 'ColumnProps[]'},
+            {name:'dataSource', default:'-', description:'data', value: 'any[]'},
+            {name:'bordered', default:'false', description:'Границы', value: 'true / false'},
+            {name:'loading', default:'false', description:'Статус загрузки таблицы', value: 'true / false'},
+            {name:'size', default:'default', description:"Размер таблицы", value: "'default' | 'middle' | 'small'"},
+            {name:'showHeader', default:'true', description:'Показывать header таблицы', value: 'true / false'},
+            {name:'pagination', default:'true', description:'Пагинация', value: 'true/object, false - to hide'}
         ]
 
         return (

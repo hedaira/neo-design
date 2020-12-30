@@ -18,15 +18,15 @@ export default class SelectsPage extends React.Component {
     };
 
     render() {
-        const data = [{name:'width', default:'185px', description:'Ширина'},
-            {name:'title', default:'false', description:'Заголовок'},
-            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
-            {name:'allowClear', default:'false', description:'Очистить поле'},
-            {name:'showSearch', default:'false', description:'Добавить иконку поиска'},
-            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов'},
-            {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги'},
-            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения'},
-            {name:'getPopupContainer', default: '-', description:'Контейнер в котором будет отображаться дроп даун select\'а'}
+        const data = [{name:'width', default:'185px', description:'Ширина', value: 'String'},
+            {name:'title', default:'false', description:'Заголовок', value: 'String'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка', value: '"Top" | "Right" | "Bottom" | "Left"'},
+            {name:'allowClear', default:'false', description:'Очистить поле', value: 'true / false'},
+            {name:'showSearch', default:'false', description:'Добавить иконку поиска', value: 'true / false'},
+            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов', value: 'Number'},
+            {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги', value: 'ReactNode'},
+            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения', value: 'Number'},
+            {name:'getPopupContainer', default: '-', description:"Контейнер в котором будет отображаться дроп даун select'а", value: 'function(e)'}
             ];
 
         return (

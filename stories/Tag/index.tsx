@@ -8,7 +8,7 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class TagPage extends React.Component {
   render() {
-      const data = [{name:'closable', default:'false', description:'Кнопка удаления(крестик)'}];
+      const data = [{name:'closable', default:'false', description:'Кнопка удаления(крестик)', value: 'true / false'}];
     return (
         <Fragment>
             <h1 className="title">Теги</h1>
