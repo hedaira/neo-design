@@ -56,6 +56,8 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
                 style={{...props.style, width: width}}
                 placeholder={props.placeholder}
                 filterOption={props.filterOption}
+                showSearch={props.showSearch}
+                allowClear={props.allowClear}
             >
                 {props.children}
             </Select>
@@ -69,6 +71,8 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         style={{...props.style, width: width}}
         placeholder={props.placeholder}
         filterOption={props.filterOption}
+        showSearch={props.showSearch}
+        allowClear={props.allowClear}
     >
         {props.children}
     </Select>
