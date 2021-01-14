@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
-import {Input} from 'antd';
+import {Input, Radio} from 'antd';
 import {Title} from "../_utils/Title";
 const InputTypes = tuple('search', 'textArea', 'checkbox', 'radio');
 export type InputType = typeof InputTypes[number];
@@ -15,7 +15,7 @@ export interface InputProps {
     className?: string;
     children?: React.ReactNode;
     name?: string;
-    value?: string;
+    value?: any;
     allowClear?: boolean;
     onClick?: any;
     onChange?: any;
@@ -117,12 +117,9 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'radio') {
-        return <label style={props.disabled? {cursor:'no-drop'}:{}}
-            className={classes} >
-            {children}
-                <input type={'radio'} checked={(props.checked)} defaultChecked={(props.defaultChecked)} name={props.name} value={props.value} onChange={props.onChange} onClick={props.onClick} disabled={props.disabled}/>
-            <span className="checkmark" style={props.disabled? {backgroundColor:'rgba(0,0,0,0.15)'}:{}}/>
-        </label>
+        return  <Radio {...props} className={classes}>
+                    {children}
+                </Radio>
     }
 
     if (props.type === 'textArea') {
