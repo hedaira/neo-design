@@ -69,7 +69,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
                 placeholder={props.placeholder}
                 disabled={props.disabled}
                 defaultValue={props.defaultValue}
-                value={props.value}
+                // value={props.value}
                 onChange={props.onChange}
             >
                 {children}
@@ -84,7 +84,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             placeholder={props.placeholder}
             disabled={props.disabled}
             defaultValue={props.defaultValue}
-            value={props.value}
+            // value={props.value}
             onChange={props.onChange}
         >
             {children}
@@ -103,7 +103,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             placeholder={props.placeholder}
             disabled={props.disabled}
             defaultValue={props.defaultValue}
-            value={props.value}
+            // value={props.value}
             onChange={props.onChange}
         >
             {children}
@@ -122,7 +122,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
             disabled={props.disabled}
             defaultValue={props.defaultValue}
-            value={props.value}
+            // value={props.value}
             onChange={props.onChange}
         >
             {children}
