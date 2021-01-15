@@ -27,6 +27,7 @@ export interface InputProps {
     disabled?: any;
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    required?: boolean;
     style?;
     id?;
     key?;
@@ -56,7 +57,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     );
 
     if (!props.type && !props.password) {
-        return props.title && props.titleOrientation ? <Title title={props.title} titleOrientation={props.titleOrientation} width={`${props.width ? props.width : "auto"}`}>
+        return props.title && props.titleOrientation ? <Title title={props.title} required={props.required} titleOrientation={props.titleOrientation} width={`${props.width ? props.width : "auto"}`}>
             <Input
                 {...props}
                 autoFocus={props.autofocus}

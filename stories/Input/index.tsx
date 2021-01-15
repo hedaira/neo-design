@@ -18,7 +18,8 @@ class InputPage extends React.Component {
             {name:'onSearch', default:'-', description:'Действие при поиске', value: 'function(e)'},
             {name:'placeholder', default:'-', description:'Текст поля по умолчанию', value: 'String'},
             {name:'allowClear', default:'false', description:'Очистить поле(иконка)', value: 'true / false'},
-            {name:'isIcon', default:'false', description:'Применяется, если кнопка содержит в себе иконку', value: 'true / false'}];
+            {name:'isIcon', default:'false', description:'Применяется, если кнопка содержит в себе иконку', value: 'true / false'},
+            {name:'required', default:'false', description:'Обязательное поле(добавляет звездочку)', value: 'true / false'}];
 
         return (
             <React.Fragment>
@@ -44,19 +45,19 @@ class InputPage extends React.Component {
                     <br/>
 
                     <div>
-                        <h4>Title</h4>
+                        <h4>Input with title</h4>
                         <br />
-                        <NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
+                        <NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
                         <br/>
-                        <NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />
+                        <NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Title' onClick={showCode}>Show Code</NeoButton>
                         <SyntaxHighlighter id='Title' language='jsx' style={okaidia} >
                             {`import { NeoInput } from "neo-design/lib";
 
-<NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
-<NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />`}
+<NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
+<NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />`}
                         </SyntaxHighlighter>
                     </div>
                     <br/>

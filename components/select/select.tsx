@@ -27,6 +27,7 @@ export interface SelectProps {
     maxTagPlaceholder?;
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
+    required?: boolean;
 }
 
 const prefix = 'select';
@@ -48,7 +49,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
     const width = `${props.width ? props.width : "185px"}`;
 
     if (props.title && props.titleOrientation) {
-        return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
+        return <Title title={props.title} titleOrientation={props.titleOrientation} required={props.required} width={width}>
             <Select
                 {...props}
                 getPopupContainer={props.getPopupContainer}

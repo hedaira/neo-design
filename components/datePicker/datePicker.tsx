@@ -19,6 +19,7 @@ export interface DatePickerProps {
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
     getCalendarContainer?: ()=>HTMLElement;
+    required?: boolean;
 }
 
 const prefix = 'datepicker';
@@ -40,7 +41,7 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
     const width = `${props.width ? props.width : "auto"}`;
 
     if (props.title && props.titleOrientation) {
-        return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
+        return <Title title={props.title} titleOrientation={props.titleOrientation} required={props.required} width={width}>
             <DatePicker
                 {...props}
                 getCalendarContainer={props.getCalendarContainer}
