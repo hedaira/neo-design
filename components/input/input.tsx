@@ -28,6 +28,7 @@ export interface InputProps {
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
     required?: boolean;
+    defaultValue?: string;
     style?;
     id?;
     key?;
@@ -65,6 +66,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
                 hidden={props.hidden}
                 onPressEnter={props.onPressEnter}
                 style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+                placeholder={props.placeholder}
+                disabled={props.disabled}
+                defaultValue={props.defaultValue}
+                value={props.value}
+                onChange={props.onChange}
             >
                 {children}
             </Input>
@@ -75,6 +81,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             hidden={props.hidden}
             onPressEnter={props.onPressEnter}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            placeholder={props.placeholder}
+            disabled={props.disabled}
+            defaultValue={props.defaultValue}
+            value={props.value}
+            onChange={props.onChange}
         >
             {children}
         </Input>
@@ -89,6 +100,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             hidden={props.hidden}
             onPressEnter={props.onPressEnter}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            placeholder={props.placeholder}
+            disabled={props.disabled}
+            defaultValue={props.defaultValue}
+            value={props.value}
+            onChange={props.onChange}
         >
             {children}
         </Input>
@@ -104,6 +120,10 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             onPressEnter={props.onPressEnter}
             onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            disabled={props.disabled}
+            defaultValue={props.defaultValue}
+            value={props.value}
+            onChange={props.onChange}
         >
             {children}
         </Input.Search>
