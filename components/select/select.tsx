@@ -40,7 +40,6 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         className,
     } = props;
 
-
     const classes = classNames(
         className,
         prefix
