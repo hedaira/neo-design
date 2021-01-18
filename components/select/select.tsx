@@ -48,8 +48,8 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
     const width = `${props.width ? props.width : "185px"}`;
 
-    if (props.title && props.titleOrientation) {
-        return <Title title={props.title} titleOrientation={props.titleOrientation} required={props.required} width={width}>
+    if (props.title) {
+        return <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} required={props.required} width={width}>
             <Select
                 {...props}
                 getPopupContainer={props.getPopupContainer}
