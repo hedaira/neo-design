@@ -31,10 +31,6 @@
     "ts-loader": "^8.0.1"
   },
   "devDependencies": {
-    "@ant-design/css-animation": "^1.7.2",
-    "@ant-design/icons": "^4.2.1",
-    "@ant-design/react-slick": "~0.26.1",
-    "@ant-design/tools": "^9.0.0",
     "@storybook/react": "^5.3.19",
     "@storybook/theming": "6.0.21",
     "@storybook/addons": "6.0.21",

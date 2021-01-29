@@ -33,7 +33,7 @@ export default class TabsPage extends React.Component {
                         type={"card"}
                         tabPosition={"top"}
                     >
-                        <NeoTabs.NeoTabPane/>
+
                     </NeoTabs>
 
                     <NeoTabs
