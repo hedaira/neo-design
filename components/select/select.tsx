@@ -16,7 +16,7 @@ export interface SelectProps {
     placeholder?: string;
     defaultValue?: any;
     onClick?: any;
-    mode?: 'default' | 'multiple' | 'tags';
+    mode?: undefined | 'multiple' | 'tags';
     maxTagCount?: number;
     maxTagTextLength?: number;
     filterOption?;

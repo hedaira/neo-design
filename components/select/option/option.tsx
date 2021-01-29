@@ -20,6 +20,7 @@ interface CompoundedComponent
 const InternalSelect: React.ForwardRefRenderFunction<unknown, OptionProps> = (props) => {
     const {
         className,
+        value
     } = props;
 
 
@@ -30,9 +31,12 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, OptionProps> = (pr
 
 
     return <Select.Option
-        {...props}
-        className={classes}
-    >{props.children}</Select.Option>
+                {...props}
+                value={value}
+                className={classes}
+            >
+                {props.children}
+            </Select.Option>
 }
 
 const NeoOption = React.forwardRef<unknown, OptionProps>(InternalSelect) as CompoundedComponent;

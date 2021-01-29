@@ -9,7 +9,7 @@ export interface TagProps {
   className?: string;
   children?: React.ReactNode;
   closable?: boolean;
-  onClose?: Function;
+  onClose?: () => void;
   style?: React.CSSProperties;
 }
 
