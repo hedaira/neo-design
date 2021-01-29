@@ -27,6 +27,7 @@ export interface SelectProps {
     maxTagPlaceholder?;
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
+    required?: boolean;
 }
 
 const prefix = 'select';
@@ -39,7 +40,6 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         className,
     } = props;
 
-
     const classes = classNames(
         className,
         prefix
@@ -47,16 +47,20 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
     const width = `${props.width ? props.width : "185px"}`;
 
-    if (props.title && props.titleOrientation) {
-        return <Title title={props.title} titleOrientation={props.titleOrientation} width={width}>
+    if (props.title) {
+        return <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} required={props.required} width={width}>
             <Select
                 {...props}
                 getPopupContainer={props.getPopupContainer}
                 className={classes}
                 style={{...props.style, width: width}}
                 placeholder={props.placeholder}
-                filterOption={props.filterOption}
-            />
+                showSearch={props.showSearch}
+                allowClear={props.allowClear}
+                filterOption={props.filterOption||true}
+            >
+                {props.children}
+            </Select>
         </Title>
     }
 
@@ -66,8 +70,12 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         className={classes}
         style={{...props.style, width: width}}
         placeholder={props.placeholder}
-        filterOption={props.filterOption}
-    />
+        showSearch={props.showSearch}
+        allowClear={props.allowClear}
+        filterOption={props.filterOption||true}
+    >
+        {props.children}
+    </Select>
 }
 
 const NeoSelect = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;

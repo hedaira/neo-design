@@ -6,9 +6,10 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class HrefPage extends React.Component {
     render() {
-        const data = [{name:'type', default:'-', description:'Тип'},
-            {name:'hidden', default:'false', description:'Видимость оповещение'},
-            {name:'dangerouslySetInnerHTML', default:'-', description:"__html: 'Пример'"}];
+        const data = [{name:'type', default:'-', description:'Тип', value: "'success' | 'warning' | 'error'"},
+            {name:'hidden', default:'false', description:'Видимость оповещение', value: 'true / false'},
+            {name:'closable', default:'false', description:'Кнопка удаления(крестик)', value: 'true / false'},
+            {name:'dangerouslySetInnerHTML', default:'-', description:"__html: 'Пример'", value: "__html: 'Пример'"}];
 
         return (
             <Fragment>

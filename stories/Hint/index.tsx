@@ -10,9 +10,9 @@ export default class HintPage extends React.Component {
 
 
     render() {
-        const data = [{name:'title', default:'-', description:'Всплывающее сообщение при наведении'},
-            {name:'placement', default:'bottomLeft', description:'Позиционирование всплывающего сообщения: top, left, right, bottom, topLeft, topRight, bottomLeft, bottomRight, leftTop, leftBottom, rightTop, rightBottom'},
-            {name:'width', default:'250px', description:'Максимальная ширина всплывающего сообщения при наведении'}];
+        const data = [{name:'title', default:'-', description:'Всплывающее сообщение при наведении', value: 'String | ReactNode'},
+            {name:'placement', default:'bottomLeft', description:'Позиционирование всплывающего сообщения', value: "'top' | 'left' | 'right' | 'bottom' | 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight' | 'leftTop' | 'leftBottom' | 'rightTop' | 'rightBottom'"},
+            {name:'width', default:'250px', description:'Максимальная ширина всплывающего сообщения при наведении', value: 'String'}];
         return (
             <Fragment>
                 <h1 className="title">Hint</h1>

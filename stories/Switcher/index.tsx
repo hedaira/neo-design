@@ -9,7 +9,7 @@ export default class SwitcherPage extends React.Component {
     state = {}
 
     render() {
-        const data = [{name:'disabled', default:'-', description:'Disabled'}];
+        const data = [{name:'disabled', default:'false', description:'disabled', value: 'true / false'}];
         return (
             <Fragment>
                 <h1 className="title">Switcher</h1>

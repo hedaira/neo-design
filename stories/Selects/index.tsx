@@ -18,15 +18,16 @@ export default class SelectsPage extends React.Component {
     };
 
     render() {
-        const data = [{name:'width', default:'185px', description:'Ширина'},
-            {name:'title', default:'false', description:'Заголовок'},
-            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
-            {name:'allowClear', default:'false', description:'Очистить поле'},
-            {name:'showSearch', default:'false', description:'Добавить иконку поиска'},
-            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов'},
-            {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги'},
-            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения'},
-            {name:'getPopupContainer', default: '-', description:'Контейнер в котором будет отображаться дроп даун select\'а'}
+        const data = [{name:'width', default:'185px', description:'Ширина', value: 'String'},
+            {name:'title', default:'false', description:'Заголовок', value: 'String'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка', value: '"Top" | "Right" | "Bottom" | "Left"'},
+            {name:'allowClear', default:'false', description:'Очистить поле', value: 'true / false'},
+            {name:'showSearch', default:'false', description:'Добавить иконку поиска', value: 'true / false'},
+            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов', value: 'Number'},
+            {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги', value: 'ReactNode'},
+            {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения', value: 'Number'},
+            {name:'getPopupContainer', default: '-', description:"Контейнер в котором будет отображаться дроп даун select'а", value: 'function(e)'},
+            {name:'required', default:'false', description:'Обязательное поле(добавляет звездочку)', value: 'true / false'}
             ];
 
         return (
@@ -104,7 +105,7 @@ export default class SelectsPage extends React.Component {
                     <br/>
                     <h4>Select with title</h4>
                     <div>
-                        <NeoSelect title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
+                        <NeoSelect required title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
                             <NeoOption value="lucy">Lucy</NeoOption>
                             <NeoOption value="jack">Jack</NeoOption>
                             <NeoOption value="john">John</NeoOption>
@@ -112,7 +113,7 @@ export default class SelectsPage extends React.Component {
                         <br/>
                         <br/>
                         <br/>
-                        <NeoSelect title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
+                        <NeoSelect required title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
                             <NeoOption value="lucy">Lucy</NeoOption>
                             <NeoOption value="jack">Jack</NeoOption>
                             <NeoOption value="john">John</NeoOption>
@@ -123,16 +124,16 @@ export default class SelectsPage extends React.Component {
                         <SyntaxHighlighter id='SelectsTitle' language='jsx' style={okaidia} >
                             {`import { NeoSelect, NeoOption } from "neo-design/lib";
 
-<NeoSelect title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
-                        <NeoOption value="lucy">Lucy</NeoOption>
-                        <NeoOption value="jack">Jack</NeoOption>
-                        <NeoOption value="john">John</NeoOption>
-                    </NeoSelect>
-                    <NeoSelect title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
-                        <NeoOption value="lucy">Lucy</NeoOption>
-                        <NeoOption value="jack">Jack</NeoOption>
-                        <NeoOption value="john">John</NeoOption>
-                    </NeoSelect>`}
+<NeoSelect required title="Person" titleOrientation={"Top"} placeholder={'lucy'}>
+    <NeoOption value="lucy">Lucy</NeoOption>
+    <NeoOption value="jack">Jack</NeoOption>
+    <NeoOption value="john">John</NeoOption>
+</NeoSelect>
+<NeoSelect required title="Person" titleOrientation={"Left"} placeholder={'lucy'}>
+    <NeoOption value="lucy">Lucy</NeoOption>
+    <NeoOption value="jack">Jack</NeoOption>
+    <NeoOption value="john">John</NeoOption>
+</NeoSelect>`}
                         </SyntaxHighlighter>
                     </div>
 

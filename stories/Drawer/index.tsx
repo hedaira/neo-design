@@ -23,11 +23,11 @@ export default class DrawerPage extends React.Component {
 
 
     render() {
-        const data = [{name:'type', default:'-', description:"Тип('success', 'info', 'error')"},
-            {name:'title', default:'-', description:'Заголовок'},
-            {name:'visible', default:'false', description:'visible'},
-            {name:'width', default:'-', description:'Ширина'},
-            {name:'footer', default:'<html>', description:'Footer<html>'}];
+        const data = [{name:'type', default:'-', description:"Тип", value: "'success' | 'info' | 'error'"},
+            {name:'title', default:'-', description:'Заголовок', value: 'String'},
+            {name:'visible', default:'false', description:'visible', value: 'true / false'},
+            {name:'width', default:'-', description:'Ширина', value: 'String'},
+            {name:'footer', default:'-', description:"Содержание footer'a", value: 'ReactNode'}];
 
         return (
             <Fragment>

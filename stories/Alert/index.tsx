@@ -9,11 +9,11 @@ export default class AlertPage extends React.Component {
 
 
     render() {
-        const data = [{name:'type', default:'-', description:"Тип Alert'а ('success', 'info', 'warning', 'error)"},
-            {name:'message', default:'-', description:'Основное сообщение(заголовок)'},
-            {name:'description', default:'-', description:'Описание'},
-            {name:'width', default:'370px', description:'Ширина'},
-            {name:'closable', default:'true', description:'Добавляет возможность закрыть окно'}]
+        const data = [{name:'type', default:'-', description:"Тип Alert'а", value: "'success' | 'info' | 'warning' | 'error'"},
+            {name:'message', default:'-', description:'Основное сообщение(заголовок)', value: 'String'},
+            {name:'description', default:'-', description:'Описание', value: 'String'},
+            {name:'width', default:'370px', description:'Ширина', value: 'String'},
+            {name:'closable', default:'true', description:'Добавляет возможность закрыть окно', value: 'true / false'}]
         return (
             <Fragment>
                 <h1 className="title">Алерт</h1>

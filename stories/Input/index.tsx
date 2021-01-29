@@ -9,16 +9,17 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 class InputPage extends React.Component {
     render() {
 
-        const data = [{name:'type', default:'-', description:"Тип('search', 'textArea', 'checkbox', 'radio', 'password')"},
-            {name:'width', default:'auto', description:'Ширина'},
-            {name:'title', default:'false', description:'Заголовок'},
-            {name:'titleOrientation', default:'false', description:'Ориентация заголовка. Значения -  "Top"|"Right"|"Bottom"|"Left"'},
-            {name:'hidden', default:'true/false', description:'Кнопка вторичного призыва к действию (Secondary)'},
-            {name:'disabled', default:'-', description:'Кнопка, запрещающая выполнение действия'},
-            {name:'onSearch', default:'', description:'()=>{}'},
-            {name:'placeholder', default:'-', description:'Placeholder'},
-            {name:'allowClear', default:'true/false', description:'Очистить поле(иконка)'},
-            {name:'isIcon', default:'-', description:'Применяется, если кнопка содержит в себе иконку'}];
+        const data = [{name:'type', default:'-', description:"Тип", value: "'search' | 'textArea' | 'checkbox' | 'radio' | 'password'"},
+            {name:'width', default:'auto', description:'Ширина', value: 'String'},
+            {name:'title', default:'false', description:'Заголовок', value: 'String'},
+            {name:'titleOrientation', default:'false', description:'Ориентация заголовка', value: '"Top" | "Right" | "Bottom" | "Left"'},
+            {name:'hidden', default:'false', description:'Кнопка вторичного призыва к действию (Secondary)', value: "true / false"},
+            {name:'disabled', default:'false', description:'Кнопка, запрещающая выполнение действия', value: 'true / false'},
+            {name:'onSearch', default:'-', description:'Действие при поиске', value: 'function(e)'},
+            {name:'placeholder', default:'-', description:'Текст поля по умолчанию', value: 'String'},
+            {name:'allowClear', default:'false', description:'Очистить поле(иконка)', value: 'true / false'},
+            {name:'isIcon', default:'false', description:'Применяется, если кнопка содержит в себе иконку', value: 'true / false'},
+            {name:'required', default:'false', description:'Обязательное поле(добавляет звездочку)', value: 'true / false'}];
 
         return (
             <React.Fragment>
@@ -44,19 +45,19 @@ class InputPage extends React.Component {
                     <br/>
 
                     <div>
-                        <h4>Title</h4>
+                        <h4>Input with title</h4>
                         <br />
-                        <NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
+                        <NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
                         <br/>
-                        <NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />
+                        <NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Title' onClick={showCode}>Show Code</NeoButton>
                         <SyntaxHighlighter id='Title' language='jsx' style={okaidia} >
                             {`import { NeoInput } from "neo-design/lib";
 
-<NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
-<NeoInput title={"Поле ввода"} placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />`}
+<NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Left"} width={"250px"} />
+<NeoInput title={"Поле ввода"} required placeholder={"ввод"} titleOrientation={"Top"} width={"250px"} />`}
                         </SyntaxHighlighter>
                     </div>
                     <br/>

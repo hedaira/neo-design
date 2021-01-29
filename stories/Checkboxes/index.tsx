@@ -10,10 +10,12 @@ export default class CheckboxesPage extends React.Component {
 
 
     render() {
-        const data = [{name:'disabled', default:'false', description:"disabled"},
-            {name:'checked', default:'false', description:'checked'},
-            {name:'defaultChecked', default:'-', description:'defaultChecked'},
-            {name:'onChange', default:'-', description:'()=>{}'}]
+        const data = [{name:'type', default:'-', description:"Тип", value: "'search' | 'textArea' | 'checkbox' | 'radio' | 'password'"},
+            {name:'disabled', default:'false', description:"disabled", value: 'true / false'},
+            {name:'checked', default:'false', description:'checked', value: 'true / false'},
+            {name:'defaultChecked', default:'false', description:'Выбрано по умолчанию', value: 'true / false'},
+            {name:'onChange', default:'-', description:'onChange', value: 'function(e)'}]
+
         return (
             <Fragment>
                 <h1 className="title">Checkboxes</h1>
