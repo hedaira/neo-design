@@ -8,7 +8,10 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 
 export default class TagPage extends React.Component {
   render() {
-      const data = [{name:'closable', default:'false', description:'Кнопка удаления(крестик)'}];
+      const data = [
+          {name:'closable', default:'false', description:'Кнопка удаления(крестик)'},
+          {name:'onClick', default:'none', description:'Обработчик onClick'}
+          ];
     return (
         <Fragment>
             <h1 className="title">Теги</h1>
@@ -17,14 +20,14 @@ export default class TagPage extends React.Component {
 
             <section className="example">
                 <div>
-                <NeoTag closable={true}>closable</NeoTag>
+                <NeoTag closable={true} onClick={()=>alert("clicked")}>closable</NeoTag>
                 <NeoTag>not closable</NeoTag>
                 </div>
                 <div className='showCode'>
                     <NeoButton style={{width: '170px'}} id='Tag' onClick={showCode}>Show Code</NeoButton>
                 <SyntaxHighlighter id='Tag' language='jsx' style={okaidia}>
                     {`
-      <NeoTag closable={true}>closable</NeoTag>
+      <NeoTag closable={true} onClick={( )=>alert("clicked")}>closable</NeoTag>
       <NeoTag>not closable</NeoTag>     
                         `}
                 </SyntaxHighlighter>
