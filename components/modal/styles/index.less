@@ -1,14 +1,37 @@
 .Modal{
 
-  &-question {
-    .ant-modal-content .ant-modal-close{
+  &-basic {
+    .ant-modal-header {
+      padding: 18px 24px;
+    }
+    .ant-modal-title {
+      margin: unset;
+    }
+    .ant-modal-content {
+      height: auto;
+    }
+    .ant-modal-content .ant-modal-close {
       display: none
+    }
+    .ant-modal-footer {
+      padding: 32px 24px 20px;
+      text-align: unset;
     }
   }
 
   &-edit {
-    .ant-modal-content{
-      height: 175px;
+    .ant-modal-header {
+      padding: 18px 24px;
+    }
+    .ant-modal-title {
+      margin: unset;
+    }
+    .ant-modal-content {
+      height: auto;
+    }
+    .ant-modal-footer {
+      padding: 32px 24px 20px;
+      text-align: unset;
     }
   }
 
@@ -17,7 +40,6 @@
   &-info{
 
       .info-button{
-        margin: 16px 0 0 0;
         width: 87px;
         color: #FFFFFF;
         font-size: 12px;
@@ -32,10 +54,10 @@
 
     .ant-modal-title{
       color: #2A356C;
-      height: 100px;
+      height: auto;
     }
     .ant-modal-footer{
-      margin-top: 10px;
+      padding: 24px 16px 30px;
       text-align: center;
 
     }
@@ -44,14 +66,14 @@
       color: #2A356C;
     }
     .ant-modal-content{
-      height: 246px;
+      height: auto;
     }
 
   }
+
   &-error{
 
     .error-button{
-      margin: 16px 0 0 0;
       width: 87px;
       color: #FFFFFF;
       font-size: 12px;
@@ -65,10 +87,10 @@
 
     .ant-modal-title{
       color: #2A356C;
-      height: 100px;
+      height: auto;
     }
     .ant-modal-footer{
-      margin-top: 10px;
+      padding: 24px 16px 30px;
       text-align: center;
     }
     .ant-modal-header{
@@ -76,13 +98,12 @@
       color: #2A356C;
     }
     .ant-modal-content{
-      height: 246px;
+      height: auto;
     }
   }
   &-success{
 
     .success-button{
-      margin: 16px 0 0 0;
       width: 87px;
       color: #FFFFFF;
       font-size: 12px;
@@ -95,10 +116,10 @@
 
     .ant-modal-title{
       color: #2A356C;
-      height: 100px;
+      height: auto;
     }
     .ant-modal-footer{
-      margin-top: 10px;
+      padding: 24px 16px 30px;
       text-align: center;
     }
     .ant-modal-header{
@@ -106,21 +127,19 @@
       color: #2A356C;
     }
     .ant-modal-content{
-      height: 246px;
+      height: auto;
     }
   }
 }
 
-.question-button-close {
-  margin: 16px 0 0 0;
+.basic-button-close {
   width: 87px;
   font-size: 12px;
   line-height: 14px;
   font-weight: 400;
 }
 
-.question-button-ok{
-  margin: 16px 0 0 0;
+.basic-button-ok{
   width: 87px;
   color: #FFFFFF;
   font-size: 12px;
@@ -128,39 +147,33 @@
   font-weight: 400;
 }
 
-.edit-button-left{
- margin-top: 20px;
-}
-
-.edit-button-right{
-  margin-top: 20px;
-}
 
 .ant-modal-content{
   border-radius: 4px;
-  width: 430px;
+  width: 432px;
   height: 158px;
 }
 
 
 .ant-modal-header{
-  padding: 24px 24px 16px;
+  padding: 20px 24px 0px;
   border: none;
 }
 
 .ant-modal-title{
   color: #2A356C;
+  line-height: 1;
+  margin-bottom: 16px;
 }
 
 .ant-modal-body{
   padding: 0 24px;
   font-size: 12px;
+  line-height: 1;
 }
 
 .ant-modal-footer{
   border: none;
-  padding: 10px 16px 15px;
-  text-align: right;
 }
 
 

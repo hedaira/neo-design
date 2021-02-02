@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
-import {Input} from 'antd';
+import {Input, Radio} from 'antd';
 import {Title} from "../_utils/Title";
 const InputTypes = tuple('search', 'textArea', 'checkbox', 'radio');
 export type InputType = typeof InputTypes[number];
@@ -15,7 +15,7 @@ export interface InputProps {
     className?: string;
     children?: React.ReactNode;
     name?: string;
-    value?: string;
+    value?: any;
     allowClear?: boolean;
     onClick?: any;
     onChange?: any;
@@ -27,6 +27,8 @@ export interface InputProps {
     disabled?: any;
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
+    required?: boolean;
+    defaultValue?: string;
     style?;
     id?;
     key?;
@@ -56,7 +58,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     );
 
     if (!props.type && !props.password) {
-        return props.title && props.titleOrientation ? <Title title={props.title} titleOrientation={props.titleOrientation} width={`${props.width ? props.width : "auto"}`}>
+        return props.title ? <Title title={props.title} required={props.required} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} width={`${props.width ? props.width : "auto"}`}>
             <Input
                 {...props}
                 autoFocus={props.autofocus}
@@ -64,6 +66,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
                 hidden={props.hidden}
                 onPressEnter={props.onPressEnter}
                 style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+                placeholder={props.placeholder}
+                disabled={props.disabled}
+                defaultValue={props.defaultValue}
+                // value={props.value}
+                onChange={props.onChange}
             >
                 {children}
             </Input>
@@ -74,6 +81,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             hidden={props.hidden}
             onPressEnter={props.onPressEnter}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            placeholder={props.placeholder}
+            disabled={props.disabled}
+            defaultValue={props.defaultValue}
+            // value={props.value}
+            onChange={props.onChange}
         >
             {children}
         </Input>
@@ -88,6 +100,11 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             hidden={props.hidden}
             onPressEnter={props.onPressEnter}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            placeholder={props.placeholder}
+            disabled={props.disabled}
+            defaultValue={props.defaultValue}
+            // value={props.value}
+            onChange={props.onChange}
         >
             {children}
         </Input>
@@ -103,6 +120,10 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             onPressEnter={props.onPressEnter}
             onSearch={props.onSearch}
             style={{...props.style, width: `${props.width ? props.width : "auto"}`}}
+            disabled={props.disabled}
+            defaultValue={props.defaultValue}
+            // value={props.value}
+            onChange={props.onChange}
         >
             {children}
         </Input.Search>
@@ -117,12 +138,9 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     }
 
     if (props.type === 'radio') {
-        return <label style={props.disabled? {cursor:'no-drop'}:{}}
-            className={classes} >
-            {children}
-                <input type={'radio'} checked={(props.checked)} defaultChecked={(props.defaultChecked)} name={props.name} value={props.value} onChange={props.onChange} onClick={props.onClick} disabled={props.disabled}/>
-            <span className="checkmark" style={props.disabled? {backgroundColor:'rgba(0,0,0,0.15)'}:{}}/>
-        </label>
+        return  <Radio {...props} className={classes}>
+                    {children}
+                </Radio>
     }
 
     if (props.type === 'textArea') {

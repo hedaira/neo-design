@@ -9,11 +9,11 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 export default class ButtonPage extends React.Component {
   render() {
 
-      const data = [{name:'type', default:'-', description:"Тип('primary', 'disabled', 'secondary', 'link', 'ghost')"},
-          {name:'size', default:'-', description:"Размер('medium', 'large')"},
-          {name:'disabled', default:'-', description:'Кнопка, запрещающая выполнение действия'},
-          {name:'hidden', default:'false', description:'Отображать ли кнопку'},
-          {name:'suffixIcon', default:'<NeoIcon icon="..." />', description:'Применяется, если кнопка содержит в себе иконку'}];
+      const data = [{name:'type', default:"'primary'", description:"Тип кнопки", value: "'primary' | 'disabled' | 'secondary' | 'link' | 'ghost'"},
+          {name:'size', default:'-', description:"Размер текста внутри кнопки", value: "'medium' | 'large'"},
+          {name:'disabled', default:'false', description:'Кнопка, запрещающая выполнение действия', value: 'true / false'},
+          {name:'hidden', default:'false', description:'Отображать ли кнопку', value: 'true / false'},
+          {name:'suffixIcon', default:'-', description:'Применяется, если кнопка содержит в себе иконку', value: '<NeoIcon icon="..." />'}];
 
     return (
       <React.Fragment>

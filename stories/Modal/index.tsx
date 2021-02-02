@@ -26,6 +26,12 @@ export default class ModalPage extends Component {
         });
     };
 
+    handleClose = () => {
+        this.setState({
+            visible: false,
+        });
+    };
+
     showModalEdit = () => {
         this.setState({
             visibleEdit: true,
@@ -87,11 +93,17 @@ export default class ModalPage extends Component {
         });
     };
     render() {
-        const data = [{name:'type', default:'-', description:"Тип ('success', 'info', 'error', 'edit', 'question')"},
-            {name:'title', default:'-', description:"Заголовок модального окна"},
-            {name:'content', default:'-', description:"Сообщение модального окна"},
-            {name:'visible', default:'false', description:"Показываетсся ли модальное окно"},
-            {name:'onOk', default:'-', description:"()=>{}"}];
+        const data = [{name:'type', default:'-', description:"Тип модального окна(обязательно)", value: "'basic' / 'success' / 'info' / 'error' / 'edit'"},
+            {name:'title', default:'-', description:"Заголовок модального окна", value: 'ReactNode'},
+            {name:'content', default:'-', description:"Сообщение модального окна", value: 'ReactNode'},
+            {name:'visible', default:'false', description:"Показываетсся ли модальное окно", value: 'true / false'},
+            {name:'onLeftButtonClick', default:'-', description:"Событие, при нажатии основной кнопки 'Ок'", value: 'function(e)'},
+            {name:'onRightButtonClick', default:'-', description:"Событие, при нажатии 'Отменить'", value: 'function(e)'},
+            {name:'textOfLeftButton', default:'Ок', description:"Текст основной кнопки 'Ок'", value: 'ReactNode'},
+            {name:'textOfRightButton', default:'Отменить', description:"Текст кнопки 'Отменить'", value: 'ReactNode'},
+            {name:'onCancel', default:'-', description:"Действие при закрытии модального окна(крестик)", value: 'function(e)'},
+            {name:'closable', default:'false', description:"Видна ли кнопка закрытия (крестик) в правом верхнем углу модального диалога или нет", value: 'true / false'},
+            {name:'footer', default:'-', description:"Кастомизация блока footer", value: 'ReactNode'}];
         return (
             <Fragment>
                 <h1 className="title">Модальное окно</h1>
@@ -123,16 +135,18 @@ export default class ModalPage extends Component {
                         <br/>
                         <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
                         <br/>
-                        <NeoModal type={'question'} title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>
+                        <NeoModal type={'basic'} title={"Question?"} content={"This is a question modal"}
+                                  visible={this.state.visible} onLeftButtonClick={this.handleOk} onRightButtonClick={this.handleClose}>
                         </NeoModal>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`state = {visible: false}
+
 showModal = () => {this.setState({visible: true})}
 handleOk = () => {this.setState({visible: false})}
     
 <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
-<NeoModal title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onOk={this.handleOk}>
+<NeoModal type={'basic'} title={"Question?"} content={"This is a question modal"} visible={this.state.visible} onLeftButtonClick={this.handleOk} onRightButtonClick={this.handleClose}>
 `}
                         </SyntaxHighlighter>
                     </div>
@@ -144,15 +158,16 @@ handleOk = () => {this.setState({visible: false})}
                         <br/>
                         <NeoButton type={'secondary'} onClick={this.showModalInfo}>Open Modal</NeoButton>
                         <br/>
-                        <NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visibleInfo} onOk={this.handleOkInfo}/>
+                        <NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visibleInfo} onLeftButtonClick={this.handleOkInfo}/>
 
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`state = {visible: false}
+
 showModal = () => {this.setState({visible: true})}
 handleOk = () => {this.setState({visible: false})}
     
 <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
-<NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visible} onOk={this.handleOk}>
+<NeoModal type={'info'} title={'Info'} content={'This is an info modal'} visible={this.state.visible} onLeftButtonClick={this.handleOk}>
 `}
                         </SyntaxHighlighter>
                     </div>
@@ -164,14 +179,15 @@ handleOk = () => {this.setState({visible: false})}
                         <br/>
                         <NeoButton type={'secondary'} onClick={this.showModalSuccess}>Open Modal</NeoButton>
                         <br/>
-                        <NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visibleSuccess} onOk={this.handleOkSuccess}/>
+                        <NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visibleSuccess} onLeftButtonClick={this.handleOkSuccess}/>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`state = {visible: false}
+
 showModal = () => {this.setState({visible: true})}
 handleOk = () => {this.setState({visible: false})}
     
 <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
-<NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visible} onOk={this.handleOk}>
+<NeoModal type={'success'} title={'Success'} content={'This is a success modal'} visible={this.state.visible} onLeftButtonClick={this.handleOk}>
 `}
                         </SyntaxHighlighter>
                     </div>
@@ -183,14 +199,15 @@ handleOk = () => {this.setState({visible: false})}
                         <br/>
                         <NeoButton type={'secondary'} onClick={this.showModalError}>Open Modal</NeoButton>
                         <br/>
-                        <NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visibleError} onOk={this.handleOkError}/>
+                        <NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visibleError} onLeftButtonClick={this.handleOkError}/>
                         <SyntaxHighlighter language='jsx' style={okaidia} >
                             {`state = {visible: false}
+
 showModal = () => {this.setState({visible: true})}
 handleOk = () => {this.setState({visible: false})}
     
 <NeoButton type={'secondary'} onClick={this.showModal}>Open Modal</NeoButton>
-<NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visible} onOk={this.handleOk}>
+<NeoModal type={'error'} title={'Error'} content={'This is an error modal'} visible={this.state.visible} onLeftButtonClick={this.handleOk}>
 `}
                         </SyntaxHighlighter>
                     </div>
@@ -203,20 +220,19 @@ handleOk = () => {this.setState({visible: false})}
                         <br/>
                         <NeoButton type={'secondary'} onClick={this.showModalEdit}>Open Modal</NeoButton>
                         <br/>
-                        <NeoModal  onCancel={this.close} closable={true} type={'edit'} title={"Question?"} content={"You still have unsaved changes. By clicking the \"Delete\" button you will return to the table without changes."} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
+                        <NeoModal  onCancel={this.close} closable={true} type={'edit'} title={"Edit?"} content={"This is an edit mode modal"} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
                                               onRightButtonClick={this.handleRightEdit} textOfLeftButton={"left"} textOfRightButton={"right"}
                     >
                     </NeoModal>
                         <SyntaxHighlighter language='jsx' style={okaidia}>
                             {`state = {visibleEdit: false}
+
 showModalEdit = () => {this.setState({ visibleEdit: true,});};
 handleLeftEdit = () => {this.setState({visibleEdit: false,});alert("left")};
 handleRightEdit = () => {this.setState({visibleEdit: false,});alert("right")};
-
-
     
 <NeoButton type={'secondary'} onClick={this.showModalEdit}>Open Modal</NeoButton>
-<NeoModal onCancel={this.close} type={'edit'} title={"Edit?"} content={"This is a edit mode modal"} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
+<NeoModal onCancel={this.close} closable={true} type={'edit'} title={"Edit?"} content={"This is a edit mode modal"} visible={this.state.visibleEdit} onLeftButtonClick={this.handleLeftEdit}
                                   onRightButtonClick={this.handleRightEdit} textOfLeftButton={"left"} textOfRightButton={"right"}
                         >
                         </NeoModal>

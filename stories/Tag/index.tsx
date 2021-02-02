@@ -9,8 +9,8 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 export default class TagPage extends React.Component {
   render() {
       const data = [
-          {name:'closable', default:'false', description:'Кнопка удаления(крестик)'},
-          {name:'onClick', default:'none', description:'Обработчик onClick'}
+          {name:'closable', default:'false', description:'Кнопка удаления(крестик)', value: 'true / false'},
+          {name:'onClick', default:'none', description:'Обработчик onClick', value: '()=>void'}
           ];
     return (
         <Fragment>
