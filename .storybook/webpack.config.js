@@ -6,11 +6,11 @@ module.exports = ({config}) => {
         use: [
             {
                 loader: require.resolve('ts-loader'),
-            },
+            }
             // Optional
-            {
-                loader: require.resolve('react-docgen-typescript-loader'),
-            },
+            // {
+            //     loader: require.resolve('react-docgen-typescript-loader'),
+            // }
         ],
         },
         {

@@ -11,6 +11,7 @@ export interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
     align?: typeof RowAligns[number];
     justify?: typeof RowJustify[number];
     prefixCls?: string;
+    justifyContent?: string;
 }
 export interface RowState {
     screens: ScreenMap;
@@ -35,6 +36,7 @@ const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) 
     return (
         <Row
             className={classes}
+            style={{justifyContent: props.justifyContent}}
             {...props}
         >
             {children}

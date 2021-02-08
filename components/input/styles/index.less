@@ -10,37 +10,40 @@
 }
 
 .input {
-    outline: none;
-    background: #FFFFFF;
-    border: 1px solid #E6E6E6 !important;
-    box-sizing: border-box;
-    border-radius: 4px;
-    //height: 32px;
-    font-size: 12px;
-    line-height: 2.5;
-    color: #333333;
-    //padding: 9px 12px 9px 12px;
-    margin: 0;
-    box-shadow: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+  outline: none;
+  background: #FFFFFF;
+  border: 1px solid #E6E6E6 !important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 32px;
+  font-size: 12px;
+  line-height: 2.5;
+  color: #333333;
+  //padding: 9px 12px 9px 12px;
+  margin: 0;
+  box-shadow: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 
+  &:focus, &:hover, &:active {
+    box-shadow: none;
+    border: 1px solid #2A356C !important;
+  }
+
+  &-search {
     &:focus, &:hover, &:active {
       box-shadow: none;
       border: 1px solid #2A356C !important;
     }
-
-    &-search input, &-textArea {
-      &:focus, &:hover,&:active {
-        outline: none;
-        border: 1px solid #2A356C;
-        box-sizing: border-box;
-        border-radius: 4px;
-      }
+    && .ant-input-search-button {
+      border: none;
+      height: 30px;
     }
-
+}
     &-textArea {
       height: auto;
+      line-height: 1.5;
+      font-size: 14px;
     }
 
     &-checkbox input {

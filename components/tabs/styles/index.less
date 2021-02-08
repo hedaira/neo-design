@@ -8,6 +8,12 @@
   font-family: 'Roboto', sans-serif;
   word-wrap: unset;
   white-space: nowrap;
+  &:active, &:focus, &:hover {
+    .ant-tabs-tab-btn {
+      color: #2A356C !important;
+      font-weight: 500 !important;
+    }
+  }
 }
 
 .ant-tabs-nav {
@@ -23,4 +29,10 @@
 
 .ant-tabs-ink-bar {
   background-color: #424D78;
+}
+
+.ant-tabs-tab-active {
+  .ant-tabs-tab-btn {
+    color: #2A356C !important;
+  }
 }

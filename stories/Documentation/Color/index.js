@@ -55,7 +55,7 @@ export default class MainColorPageDoc extends Component {
                         Фиолетовый используются в качестве основного цвета хедера, кнопок, иконок.
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('Hover', 'violete_6', '#D9A54C')}
                         {this.renderColorBox('Default', 'violete_5', '#FFCC66')}
                     </NeoRow>
@@ -67,7 +67,7 @@ export default class MainColorPageDoc extends Component {
                         Цветовая раскладка фиолетового цвета
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'violete_8', '#000000')}
                         {this.renderColorBox('', 'violete_7', '#171D45')}
                         {this.renderColorBox('Hover', 'violete_6', '#2A356C')}
@@ -88,7 +88,7 @@ export default class MainColorPageDoc extends Component {
                         Цвет текста возле инпутов в боковом меню(фильтры, сортировки) - grey-8
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'grey_9', '#333333')}
                         {this.renderColorBox('', 'grey_8', '#404040')}
                     </NeoRow>
@@ -100,7 +100,7 @@ export default class MainColorPageDoc extends Component {
                         Цветовая раскладка серого цвета.
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'grey_9', '#333333')}
                         {this.renderColorBox('', 'grey_8', '#404040')}
                         {this.renderColorBox('', 'grey_7', '#666666')}
@@ -122,7 +122,7 @@ export default class MainColorPageDoc extends Component {
                         Основной акцентный цвет
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('Default', 'yellow_5', '#FFCC66')}
                     </NeoRow>
 
@@ -133,7 +133,7 @@ export default class MainColorPageDoc extends Component {
                         Цветовая раскладка желтого цвета
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'yellow_7', '#B38136')}
                         {this.renderColorBox('Hover', 'yellow_6', '#D9A54C')}
                         {this.renderColorBox('Default', 'yellow_5', '#FFCC66')}
@@ -151,7 +151,7 @@ export default class MainColorPageDoc extends Component {
                         Дополнительный вкцентный цвет
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'magenta_6', '#AD1457')}
                     </NeoRow>
 
@@ -162,7 +162,7 @@ export default class MainColorPageDoc extends Component {
                         Цветовая раскладка розового цвета
                     </p>
 
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'magenta_8', '#610231')}
                         {this.renderColorBox('', 'magenta_7', '#870944')}
                         {this.renderColorBox('', 'magenta_6', '#AD1457')}
@@ -180,7 +180,7 @@ export default class MainColorPageDoc extends Component {
                         Голубой и зеленый
                         Дополнительные акцентные цвета, используются при необходимости
                     </p>
-                    <NeoRow gutter={16}>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'blue_8', '#0E5A7D')}
                         {this.renderColorBox('', 'blue_7', '#1A7CA3')}
                         {this.renderColorBox('', 'blue_6', '#2AA2C9')}
@@ -190,7 +190,8 @@ export default class MainColorPageDoc extends Component {
                         {this.renderColorBox('', 'blue_2', '#D7F8FC')}
                         {this.renderColorBox('', 'blue_1', '#F0FEFF')}
                     </NeoRow>
-                    <NeoRow gutter={16}>
+                    <br/>
+                    <NeoRow gutter={16} justifyContent={'flex-start'}>
                         {this.renderColorBox('', 'green_8', '#0A2430')}
                         {this.renderColorBox('', 'green_7', '#174557')}
                         {this.renderColorBox('', 'green_6', '#27677C')}

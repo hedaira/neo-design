@@ -4,20 +4,34 @@
         height: 16px;
   background: #B3B3B3;
 
-  &-ant-switch-checked{
-    background: #FFDD8F!important;
+
+  .ant-switch-handle {
+    width: 12px;
+    height: 12px;
   }
-
-
-
+  &:active, &:focus, &:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    //touch-action: none;
+  }
 }
 
-.ant-switch::after{
-  background: #ffffff;
-  height: 12px;
-  width: 12px;
-  top: 0.65px;
-  left: 1.75px;
+.ant-switch {
+  &-checked{
+    .ant-switch-handle {
+      left: calc(100% - 15px);
+      &:before{
+        background: #FFDD8F!important;
+      }
+    }
+  }
+  &::after {
+    background: #ffffff;
+    height: 12px;
+    width: 12px;
+    top: 0.65px;
+    left: 1.75px;
+  }
 }
 
 .ant-switch-checked::after{
