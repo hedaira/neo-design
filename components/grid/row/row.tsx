@@ -11,7 +11,6 @@ export interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
     align?: typeof RowAligns[number];
     justify?: typeof RowJustify[number];
     prefixCls?: string;
-    justifyContent?: string;
 }
 export interface RowState {
     screens: ScreenMap;
@@ -20,13 +19,13 @@ export interface RowState {
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<RowProps & React.RefAttributes<HTMLElement>> {}
 
+    const prefix = 'row';
+
 const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) => {
     const {
         className,
         children
     } = props;
-
-    const prefix = 'row';
 
     const classes = classNames(
         prefix,
@@ -36,7 +35,7 @@ const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) 
     return (
         <Row
             className={classes}
-            style={{justifyContent: props.justifyContent}}
+            style={props.style}
             {...props}
         >
             {children}

@@ -6,11 +6,12 @@ import {Component} from "react";
 
 const TabsTypes = tuple('card', 'editable-card', 'line');
 const TabsPositions = tuple('top', 'right', 'bottom', 'left');
-const TabsSizes = tuple('large','default','small');
+// const TabsSizes = tuple('large','default','small');
 
+export declare type SizeType = 'small' | 'middle' | 'large' | undefined;
 export type TabType = typeof TabsTypes[number];
 export type TabPosition = typeof TabsPositions[number];
-export type TabSize = typeof TabsSizes[number];
+// export type TabSize = typeof TabsSizes[number];
 
 
 export interface TabProps {
@@ -22,7 +23,7 @@ export interface TabProps {
     animated?: boolean | {inkBar:boolean, tabPane:boolean};
     renderTabBar?: (props: any, DefaultTabBar: React.ComponentClass) => React.ReactElement;
     defaultActiveKey?: string;
-    size?: any;
+    size?: SizeType;
     tabBarExtraContent?: React.ReactNode;
     tabBarGutter?: number;
     tabBarStyle?: object;
