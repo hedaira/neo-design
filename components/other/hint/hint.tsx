@@ -13,7 +13,8 @@ export interface HintProps {
     getPopupContainer?;
     style?;
     width?: string;
-
+    mouseEnterDelay?: number;
+    mouseLeaveDelay?: number;
 }
 
 const prefix = 'hint';
@@ -39,6 +40,8 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, HintProps> = (prop
         title={props.title}
         placement={props.placement ? props.placement : "bottomLeft"}
         overlayStyle={{maxWidth:props.width}}
+        mouseEnterDelay={props.mouseEnterDelay}
+        mouseLeaveDelay={props.mouseLeaveDelay}
     ><div>{children}</div></Tooltip></div>
 }
 
