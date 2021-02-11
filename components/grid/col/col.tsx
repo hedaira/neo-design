@@ -4,6 +4,7 @@ import {Col} from 'antd';
 
 declare type ColSpanType = number | string;
 declare type FlexType = number | 'none' | 'auto' | string;
+declare const ColJustify: ["start", "end", "center", "space-around", "space-between"];
 
 export interface ColSize {
     span?: ColSpanType;
@@ -15,6 +16,7 @@ export interface ColSize {
 
 export interface ColProps extends React.HTMLAttributes<HTMLDivElement> {
     span?: ColSpanType;
+    justify?: typeof ColJustify[number];
     order?: ColSpanType;
     offset?: ColSpanType;
     push?: ColSpanType;
