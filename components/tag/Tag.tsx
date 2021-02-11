@@ -9,8 +9,9 @@ export interface TagProps {
   className?: string;
   children?: React.ReactNode;
   closable?: boolean;
-  onClose?: Function;
+  onClose?: () => void;
   style?: React.CSSProperties;
+  onClick?: (event:React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
 }
 
 const prefix = 'tag';
@@ -22,6 +23,7 @@ const InternalTag: React.ForwardRefRenderFunction<unknown, TagProps> = (props) =
   const {
     className,
     children,
+    onClick
   } = props;
 
 
@@ -33,6 +35,7 @@ const InternalTag: React.ForwardRefRenderFunction<unknown, TagProps> = (props) =
 
     return <Tag
         {...props}
+        onClick={onClick}
         className={classes}
         /*style={{width: `${props.width ? props.width : "auto"}`}}*/
     >

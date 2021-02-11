@@ -1,32 +1,63 @@
 
-        .ant-calendar-selected-day .ant-calendar-date {
-          background: unset !important;
-          border: 1px solid #FFCC66 !important;
-        }
+.datepicker {
+  outline: none;
+  background: #FFFFFF;
+  border: 1px solid #E6E6E6 !important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 32px;
+  font-size: 12px;
+  line-height: 2.5;
+  color: #333333;
+  //padding: 9px 12px 9px 12px;
+  margin: 0;
+  box-shadow: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 
-        .ant-calendar-today .ant-calendar-date {
-          color: unset !important;
-          border: 1px solid #FFCC66 !important;
-          background: #FFF8E0 !important;
-        }
+  &:focus, &:hover, &:active, &.ant-picker-focused {
+    box-shadow: none;
+    border: 1px solid #2A356C !important;
+  }
 
-        .ant-calendar-date:hover {
-          color: unset !important;
-          background: #FFF8E0 !important;
-        }
+  .ant-picker-clear {
+    display: none;
+  }
 
-        .ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
-          border: 1px solid #424D78 !important;
-        }
+}
 
-        .ant-input:focus {
-          border-color: #424D78 !important;
-          border-right-width: 1px !important;
-          -webkit-box-shadow: unset !important;
-        }
+.ant-picker-cell-today .ant-picker-cell-inner {
+  background: #fff !important;
 
-        .ant-calendar-picker-icon {
-          top: 45% !important;
-          right: 13px !important;
-        }
+}
 
+.ant-picker-cell:hover .ant-picker-cell-inner {
+  //color: black !important;
+  background: #fff8e0 !important;
+
+}
+.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border: 1px solid #ffcc66 !important;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner  {
+  background: #fff8e0 !important;
+  border: 1px solid #ffcc66 !important;
+  color: black !important;
+}
+
+.ant-picker-body tbody tr:nth-child(2n), .ant-picker-body thead th, .ant-picker-body tbody tr:hover>td {
+  background-color: unset !important;
+}
+
+.ant-picker-header-view button:hover {
+  color: #b38136 !important;
+}
+
+.ant-picker-footer .ant-picker-today-btn {
+  display: unset !important;
+  &:hover {
+    color: #b38136 !important;
+    text-decoration: none !important;
+  }
+}

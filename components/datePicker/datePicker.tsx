@@ -4,7 +4,6 @@ import {DatePicker} from 'antd';
 import {NeoIcon} from "neo-icon/lib";
 import {Title} from "../_utils/Title";
 
-
 export interface DatePickerProps {
     width?: string;
     defaultValue?;
@@ -18,7 +17,7 @@ export interface DatePickerProps {
     showTime?;
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
-    getCalendarContainer?: ()=>HTMLElement;
+    getCalendarContainer?: () => HTMLElement;
     required?: boolean;
 }
 
@@ -32,7 +31,6 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
         className,
     } = props;
 
-
     const classes = classNames(
         prefix,
         className,
@@ -44,7 +42,7 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
         return <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} required={props.required} width={width}>
             <DatePicker
                 {...props}
-                getCalendarContainer={props.getCalendarContainer}
+                getPopupContainer={props.getCalendarContainer}
                 className={classes}
                 style={{width: `${props.width ? props.width : "auto"}`}}
                 suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
@@ -54,7 +52,7 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
 
     return <DatePicker
         {...props}
-        getCalendarContainer={props.getCalendarContainer}
+        getPopupContainer={props.getCalendarContainer}
         className={classes}
         style={{width: width}}
         suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}

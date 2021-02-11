@@ -39,10 +39,8 @@ const InternalSwitch: React.ForwardRefRenderFunction<unknown, SwitchProps> = (pr
             style={props.style}
             className={classes}
             {...props}
-        >
-        </Switch>
-
-}
+        />
+};
 
 const NeoSwitch = React.forwardRef<unknown, SwitchProps>(InternalSwitch) as CompoundedComponent;
 

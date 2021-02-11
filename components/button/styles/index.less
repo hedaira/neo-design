@@ -27,7 +27,7 @@
       &:hover {
         background: #2A356C;
         border: none;
-        color: white;
+        //color: white;
       }
 }
 
@@ -82,10 +82,11 @@ span.btn-disabled button {
       }
 }
 
-.btn-link {
+.btn-link, .btn-link div:nth-child(2) {
   background-color: rgba(255,255,255,0);
   width: auto;
   padding: unset;
+  color: #2A356C;
   &:active{
     background-color: rgba(255,255,255,0);
   }
@@ -100,21 +101,26 @@ span.btn-disabled button {
   padding: 5px;
 }
 
-.btn-ghost {
+.btn-ghost, .btn-ghost div:nth-child(2) {
   background: none;
   //border: none;
   color: #2A356C;
   width: auto;
   border: 1px solid rgba(0,0,0,0);
 
-  &:active{
+  &:active:not(.btn-ghost div:nth-child(2)){
     background: #FFF8E0 !important;
     border: 1px solid #FFCC66 !important;
   }
-  &:hover {
+  &:hover:not(.btn-ghost div:nth-child(2)) {
     background-color: #fff;
     border: 1px solid #171D45;
     color: #424D78;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
   }
+}
+
+.btn-circle {
+  border-radius: 50%;
+  padding: 8px;
 }

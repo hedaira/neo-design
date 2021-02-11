@@ -19,13 +19,13 @@ export interface RowState {
 interface CompoundedComponent
     extends React.ForwardRefExoticComponent<RowProps & React.RefAttributes<HTMLElement>> {}
 
+    const prefix = 'row';
+
 const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) => {
     const {
         className,
         children
     } = props;
-
-    const prefix = 'row';
 
     const classes = classNames(
         prefix,
@@ -35,6 +35,7 @@ const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) 
     return (
         <Row
             className={classes}
+            style={props.style}
             {...props}
         >
             {children}

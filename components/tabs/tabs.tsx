@@ -6,11 +6,12 @@ import {Component} from "react";
 
 const TabsTypes = tuple('card', 'editable-card', 'line');
 const TabsPositions = tuple('top', 'right', 'bottom', 'left');
-const TabsSizes = tuple('large','default','small');
+// const TabsSizes = tuple('large','default','small');
 
+export declare type SizeType = 'small' | 'middle' | 'large' | undefined;
 export type TabType = typeof TabsTypes[number];
 export type TabPosition = typeof TabsPositions[number];
-export type TabSize = typeof TabsSizes[number];
+// export type TabSize = typeof TabsSizes[number];
 
 
 export interface TabProps {
@@ -21,23 +22,23 @@ export interface TabProps {
     className?: string;
     animated?: boolean | {inkBar:boolean, tabPane:boolean};
     renderTabBar?: (props: any, DefaultTabBar: React.ComponentClass) => React.ReactElement;
-    defaultActiveKey?: string,
-    size?: TabSize,
-    tabBarExtraContent?: React.ReactNode,
-    tabBarGutter?: number,
-    tabBarStyle?: object,
-    onChange?: any,
-    onEdit?: (targetKey: string, action: any) => void
-    onNextClick?: any,
-    onPrevClick?: any,
-    onTabClick?: (key: string, event: MouseEvent) => void,
+    defaultActiveKey?: string;
+    size?: SizeType;
+    tabBarExtraContent?: React.ReactNode;
+    tabBarGutter?: number;
+    tabBarStyle?: object;
+    onChange?: any;
+    onEdit?: (targetKey: string, action: any) => void;
+    onNextClick?: any;
+    onPrevClick?: any;
+    // onTabClick?: (key: string, event: MouseEvent) => void;
     children?: React.ReactNode;
 }
 
 const prefix = 'tabs'; // для удобства чтоб понимать
 
 export default class NeoTabs extends Component<TabProps, any> {
-    static NeoTabPane = Tabs.TabPane;
+  static TabPane = Tabs.TabPane;
 
     classes = classNames(
         this.props.className,
@@ -65,12 +66,12 @@ export default class NeoTabs extends Component<TabProps, any> {
                     tabBarStyle={this.props.tabBarStyle}
                     onChange={this.props.onChange}
                     onEdit={this.props.onEdit}
-                    onNextClick={this.props.onNextClick}
-                    onPrevClick={this.props.onPrevClick}
-                    onTabClick={this.props.onTabClick}
+                    // onNextClick={this.props.onNextClick}
+                    // onPrevClick={this.props.onPrevClick}
+                    // onTabClick={this.props.onTabClick}
                     children={this.props.children}
                 />
-            :
+                :
                 <Tabs
                     type={this.props.type || 'line'}
                     tabPosition={this.props.tabPosition || 'top'}
@@ -85,12 +86,11 @@ export default class NeoTabs extends Component<TabProps, any> {
                     tabBarStyle={this.props.tabBarStyle}
                     onChange={this.props.onChange}
                     onEdit={this.props.onEdit}
-                    onNextClick={this.props.onNextClick}
-                    onPrevClick={this.props.onPrevClick}
-                    onTabClick={this.props.onTabClick}
+                    // onNextClick={this.props.onNextClick}
+                    // onPrevClick={this.props.onPrevClick}
+                    // onTabClick={this.props.onTabClick}
                     children={this.props.children}
                 />
-        );
+        )
     }
 }
-

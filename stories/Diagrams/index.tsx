@@ -50,28 +50,28 @@ export default class DiagramsPage extends Component {
                 <NeoRow className={"Row"}><h3 className={'chooseType'}>Выберите тип диаграммы</h3></NeoRow>
                 <NeoRow className={'chooseRow'}>
                     <NeoCol span={7} className={'chooseCol'}>
-                        <NeoButton className={'chooseButton'} type={'link'} style={{background: this.state.diagramType === "Block" ? "#FFF8E0" : "white", border: this.state.diagramType === "Block" ? "1px solid #FFCC66": "1px solid #424D78"}}
+                        <NeoButton className={'chooseButton'} type={'link'} style={{marginRight:'12px', background: this.state.diagramType === "Block" ? "#FFF8E0" : "white", border: this.state.diagramType === "Block" ? "1px solid #FFCC66": "1px solid #424D78"}}
                         onClick={()=>{this.setState({diagramType:"Block"})}}>
                             <NeoIcon icon={"diagramBlock"} color={'#424D78'} style={{marginTop: "4px"}}/>
                         </NeoButton>
                         <h4 className={'types'}>Гистограмма</h4>
                     </NeoCol>
                     <NeoCol span={7} className={'chooseCol'}>
-                        <NeoButton className={'chooseButton'} size={'medium'} type={'link'} style={{background: this.state.diagramType === "Bar" ? "#FFF8E0" : "white", border: this.state.diagramType === "Bar" ? "1px solid #FFCC66": "1px solid #424D78"}}
+                        <NeoButton className={'chooseButton'} size={'medium'} type={'link'} style={{marginRight:'12px', background: this.state.diagramType === "Bar" ? "#FFF8E0" : "white", border: this.state.diagramType === "Bar" ? "1px solid #FFCC66": "1px solid #424D78"}}
                         onClick={()=>{this.setState({diagramType:"Bar"})}}>
                             <NeoIcon icon={"barChart"} color={'#424D78'} style={{marginTop: "4px"}}/>
                         </NeoButton>
                         <h4 className={'types'}>Линейчатая</h4>
                     </NeoCol>
                     <NeoCol span={6} className={'chooseCol'}>
-                        <NeoButton className={'chooseButton'} size={'medium'} type={'link'} style={{background: this.state.diagramType === "Pie" ? "#FFF8E0" : "white", border: this.state.diagramType === "Pie" ? "1px solid #FFCC66": "1px solid #424D78"}}
+                        <NeoButton className={'chooseButton'} size={'medium'} type={'link'} style={{marginRight:'12px', background: this.state.diagramType === "Pie" ? "#FFF8E0" : "white", border: this.state.diagramType === "Pie" ? "1px solid #FFCC66": "1px solid #424D78"}}
                         onClick={()=>{this.setState({diagramType:"Pie"})}}>
                             <NeoIcon icon={"diagramCircle"} color={'#424D78'} style={{marginTop: "4px"}}/>
                         </NeoButton>
                         <h4 className={'types'}>Круговая</h4>
                     </NeoCol>
                     <NeoCol span={4} className={'chooseCol'}>
-                        <NeoButton className={'chooseButton'} size={'medium'} type={'link'} style={{background: this.state.diagramType === "Line" ? "#FFF8E0" : "white", border: this.state.diagramType === "Line" ? "1px solid #FFCC66": "1px solid #424D78"}}
+                        <NeoButton className={'chooseButton'} size={'medium'} type={'link'} style={{marginRight:'12px', background: this.state.diagramType === "Line" ? "#FFF8E0" : "white", border: this.state.diagramType === "Line" ? "1px solid #FFCC66": "1px solid #424D78"}}
                         onClick={()=>{this.setState({diagramType:"Line"})}}>
                             <NeoIcon icon={"diagram"} color={'#424D78'} style={{marginTop: "4px"}}/>
                         </NeoButton>

@@ -8,7 +8,7 @@ function compTsx() {
         .src('components/**/*.tsx')
         .pipe(ts({
             ...tsconfig.compilerOptions,
-            declaration: true,
+            declaration: true
         }))
         .pipe(gulp.dest('lib'))
 }

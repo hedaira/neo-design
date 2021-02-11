@@ -32,7 +32,7 @@ class InputPage extends React.Component {
                     <div>
                         <h4>Default input</h4>
                         <br />
-                        <NeoInput width={"250px"} title={"test"} />
+                        <NeoInput width={"250px"} />
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='DefaultInput' onClick={showCode}>Show Code</NeoButton>
@@ -65,14 +65,14 @@ class InputPage extends React.Component {
                     <div>
                         <h4>Default with text input</h4>
                         <br />
-                        <NeoInput width={"250px"} placeholder={"Text"} title={"test"} />
+                        <NeoInput width={'200'} placeholder={"Text"} title={"Title"} />
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='DefaultWithText' onClick={showCode}>Show Code</NeoButton>
                         <SyntaxHighlighter id='DefaultWithText' language='jsx' style={okaidia} >
                             {`import { NeoInput } from "neo-design/lib";
 
-<NeoInput width={"250px"} value={"Text"} title={"test"} />`}
+<NeoInput width={"250px"} value={"Text"} title={"Title"} />`}
                         </SyntaxHighlighter>
                     </div>
                     <br/>
@@ -80,7 +80,7 @@ class InputPage extends React.Component {
                     <div>
                         <h4>Search input</h4>
                         <br />
-                        <NeoInput type={'search'} className={'inputttt'} width={"250px"} />
+                        <NeoInput type={'search'} width={"250px"} />
                     </div>
                     <div className='showCode'>
                         <NeoButton style={{width: '170px'}} id='Search' onClick={showCode}>Show Code</NeoButton>

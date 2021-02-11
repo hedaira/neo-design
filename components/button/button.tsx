@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Tooltip} from "antd";
 
-const ButtonTypes = tuple('primary', 'disabled', 'secondary', 'link', 'ghost');
+const ButtonTypes = tuple('primary', 'disabled', 'secondary', 'link', 'ghost', 'circle');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
@@ -20,6 +20,7 @@ export interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLElement>;
     suffixIcon?: React.ReactNode;
     style?;
+    color?: string;
 }
 
 const prefix = 'btn';
@@ -62,7 +63,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                     id={id}
                     className={classes}
                     onClick={handleClick}
-                    style={style}
+                    style={{...style, color: props.color==='blue' ? '#2a356c' : props.color==='white' ? '#fff': props.color ? props.color : undefined}}
                     hidden={props.hidden}
                     disabled={(props.type === 'disabled')}
                 >
@@ -83,7 +84,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 title={title}
                 className={classes}
                 onClick={handleClick}
-                style={style}
+                style={{...style, color: props.color==='blue' ? '#2a356c' : props.color==='white' ? '#fff': props.color ? props.color : undefined}}
                 hidden={props.hidden}
                 disabled={(props.type === 'disabled')}
             >
@@ -103,7 +104,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                 id={id}
                 className={classes}
                 onClick={handleClick}
-                style={style}
+                style={{...style, color: props.color==='blue' ? '#2a356c' : props.color==='white' ? '#fff': props.color ? props.color : undefined}}
                 hidden={props.hidden}
                 disabled={(props.type === 'disabled')}
             >
@@ -111,14 +112,13 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
             </button>
         </Tooltip>
         )
-    }
-    else {
+    } else {
         return (
             <button
                 id={id}
                 className={classes}
                 onClick={handleClick}
-                style={style}
+                style={{...style, color: props.color==='blue' ? '#2a356c' : props.color==='white' ? '#fff': props.color ? props.color : undefined}}
                 hidden={props.hidden}
                 disabled={(props.type === 'disabled')}
             >
