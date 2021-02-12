@@ -1,7 +1,8 @@
-import {Col, Row} from "antd";
 import * as React from "react";
 import {NeoCol, NeoRow, NeoTypography} from "../index";
 import {getTextWidth} from "./fontSizeUtils";
+
+const inputElementStandardWidth = 200;
 
 interface Props {
     width: string,
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export function Title(props:Props) {
-    const width = parseInt(props.width, 10);
+    const width = props.width ? parseInt(props.width, 10) : inputElementStandardWidth;
     const textWidth = getTextWidth(props.title, "bold 12pt Roboto");
     const typographyWidth = 150;
     if (props.titleOrientation === "Left" || props.titleOrientation === "Right") {
