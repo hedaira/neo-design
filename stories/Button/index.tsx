@@ -80,6 +80,10 @@ export default class ButtonPage extends React.Component {
                   <NeoIcon icon={"plus"} size={'m'} color={'white'}/>
               </NeoButton>
 
+              <NeoButton className={'ml20'} type={'ghost-icon'}>
+                  <NeoIcon icon={"plus"} size={'m'} color={'#2A356C'}/>
+              </NeoButton>
+
           </div>
             <div className='showCode'>
                 <NeoButton  id='ButtonTypes' style={{width: '170px'}} onClick={showCode}>Show code</NeoButton>
@@ -102,6 +106,10 @@ export default class ButtonPage extends React.Component {
 
 <NeoButton className={'ml20'} type={'square'}>
   <NeoIcon icon={"plus"} size={'m'} color={'white'}/>
+</NeoButton>
+
+<NeoButton className={'ml20'} type={'ghost-icon'}>
+  <NeoIcon icon={"plus"} size={'m'} color={'#2A356C'}/>
 </NeoButton>`}
                 </SyntaxHighlighter>
             </div>

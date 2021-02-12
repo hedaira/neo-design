@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import {Tooltip} from "antd";
 
-const ButtonTypes = tuple('primary', 'disabled', 'secondary', 'link', 'ghost', 'circle', 'square');
+const ButtonTypes = tuple('primary', 'disabled', 'secondary', 'link', 'ghost', 'circle', 'square', 'ghost-icon');
 export type ButtonType = typeof ButtonTypes[number];
 
 const SizeTypes = tuple('medium', 'large');
