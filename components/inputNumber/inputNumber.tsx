@@ -1,8 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {InputNumber} from 'antd';
-
-
+import {Title} from "../_utils/Title";
 
 export interface InputNumberProps {
   width?: string;
@@ -18,6 +17,8 @@ export interface InputNumberProps {
   disabled?: boolean;
   onChange?: any;
   style?: React.CSSProperties;
+  title?: string;
+  titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
 }
 
 const prefix = 'inputNumber';
@@ -38,7 +39,15 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, InputNumberPr
   );
 
 
-    return <InputNumber
+    return props.title ? <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} width={`${props.width ? props.width : "auto"}`}>
+        <InputNumber
+          className={classes}
+          {...props}
+          style={{width: `${props.width ? props.width : "auto"}`}}
+      >
+        {children}
+      </InputNumber>
+    </Title> : <InputNumber
         className={classes}
         {...props}
         style={{width: `${props.width ? props.width : "auto"}`}}
