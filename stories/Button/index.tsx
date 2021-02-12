@@ -9,7 +9,7 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 export default class ButtonPage extends React.Component {
   render() {
 
-      const data = [{name:'type', default:"'primary'", description:"Тип кнопки", value: "'primary' | 'disabled' | 'secondary' | 'link' | 'ghost' | 'circle'"},
+      const data = [{name:'type', default:"'primary'", description:"Тип кнопки", value: "'primary' | 'disabled' | 'secondary' | 'link' | 'ghost' | 'circle' | 'square'"},
           {name:'size', default:'-', description:"Размер текста внутри кнопки", value: "'medium' | 'large'"},
           {name:'color', default:'-', description:"Цвет текста внутри кнопки", value: "'blue' | 'white' | hex/rgb/rgba"},
           {name:'disabled', default:'false', description:'Кнопка, запрещающая выполнение действия', value: 'true / false'},
@@ -75,6 +75,11 @@ export default class ButtonPage extends React.Component {
               <NeoButton className={'ml20'} type={'circle'}>
                   <NeoIcon icon={"gear"} color={'white'}/>
               </NeoButton>
+
+              <NeoButton className={'ml20'} type={'square'}>
+                  <NeoIcon icon={"plus"} size={'m'} color={'white'}/>
+              </NeoButton>
+
           </div>
             <div className='showCode'>
                 <NeoButton  id='ButtonTypes' style={{width: '170px'}} onClick={showCode}>Show code</NeoButton>
@@ -93,6 +98,10 @@ export default class ButtonPage extends React.Component {
 
 <NeoButton type={'circle'}>
   <NeoIcon icon={"gear"} color={'white'} />
+</NeoButton>
+
+<NeoButton className={'ml20'} type={'square'}>
+  <NeoIcon icon={"plus"} size={'m'} color={'white'}/>
 </NeoButton>`}
                 </SyntaxHighlighter>
             </div>
