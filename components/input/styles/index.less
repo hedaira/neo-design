@@ -172,7 +172,7 @@
 }
 
 /*Datasearch Page(App)*/
-.datasearch__filter__drawer .ant-checkbox-wrapper {
+.datasearch__filter__drawer .ant-checkbox-wrapper, .toolsDrawer .ant-checkbox-wrapper {
   width: fit-content;
   position: relative;
   padding-left: 25px;
@@ -186,10 +186,12 @@
   user-select: none;
   border: none !important;
 }
-.datasearch__filter__drawer .ant-checkbox-checked:after {
+.datasearch__filter__drawer .ant-checkbox-checked:after,
+.toolsDrawer .ant-checkbox-checked:after {
   border: none;
 }
-.datasearch__filter__drawer .ant-checkbox {
+.datasearch__filter__drawer .ant-checkbox,
+.toolsDrawer .ant-checkbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -200,12 +202,14 @@
   border-radius: 2px;
   box-sizing: border-box;
 }
-.datasearch__filter__drawer .ant-checkbox-inner, .datasearch__filter__drawer .ant-checkbox-inner:hover {
+.datasearch__filter__drawer .ant-checkbox-inner, .datasearch__filter__drawer .ant-checkbox-inner:hover,
+.toolsDrawer .ant-checkbox-inner, .toolsDrawer .ant-checkbox-inner:hover {
   border: none !important;
   box-shadow: none !important;
   height: auto;
 }
-.datasearch__filter__drawer .ant-checkbox-checked .ant-checkbox-inner::after, .datasearch__filter__drawer .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+.datasearch__filter__drawer .ant-checkbox-checked .ant-checkbox-inner::after, .datasearch__filter__drawer .ant-checkbox-indeterminate .ant-checkbox-inner::after,
+.toolsDrawer .ant-checkbox-checked .ant-checkbox-inner::after, .toolsDrawer .ant-checkbox-indeterminate .ant-checkbox-inner::after {
   top: 55%;
   left: 22%;
   height: 9px;
@@ -223,7 +227,8 @@
   content: ' ';
   background-color: unset;
 }
-.datasearch__filter__drawer .ant-checkbox-wrapper:hover .ant-checkbox {
+.datasearch__filter__drawer .ant-checkbox-wrapper:hover .ant-checkbox,
+.toolsDrawer .datasearch__filter__drawer .ant-checkbox-wrapper:hover .ant-checkbox {
   box-shadow: 0 0 1px #424D78;
 }
 
