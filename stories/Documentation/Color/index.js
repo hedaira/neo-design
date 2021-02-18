@@ -55,7 +55,7 @@ export default class MainColorPageDoc extends Component {
                         Фиолетовый используются в качестве основного цвета хедера, кнопок, иконок.
                     </p>
 
-                    <NeoRow gutter={16} justifyContent={'flex-start'}>
+                    <NeoRow gutter={16} justify={'start'}>
                         {this.renderColorBox('Hover', 'violete_6', '#D9A54C')}
                         {this.renderColorBox('Default', 'violete_5', '#FFCC66')}
                     </NeoRow>

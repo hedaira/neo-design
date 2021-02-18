@@ -37,6 +37,9 @@ const InternalRow: React.ForwardRefRenderFunction<RowState, RowProps> = (props) 
             {...props}
             className={classes}
             style={props.style}
+            justify={props.justify}
+            align={props.align}
+            gutter={props.gutter}
         >
             {children}
         </Row>

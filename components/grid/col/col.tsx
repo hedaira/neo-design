@@ -4,7 +4,7 @@ import {Col} from 'antd';
 
 declare type ColSpanType = number | string;
 declare type FlexType = number | 'none' | 'auto' | string;
-declare const ColJustify: ["start", "end", "center", "space-around", "space-between"];
+declare const ColJustify: ["start", "end", "center", "space-around", "space-between", "unset"];
 
 export interface ColSize {
     span?: ColSpanType;
@@ -55,7 +55,7 @@ const InternalCol: React.ForwardRefRenderFunction<ColSize, ColProps> = (props) =
         <Col
             {...props}
             className={classes}
-            style={props.style}
+            style={{...props.style, justifyContent:props.justify}}
         >
             {children}
         </Col>

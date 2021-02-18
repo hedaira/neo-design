@@ -28,7 +28,7 @@ export default class TypographyPageDoc extends Component {
                     {`import NeoTypography from 'neo-design/lib';`}
                 </SyntaxHighlighter>
 
-                <section className="example">
+                <section className="example example_typography">
                     <p className="text">
                         <NeoTypography type={'h3_medium'}>Шрифт -  Roboto</NeoTypography>
                     </p>
