@@ -31,7 +31,7 @@ export interface TabProps {
     onEdit?: (targetKey: string, action: any) => void;
     onNextClick?: any;
     onPrevClick?: any;
-    // onTabClick?: (key: string, event: MouseEvent) => void;
+    onTabClick?: (key: string, event: any) => void;
     children?: React.ReactNode;
 }
 
@@ -68,7 +68,7 @@ export default class NeoTabs extends Component<TabProps, any> {
                     onEdit={this.props.onEdit}
                     // onNextClick={this.props.onNextClick}
                     // onPrevClick={this.props.onPrevClick}
-                    // onTabClick={this.props.onTabClick}
+                    onTabClick={this.props.onTabClick}
                     children={this.props.children}
                 />
                 :
