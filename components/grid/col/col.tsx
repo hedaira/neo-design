@@ -55,7 +55,7 @@ const InternalCol: React.ForwardRefRenderFunction<ColSize, ColProps> = (props) =
         <Col
             {...props}
             className={classes}
-            style={{...props.style, justifyContent:props.align}}
+            style={{...props.style, alignItems:props.align}}
         >
             {children}
         </Col>
