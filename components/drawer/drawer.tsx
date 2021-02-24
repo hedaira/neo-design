@@ -51,7 +51,7 @@ const classes = classNames(
             width={width}
             onClose={props.onClose}
             visible={visible}
-            bodyStyle={{ paddingBottom: 80 }}
+            bodyStyle={{ paddingBottom: 150 }}
             style={{...props.style, top:'79px'}}
             className={classes}
             {...props}
