@@ -26,6 +26,7 @@ export interface ModalProps {
         children?: React.ReactNode;
         closable?: boolean;
         footer?: any;
+        getContainer?: HTMLElement | false | string | (()=>HTMLElement);
 }
 
 
@@ -47,7 +48,8 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
       visible,
       className,
       children,
-      footer
+      footer,
+      getContainer
   } = props;
 
 
@@ -66,6 +68,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         <Modal
             {...props}
             className={classes}
+            getContainer={getContainer}
             title={title}
             visible={visible}
             closable={props.closable}
@@ -85,6 +88,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         return <Modal
             {...props}
             className={classes}
+            getContainer={getContainer}
             title={
                 <div>
                     <NeoIcon icon={'info'} customSize={'60'}/>
@@ -109,6 +113,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         return <Modal
             {...props}
             className={classes}
+            getContainer={getContainer}
             title={
                 <div>
                     <NeoIcon icon={"warning"} customSize={'60'} color={'#e16468'}/>
@@ -132,6 +137,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
         return <Modal
             {...props}
             className={classes}
+            getContainer={getContainer}
             title={
                 <div>
                     <NeoIcon icon={"success"} customSize={'60'} color={'#27677c'}/>
@@ -156,6 +162,7 @@ const InternalModal: React.ForwardRefRenderFunction<unknown, ModalProps> = (prop
             <Modal
                 {...props}
                 className={classes}
+                getContainer={getContainer}
                 title={title}
                 visible={visible}
                 closable={props.closable}
