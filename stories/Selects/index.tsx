@@ -23,7 +23,7 @@ export default class SelectsPage extends React.Component {
             {name:'titleOrientation', default:'false', description:'Ориентация заголовка', value: '"Top" | "Right" | "Bottom" | "Left"'},
             {name:'allowClear', default:'false', description:'Очистить поле', value: 'true / false'},
             {name:'showSearch', default:'false', description:'Добавить иконку поиска', value: 'true / false'},
-            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов', value: 'Number'},
+            {name:'maxTagCount', default:'-', description:'Максимальное количество отображаемых тегов', value: 'Number | "responsive"'},
             {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги', value: 'ReactNode'},
             {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения', value: 'Number'},
             {name:'getPopupContainer', default: '-', description:"Контейнер в котором будет отображаться дроп даун select'а", value: 'function(e)'},
@@ -144,6 +144,7 @@ export default class SelectsPage extends React.Component {
                             mode={"tags"}
                             width={'670px'}
                             placeholder={"Выберите из списка"}
+                            maxTagCount={'responsive'}
                         >
                             <NeoOption value="lucy">Lucy</NeoOption>
                             <NeoOption value="jack">Jack</NeoOption>
@@ -155,7 +156,13 @@ export default class SelectsPage extends React.Component {
                         <SyntaxHighlighter id='Selects' language='jsx' style={okaidia} >
                             {`import { NeoSelect, NeoOption } from "neo-design/lib";
 
-<NeoSelect defaultValue="lucy">
+<NeoSelect
+    allowClear={true}
+    mode={"tags"}
+    width={'670px'}
+    placeholder={"Выберите из списка"}
+    maxTagCount={'responsive'}
+>
     <NeoOption value="lucy">Lucy</NeoOption>
     <NeoOption value="jack">Jack</NeoOption>
     <NeoOption value="john">John</NeoOption>

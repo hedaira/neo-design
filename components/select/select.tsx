@@ -17,7 +17,7 @@ export interface SelectProps {
     defaultValue?: any;
     onClick?: any;
     mode?: undefined | 'multiple' | 'tags';
-    maxTagCount?: number;
+    maxTagCount?: number | 'responsive';
     maxTagTextLength?: number;
     filterOption?;
     onChange?;
