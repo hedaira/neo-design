@@ -21,6 +21,7 @@ export interface ButtonProps {
     suffixIcon?: React.ReactNode;
     style?;
     color?: string;
+    htmlType?: 'submit' | 'button' | 'reset'
 }
 
 const prefix = 'btn';
@@ -60,6 +61,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         return (
             <Tooltip title={props.title} placement="bottomLeft">
                 <button
+                    type={props.htmlType}
                     id={id}
                     className={classes}
                     onClick={handleClick}
@@ -80,6 +82,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
     if (suffixIcon) {
         return (
             <button
+                type={props.htmlType}
                 id={id}
                 title={title}
                 className={classes}
@@ -101,6 +104,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         return (
         <Tooltip title={props.title} placement="bottomLeft">
             <button
+                type={props.htmlType}
                 id={id}
                 className={classes}
                 onClick={handleClick}
@@ -115,6 +119,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
     } else {
         return (
             <button
+                type={props.htmlType}
                 id={id}
                 className={classes}
                 onClick={handleClick}

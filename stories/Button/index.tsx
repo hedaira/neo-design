@@ -11,6 +11,7 @@ export default class ButtonPage extends React.Component {
 
       const data = [{name:'type', default:"'primary'", description:"Тип кнопки", value: "'primary' | 'disabled' | 'secondary' | 'link' | 'ghost' | 'circle' | 'square'"},
           {name:'size', default:'-', description:"Размер текста внутри кнопки", value: "'medium' | 'large'"},
+          {name:'htmlType', default:'-', description:"Поведение кнопки", value: "'submit' | 'button' | 'reset'"},
           {name:'color', default:'-', description:"Цвет текста внутри кнопки", value: "'blue' | 'white' | hex/rgb/rgba"},
           {name:'disabled', default:'false', description:'Кнопка, запрещающая выполнение действия', value: 'true / false'},
           {name:'hidden', default:'false', description:'Отображать ли кнопку', value: 'true / false'},
