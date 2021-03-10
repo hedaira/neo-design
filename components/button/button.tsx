@@ -22,6 +22,7 @@ export interface ButtonProps {
     style?;
     color?: string;
     htmlType?: 'submit' | 'button' | 'reset'
+    titlePos?;
 }
 
 const prefix = 'btn';
@@ -59,7 +60,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
 
     if (suffixIcon && props.title) {
         return (
-            <Tooltip title={props.title} placement="bottomLeft">
+            <Tooltip title={props.title} placement={props.titlePos ? props.titlePos : "bottomLeft"}>
                 <button
                     type={props.htmlType}
                     id={id}
@@ -102,7 +103,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
     }
     if(props.title){
         return (
-        <Tooltip title={props.title} placement="bottomLeft">
+        <Tooltip title={props.title} placement={props.titlePos ? props.titlePos : "bottomLeft"}>
             <button
                 type={props.htmlType}
                 id={id}
@@ -135,13 +136,12 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
 
 };
 
-const Button = React.forwardRef<unknown, ButtonProps>(InternalButton) as CompoundedComponent;
+const NeoButton = React.forwardRef<unknown, ButtonProps>(InternalButton) as CompoundedComponent;
 
-Button.displayName = 'NeoButton';
+NeoButton.displayName = 'NeoButton';
 
-Button.defaultProps = {
+NeoButton.defaultProps = {
 };
 
-export default Button
-
+export default NeoButton
 
