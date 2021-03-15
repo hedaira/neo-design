@@ -62,6 +62,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         return (
             <Tooltip title={props.title} placement={props.titlePos ? props.titlePos : "bottomLeft"}>
                 <button
+                    {...props}
                     type={props.htmlType}
                     id={id}
                     className={classes}
@@ -83,6 +84,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
     if (suffixIcon) {
         return (
             <button
+                {...props}
                 type={props.htmlType}
                 id={id}
                 title={title}
@@ -105,6 +107,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         return (
         <Tooltip title={props.title} placement={props.titlePos ? props.titlePos : "bottomLeft"}>
             <button
+                {...props}
                 type={props.htmlType}
                 id={id}
                 className={classes}
@@ -120,6 +123,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
     } else {
         return (
             <button
+                {...props}
                 type={props.htmlType}
                 id={id}
                 className={classes}
