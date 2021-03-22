@@ -48,7 +48,7 @@ class IconPage extends React.Component {
     groupMenuIcon = (arr) => {
         return arr.map((icon, i) =>
             <div
-                style={{width: '200px'}}
+                style={{width: '100px'}}
                 className="icon"
                 onClick={() => this.copyToClipboard(icon)}
             >
@@ -357,6 +357,7 @@ class IconPage extends React.Component {
             "map",
             "minus-circle",
             "minus-square",
+            "minus-check",
             "minus-square-check",
             "minus",
             "money",
