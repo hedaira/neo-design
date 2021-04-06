@@ -210,6 +210,7 @@ class IconPage extends React.Component {
 
         const additional = [
             "ancore",
+            "apps",
             "arrow-back",
             "arrow-backward",
             "arrow-double-reply",
