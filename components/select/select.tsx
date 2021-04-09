@@ -28,6 +28,7 @@ export interface SelectProps {
     title?: string;
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
     required?: boolean;
+    hidden?: boolean;
 }
 
 const prefix = 'select';
@@ -48,12 +49,16 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
     const width = `${props.width ? props.width : "185px"}`;
 
     if (props.title) {
-        return <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} required={props.required} width={width}>
+        return <Title
+            hidden={props.hidden}
+            title={props.title}
+            titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"}
+            required={props.required} width={width}>
             <Select
                 {...props}
                 getPopupContainer={props.getPopupContainer}
                 className={classes}
-                style={{...props.style, width: width}}
+                style={{display: props.hidden ? "none" : undefined, ...props.style, width: width}}
                 placeholder={props.placeholder}
                 showSearch={props.showSearch}
                 allowClear={props.allowClear}
@@ -68,7 +73,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         {...props}
         getPopupContainer={props.getPopupContainer}
         className={classes}
-        style={{...props.style, width: width}}
+        style={{display: props.hidden ? "none" : undefined, ...props.style, width: width}}
         placeholder={props.placeholder}
         showSearch={props.showSearch}
         allowClear={props.allowClear}

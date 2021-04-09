@@ -58,7 +58,12 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
     );
 
     if (!props.type && !props.password) {
-        return props.title ? <Title title={props.title} required={props.required} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} width={`${props.width ? props.width : "auto"}`}>
+        return props.title ? <Title
+            title={props.title}
+            hidden={props.hidden}
+            required={props.required}
+            titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"}
+            width={`${props.width ? props.width : "auto"}`}>
             <Input
                 {...props}
                 autoFocus={props.autofocus}
