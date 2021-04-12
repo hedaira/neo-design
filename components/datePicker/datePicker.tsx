@@ -9,7 +9,7 @@ export interface DatePickerProps {
     defaultValue?;
     className?: string;
     disabled?: any;
-    allowClear?: any;
+    allowClear?: boolean;
     onChange?: any;
     key?: any;
     value?;
