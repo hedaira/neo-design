@@ -1,7 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
-import '../../components/drawer/styles/index.less'
 import { Drawer } from "antd";
 declare type getContainerFunc = () => HTMLElement;
 
