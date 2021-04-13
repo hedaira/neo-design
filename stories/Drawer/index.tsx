@@ -43,25 +43,16 @@ export default class DrawerPage extends React.Component {
                             title={'This is drawer title'}
                             visible={this.state.visible}
                             onClose={this.onClose}
-                            width={720}>
-                            <h1>Content</h1>
-                            <div style={{
-                                position: 'absolute',
-                                right: 0,
-                                bottom: '80px',
-                                width: '100%',
-                                borderTop: '1px solid #e9e9e9',
-                                padding: '16px 40px',
-                                background: '#F2F2F2',
-                                textAlign: 'left',
-                            }}>
+                            footer={<>
                                 <NeoButton onClick={this.onSubmit} style={{marginRight:'16px'}}>
                                     Применить
                                 </NeoButton>
                                 <NeoButton type={'secondary'} onClick={this.onClose}>
                                     Отменить
                                 </NeoButton>
-                            </div>
+                            </>}
+                            width={720}>
+                            <h1>Content</h1>
                         </NeoDrawer>
                         <div className='showCode'>
                             <NeoButton style={{width: '170px'}} id='Drawer' onClick={showCode}>Show Code</NeoButton>
