@@ -30,7 +30,7 @@ export interface InputProps {
     required?: boolean;
     defaultValue?: string;
     style?;
-    id?;
+    id?: string;
     key?;
     onKeyUp?;
     onPressEnter?;

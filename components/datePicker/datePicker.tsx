@@ -21,6 +21,7 @@ export interface DatePickerProps {
     required?: boolean;
     style?;
     hidden?: boolean;
+    id?: string
 }
 
 const prefix = 'datepicker';
@@ -58,6 +59,7 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
 
     return <DatePicker
         {...props}
+        id={props.id}
         getPopupContainer={props.getCalendarContainer}
         className={classes}
         style={{display: props.hidden ? "none" : undefined, ...props.style, width: width}}

@@ -29,6 +29,7 @@ export interface SelectProps {
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
     required?: boolean;
     hidden?: boolean;
+    id?: string;
 }
 
 const prefix = 'select';
@@ -56,6 +57,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
             required={props.required} width={width}>
             <Select
                 {...props}
+                id={props.id}
                 getPopupContainer={props.getPopupContainer}
                 className={classes}
                 style={{display: props.hidden ? "none" : undefined, ...props.style, width: width}}
@@ -71,6 +73,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
     return <Select
         {...props}
+        id={props.id}
         getPopupContainer={props.getPopupContainer}
         className={classes}
         style={{display: props.hidden ? "none" : undefined, ...props.style, width: width}}
