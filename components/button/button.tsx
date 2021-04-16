@@ -23,6 +23,7 @@ export interface ButtonProps {
     color?: string;
     htmlType?: 'submit' | 'button' | 'reset'
     titlePos?;
+    select?: boolean;
 }
 
 const prefix = 'btn';
@@ -39,14 +40,16 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
       children,
       style,
       id,
-      suffixIcon
+      suffixIcon,
+      select
   } = props;
 
   const classes = classNames(
       prefix,
       {
         [`${prefix}-${type}`]: type,
-        [`${prefix}-${size}`]: size
+        [`${prefix}-${size}`]: size,
+      [`${prefix}-${type?type:'primary'}-select`]: select
       },
       className
   );

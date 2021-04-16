@@ -65,6 +65,12 @@ span.btn {
   pointer-events: none;
 }
 
+.btn-primary {
+  &-select:focus{
+    background: #2A356C;
+  }
+}
+
 .btn-secondary {
   background-color: #fff;
   border: 1px solid #424D78;
@@ -80,6 +86,10 @@ span.btn {
         color: #424D78;
         box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
       }
+  &-select:focus{
+    background: #FFF8E0;
+    border: 1px solid #FFCC66;
+  }
 }
 
 .btn-link, .btn-link div:nth-child(2) {
@@ -99,6 +109,12 @@ span.btn {
 .btn-icon {
   min-width: 0px;
   padding: 5px;
+}
+
+.btn-ghost {
+  &-select:focus{
+    border: 1px solid #171D45;
+  }
 }
 
 .btn-ghost, .btn-ghost div:nth-child(2), .btn-ghost-icon {
