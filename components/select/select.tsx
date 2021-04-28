@@ -30,6 +30,7 @@ export interface SelectProps {
     required?: boolean;
     hidden?: boolean;
     id?: string;
+    dropdownRender?
 }
 
 const prefix = 'select';
@@ -65,6 +66,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
                 showSearch={props.showSearch}
                 allowClear={props.allowClear}
                 filterOption={props.filterOption||true}
+                dropdownRender={props.dropdownRender}
             >
                 {props.children}
             </Select>
@@ -81,6 +83,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
         showSearch={props.showSearch}
         allowClear={props.allowClear}
         filterOption={props.filterOption||true}
+        dropdownRender={props.dropdownRender}
     >
         {props.children}
     </Select>
