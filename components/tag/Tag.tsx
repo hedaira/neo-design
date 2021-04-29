@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {Tag} from 'antd';
+import {MouseEventHandler} from "react";
 
 
 
@@ -12,6 +13,8 @@ export interface TagProps {
   onClose?: () => void;
   style?: React.CSSProperties;
   onClick?: (event:React.MouseEvent<HTMLSpanElement, MouseEvent>) => void;
+  onMouseUp?: MouseEventHandler<any>,
+  onMouseDown?: MouseEventHandler<any>
 }
 
 const prefix = 'tag';
@@ -23,7 +26,9 @@ const InternalTag: React.ForwardRefRenderFunction<unknown, TagProps> = (props) =
   const {
     className,
     children,
-    onClick
+    onClick,
+    onMouseUp,
+    onMouseDown
   } = props;
 
 
@@ -35,6 +40,8 @@ const InternalTag: React.ForwardRefRenderFunction<unknown, TagProps> = (props) =
 
     return <Tag
         {...props}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
         onClick={onClick}
         className={classes}
         /*style={{width: `${props.width ? props.width : "auto"}`}}*/
