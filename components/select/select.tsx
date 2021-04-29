@@ -2,6 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {Select} from 'antd';
 import {Title} from "../_utils/Title";
+import {RefSelectProps} from "antd/es/select";
+import {RefObject} from "react";
 
 
 export interface SelectProps {
@@ -30,15 +32,13 @@ export interface SelectProps {
     required?: boolean;
     hidden?: boolean;
     id?: string;
-    dropdownRender?
+    dropdownRender?;
+    ref?;
 }
 
 const prefix = 'select';
 
-interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLElement>> {}
-
-const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (props) => {
+const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSelectProps>) => {
     const {
         className,
     } = props;
@@ -58,6 +58,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
             required={props.required} width={width}>
             <Select
                 {...props}
+                ref={ref}
                 id={props.id}
                 getPopupContainer={props.getPopupContainer}
                 className={classes}
@@ -75,6 +76,7 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
 
     return <Select
         {...props}
+        ref={ref}
         id={props.id}
         getPopupContainer={props.getPopupContainer}
         className={classes}
@@ -87,9 +89,9 @@ const InternalSelect: React.ForwardRefRenderFunction<unknown, SelectProps> = (pr
     >
         {props.children}
     </Select>
-}
+});
 
-const NeoSelect = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;
+const NeoSelect = InternalSelect;
 
 NeoSelect.displayName = 'NeoSelect';
 
