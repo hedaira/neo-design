@@ -48,7 +48,8 @@ const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (pr
         mask,
         maskClosable,
         placement,
-        bodyStyle
+        bodyStyle,
+        footer,
     } = props;
 
     const classes = classNames(
@@ -65,29 +66,16 @@ const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (pr
             placement={placement}
             onClose={props.onClose}
             visible={visible}
-            bodyStyle={bodyStyle ? bodyStyle : { paddingBottom: 150 }}
-            style={{...props.style, top:'79px'}}
+            bodyStyle={bodyStyle}
+            style={{...props.style, top:"80px", height:"calc(100% - 80px)"}}
             className={classes}
             mask={mask}
             maskClosable={maskClosable}
-            {...props}
+            footer={footer}
             getContainer={props.getContainer}
+            {...props}
         >
             {children}
-
-            {props.footer && <div
-                style={{
-                    position: 'absolute',
-                    right: 0,
-                    bottom: '79px',
-                    width: '100%',
-                    borderTop: '1px solid #e9e9e9',
-                    padding: '16px 40px',
-                    background: '#F2F2F2',
-                    textAlign: 'left',
-                }}
-            >{props.footer}</div>
-            }
         </Drawer>
     )
 

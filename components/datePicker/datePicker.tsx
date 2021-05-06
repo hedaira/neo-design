@@ -9,7 +9,7 @@ export interface DatePickerProps {
     defaultValue?;
     className?: string;
     disabled?: any;
-    allowClear?: any;
+    allowClear?: boolean;
     onChange?: any;
     key?: any;
     value?;
@@ -19,6 +19,9 @@ export interface DatePickerProps {
     titleOrientation?: "Top"|"Right"|"Bottom"|"Left";
     getCalendarContainer?: () => HTMLElement;
     required?: boolean;
+    style?;
+    hidden?: boolean;
+    id?: string
 }
 
 const prefix = 'datepicker';
@@ -39,12 +42,16 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
     const width = `${props.width ? props.width : "auto"}`;
 
     if (props.title) {
-        return <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} required={props.required} width={width}>
+        return <Title
+            hidden={props.hidden}
+            title={props.title}
+            titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"}
+            required={props.required} width={width}>
             <DatePicker
                 {...props}
                 getPopupContainer={props.getCalendarContainer}
                 className={classes}
-                style={{width: `${props.width ? props.width : "auto"}`}}
+                style={{display: props.hidden ? "none" : undefined,  ...props.style, width: `${props.width ? props.width : "auto"}`}}
                 suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
             />
         </Title>
@@ -52,9 +59,10 @@ const InternalDatePicker: React.ForwardRefRenderFunction<unknown, DatePickerProp
 
     return <DatePicker
         {...props}
+        id={props.id}
         getPopupContainer={props.getCalendarContainer}
         className={classes}
-        style={{width: width}}
+        style={{display: props.hidden ? "none" : undefined, ...props.style, width: width}}
         suffixIcon={<NeoIcon icon={"calendarFull"} color={"rgba(0, 0, 0, 0.25)"}/>}
     />
 }
