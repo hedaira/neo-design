@@ -65,6 +65,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
                     {...props}
                     type={props.htmlType}
                     id={id}
+                    title={""}
                     className={classes}
                     onClick={handleClick}
                     style={{...style, color: props.color==='blue' ? '#2a356c' : props.color==='white' ? '#fff': props.color ? props.color : undefined}}
@@ -108,6 +109,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, ButtonProps> = (pr
         <Tooltip title={props.title} placement={props.titlePos ? props.titlePos : "bottomLeft"}>
             <button
                 {...props}
+                title={""}
                 type={props.htmlType}
                 id={id}
                 className={classes}
