@@ -4,6 +4,7 @@ import {Select} from 'antd';
 import {Title} from "../_utils/Title";
 import {RefSelectProps} from "antd/es/select";
 import {RefObject} from "react";
+import {NeoIcon} from "neo-icon/lib";
 
 
 export interface SelectProps {
@@ -71,7 +72,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
                 filterOption={props.filterOption||true}
                 dropdownRender={props.dropdownRender}
                 tagRender={props.tagRender}
-                suffixIcon={props.suffixIcon}
+                suffixIcon={props.suffixIcon ? props.suffixIcon : <NeoIcon icon={'arrowDown'} size={'s'} />}
             >
                 {props.children}
             </Select>
@@ -91,7 +92,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
         filterOption={props.filterOption||true}
         dropdownRender={props.dropdownRender}
         tagRender={props.tagRender}
-        suffixIcon={props.suffixIcon}
+        suffixIcon={props.suffixIcon ? props.suffixIcon : <NeoIcon icon={'arrowDown'} size={'s'} />}
     >
         {props.children}
     </Select>
