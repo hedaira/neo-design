@@ -19,6 +19,7 @@ class InputPage extends React.Component {
             {name:'placeholder', default:'-', description:'Текст поля по умолчанию', value: 'String'},
             {name:'allowClear', default:'false', description:'Очистить поле(иконка)', value: 'true / false'},
             {name:'isIcon', default:'false', description:'Применяется, если кнопка содержит в себе иконку', value: 'true / false'},
+            {name:'suffix', default:'-', description:'Кастомизированная иконка', value: 'React.Node'},
             {name:'required', default:'false', description:'Обязательное поле(добавляет звездочку)', value: 'true / false'}];
 
         return (

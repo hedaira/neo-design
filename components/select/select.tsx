@@ -35,6 +35,7 @@ export interface SelectProps {
     dropdownRender?;
     tagRender?;
     ref?;
+    suffixIcon?;
 }
 
 const prefix = 'select';
@@ -70,6 +71,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
                 filterOption={props.filterOption||true}
                 dropdownRender={props.dropdownRender}
                 tagRender={props.tagRender}
+                suffixIcon={props.suffixIcon}
             >
                 {props.children}
             </Select>
@@ -89,6 +91,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
         filterOption={props.filterOption||true}
         dropdownRender={props.dropdownRender}
         tagRender={props.tagRender}
+        suffixIcon={props.suffixIcon}
     >
         {props.children}
     </Select>
