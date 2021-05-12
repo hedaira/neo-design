@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {tuple} from '../_utils/tools'
 import { Drawer } from "antd";
+import {NeoIcon} from "neo-icon/lib";
 declare type getContainerFunc = () => HTMLElement;
 
 const DrawerTypes = tuple('success', 'info', 'error');
@@ -73,6 +74,7 @@ const InternalDrawer: React.ForwardRefRenderFunction<unknown, DrawerProps> = (pr
             maskClosable={maskClosable}
             footer={footer}
             getContainer={props.getContainer}
+            closeIcon={<NeoIcon icon={'close'} color={'#B3B3B3'} />}
             {...props}
         >
             {children}
