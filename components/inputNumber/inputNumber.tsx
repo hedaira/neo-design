@@ -11,7 +11,7 @@ export interface NeoInputNumberProps extends InputNumberProps {
 const prefix = 'inputNumber';
 
 interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<InputNumberProps & React.RefAttributes<HTMLElement>> {}
+    extends React.ForwardRefExoticComponent<NeoInputNumberProps & React.RefAttributes<HTMLElement>> {}
 
 const InternalInputNumber: React.ForwardRefRenderFunction<unknown, NeoInputNumberProps> = (props) => {
   const {
@@ -44,7 +44,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, NeoInputNumbe
 
 }
 
-const NeoInputNumber = React.forwardRef<unknown, InputNumberProps>(InternalInputNumber) as CompoundedComponent;
+const NeoInputNumber = React.forwardRef<unknown, NeoInputNumberProps>(InternalInputNumber) as CompoundedComponent;
 
 NeoInputNumber.displayName = 'NeoInputNumber';
 
