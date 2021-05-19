@@ -17,6 +17,7 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, NeoInputNumbe
   const {
     className,
     children,
+    hidden
   } = props;
 
 
@@ -29,15 +30,15 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, NeoInputNumbe
     return props.title ? <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} width={`${props.width ? props.width : "auto"}`}>
         <InputNumber
           className={classes}
+          style={{width: `${props.width ? props.width : "auto"}`, display: hidden ? "none" : undefined}}
           {...props}
-          style={{width: `${props.width ? props.width : "auto"}`}}
       >
         {children}
       </InputNumber>
     </Title> : <InputNumber
         className={classes}
+        style={{width: `${props.width ? props.width : "auto"}`, display: hidden ? "none" : undefined}}
         {...props}
-        style={{width: `${props.width ? props.width : "auto"}`}}
     >
       {children}
     </InputNumber>
