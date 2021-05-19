@@ -27,7 +27,10 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, NeoInputNumbe
   );
 
 
-    return props.title ? <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} width={`${props.width ? props.width : "auto"}`}>
+    return props.title ? <Title title={props.title}
+                                hidden={hidden}
+                                titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"}
+                                width={`${props.width ? props.width : "auto"}`}>
         <InputNumber
           className={classes}
           style={{width: `${props.width ? props.width : "auto"}`, display: hidden ? "none" : undefined}}
