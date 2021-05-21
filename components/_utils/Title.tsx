@@ -18,9 +18,9 @@ export function Title(props:Props) {
     const textWidth = getTextWidth(props.title, "bold 12pt Roboto");
     const typographyWidth = 150;
     if (props.titleOrientation === "Left" || props.titleOrientation === "Right") {
-        return <NeoRow hidden={props.hidden} className={"neo-title-container"} style={{minWidth: typographyWidth + 80 + "px", maxWidth: width + 150, display: "flex", alignItems: textWidth > typographyWidth ? "center" : "baseline"}}>
+        return <NeoRow hidden={props.hidden} className={"neo-title-container"} style={{minWidth: typographyWidth + 80 + "px", maxWidth: width + 150, display: "flex", alignItems: "flexStart"}}>
             <NeoCol span={props.titleOrientation === "Left" ? 6 : 18}>
-                {props.titleOrientation === "Left" ? <NeoTypography style={{padding: "4px 12px 4px 0", wordBreak: "break-word", textAlign: "right"}}>{props.title}{props.required&&<span style={{color:'#ad1457'}}> *</span>}</NeoTypography> : props.children}
+                {props.titleOrientation === "Left" ? <NeoTypography style={{padding: "8px 12px 4px 0", wordBreak: "break-word", textAlign: "right"}}>{props.title}{props.required&&<span style={{color:'#ad1457'}}> *</span>}</NeoTypography> : props.children}
             </NeoCol>
             <NeoCol span={props.titleOrientation === "Right" ? 6 : 18}>
                 {props.titleOrientation === "Right" ? <NeoTypography style={{padding: "4px 0 4px 12px", wordBreak: "break-word"}}>{props.title}{props.required&&<span style={{color:'#ad1457'}}> *</span>}</NeoTypography> : props.children}
