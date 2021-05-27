@@ -1,6 +1,7 @@
 import * as React from "react";
 import {NeoCol, NeoRow, NeoTypography} from "../index";
-import {useRef} from "react";
+import {useRef, useState} from "react";
+import {useEffect} from "react";
 
 const inputElementStandardWidth = 200;
 
@@ -17,8 +18,13 @@ export function Title(props:Props) {
     const width = props.width ? parseInt(props.width, 10) : inputElementStandardWidth;
     const typographyWidth = 150;
     const contentContainer = useRef(null);
+    const [initializeRef,setInitializeRef] = useState(false);
 
-    const divContainer = <div ref={contentContainer}>
+    useEffect(()=>{
+        setInitializeRef(!initializeRef)
+    },[]);
+
+    const divContainer = <div ref={contentContainer} style={{width:"fit-content"}}>
         {props.children}
     </div>;
 
