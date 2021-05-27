@@ -7,6 +7,7 @@ import {Radio} from 'antd';
 export interface RadioGroupProps {
     className?: string;
     children?: React.ReactNode;
+    hidden?: boolean;
     value?: any;
     defaultValue?: any;
     placeholder?: string;
@@ -34,6 +35,10 @@ const InternalRadioGroup: React.ForwardRefRenderFunction<unknown, RadioGroupProp
 
     return <Radio.Group
         {...props}
+        style={{
+            ...props.style,
+            display: props.hidden ? "none" : undefined
+        }}
         className={classes}
         onChange={props.onChange}
         value={props.value}
