@@ -37,7 +37,7 @@ const InternalRadioGroup: React.ForwardRefRenderFunction<unknown, RadioGroupProp
         {...props}
         style={{
             ...props.style,
-            display: props.hidden ? "none" : undefined
+            display: props.hidden ? "none" : props.style?.display
         }}
         className={classes}
         onChange={props.onChange}
