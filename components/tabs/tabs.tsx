@@ -15,6 +15,7 @@ export type TabPosition = typeof TabsPositions[number];
 
 
 export interface TabProps {
+    style?;
     type?: TabType;
     tabPosition?: TabPosition;
     hideAdd?: boolean;
@@ -52,6 +53,7 @@ export default class NeoTabs extends Component<TabProps, any> {
         return (
             this.props.activeKey !== undefined ?
                 <Tabs
+                    style={this.props.style}
                     type={this.props.type || 'line'}
                     tabPosition={this.props.tabPosition || 'top'}
                     hideAdd={this.props.hideAdd || false}
@@ -73,6 +75,7 @@ export default class NeoTabs extends Component<TabProps, any> {
                 />
                 :
                 <Tabs
+                    style={this.props.style}
                     type={this.props.type || 'line'}
                     tabPosition={this.props.tabPosition || 'top'}
                     hideAdd={this.props.hideAdd || false}
