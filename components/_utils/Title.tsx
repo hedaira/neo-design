@@ -18,17 +18,25 @@ export function Title(props:Props) {
     const width = props.width ? parseInt(props.width, 10) : inputElementStandardWidth;
     const typographyWidth = 150;
     const contentContainer = useRef(null);
-    const [initializeRef,setInitializeRef] = useState(false);
+    const [contentWidth,setContentWidth] = useState(0);
+    const [observer, setObserver] = useState(new MutationObserver(() => {
+        if (contentContainer.current) {
+            setContentWidth(contentContainer.current.offsetWidth)
+        }
+    }));
 
     useEffect(()=>{
-        setInitializeRef(!initializeRef)
+        if (!width) {
+            observer.observe(document, {subtree: true, childList: true});
+            return ()=>{
+                observer.disconnect()
+            }
+        }
     },[]);
 
     const divContainer = <div ref={contentContainer} style={{width:"fit-content"}}>
         {props.children}
     </div>;
-
-    const contentWidth = contentContainer.current?.offsetWidth;
 
     if (props.titleOrientation === "Left" || props.titleOrientation === "Right") {
         return <NeoRow hidden={props.hidden} className={"neo-title-container"} style={{minWidth: typographyWidth + 80 + "px", maxWidth: width + 150, display: "flex", alignItems: "flexStart"}}>
