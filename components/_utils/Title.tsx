@@ -30,7 +30,7 @@ export function Title(props:Props) {
     }
 
     if (props.titleOrientation === "Top" || props.titleOrientation === "Bottom") {
-        return <NeoRow hidden={props.hidden}>
+        return <NeoRow hidden={props.hidden} style={{width:"fit-content"}}>
             <NeoCol style={{width: "fit-content"}}>
                 {props.titleOrientation === "Top" ? <NeoTypography style={{width: width , wordBreak: "break-word", paddingBottom: "4px", textAlign: "center"}}>{props.title}{props.required&&<span style={{color:'#ad1457'}}> *</span>}</NeoTypography> : props.children}
                 {props.titleOrientation === "Top" ? props.children : <NeoTypography style={{width: width , wordBreak: "break-word", paddingBottom: "4px", textAlign: "center"}}>{props.title}{props.required&&<span style={{color:'#ad1457'}}> *</span>}</NeoTypography>}
