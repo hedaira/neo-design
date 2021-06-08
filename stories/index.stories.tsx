@@ -11,6 +11,7 @@ import ParagraphPageDoc from "../stories/Documentation/Paragraph";
 import ColorPageDoc from "../stories/Documentation/Color";
 import ButtonPage from "../stories/Button";
 import IconPage from "../stories/Icon";
+import StepsPage from "../stories/Steps";
 import InputPage from "../stories/Input";
 import BarsPage from "../stories/Bar";
 import TablesPage from "./Table";
@@ -89,6 +90,8 @@ storiesOf('General|Radio', module)
 storiesOf('General|Select', module)
     .add('Selects', () => <SelectsPage />)
 
+storiesOf('General|Step', module)
+    .add('Steps', () => <StepsPage />)
 
 // /*Feedback*/
  storiesOf('Feedback|Alerts', module)
