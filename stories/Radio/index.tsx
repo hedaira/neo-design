@@ -8,8 +8,7 @@ import {PropsTab} from "../../components/_utils/PropsTab";
 export default class RadioPage extends React.Component {
     state = {
         value: 1
-    }
-
+    };
 
     render() {
         const data = [{name:'type', default:'-', description:"Тип", value: "'search' | 'textArea' | 'checkbox' | 'radio' | 'password'"},
@@ -43,7 +42,11 @@ export default class RadioPage extends React.Component {
                     <div>
                         <h4>Radio group</h4>
                         <br />
-                        <NeoRadioGroup value={this.state.value} onChange={(e)=>this.setState({value:e.target.value})}>
+                        <NeoRadioGroup
+                            title={"NeoRadio"}
+                            titleOrientation={"Top"}
+                            radioPosition={"row"}
+                            value={this.state.value} onChange={(e)=>this.setState({value:e.target.value})}>
                             <NeoInput type={'radio'} value={1}>Radio 1</NeoInput>
                             <NeoInput type={'radio'} value={2}>Radio 2</NeoInput>
                             <NeoInput type={'radio'} value={3}>Radio 3</NeoInput>

@@ -27,6 +27,7 @@ export default class SelectsPage extends React.Component {
             {name:'maxTagPlaceholder', default:'-', description:'Заполнитель, чтобы не отображать все теги', value: 'ReactNode'},
             {name:'maxTagTextLength', default:'-', description:'Максимальная длина текста тега для отображения', value: 'Number'},
             {name:'getPopupContainer', default: '-', description:"Контейнер в котором будет отображаться дроп даун select'а", value: 'function(e)'},
+            {name:'suffixIcon', default: '-', description:"Кастомизированная иконка", value: 'React.Node'},
             {name:'required', default:'false', description:'Обязательное поле(добавляет звездочку)', value: 'true / false'}
             ];
 

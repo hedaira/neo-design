@@ -40,10 +40,8 @@ export interface TypographyProps {
 
 const prefix = 'typography';
 
-interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<TypographyProps & React.RefAttributes<HTMLElement>> {}
 
-const InternalButton: React.ForwardRefRenderFunction<unknown, TypographyProps> = (props) => {
+const InternalButton = React.forwardRef((props:TypographyProps, ref:any) => {
   const {
       type,
       className,
@@ -64,6 +62,7 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, TypographyProps> =
 
     return (
         <div
+            ref={ref}
             id={id}
             className={classes}
             style={style}
@@ -72,9 +71,9 @@ const InternalButton: React.ForwardRefRenderFunction<unknown, TypographyProps> =
         </div>
     )
 
-};
+});
 
-const Typography = React.forwardRef<unknown, TypographyProps>(InternalButton) as CompoundedComponent;
+const Typography = InternalButton;
 
 Typography.displayName = 'NeoTypography';
 

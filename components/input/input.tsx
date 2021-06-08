@@ -34,6 +34,7 @@ export interface InputProps {
     key?;
     onKeyUp?;
     onPressEnter?;
+    suffix?;
 }
 
 const prefix = 'input';
@@ -76,6 +77,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
                 defaultValue={props.defaultValue}
                 // value={props.value}
                 onChange={props.onChange}
+                suffix={props.suffix}
             >
                 {children}
             </Input>
@@ -91,6 +93,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             defaultValue={props.defaultValue}
             // value={props.value}
             onChange={props.onChange}
+            suffix={props.suffix}
         >
             {children}
         </Input>
@@ -110,6 +113,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             defaultValue={props.defaultValue}
             // value={props.value}
             onChange={props.onChange}
+            suffix={props.suffix}
         >
             {children}
         </Input>
@@ -129,6 +133,7 @@ const InternalInput: React.ForwardRefRenderFunction<unknown, InputProps> = (prop
             defaultValue={props.defaultValue}
             // value={props.value}
             onChange={props.onChange}
+            suffix={props.suffix}
         >
             {children}
         </Input.Search>

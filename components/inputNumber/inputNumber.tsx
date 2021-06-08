@@ -1,22 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import {InputNumber} from 'antd';
+import {InputNumber, InputNumberProps} from 'antd';
 import {Title} from "../_utils/Title";
 
-export interface InputNumberProps {
-  width?: string;
-  className?: string;
-  children?: React.ReactNode;
-  defaultValue?: number;
-  parser?: (displayValue: any | undefined) => number | string;
-  formatter?: (value: number | string | undefined) => string;
-  min?: number;
-  max?: number;
-  value?: any;
-  placeholder?: string;
-  disabled?: boolean;
-  onChange?: any;
-  style?: React.CSSProperties;
+export interface NeoInputNumberProps extends InputNumberProps {
   title?: string;
   titleOrientation?: "Top"|"Right"|"Bottom"|"Left"
 }
@@ -24,12 +11,13 @@ export interface InputNumberProps {
 const prefix = 'inputNumber';
 
 interface CompoundedComponent
-    extends React.ForwardRefExoticComponent<InputNumberProps & React.RefAttributes<HTMLElement>> {}
+    extends React.ForwardRefExoticComponent<NeoInputNumberProps & React.RefAttributes<HTMLElement>> {}
 
-const InternalInputNumber: React.ForwardRefRenderFunction<unknown, InputNumberProps> = (props) => {
+const InternalInputNumber: React.ForwardRefRenderFunction<unknown, NeoInputNumberProps> = (props) => {
   const {
     className,
     children,
+    hidden
   } = props;
 
 
@@ -39,25 +27,28 @@ const InternalInputNumber: React.ForwardRefRenderFunction<unknown, InputNumberPr
   );
 
 
-    return props.title ? <Title title={props.title} titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"} width={`${props.width ? props.width : "auto"}`}>
+    return props.title ? <Title title={props.title}
+                                hidden={hidden}
+                                titleOrientation={props.titleOrientation ? props.titleOrientation : "Left"}
+                                width={`${props.width ? props.width : "auto"}`}>
         <InputNumber
           className={classes}
+          style={{width: `${props.width ? props.width : "auto"}`, display: hidden ? "none" : undefined}}
           {...props}
-          style={{width: `${props.width ? props.width : "auto"}`}}
       >
         {children}
       </InputNumber>
     </Title> : <InputNumber
         className={classes}
+        style={{width: `${props.width ? props.width : "auto"}`, display: hidden ? "none" : undefined}}
         {...props}
-        style={{width: `${props.width ? props.width : "auto"}`}}
     >
       {children}
     </InputNumber>
 
 }
 
-const NeoInputNumber = React.forwardRef<unknown, InputNumberProps>(InternalInputNumber) as CompoundedComponent;
+const NeoInputNumber = React.forwardRef<unknown, NeoInputNumberProps>(InternalInputNumber) as CompoundedComponent;
 
 NeoInputNumber.displayName = 'NeoInputNumber';
 
