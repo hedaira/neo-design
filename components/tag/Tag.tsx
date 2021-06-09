@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {Tag} from 'antd';
 import {MouseEventHandler} from "react";
+import {NeoIcon} from "neo-icon/lib";
 
 
 
@@ -37,20 +38,22 @@ const InternalTag: React.ForwardRefRenderFunction<unknown, TagProps> = (props) =
       className,
   );
 
+  const closeIcon = <NeoIcon icon={"close"} size={"s"}/>
 
-    return <Tag
-        {...props}
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
-        onClick={onClick}
-        className={classes}
-        /*style={{width: `${props.width ? props.width : "auto"}`}}*/
-    >
-      <span style={{fontStyle: "normal", fontWeight: "normal", fontSize: "14px", lineHeight: "30px", color: "#424D78"}}>
-        {children}
-      </span>
+  return <Tag
+      {...props}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onClick={onClick}
+      className={classes}
+      closeIcon={closeIcon}
+      /*style={{width: `${props.width ? props.width : "auto"}`}}*/
+  >
+    <span style={{fontStyle: "normal", fontWeight: "normal", fontSize: "14px", lineHeight: "30px", color: "#424D78"}}>
+      {children}
+    </span>
 
-    </Tag>
+  </Tag>
 
 }
 
