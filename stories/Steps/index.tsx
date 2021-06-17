@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import {Steps} from "antd";
 import NeoSteps from "../../components/steps";
+import {NeoButton, NeoTypography} from "../../lib";
 
 
 export default class StepsPage extends Component {
@@ -10,7 +10,7 @@ export default class StepsPage extends Component {
         visibleError: false,
         visibleSuccess: false,
         visibleEdit: false,
-
+        current: 0
     };
 
 
@@ -19,7 +19,7 @@ export default class StepsPage extends Component {
 
         return (
             <Fragment>
-                <h1 className="title">Модальное окно</h1>
+                <h1 className="title">Progress Bar - Steps</h1>
 
                 <p className="text">
                     Модальное окно — это окно, которое блокирует работу пользователя с приложением до тех пор, пока это окно не закроют.
@@ -35,11 +35,14 @@ export default class StepsPage extends Component {
                 </p>
 
 
-                <NeoSteps style={{paddingLeft: "20px"}} current={0} status="process">
-                    <NeoSteps.Steps title="Finished" subTitle={"rteere"} description="This is a description." />
-                    <NeoSteps.Steps title="In Progress" description="This is a description." />
-                    <NeoSteps.Steps title="Waiting" description="This is a description." />
+                <NeoSteps style={{paddingLeft: "20px"}} current={this.state.current}>
+                    <NeoSteps.Step description={'Загрузка данных за выбранную дату'} />
+                    <NeoSteps.Step description={'Запуск классификации ссуд'} />
+                    <NeoSteps.Step description={'Запуск расчета резервов'} />
+                    <NeoSteps.Step description={'Расчет проводок'} />
                 </NeoSteps>
+                <NeoButton onClick={()=>this.setState({current:this.state.current-1})} type={"secondary"}>Prev</NeoButton>
+                <NeoButton onClick={()=>this.setState({current:this.state.current+1})}>Next</NeoButton>
 
 
 

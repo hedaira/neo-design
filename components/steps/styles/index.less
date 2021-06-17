@@ -1,20 +1,116 @@
+.Neostep {
+  .ant-steps-item {
 
-.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot{
-background: #2A356C;
+    .ant-steps-item-content {
+      width: 193px;
+      padding: 16px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      margin-bottom: 20px;
+
+      .ant-steps-item-title {
+
+        .step-status {
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
+
+        .ant-steps-item-subtitle {
+          margin: unset;
+          font-family: Roboto, serif;
+          font-size: 12px;
+          line-height: 16px;
+          color: #333333;
+        }
+
+      }
+
+      .ant-steps-item-description {
+        font-family: Roboto, serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+      }
+
+    }
+
+    &-finish {
+
+      .ant-steps-item-tail::after {
+        background-color: #2A356C;
+      }
+
+      .ant-steps-item-icon {
+        .ant-steps-icon-dot {
+          background: #2A356C;
+        }
+      }
+
+      .ant-steps-item-content {
+        background: #FFFFFF;
+
+        .step-status {
+          background: #D7F8FC;
+          color: #1A7CA3;
+        }
+
+        .ant-steps-item-subtitle {
+          color: #333333;
+        }
+      }
+    }
+
+    &-process {
+
+      .ant-steps-item-icon {
+        .ant-steps-icon-dot {
+          background: rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      .ant-steps-item-content {
+        background: #FFFCF3;
+
+        .step-status {
+          background: #FFECB8;
+          color: #B38136;
+        }
+      }
+    }
+
+    &-wait {
+      .ant-steps-item-content {
+        background: #F2F2F2;
+
+        .step-status {
+          background: #FFECB8;
+          color: #B38136;
+        }
+
+        .ant-steps-item-title {
+          .ant-steps-item-subtitle {
+            color: #8C8C8C;
+          }
+        }
+
+        .ant-steps-item-description {
+          color: #8C8C8C;
+        }
+      }
+    }
+
+    &-error {
+      .ant-steps-item-content {
+        background: #FFFFFF;
+
+        .step-status {
+          background: #EDDADF;
+          color: #870944;
+        }
+
+      }
+    }
+
+  }
 }
-
-.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-tail::after{
-  background: #2A356C;
-  margin-left: 11px
-}
-
-.ant-steps-vertical > .ant-steps-item .ant-steps-item-content{
-  min-height: unset;
-  width: 193px;
-}
-.ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-content{
-  background: #FFFCF3;
-}
-
-
-
