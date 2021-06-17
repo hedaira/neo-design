@@ -51,6 +51,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
         prefix
     );
 
+    const closeIcon = <NeoIcon icon={"close"} size={"s"}/>
     const width = `${props.width ? props.width : "185px"}`;
 
     if (props.title) {
@@ -62,6 +63,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
             <Select
                 {...props}
                 ref={ref}
+                removeIcon={closeIcon}
                 id={props.id}
                 getPopupContainer={props.getPopupContainer}
                 className={classes}
@@ -81,6 +83,7 @@ const InternalSelect = React.forwardRef((props:SelectProps, ref:RefObject<RefSel
 
     return <Select
         {...props}
+        removeIcon={closeIcon}
         ref={ref}
         id={props.id}
         getPopupContainer={props.getPopupContainer}
