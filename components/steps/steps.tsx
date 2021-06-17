@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import {Steps} from 'antd';
 import {Component} from "react";
-import {NeoTypography} from "../../lib";
+import {NeoTypography} from "../index";
 
 
 export interface StepsProps {
