@@ -3,7 +3,7 @@
 
     .ant-steps-item-content {
       width: 193px;
-      padding: 16px;
+      padding: 0 16px 16px;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05);
       border-radius: 4px;
       margin-bottom: 20px;
@@ -11,6 +11,7 @@
       .ant-steps-item-title {
 
         .step-status {
+          margin-top: 16px;
           padding: 4px 8px;
           border-radius: 4px;
         }
@@ -89,12 +90,12 @@
         }
 
         .ant-steps-item-title {
-          .ant-steps-item-subtitle {
+          .ant-steps-item-subtitle .typography {
             color: #8C8C8C;
           }
         }
 
-        .ant-steps-item-description {
+        .ant-steps-item-description .typography {
           color: #8C8C8C;
         }
       }
@@ -112,5 +113,20 @@
       }
     }
 
+    &-active {
+      .ant-steps-item-content {
+        background: #FFFFFF;
+      }
+      .ant-steps-item-icon {
+        .ant-steps-icon-dot {
+          background: #2A356C;
+        }
+      }
+    }
+
   }
+}
+
+.ant-steps-vertical > .ant-steps-item .ant-steps-item-description {
+  padding-bottom: unset;
 }

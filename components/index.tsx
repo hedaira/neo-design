@@ -31,3 +31,4 @@ export { default as NeoColor } from './color'
 
 export { default as NeoDrawer } from './drawer'
 export { default as NeoSteps } from './steps'
+export { default as NeoStep } from './steps/step/step'

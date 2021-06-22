@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import NeoSteps from "../../components/steps";
-import {NeoButton, NeoTypography} from "../../lib";
+import {NeoButton, NeoStep, NeoSteps} from "../../components";
 
 
 export default class StepsPage extends Component {
@@ -34,20 +33,14 @@ export default class StepsPage extends Component {
                     У модального окна всегда есть кнопка действия.
                 </p>
 
-
                 <NeoSteps style={{paddingLeft: "20px"}} current={this.state.current}>
-                    <NeoSteps.Step description={'Загрузка данных за выбранную дату'} />
-                    <NeoSteps.Step description={'Запуск классификации ссуд'} />
-                    <NeoSteps.Step description={'Запуск расчета резервов'} />
-                    <NeoSteps.Step description={'Расчет проводок'} />
+                    <NeoStep description={'Загрузка данных за выбранную дату'} />
+                    <NeoStep description={'Запуск классификации ссуд'} />
+                    <NeoStep description={'Запуск расчета резервов'} />
+                    <NeoStep description={'Расчет проводок'} />
                 </NeoSteps>
                 <NeoButton onClick={()=>this.setState({current:this.state.current-1})} type={"secondary"}>Prev</NeoButton>
                 <NeoButton onClick={()=>this.setState({current:this.state.current+1})}>Next</NeoButton>
-
-
-
-
-
 
             </Fragment>
         );
