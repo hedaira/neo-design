@@ -14,6 +14,7 @@ export interface StepProps {
     description?: any;
     status?: 'wait' | 'process' | 'finish' | 'error';
     title?: React.ReactNode;
+    subTitle?: React.ReactNode;
     style?: React.CSSProperties;
     children?: React.ReactNode;
     stepNumber?: any;
