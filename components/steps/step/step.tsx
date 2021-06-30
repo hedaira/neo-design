@@ -59,8 +59,8 @@ export default class NeoStep extends Component<StepProps, any> {
             }
             subTitle={<NeoTypography type={'capture_regular'} style={{margin: '16px 0 8px'}}>Шаг {this.props.stepNumber}</NeoTypography>}
             status={'wait'}
-            {...this.props}
             description={
+                // this.props.description
                 <>
                     <NeoTypography type={"body_medium"}>{this.props.description}</NeoTypography>
                     {this.props.status === 'finish'?
@@ -80,6 +80,7 @@ export default class NeoStep extends Component<StepProps, any> {
                     }
                 </>
             }
+            {...this.props}
         />
     }
 };
